@@ -1,0 +1,7 @@
+_partition,_aspect,_key,_type,_value
+Column,gender,displayChoicesList,object,"[{""choice_list_name"":""sexes"",""data_value"":""male"",""display"":{""title"":{""text"":""Male""}},""_row_num"":2},{""choice_list_name"":""sexes"",""data_value"":""female"",""display"":{""title"":{""text"":""Female""}},""_row_num"":3}]"
+Column,location,displayChoicesList,object,"[{""choice_list_name"":""village_name"",""data_value"":""levuka"",""display"":{""title"":{""text"":""Levuka Vakavita""}},""_row_num"":5},{""choice_list_name"":""village_name"",""data_value"":""baba"",""display"":{""title"":{""text"":""Baba""}},""_row_num"":6},{""choice_list_name"":""village_name"",""data_value"":""wailailai"",""display"":{""title"":{""text"":""Wailailai""}},""_row_num"":7},{""choice_list_name"":""village_name"",""data_value"":""vagadaci"",""display"":{""title"":{""text"":""Vagadaci""}},""_row_num"":8}]"
+FormType,default,FormType.formType,string,SURVEY
+SurveyUtil,default,SurveyUtil.formId,string,household_items
+Table,default,defaultViewType,string,SPREADSHEET
+Table,default,displayName,object,"{""text"":""Household Items""}"
