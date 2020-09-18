@@ -79,6 +79,36 @@
           }
         },
         "_row_num": 8
+      },
+      {
+        "choice_list_name": "custom_member_choices",
+        "data_value": "tokatoka",
+        "display": {
+          "title": {
+            "text": "Tokatoka"
+          }
+        },
+        "_row_num": 10
+      },
+      {
+        "choice_list_name": "custom_member_choices",
+        "data_value": "mataqali",
+        "display": {
+          "title": {
+            "text": "Mataqali"
+          }
+        },
+        "_row_num": 11
+      },
+      {
+        "choice_list_name": "custom_member_choices",
+        "data_value": "yavusa",
+        "display": {
+          "title": {
+            "text": "Yavusa"
+          }
+        },
+        "_row_num": 12
       }
     ],
     "settings": [
@@ -98,13 +128,18 @@
         "_row_num": 4
       },
       {
+        "setting_name": "instance_name",
+        "value": "household_id",
+        "_row_num": 5
+      },
+      {
         "setting_name": "survey",
         "display": {
           "title": {
             "text": "Household Survey"
           }
         },
-        "_row_num": 5
+        "_row_num": 7
       },
       {
         "setting_name": "id",
@@ -113,7 +148,7 @@
             "text": "Household ID"
           }
         },
-        "_row_num": 6
+        "_row_num": 8
       },
       {
         "setting_name": "members",
@@ -122,12 +157,43 @@
             "text": "Household Members"
           }
         },
-        "_row_num": 7
+        "_row_num": 9
       },
       {
-        "setting_name": "instance_name",
-        "value": "household_id",
+        "setting_name": "asset_wealth",
+        "display": {
+          "title": {
+            "text": "Household Asset Inventory/Wealth"
+          }
+        },
         "_row_num": 10
+      },
+      {
+        "setting_name": "income",
+        "display": {
+          "title": {
+            "text": "Income of Head and Spouse"
+          }
+        },
+        "_row_num": 11
+      },
+      {
+        "setting_name": "food_security",
+        "display": {
+          "title": {
+            "text": "Food Security"
+          }
+        },
+        "_row_num": 12
+      },
+      {
+        "setting_name": "crops_fishing",
+        "display": {
+          "title": {
+            "text": "Crops under Cultivation/Fishing"
+          }
+        },
+        "_row_num": 13
       }
     ],
     "queries": [
@@ -141,6 +207,13 @@
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
         "openRowInitialElementKeyToValueMap": "{}",
         "_row_num": 3
+      }
+    ],
+    "model": [
+      {
+        "name": "household_id",
+        "type": "text",
+        "_row_num": 2
       }
     ],
     "id": [
@@ -206,6 +279,18 @@
         "_row_num": 2
       },
       {
+        "comments": "Customary membership of household",
+        "type": "select_one_with_other",
+        "values_list": "custom_member_choices",
+        "name": "customary_membership",
+        "display": {
+          "prompt": {
+            "text": "What is the houeshold's customary membership?"
+          }
+        },
+        "_row_num": 3
+      },
+      {
         "type": "linked_table",
         "values_list": "linked_household_member",
         "display": {
@@ -216,14 +301,7 @@
             "text": "Add House Member"
           }
         },
-        "_row_num": 3
-      }
-    ],
-    "model": [
-      {
-        "name": "household_id",
-        "type": "text",
-        "_row_num": 2
+        "_row_num": 4
       }
     ]
   },
@@ -259,6 +337,11 @@
         "value": "household_census",
         "_row_num": 4
       },
+      "instance_name": {
+        "setting_name": "instance_name",
+        "value": "household_id",
+        "_row_num": 5
+      },
       "survey": {
         "setting_name": "survey",
         "display": {
@@ -266,7 +349,7 @@
             "text": "Household Survey"
           }
         },
-        "_row_num": 5
+        "_row_num": 7
       },
       "id": {
         "setting_name": "id",
@@ -275,7 +358,7 @@
             "text": "Household ID"
           }
         },
-        "_row_num": 6
+        "_row_num": 8
       },
       "members": {
         "setting_name": "members",
@@ -284,16 +367,47 @@
             "text": "Household Members"
           }
         },
-        "_row_num": 7
+        "_row_num": 9
       },
-      "instance_name": {
-        "setting_name": "instance_name",
-        "value": "household_id",
+      "asset_wealth": {
+        "setting_name": "asset_wealth",
+        "display": {
+          "title": {
+            "text": "Household Asset Inventory/Wealth"
+          }
+        },
         "_row_num": 10
+      },
+      "income": {
+        "setting_name": "income",
+        "display": {
+          "title": {
+            "text": "Income of Head and Spouse"
+          }
+        },
+        "_row_num": 11
+      },
+      "food_security": {
+        "setting_name": "food_security",
+        "display": {
+          "title": {
+            "text": "Food Security"
+          }
+        },
+        "_row_num": 12
+      },
+      "crops_fishing": {
+        "setting_name": "crops_fishing",
+        "display": {
+          "title": {
+            "text": "Crops under Cultivation/Fishing"
+          }
+        },
+        "_row_num": 13
       },
       "_locales": {
         "setting_name": "_locales",
-        "_row_num": 5,
+        "_row_num": 7,
         "value": [
           {
             "display": {
@@ -307,7 +421,7 @@
       },
       "_default_locale": {
         "setting_name": "_default_locale",
-        "_row_num": 5,
+        "_row_num": 7,
         "value": "default"
       },
       "initial": {
@@ -317,7 +431,7 @@
             "text": "Household Survey"
           }
         },
-        "_row_num": 5
+        "_row_num": 7
       }
     },
     "choices": {
@@ -383,6 +497,38 @@
             }
           },
           "_row_num": 8
+        }
+      ],
+      "custom_member_choices": [
+        {
+          "choice_list_name": "custom_member_choices",
+          "data_value": "tokatoka",
+          "display": {
+            "title": {
+              "text": "Tokatoka"
+            }
+          },
+          "_row_num": 10
+        },
+        {
+          "choice_list_name": "custom_member_choices",
+          "data_value": "mataqali",
+          "display": {
+            "title": {
+              "text": "Mataqali"
+            }
+          },
+          "_row_num": 11
+        },
+        {
+          "choice_list_name": "custom_member_choices",
+          "data_value": "yavusa",
+          "display": {
+            "title": {
+              "text": "Yavusa"
+            }
+          },
+          "_row_num": 12
         }
       ]
     },
@@ -491,6 +637,17 @@
         ],
         "type": "string",
         "elementKey": "household_human_id"
+      },
+      "customary_membership": {
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "members"
+          }
+        ],
+        "type": "string",
+        "valuesList": "custom_member_choices",
+        "elementKey": "customary_membership"
       }
     },
     "section_names": [
@@ -753,6 +910,23 @@
             "promptIdx": 0
           },
           {
+            "comments": "Customary membership of household",
+            "type": "select_one_with_other",
+            "values_list": "custom_member_choices",
+            "name": "customary_membership",
+            "display": {
+              "prompt": {
+                "text": "What is the houeshold's customary membership?"
+              }
+            },
+            "_row_num": 3,
+            "__rowNum__": 2,
+            "_token_type": "prompt",
+            "_type": "select_one_with_other",
+            "_branch_label_enclosing_screen": "members/_screen3",
+            "promptIdx": 1
+          },
+          {
             "type": "linked_table",
             "values_list": "linked_household_member",
             "display": {
@@ -763,20 +937,20 @@
                 "text": "Add House Member"
               }
             },
-            "_row_num": 3,
-            "__rowNum__": 2,
+            "_row_num": 4,
+            "__rowNum__": 3,
             "_token_type": "prompt",
             "_type": "linked_table",
-            "_branch_label_enclosing_screen": "members/_screen3",
-            "promptIdx": 1
+            "_branch_label_enclosing_screen": "members/_screen4",
+            "promptIdx": 2
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 4,
-            "_branch_label_enclosing_screen": "members/_screen4",
-            "promptIdx": 2
+            "_row_num": 5,
+            "_branch_label_enclosing_screen": "members/_screen5",
+            "promptIdx": 3
           }
         ],
         "validation_tag_map": {
@@ -796,32 +970,39 @@
             "operationIdx": 1
           },
           {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 4,
-            "operationIdx": 2
-          },
-          {
             "_row_num": 4,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 2
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 5,
+            "operationIdx": 3
+          },
+          {
+            "_row_num": 5,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 3
+            "operationIdx": 4
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 4,
-            "operationIdx": 4
+            "_row_num": 5,
+            "operationIdx": 5
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
           "_screen3": 1,
-          "_contents": 3,
-          "_screen4": 3
+          "_screen4": 2,
+          "_contents": 4,
+          "_screen5": 4
         }
       },
       "initial": {
@@ -1138,6 +1319,20 @@
         "elementSet": "data",
         "elementPath": "household_human_id"
       },
+      "customary_membership": {
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "members"
+          }
+        ],
+        "type": "string",
+        "valuesList": "custom_member_choices",
+        "elementKey": "customary_membership",
+        "elementName": "customary_membership",
+        "elementSet": "data",
+        "elementPath": "customary_membership"
+      },
       "household_image_uriFragment": {
         "type": "string",
         "elementType": "rowpath",
@@ -1297,6 +1492,13 @@
       }
     },
     "properties": [
+      {
+        "_partition": "Column",
+        "_aspect": "customary_membership",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"custom_member_choices\",\"data_value\":\"tokatoka\",\"display\":{\"title\":{\"text\":\"Tokatoka\"}},\"_row_num\":10},{\"choice_list_name\":\"custom_member_choices\",\"data_value\":\"mataqali\",\"display\":{\"title\":{\"text\":\"Mataqali\"}},\"_row_num\":11},{\"choice_list_name\":\"custom_member_choices\",\"data_value\":\"yavusa\",\"display\":{\"title\":{\"text\":\"Yavusa\"}},\"_row_num\":12}]"
+      },
       {
         "_partition": "Column",
         "_aspect": "household_village",
