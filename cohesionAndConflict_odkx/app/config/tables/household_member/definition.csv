@@ -9,6 +9,7 @@ household_id,household_id,string,[]
 last_name,last_name,string,[]
 marital_status,marital_status,string,[]
 name,name,string,[]
+parent_1,parent_1,string,[]
 person_photo,person_photo,mimeUri,"[""person_photo_contentType"",""person_photo_uriFragment""]"
 person_photo_contentType,contentType,mimeType,[]
 person_photo_uriFragment,uriFragment,rowpath,[]
