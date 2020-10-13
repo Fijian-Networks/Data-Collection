@@ -480,6 +480,16 @@
           }
         },
         "_row_num": 5
+      },
+      {
+        "choice_list_name": "forms",
+        "data_value": "reproductive_history",
+        "display": {
+          "title": {
+            "text": "Reproductive_history"
+          }
+        },
+        "_row_num": 6
       }
     ],
     "survey": [
@@ -593,6 +603,24 @@
       {
         "clause": "exit section",
         "_row_num": 23
+      },
+      {
+        "branch_label": "reproductive_history",
+        "_row_num": 26
+      },
+      {
+        "url": "'?' + odkSurvey.getHashString('reproductive_history')",
+        "type": "external_link",
+        "display": {
+          "prompt": {
+            "text": "Open form"
+          }
+        },
+        "_row_num": 27
+      },
+      {
+        "clause": "exit section",
+        "_row_num": 28
       }
     ]
   },
@@ -707,6 +735,16 @@
             }
           },
           "_row_num": 5
+        },
+        {
+          "choice_list_name": "forms",
+          "data_value": "reproductive_history",
+          "display": {
+            "title": {
+              "text": "Reproductive_history"
+            }
+          },
+          "_row_num": 6
         }
       ]
     },
@@ -1347,12 +1385,27 @@
             "promptIdx": 5
           },
           {
+            "url": "'?' + odkSurvey.getHashString('reproductive_history')",
+            "type": "external_link",
+            "display": {
+              "prompt": {
+                "text": "Open form"
+              }
+            },
+            "_row_num": 27,
+            "__rowNum__": 26,
+            "_token_type": "prompt",
+            "_type": "external_link",
+            "_branch_label_enclosing_screen": "survey/_screen27",
+            "promptIdx": 6
+          },
+          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 24,
-            "_branch_label_enclosing_screen": "survey/_screen24",
-            "promptIdx": 6
+            "_row_num": 29,
+            "_branch_label_enclosing_screen": "survey/_screen29",
+            "promptIdx": 7
           }
         ],
         "validation_tag_map": {
@@ -1454,25 +1507,38 @@
             "operationIdx": 13
           },
           {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 24,
+            "_row_num": 27,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 14
           },
           {
-            "_row_num": 24,
+            "clause": "exit section",
+            "_row_num": 28,
+            "__rowNum__": 27,
+            "_token_type": "exit_section",
+            "operationIdx": 15
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 29,
+            "operationIdx": 16
+          },
+          {
+            "_row_num": 29,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 15
+            "operationIdx": 17
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 24,
-            "operationIdx": 16
+            "_row_num": 29,
+            "operationIdx": 18
           }
         ],
         "branch_label_map": {
@@ -1489,8 +1555,10 @@
           "_screen18": 10,
           "household_member": 12,
           "_screen22": 12,
-          "_contents": 15,
-          "_screen24": 15
+          "reproductive_history": 14,
+          "_screen27": 14,
+          "_contents": 17,
+          "_screen29": 17
         }
       }
     },
@@ -1527,3 +1595,5 @@
     ]
   }
 }
+could not find setting with name: framework_variant
+could not find setting with name: framework_variant

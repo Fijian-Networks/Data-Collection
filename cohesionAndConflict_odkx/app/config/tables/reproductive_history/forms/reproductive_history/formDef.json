@@ -1,0 +1,1405 @@
+{
+  "xlsx": {
+    "initial": [
+      {
+        "clause": "do section survey",
+        "_row_num": 2
+      },
+      {
+        "clause": "goto _finalize",
+        "comments": "skips the finalize screen where the user chooses to save as incomplete or finalized and instead saves as finalized",
+        "_row_num": 3
+      }
+    ],
+    "survey": [
+      {
+        "clause": "do section reproductive_history",
+        "_row_num": 3
+      },
+      {
+        "comment": "assign full name for instance name",
+        "type": "assign",
+        "name": "child_name",
+        "calculation": "(data('first_name') + '_' + data('last_name'))",
+        "_row_num": 4
+      }
+    ],
+    "choices": [
+      {
+        "choice_list_name": "yesno",
+        "data_value": "yes",
+        "display": {
+          "title": {
+            "text": "yes"
+          }
+        },
+        "_row_num": 2
+      },
+      {
+        "choice_list_name": "yesno",
+        "data_value": "no",
+        "display": {
+          "title": {
+            "text": "no"
+          }
+        },
+        "_row_num": 3
+      },
+      {
+        "choice_list_name": "sexes",
+        "data_value": "male",
+        "display": {
+          "title": {
+            "text": "male"
+          }
+        },
+        "_row_num": 5
+      },
+      {
+        "choice_list_name": "sexes",
+        "data_value": "female",
+        "display": {
+          "title": {
+            "text": "female"
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "choice_list_name": "marital_choices",
+        "data_value": "married",
+        "display": {
+          "title": {
+            "text": "Married"
+          }
+        },
+        "_row_num": 8
+      },
+      {
+        "choice_list_name": "marital_choices",
+        "data_value": "never_married",
+        "display": {
+          "title": {
+            "text": "Never Married"
+          }
+        },
+        "_row_num": 9
+      },
+      {
+        "choice_list_name": "marital_choices",
+        "data_value": "divorced",
+        "display": {
+          "title": {
+            "text": "Divorced"
+          }
+        },
+        "_row_num": 10
+      },
+      {
+        "choice_list_name": "marital_choices",
+        "data_value": "separated",
+        "display": {
+          "title": {
+            "text": "Separated"
+          }
+        },
+        "_row_num": 11
+      },
+      {
+        "choice_list_name": "marital_choices",
+        "data_value": "widowed",
+        "display": {
+          "title": {
+            "text": "Widowed"
+          }
+        },
+        "_row_num": 12
+      }
+    ],
+    "settings": [
+      {
+        "setting_name": "form_id",
+        "value": "reproductive_history",
+        "_row_num": 2
+      },
+      {
+        "setting_name": "form_version",
+        "value": 2,
+        "_row_num": 3
+      },
+      {
+        "setting_name": "table_id",
+        "value": "reproductive_history",
+        "_row_num": 4
+      },
+      {
+        "setting_name": "instance_name",
+        "value": "first_name",
+        "_row_num": 5
+      },
+      {
+        "setting_name": "survey",
+        "display": {
+          "title": {
+            "text": "Reproductive History"
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "setting_name": "reproductive_history",
+        "display": {
+          "title": {
+            "text": "Reproductive History"
+          }
+        },
+        "_row_num": 7
+      }
+    ],
+    "model": [
+      {
+        "name": "parent_household_id",
+        "type": "text",
+        "_row_num": 3
+      },
+      {
+        "name": "parent_1",
+        "type": "text",
+        "_row_num": 4
+      },
+      {
+        "name": "parent_2",
+        "type": "text",
+        "_row_num": 5
+      },
+      {
+        "name": "first_name",
+        "type": "text",
+        "_row_num": 8
+      },
+      {
+        "name": "last_name",
+        "type": "text",
+        "_row_num": 9
+      },
+      {
+        "name": "child_name",
+        "type": "text",
+        "_row_num": 10
+      },
+      {
+        "name": "year_born",
+        "type": "integer",
+        "_row_num": 11
+      },
+      {
+        "name": "sex",
+        "type": "select_one",
+        "_row_num": 12
+      },
+      {
+        "name": "is_alive",
+        "type": "select_one",
+        "_row_num": 13
+      },
+      {
+        "name": "live_location",
+        "type": "text",
+        "_row_num": 15
+      },
+      {
+        "name": "marital_status",
+        "type": "select_one",
+        "_row_num": 16
+      },
+      {
+        "name": "years_education",
+        "type": "integer",
+        "_row_num": 17
+      }
+    ],
+    "reproductive_history": [
+      {
+        "clause": "begin screen",
+        "_row_num": 2
+      },
+      {
+        "type": "text",
+        "name": "first_name",
+        "display": {
+          "prompt": {
+            "text": "First name of child:"
+          }
+        },
+        "_row_num": 3
+      },
+      {
+        "type": "text",
+        "name": "last_name",
+        "display": {
+          "prompt": {
+            "text": "Last name of child:"
+          }
+        },
+        "_row_num": 4
+      },
+      {
+        "type": "select_one",
+        "values_list": "sexes",
+        "name": "sex",
+        "display": {
+          "prompt": {
+            "text": "Sex:"
+          }
+        },
+        "_row_num": 5
+      },
+      {
+        "type": "integer",
+        "name": "year_born",
+        "display": {
+          "prompt": {
+            "text": "What year were they born?"
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "type": "select_one",
+        "values_list": "yesno",
+        "name": "is_alive",
+        "display": {
+          "prompt": {
+            "text": "Is the child still alive?"
+          }
+        },
+        "_row_num": 7
+      },
+      {
+        "type": "text",
+        "name": "live_location",
+        "display": {
+          "prompt": {
+            "text": "Where do they live?"
+          }
+        },
+        "_row_num": 8
+      },
+      {
+        "type": "select_one_dropdown",
+        "values_list": "marital_choices",
+        "name": "marital_status",
+        "display": {
+          "prompt": {
+            "text": "What is their marital status?"
+          }
+        },
+        "_row_num": 11
+      },
+      {
+        "type": "integer",
+        "name": "years_education",
+        "display": {
+          "prompt": {
+            "text": "Years of education?"
+          }
+        },
+        "_row_num": 12
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 17
+      }
+    ]
+  },
+  "specification": {
+    "column_types": {
+      "_screen_block": "function",
+      "condition": "formula",
+      "constraint": "formula",
+      "required": "formula",
+      "calculation": "formula",
+      "newRowInitialElementKeyToValueMap": "formula",
+      "openRowInitialElementKeyToValueMap": "formula",
+      "selectionArgs": "formula",
+      "url": "formula",
+      "uri": "formula",
+      "callback": "formula(context)",
+      "choice_filter": "formula(choice_item)",
+      "templatePath": "requirejs_path"
+    },
+    "settings": {
+      "form_id": {
+        "setting_name": "form_id",
+        "value": "reproductive_history",
+        "_row_num": 2
+      },
+      "form_version": {
+        "setting_name": "form_version",
+        "value": 2,
+        "_row_num": 3
+      },
+      "table_id": {
+        "setting_name": "table_id",
+        "value": "reproductive_history",
+        "_row_num": 4
+      },
+      "instance_name": {
+        "setting_name": "instance_name",
+        "value": "first_name",
+        "_row_num": 5
+      },
+      "survey": {
+        "setting_name": "survey",
+        "display": {
+          "title": {
+            "text": "Reproductive History"
+          }
+        },
+        "_row_num": 6
+      },
+      "reproductive_history": {
+        "setting_name": "reproductive_history",
+        "display": {
+          "title": {
+            "text": "Reproductive History"
+          }
+        },
+        "_row_num": 7
+      },
+      "_locales": {
+        "setting_name": "_locales",
+        "_row_num": 6,
+        "value": [
+          {
+            "display": {
+              "locale": {
+                "text": "default"
+              }
+            },
+            "name": "default"
+          }
+        ]
+      },
+      "_default_locale": {
+        "setting_name": "_default_locale",
+        "_row_num": 6,
+        "value": "default"
+      },
+      "initial": {
+        "setting_name": "survey",
+        "display": {
+          "title": {
+            "text": "Reproductive History"
+          }
+        },
+        "_row_num": 6
+      }
+    },
+    "choices": {
+      "yesno": [
+        {
+          "choice_list_name": "yesno",
+          "data_value": "yes",
+          "display": {
+            "title": {
+              "text": "yes"
+            }
+          },
+          "_row_num": 2
+        },
+        {
+          "choice_list_name": "yesno",
+          "data_value": "no",
+          "display": {
+            "title": {
+              "text": "no"
+            }
+          },
+          "_row_num": 3
+        }
+      ],
+      "sexes": [
+        {
+          "choice_list_name": "sexes",
+          "data_value": "male",
+          "display": {
+            "title": {
+              "text": "male"
+            }
+          },
+          "_row_num": 5
+        },
+        {
+          "choice_list_name": "sexes",
+          "data_value": "female",
+          "display": {
+            "title": {
+              "text": "female"
+            }
+          },
+          "_row_num": 6
+        }
+      ],
+      "marital_choices": [
+        {
+          "choice_list_name": "marital_choices",
+          "data_value": "married",
+          "display": {
+            "title": {
+              "text": "Married"
+            }
+          },
+          "_row_num": 8
+        },
+        {
+          "choice_list_name": "marital_choices",
+          "data_value": "never_married",
+          "display": {
+            "title": {
+              "text": "Never Married"
+            }
+          },
+          "_row_num": 9
+        },
+        {
+          "choice_list_name": "marital_choices",
+          "data_value": "divorced",
+          "display": {
+            "title": {
+              "text": "Divorced"
+            }
+          },
+          "_row_num": 10
+        },
+        {
+          "choice_list_name": "marital_choices",
+          "data_value": "separated",
+          "display": {
+            "title": {
+              "text": "Separated"
+            }
+          },
+          "_row_num": 11
+        },
+        {
+          "choice_list_name": "marital_choices",
+          "data_value": "widowed",
+          "display": {
+            "title": {
+              "text": "Widowed"
+            }
+          },
+          "_row_num": 12
+        }
+      ]
+    },
+    "table_specific_definitions": {
+      "_tokens": {}
+    },
+    "queries": {},
+    "calculates": {},
+    "model": {
+      "parent_household_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "parent_household_id"
+      },
+      "parent_1": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "parent_1"
+      },
+      "parent_2": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "parent_2"
+      },
+      "first_name": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "reproductive_history"
+          },
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "first_name"
+      },
+      "last_name": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "reproductive_history"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "last_name"
+      },
+      "child_name": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "child_name"
+      },
+      "year_born": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "reproductive_history"
+          },
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "year_born"
+      },
+      "sex": {
+        "type": "string",
+        "valuesList": "sexes",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "reproductive_history"
+          },
+          {
+            "_row_num": 12,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "sex"
+      },
+      "is_alive": {
+        "type": "string",
+        "valuesList": "yesno",
+        "_defn": [
+          {
+            "_row_num": 7,
+            "section_name": "reproductive_history"
+          },
+          {
+            "_row_num": 13,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "is_alive"
+      },
+      "live_location": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 8,
+            "section_name": "reproductive_history"
+          },
+          {
+            "_row_num": 15,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "live_location"
+      },
+      "marital_status": {
+        "type": "string",
+        "valuesList": "marital_choices",
+        "_defn": [
+          {
+            "_row_num": 11,
+            "section_name": "reproductive_history"
+          },
+          {
+            "_row_num": 16,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "marital_status"
+      },
+      "years_education": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 12,
+            "section_name": "reproductive_history"
+          },
+          {
+            "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "years_education"
+      }
+    },
+    "section_names": [
+      "initial",
+      "reproductive_history",
+      "survey"
+    ],
+    "sections": {
+      "initial": {
+        "section_name": "initial",
+        "nested_sections": {
+          "survey": true
+        },
+        "reachable_sections": {
+          "survey": true,
+          "reproductive_history": true
+        },
+        "prompts": [
+          {
+            "clause": "do section survey",
+            "_row_num": 2,
+            "__rowNum__": 1,
+            "_token_type": "prompt",
+            "_do_section_name": "survey",
+            "_type": "_section",
+            "promptIdx": 0,
+            "display": {
+              "title": {
+                "text": "Reproductive History"
+              }
+            },
+            "_branch_label_enclosing_screen": "survey/0"
+          },
+          {
+            "_token_type": "prompt",
+            "type": "contents",
+            "_type": "contents",
+            "_row_num": 4,
+            "_branch_label_enclosing_screen": "initial/_screen4",
+            "promptIdx": 1
+          }
+        ],
+        "validation_tag_map": {
+          "finalize": []
+        },
+        "operations": [
+          {
+            "clause": "do section survey",
+            "_row_num": 2,
+            "__rowNum__": 1,
+            "_token_type": "do_section",
+            "_do_section_name": "survey",
+            "operationIdx": 0
+          },
+          {
+            "clause": "goto _finalize",
+            "comments": "skips the finalize screen where the user chooses to save as incomplete or finalized and instead saves as finalized",
+            "_row_num": 3,
+            "__rowNum__": 2,
+            "_token_type": "goto_label",
+            "_branch_label": "_finalize",
+            "operationIdx": 1
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 4,
+            "operationIdx": 2
+          },
+          {
+            "_row_num": 4,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 3
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 4,
+            "operationIdx": 4
+          },
+          {
+            "_token_type": "validate",
+            "clause": "validate finalize",
+            "_sweep_name": "finalize",
+            "_row_num": 4,
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 5
+          },
+          {
+            "_token_type": "save_and_terminate",
+            "clause": "save and terminate",
+            "calculation": true,
+            "_row_num": 4,
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 6
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 4,
+            "operationIdx": 7
+          }
+        ],
+        "branch_label_map": {
+          "_contents": 3,
+          "_screen4": 3,
+          "_finalize": 5
+        }
+      },
+      "survey": {
+        "section_name": "survey",
+        "nested_sections": {
+          "reproductive_history": true
+        },
+        "reachable_sections": {
+          "reproductive_history": true
+        },
+        "prompts": [
+          {
+            "clause": "do section reproductive_history",
+            "_row_num": 3,
+            "__rowNum__": 2,
+            "_token_type": "prompt",
+            "_do_section_name": "reproductive_history",
+            "_type": "_section",
+            "promptIdx": 0,
+            "display": {
+              "title": {
+                "text": "Reproductive History"
+              }
+            },
+            "_branch_label_enclosing_screen": "reproductive_history/0"
+          },
+          {
+            "_token_type": "prompt",
+            "type": "contents",
+            "_type": "contents",
+            "_row_num": 5,
+            "_branch_label_enclosing_screen": "survey/_screen5",
+            "promptIdx": 1
+          }
+        ],
+        "validation_tag_map": {
+          "finalize": []
+        },
+        "operations": [
+          {
+            "clause": "do section reproductive_history",
+            "_row_num": 3,
+            "__rowNum__": 2,
+            "_token_type": "do_section",
+            "_do_section_name": "reproductive_history",
+            "operationIdx": 0
+          },
+          {
+            "comment": "assign full name for instance name",
+            "type": "assign",
+            "name": "child_name",
+            "calculation": "(data('first_name') + '_' + data('last_name'))",
+            "_row_num": 4,
+            "__rowNum__": 3,
+            "_token_type": "assign",
+            "operationIdx": 1
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 5,
+            "operationIdx": 2
+          },
+          {
+            "_row_num": 5,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 3
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 5,
+            "operationIdx": 4
+          }
+        ],
+        "branch_label_map": {
+          "_contents": 3,
+          "_screen5": 3
+        }
+      },
+      "reproductive_history": {
+        "section_name": "reproductive_history",
+        "nested_sections": {},
+        "reachable_sections": {},
+        "prompts": [
+          {
+            "type": "text",
+            "name": "first_name",
+            "display": {
+              "prompt": {
+                "text": "First name of child:"
+              }
+            },
+            "_row_num": 3,
+            "__rowNum__": 2,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "reproductive_history/_screen2",
+            "promptIdx": 0
+          },
+          {
+            "type": "text",
+            "name": "last_name",
+            "display": {
+              "prompt": {
+                "text": "Last name of child:"
+              }
+            },
+            "_row_num": 4,
+            "__rowNum__": 3,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "reproductive_history/_screen2",
+            "promptIdx": 1
+          },
+          {
+            "type": "select_one",
+            "values_list": "sexes",
+            "name": "sex",
+            "display": {
+              "prompt": {
+                "text": "Sex:"
+              }
+            },
+            "_row_num": 5,
+            "__rowNum__": 4,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "reproductive_history/_screen2",
+            "promptIdx": 2
+          },
+          {
+            "type": "integer",
+            "name": "year_born",
+            "display": {
+              "prompt": {
+                "text": "What year were they born?"
+              }
+            },
+            "_row_num": 6,
+            "__rowNum__": 5,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "reproductive_history/_screen2",
+            "promptIdx": 3
+          },
+          {
+            "type": "select_one",
+            "values_list": "yesno",
+            "name": "is_alive",
+            "display": {
+              "prompt": {
+                "text": "Is the child still alive?"
+              }
+            },
+            "_row_num": 7,
+            "__rowNum__": 6,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "reproductive_history/_screen2",
+            "promptIdx": 4
+          },
+          {
+            "type": "text",
+            "name": "live_location",
+            "display": {
+              "prompt": {
+                "text": "Where do they live?"
+              }
+            },
+            "_row_num": 8,
+            "__rowNum__": 7,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "reproductive_history/_screen2",
+            "promptIdx": 5
+          },
+          {
+            "type": "select_one_dropdown",
+            "values_list": "marital_choices",
+            "name": "marital_status",
+            "display": {
+              "prompt": {
+                "text": "What is their marital status?"
+              }
+            },
+            "_row_num": 11,
+            "__rowNum__": 10,
+            "_token_type": "prompt",
+            "_type": "select_one_dropdown",
+            "_branch_label_enclosing_screen": "reproductive_history/_screen2",
+            "promptIdx": 6
+          },
+          {
+            "type": "integer",
+            "name": "years_education",
+            "display": {
+              "prompt": {
+                "text": "Years of education?"
+              }
+            },
+            "_row_num": 12,
+            "__rowNum__": 11,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "reproductive_history/_screen2",
+            "promptIdx": 7
+          },
+          {
+            "_token_type": "prompt",
+            "type": "contents",
+            "_type": "contents",
+            "_row_num": 18,
+            "_branch_label_enclosing_screen": "reproductive_history/_screen18",
+            "promptIdx": 8
+          }
+        ],
+        "validation_tag_map": {
+          "finalize": []
+        },
+        "operations": [
+          {
+            "clause": "begin screen",
+            "_row_num": 2,
+            "__rowNum__": 1,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 17,
+              "__rowNum__": 16,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 0
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 18,
+            "operationIdx": 1
+          },
+          {
+            "_row_num": 18,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 2
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 18,
+            "operationIdx": 3
+          }
+        ],
+        "branch_label_map": {
+          "_screen2": 0,
+          "_contents": 2,
+          "_screen18": 2
+        }
+      }
+    },
+    "dataTableModel": {
+      "parent_household_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "parent_household_id",
+        "elementName": "parent_household_id",
+        "elementSet": "data",
+        "elementPath": "parent_household_id"
+      },
+      "parent_1": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "parent_1",
+        "elementName": "parent_1",
+        "elementSet": "data",
+        "elementPath": "parent_1"
+      },
+      "parent_2": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "parent_2",
+        "elementName": "parent_2",
+        "elementSet": "data",
+        "elementPath": "parent_2"
+      },
+      "first_name": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "reproductive_history"
+          },
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "first_name",
+        "elementName": "first_name",
+        "elementSet": "data",
+        "elementPath": "first_name"
+      },
+      "last_name": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "reproductive_history"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "last_name",
+        "elementName": "last_name",
+        "elementSet": "data",
+        "elementPath": "last_name"
+      },
+      "child_name": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "child_name",
+        "elementName": "child_name",
+        "elementSet": "data",
+        "elementPath": "child_name"
+      },
+      "year_born": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "reproductive_history"
+          },
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "year_born",
+        "elementName": "year_born",
+        "elementSet": "data",
+        "elementPath": "year_born"
+      },
+      "sex": {
+        "type": "string",
+        "valuesList": "sexes",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "reproductive_history"
+          },
+          {
+            "_row_num": 12,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "sex",
+        "elementName": "sex",
+        "elementSet": "data",
+        "elementPath": "sex"
+      },
+      "is_alive": {
+        "type": "string",
+        "valuesList": "yesno",
+        "_defn": [
+          {
+            "_row_num": 7,
+            "section_name": "reproductive_history"
+          },
+          {
+            "_row_num": 13,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "is_alive",
+        "elementName": "is_alive",
+        "elementSet": "data",
+        "elementPath": "is_alive"
+      },
+      "live_location": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 8,
+            "section_name": "reproductive_history"
+          },
+          {
+            "_row_num": 15,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "live_location",
+        "elementName": "live_location",
+        "elementSet": "data",
+        "elementPath": "live_location"
+      },
+      "marital_status": {
+        "type": "string",
+        "valuesList": "marital_choices",
+        "_defn": [
+          {
+            "_row_num": 11,
+            "section_name": "reproductive_history"
+          },
+          {
+            "_row_num": 16,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "marital_status",
+        "elementName": "marital_status",
+        "elementSet": "data",
+        "elementPath": "marital_status"
+      },
+      "years_education": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 12,
+            "section_name": "reproductive_history"
+          },
+          {
+            "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "years_education",
+        "elementName": "years_education",
+        "elementSet": "data",
+        "elementPath": "years_education"
+      },
+      "_id": {
+        "type": "string",
+        "isNotNullable": true,
+        "elementKey": "_id",
+        "elementName": "_id",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_id"
+      },
+      "_row_etag": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_row_etag",
+        "elementName": "_row_etag",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_row_etag"
+      },
+      "_sync_state": {
+        "type": "string",
+        "isNotNullable": true,
+        "elementKey": "_sync_state",
+        "elementName": "_sync_state",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_sync_state"
+      },
+      "_conflict_type": {
+        "type": "integer",
+        "isNotNullable": false,
+        "elementKey": "_conflict_type",
+        "elementName": "_conflict_type",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_conflict_type"
+      },
+      "_default_access": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_default_access",
+        "elementName": "_default_access",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_default_access"
+      },
+      "_form_id": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_form_id",
+        "elementName": "_form_id",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_form_id"
+      },
+      "_group_modify": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_group_modify",
+        "elementName": "_group_modify",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_group_modify"
+      },
+      "_group_privileged": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_group_privileged",
+        "elementName": "_group_privileged",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_group_privileged"
+      },
+      "_group_read_only": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_group_read_only",
+        "elementName": "_group_read_only",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_group_read_only"
+      },
+      "_locale": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_locale",
+        "elementName": "_locale",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_locale"
+      },
+      "_row_owner": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_row_owner",
+        "elementName": "_row_owner",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_row_owner"
+      },
+      "_savepoint_type": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_savepoint_type",
+        "elementName": "_savepoint_type",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_savepoint_type"
+      },
+      "_savepoint_timestamp": {
+        "type": "string",
+        "isNotNullable": true,
+        "elementKey": "_savepoint_timestamp",
+        "elementName": "_savepoint_timestamp",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_savepoint_timestamp"
+      },
+      "_savepoint_creator": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_savepoint_creator",
+        "elementName": "_savepoint_creator",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_savepoint_creator"
+      }
+    },
+    "properties": [
+      {
+        "_partition": "Column",
+        "_aspect": "is_alive",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"yesno\",\"data_value\":\"yes\",\"display\":{\"title\":{\"text\":\"yes\"}},\"_row_num\":2},{\"choice_list_name\":\"yesno\",\"data_value\":\"no\",\"display\":{\"title\":{\"text\":\"no\"}},\"_row_num\":3}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "marital_status",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"marital_choices\",\"data_value\":\"married\",\"display\":{\"title\":{\"text\":\"Married\"}},\"_row_num\":8},{\"choice_list_name\":\"marital_choices\",\"data_value\":\"never_married\",\"display\":{\"title\":{\"text\":\"Never Married\"}},\"_row_num\":9},{\"choice_list_name\":\"marital_choices\",\"data_value\":\"divorced\",\"display\":{\"title\":{\"text\":\"Divorced\"}},\"_row_num\":10},{\"choice_list_name\":\"marital_choices\",\"data_value\":\"separated\",\"display\":{\"title\":{\"text\":\"Separated\"}},\"_row_num\":11},{\"choice_list_name\":\"marital_choices\",\"data_value\":\"widowed\",\"display\":{\"title\":{\"text\":\"Widowed\"}},\"_row_num\":12}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "sex",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sexes\",\"data_value\":\"male\",\"display\":{\"title\":{\"text\":\"male\"}},\"_row_num\":5},{\"choice_list_name\":\"sexes\",\"data_value\":\"female\",\"display\":{\"title\":{\"text\":\"female\"}},\"_row_num\":6}]"
+      },
+      {
+        "_partition": "FormType",
+        "_aspect": "default",
+        "_key": "FormType.formType",
+        "_type": "string",
+        "_value": "SURVEY"
+      },
+      {
+        "_partition": "SurveyUtil",
+        "_aspect": "default",
+        "_key": "SurveyUtil.formId",
+        "_type": "string",
+        "_value": "reproductive_history"
+      },
+      {
+        "_partition": "Table",
+        "_aspect": "default",
+        "_key": "defaultViewType",
+        "_type": "string",
+        "_value": "SPREADSHEET"
+      },
+      {
+        "_partition": "Table",
+        "_aspect": "default",
+        "_key": "displayName",
+        "_type": "object",
+        "_value": "{\"text\":\"Reproductive History\"}"
+      }
+    ]
+  }
+}

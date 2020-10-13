@@ -282,7 +282,7 @@
       },
       {
         "setting_name": "form_version",
-        "value": 20130408,
+        "value": 2,
         "_row_num": 3
       },
       {
@@ -299,7 +299,7 @@
         "setting_name": "survey",
         "display": {
           "title": {
-            "text": "Household Members"
+            "text": "Household Member"
           }
         },
         "_row_num": 6
@@ -427,21 +427,6 @@
         "name": "has_children",
         "type": "select_one",
         "_row_num": 23
-      },
-      {
-        "name": "same_parents",
-        "type": "select_one",
-        "_row_num": 24
-      },
-      {
-        "name": "parent_1",
-        "type": "text",
-        "_row_num": 25
-      },
-      {
-        "name": "parent_2",
-        "type": "text",
-        "_row_num": 26
       }
     ],
     "calculates": [
@@ -661,19 +646,6 @@
         "_row_num": 14
       }
     ],
-    "queries": [
-      {
-        "query_name": "linked_reproductive_history",
-        "query_type": "linked_table",
-        "linked_form_id": "reproductive_history",
-        "linked_table_id": "household_member",
-        "selection": "parent_1 = ?",
-        "selectionArgs": "[ data('name') ]",
-        "newRowInitialElementKeyToValueMap": "{ parent_1 : data('name'), parent_household_id : data('household_id'), parent_2 : data('parent_2') }",
-        "openRowInitialElementKeyToValueMap": "{}",
-        "_row_num": 4
-      }
-    ],
     "reproductive_history": [
       {
         "clause": "begin screen",
@@ -715,21 +687,11 @@
         "_row_num": 9
       },
       {
-        "type": "text",
-        "name": "parent_2",
-        "display": {
-          "prompt": {
-            "text": "If all of your children share the same parents, please write the other parents name here."
-          }
-        },
-        "_row_num": 11
-      },
-      {
         "type": "linked_table",
         "values_list": "linked_reproductive_history",
         "display": {
           "prompt": {
-            "text": "Reproductive History:: BRANCHING TEST"
+            "text": "Reproductive History"
           }
         },
         "_row_num": 13
@@ -737,6 +699,19 @@
       {
         "clause": "end screen",
         "_row_num": 14
+      }
+    ],
+    "queries": [
+      {
+        "query_name": "linked_reproductive_history",
+        "query_type": "linked_table",
+        "linked_form_id": "reproductive_history",
+        "linked_table_id": "reproductive_history",
+        "selection": "parent_household_id = ?",
+        "selectionArgs": "[ data('household_id') ]",
+        "newRowInitialElementKeyToValueMap": "{ parent_household_id : data('household_id'), parent_1 : data('name') }",
+        "openRowInitialElementKeyToValueMap": "{  }",
+        "_row_num": 4
       }
     ]
   },
@@ -764,7 +739,7 @@
       },
       "form_version": {
         "setting_name": "form_version",
-        "value": 20130408,
+        "value": 2,
         "_row_num": 3
       },
       "table_id": {
@@ -781,7 +756,7 @@
         "setting_name": "survey",
         "display": {
           "title": {
-            "text": "Household Members"
+            "text": "Household Member"
           }
         },
         "_row_num": 6
@@ -845,7 +820,7 @@
         "setting_name": "survey",
         "display": {
           "title": {
-            "text": "Household Members"
+            "text": "Household Member"
           }
         },
         "_row_num": 6
@@ -1099,11 +1074,11 @@
         "query_name": "linked_reproductive_history",
         "query_type": "linked_table",
         "linked_form_id": "reproductive_history",
-        "linked_table_id": "household_member",
-        "selection": "parent_1 = ?",
-        "selectionArgs": "[ data('name') ]",
-        "newRowInitialElementKeyToValueMap": "{ parent_1 : data('name'), parent_household_id : data('household_id'), parent_2 : data('parent_2') }",
-        "openRowInitialElementKeyToValueMap": "{}",
+        "linked_table_id": "reproductive_history",
+        "selection": "parent_household_id = ?",
+        "selectionArgs": "[ data('household_id') ]",
+        "newRowInitialElementKeyToValueMap": "{ parent_household_id : data('household_id'), parent_1 : data('name') }",
+        "openRowInitialElementKeyToValueMap": "{  }",
         "_row_num": 4
       }
     },
@@ -1311,40 +1286,6 @@
           }
         ],
         "elementKey": "has_children"
-      },
-      "same_parents": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 24,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "same_parents"
-      },
-      "parent_1": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 25,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "parent_1"
-      },
-      "parent_2": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 11,
-            "section_name": "reproductive_history"
-          },
-          {
-            "_row_num": 26,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "parent_2"
       }
     },
     "section_names": [
@@ -1378,7 +1319,7 @@
             "promptIdx": 0,
             "display": {
               "title": {
-                "text": "Household Members"
+                "text": "Household Member"
               }
             },
             "_branch_label_enclosing_screen": "survey/0"
@@ -2086,26 +2027,11 @@
             "promptIdx": 2
           },
           {
-            "type": "text",
-            "name": "parent_2",
-            "display": {
-              "prompt": {
-                "text": "If all of your children share the same parents, please write the other parents name here."
-              }
-            },
-            "_row_num": 11,
-            "__rowNum__": 10,
-            "_token_type": "prompt",
-            "_type": "text",
-            "_branch_label_enclosing_screen": "reproductive_history/_screen7",
-            "promptIdx": 3
-          },
-          {
             "type": "linked_table",
             "values_list": "linked_reproductive_history",
             "display": {
               "prompt": {
-                "text": "Reproductive History:: BRANCHING TEST"
+                "text": "Reproductive History"
               }
             },
             "_row_num": 13,
@@ -2113,7 +2039,7 @@
             "_token_type": "prompt",
             "_type": "linked_table",
             "_branch_label_enclosing_screen": "reproductive_history/_screen7",
-            "promptIdx": 4
+            "promptIdx": 3
           },
           {
             "_token_type": "prompt",
@@ -2121,7 +2047,7 @@
             "_type": "contents",
             "_row_num": 15,
             "_branch_label_enclosing_screen": "reproductive_history/_screen15",
-            "promptIdx": 5
+            "promptIdx": 4
           }
         ],
         "validation_tag_map": {
@@ -2153,7 +2079,7 @@
               "__rowNum__": 13,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 1
           },
           {
@@ -2165,7 +2091,7 @@
           {
             "_row_num": 15,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
@@ -2434,49 +2360,6 @@
         "elementSet": "data",
         "elementPath": "has_children"
       },
-      "same_parents": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 24,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "same_parents",
-        "elementName": "same_parents",
-        "elementSet": "data",
-        "elementPath": "same_parents"
-      },
-      "parent_1": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 25,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "parent_1",
-        "elementName": "parent_1",
-        "elementSet": "data",
-        "elementPath": "parent_1"
-      },
-      "parent_2": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 11,
-            "section_name": "reproductive_history"
-          },
-          {
-            "_row_num": 26,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "parent_2",
-        "elementName": "parent_2",
-        "elementSet": "data",
-        "elementPath": "parent_2"
-      },
       "person_photo_uriFragment": {
         "type": "string",
         "elementType": "rowpath",
@@ -2662,7 +2545,7 @@
         "_aspect": "default",
         "_key": "displayName",
         "_type": "object",
-        "_value": "{\"text\":\"Household Members\"}"
+        "_value": "{\"text\":\"Household Member\"}"
       }
     ]
   }
