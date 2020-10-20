@@ -486,10 +486,20 @@
         "data_value": "reproductive_history",
         "display": {
           "title": {
-            "text": "Reproductive_history"
+            "text": "Reproductive history"
           }
         },
         "_row_num": 6
+      },
+      {
+        "choice_list_name": "forms",
+        "data_value": "marriages",
+        "display": {
+          "title": {
+            "text": "Marriages"
+          }
+        },
+        "_row_num": 7
       }
     ],
     "survey": [
@@ -621,6 +631,24 @@
       {
         "clause": "exit section",
         "_row_num": 28
+      },
+      {
+        "branch_label": "marriages",
+        "_row_num": 30
+      },
+      {
+        "url": "'?' + odkSurvey.getHashString('marriages')",
+        "type": "external_link",
+        "display": {
+          "prompt": {
+            "text": "Open form"
+          }
+        },
+        "_row_num": 31
+      },
+      {
+        "clause": "exit section",
+        "_row_num": 32
       }
     ]
   },
@@ -741,10 +769,20 @@
           "data_value": "reproductive_history",
           "display": {
             "title": {
-              "text": "Reproductive_history"
+              "text": "Reproductive history"
             }
           },
           "_row_num": 6
+        },
+        {
+          "choice_list_name": "forms",
+          "data_value": "marriages",
+          "display": {
+            "title": {
+              "text": "Marriages"
+            }
+          },
+          "_row_num": 7
         }
       ]
     },
@@ -1400,12 +1438,27 @@
             "promptIdx": 6
           },
           {
+            "url": "'?' + odkSurvey.getHashString('marriages')",
+            "type": "external_link",
+            "display": {
+              "prompt": {
+                "text": "Open form"
+              }
+            },
+            "_row_num": 31,
+            "__rowNum__": 30,
+            "_token_type": "prompt",
+            "_type": "external_link",
+            "_branch_label_enclosing_screen": "survey/_screen31",
+            "promptIdx": 7
+          },
+          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 29,
-            "_branch_label_enclosing_screen": "survey/_screen29",
-            "promptIdx": 7
+            "_row_num": 33,
+            "_branch_label_enclosing_screen": "survey/_screen33",
+            "promptIdx": 8
           }
         ],
         "validation_tag_map": {
@@ -1520,25 +1573,38 @@
             "operationIdx": 15
           },
           {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 29,
+            "_row_num": 31,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 16
           },
           {
-            "_row_num": 29,
+            "clause": "exit section",
+            "_row_num": 32,
+            "__rowNum__": 31,
+            "_token_type": "exit_section",
+            "operationIdx": 17
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 33,
+            "operationIdx": 18
+          },
+          {
+            "_row_num": 33,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 17
+            "operationIdx": 19
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 29,
-            "operationIdx": 18
+            "_row_num": 33,
+            "operationIdx": 20
           }
         ],
         "branch_label_map": {
@@ -1557,8 +1623,10 @@
           "_screen22": 12,
           "reproductive_history": 14,
           "_screen27": 14,
-          "_contents": 17,
-          "_screen29": 17
+          "marriages": 16,
+          "_screen31": 16,
+          "_contents": 19,
+          "_screen33": 19
         }
       }
     },
@@ -1595,5 +1663,3 @@
     ]
   }
 }
-could not find setting with name: framework_variant
-could not find setting with name: framework_variant

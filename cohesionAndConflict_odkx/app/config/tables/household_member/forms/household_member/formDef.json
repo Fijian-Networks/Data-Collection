@@ -26,20 +26,6 @@
       {
         "clause": "do section demog_continued",
         "_row_num": 4
-      },
-      {
-        "clause": "if",
-        "condition": "data('has_children') == 'yes'",
-        "required": "data('has_children') == 'yes'",
-        "_row_num": 6
-      },
-      {
-        "clause": "do section reproductive_history",
-        "_row_num": 7
-      },
-      {
-        "clause": "end if",
-        "_row_num": 8
       }
     ],
     "choices": [
@@ -398,7 +384,8 @@
         "_row_num": 13
       },
       {
-        "comment": "has children in children portion",
+        "name": "has_children",
+        "type": "select_one",
         "_row_num": 14
       },
       {
@@ -420,13 +407,10 @@
         "_row_num": 20
       },
       {
-        "comment": "children",
-        "_row_num": 22
-      },
-      {
-        "name": "has_children",
+        "comment": "lives in household?",
+        "name": "lives_in_household",
         "type": "select_one",
-        "_row_num": 23
+        "_row_num": 22
       }
     ],
     "calculates": [
@@ -515,8 +499,8 @@
       {
         "clause": "if",
         "condition": "data('age') >= 18",
-        "required": "data('age') >=18",
-        "_row_num": 5
+        "required": "data('age') >=16",
+        "_row_num": 7
       },
       {
         "type": "select_one_dropdown",
@@ -527,16 +511,16 @@
             "text": "What is {{data.first_name}}'s marital status?"
           }
         },
-        "_row_num": 6
+        "_row_num": 8
       },
       {
         "clause": "end if",
-        "_row_num": 7
+        "_row_num": 9
       },
       {
         "clause": "if",
         "condition": "data('age') >= 5",
-        "_row_num": 9
+        "_row_num": 11
       },
       {
         "type": "integer",
@@ -546,17 +530,17 @@
             "text": "How many years of education has {{data:first_name}} had?"
           }
         },
-        "_row_num": 10
+        "_row_num": 12
       },
       {
         "clause": "end if",
-        "_row_num": 11
+        "_row_num": 13
       },
       {
         "clause": "if",
         "condition": "data('age') >= 15",
-        "required": "data('age') >= 15",
-        "_row_num": 13
+        "required": "data('age') >= 16",
+        "_row_num": 15
       },
       {
         "type": "select_one",
@@ -567,21 +551,21 @@
             "text": "Does {{data:first_name}} have any children?"
           }
         },
-        "_row_num": 14
+        "_row_num": 16
       },
       {
         "clause": "end if",
-        "_row_num": 18
+        "_row_num": 20
       },
       {
         "clause": "end screen",
-        "_row_num": 20
+        "_row_num": 22
       },
       {
         "clause": "if",
         "condition": "(data('sex') == 'female') && ( data('relation_to_head') != 'son_daughter' )",
         "required": "( data('sex') == 'female' ) && ( data('relation_to_head') != 'son_daughter' )",
-        "_row_num": 24
+        "_row_num": 26
       },
       {
         "type": "text",
@@ -591,15 +575,15 @@
             "text": "Where was {{data.first_name}} born?"
           }
         },
-        "_row_num": 25
+        "_row_num": 27
       },
       {
         "clause": "end if",
-        "_row_num": 26
+        "_row_num": 28
       },
       {
         "clause": "begin screen",
-        "_row_num": 30
+        "_row_num": 32
       },
       {
         "type": "image",
@@ -609,11 +593,11 @@
             "text": "Please take a photo of the household member"
           }
         },
-        "_row_num": 31
+        "_row_num": 33
       },
       {
         "clause": "end screen",
-        "_row_num": 32
+        "_row_num": 34
       }
     ],
     "female_questions": [
@@ -643,75 +627,7 @@
       },
       {
         "clause": "end screen",
-        "_row_num": 14
-      }
-    ],
-    "reproductive_history": [
-      {
-        "clause": "begin screen",
-        "_row_num": 2
-      },
-      {
-        "type": "note",
-        "display": {
-          "prompt": {
-            "text": "The following questions refer to all your biological children who do not live with you."
-          }
-        },
-        "_row_num": 3
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 5
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 7
-      },
-      {
-        "type": "note",
-        "display": {
-          "prompt": {
-            "text": "Please list your children who were born alive, including those who have since died."
-          }
-        },
         "_row_num": 8
-      },
-      {
-        "type": "note",
-        "display": {
-          "prompt": {
-            "text": "Start with the first born."
-          }
-        },
-        "_row_num": 9
-      },
-      {
-        "type": "linked_table",
-        "values_list": "linked_reproductive_history",
-        "display": {
-          "prompt": {
-            "text": "Reproductive History"
-          }
-        },
-        "_row_num": 13
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 14
-      }
-    ],
-    "queries": [
-      {
-        "query_name": "linked_reproductive_history",
-        "query_type": "linked_table",
-        "linked_form_id": "reproductive_history",
-        "linked_table_id": "reproductive_history",
-        "selection": "parent_household_id = ?",
-        "selectionArgs": "[ data('household_id') ]",
-        "newRowInitialElementKeyToValueMap": "{ parent_household_id : data('household_id'), parent_1 : data('name') }",
-        "openRowInitialElementKeyToValueMap": "{  }",
-        "_row_num": 4
       }
     ]
   },
@@ -1069,19 +985,7 @@
     "table_specific_definitions": {
       "_tokens": {}
     },
-    "queries": {
-      "linked_reproductive_history": {
-        "query_name": "linked_reproductive_history",
-        "query_type": "linked_table",
-        "linked_form_id": "reproductive_history",
-        "linked_table_id": "reproductive_history",
-        "selection": "parent_household_id = ?",
-        "selectionArgs": "[ data('household_id') ]",
-        "newRowInitialElementKeyToValueMap": "{ parent_household_id : data('household_id'), parent_1 : data('name') }",
-        "openRowInitialElementKeyToValueMap": "{  }",
-        "_row_num": 4
-      }
-    },
+    "queries": {},
     "calculates": {
       "ageIsOddOrEven": {
         "calculation_name": "ageIsOddOrEven",
@@ -1192,7 +1096,7 @@
         "valuesList": "marital_choices",
         "_defn": [
           {
-            "_row_num": 6,
+            "_row_num": 8,
             "section_name": "demog_continued"
           },
           {
@@ -1216,7 +1120,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 12,
             "section_name": "demog_continued"
           },
           {
@@ -1226,11 +1130,26 @@
         ],
         "elementKey": "education_years"
       },
+      "has_children": {
+        "type": "string",
+        "valuesList": "yesno",
+        "_defn": [
+          {
+            "_row_num": 16,
+            "section_name": "demog_continued"
+          },
+          {
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "has_children"
+      },
       "birthplace": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 25,
+            "_row_num": 27,
             "section_name": "demog_continued"
           },
           {
@@ -1262,7 +1181,7 @@
         },
         "_defn": [
           {
-            "_row_num": 31,
+            "_row_num": 33,
             "section_name": "demog_continued"
           },
           {
@@ -1272,20 +1191,16 @@
         ],
         "elementKey": "person_photo"
       },
-      "has_children": {
+      "lives_in_household": {
         "type": "string",
-        "valuesList": "yesno",
         "_defn": [
           {
-            "_row_num": 14,
-            "section_name": "demog_continued"
-          },
-          {
-            "_row_num": 23,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
-        "elementKey": "has_children"
+        "comment": "lives in household?",
+        "elementKey": "lives_in_household"
       }
     },
     "section_names": [
@@ -1293,7 +1208,6 @@
       "demog_continued",
       "female_questions",
       "initial",
-      "reproductive_history",
       "survey"
     ],
     "sections": {
@@ -1305,8 +1219,7 @@
         "reachable_sections": {
           "survey": true,
           "basic_demog": true,
-          "demog_continued": true,
-          "reproductive_history": true
+          "demog_continued": true
         },
         "prompts": [
           {
@@ -1412,13 +1325,11 @@
         "section_name": "survey",
         "nested_sections": {
           "basic_demog": true,
-          "demog_continued": true,
-          "reproductive_history": true
+          "demog_continued": true
         },
         "reachable_sections": {
           "basic_demog": true,
-          "demog_continued": true,
-          "reproductive_history": true
+          "demog_continued": true
         },
         "prompts": [
           {
@@ -1452,27 +1363,12 @@
             "_branch_label_enclosing_screen": "demog_continued/0"
           },
           {
-            "clause": "do section reproductive_history",
-            "_row_num": 7,
-            "__rowNum__": 6,
-            "_token_type": "prompt",
-            "_do_section_name": "reproductive_history",
-            "_type": "_section",
-            "promptIdx": 2,
-            "display": {
-              "title": {
-                "text": "Reproductive History"
-              }
-            },
-            "_branch_label_enclosing_screen": "reproductive_history/0"
-          },
-          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 9,
-            "_branch_label_enclosing_screen": "survey/_screen9",
-            "promptIdx": 3
+            "_row_num": 5,
+            "_branch_label_enclosing_screen": "survey/_screen5",
+            "promptIdx": 2
           }
         ],
         "validation_tag_map": {
@@ -1506,65 +1402,30 @@
             "operationIdx": 2
           },
           {
-            "clause": "if",
-            "condition": "data('has_children') == 'yes'",
-            "required": "data('has_children') == 'yes'",
-            "_row_num": 6,
-            "__rowNum__": 5,
-            "_token_type": "goto_label",
-            "_branch_label": "_then6",
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 5,
             "operationIdx": 3
           },
           {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else8",
-            "_row_num": 8,
-            "operationIdx": 4
-          },
-          {
-            "clause": "do section reproductive_history",
-            "_row_num": 7,
-            "__rowNum__": 6,
-            "_token_type": "do_section",
-            "_do_section_name": "reproductive_history",
-            "operationIdx": 5
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif8",
-            "_row_num": 8,
-            "operationIdx": 6
-          },
-          {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 9,
-            "operationIdx": 7
-          },
-          {
-            "_row_num": 9,
+            "_row_num": 5,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 8
+            "operationIdx": 4
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 9,
-            "operationIdx": 9
+            "_row_num": 5,
+            "operationIdx": 5
           }
         ],
         "branch_label_map": {
-          "_then6": 5,
-          "_else8": 7,
-          "_endif8": 7,
-          "_contents": 8,
-          "_screen9": 8
+          "_contents": 4,
+          "_screen5": 4
         }
       },
       "basic_demog": {
@@ -1732,8 +1593,8 @@
                 "text": "What is {{data.first_name}}'s marital status?"
               }
             },
-            "_row_num": 6,
-            "__rowNum__": 5,
+            "_row_num": 8,
+            "__rowNum__": 7,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
             "_branch_label_enclosing_screen": "demog_continued/_screen2",
@@ -1747,8 +1608,8 @@
                 "text": "How many years of education has {{data:first_name}} had?"
               }
             },
-            "_row_num": 10,
-            "__rowNum__": 9,
+            "_row_num": 12,
+            "__rowNum__": 11,
             "_token_type": "prompt",
             "_type": "integer",
             "_branch_label_enclosing_screen": "demog_continued/_screen2",
@@ -1763,8 +1624,8 @@
                 "text": "Does {{data:first_name}} have any children?"
               }
             },
-            "_row_num": 14,
-            "__rowNum__": 13,
+            "_row_num": 16,
+            "__rowNum__": 15,
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "demog_continued/_screen2",
@@ -1778,11 +1639,11 @@
                 "text": "Where was {{data.first_name}} born?"
               }
             },
-            "_row_num": 25,
-            "__rowNum__": 24,
+            "_row_num": 27,
+            "__rowNum__": 26,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "demog_continued/_screen25",
+            "_branch_label_enclosing_screen": "demog_continued/_screen27",
             "promptIdx": 4
           },
           {
@@ -1793,19 +1654,19 @@
                 "text": "Please take a photo of the household member"
               }
             },
-            "_row_num": 31,
-            "__rowNum__": 30,
+            "_row_num": 33,
+            "__rowNum__": 32,
             "_token_type": "prompt",
             "_type": "image",
-            "_branch_label_enclosing_screen": "demog_continued/_screen30",
+            "_branch_label_enclosing_screen": "demog_continued/_screen32",
             "promptIdx": 5
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 33,
-            "_branch_label_enclosing_screen": "demog_continued/_screen33",
+            "_row_num": 35,
+            "_branch_label_enclosing_screen": "demog_continued/_screen35",
             "promptIdx": 6
           }
         ],
@@ -1820,8 +1681,8 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 20,
-              "__rowNum__": 19,
+              "_row_num": 22,
+              "__rowNum__": 21,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nif (data('age') >= 18) {\nactivePromptIndicies.push(1);\n}\nif (data('age') >= 5) {\nactivePromptIndicies.push(2);\n}\nif (data('age') >= 15) {\nactivePromptIndicies.push(3);\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -1831,21 +1692,21 @@
             "clause": "if",
             "condition": "(data('sex') == 'female') && ( data('relation_to_head') != 'son_daughter' )",
             "required": "( data('sex') == 'female' ) && ( data('relation_to_head') != 'son_daughter' )",
-            "_row_num": 24,
-            "__rowNum__": 23,
+            "_row_num": 26,
+            "__rowNum__": 25,
             "_token_type": "goto_label",
-            "_branch_label": "_then24",
+            "_branch_label": "_then26",
             "operationIdx": 1
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else26",
-            "_row_num": 26,
+            "_branch_label": "_else28",
+            "_row_num": 28,
             "operationIdx": 2
           },
           {
-            "_row_num": 25,
+            "_row_num": 27,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 3
@@ -1853,19 +1714,19 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif26",
-            "_row_num": 26,
+            "_branch_label": "_endif28",
+            "_row_num": 28,
             "operationIdx": 4
           },
           {
             "clause": "begin screen",
-            "_row_num": 30,
-            "__rowNum__": 29,
+            "_row_num": 32,
+            "__rowNum__": 31,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 32,
-              "__rowNum__": 31,
+              "_row_num": 34,
+              "__rowNum__": 33,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
@@ -1874,11 +1735,11 @@
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 33,
+            "_row_num": 35,
             "operationIdx": 6
           },
           {
-            "_row_num": 33,
+            "_row_num": 35,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
@@ -1889,19 +1750,19 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 33,
+            "_row_num": 35,
             "operationIdx": 8
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
-          "_then24": 3,
-          "_screen25": 3,
-          "_else26": 5,
-          "_endif26": 5,
-          "_screen30": 5,
+          "_then26": 3,
+          "_screen27": 3,
+          "_else28": 5,
+          "_endif28": 5,
+          "_screen32": 5,
           "_contents": 7,
-          "_screen33": 7
+          "_screen35": 7
         }
       },
       "female_questions": {
@@ -1928,8 +1789,8 @@
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 15,
-            "_branch_label_enclosing_screen": "female_questions/_screen15",
+            "_row_num": 9,
+            "_branch_label_enclosing_screen": "female_questions/_screen9",
             "promptIdx": 1
           }
         ],
@@ -1944,8 +1805,8 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 14,
-              "__rowNum__": 13,
+              "_row_num": 8,
+              "__rowNum__": 7,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nif (data('relation_to_head') != 'son_daughter') {\nactivePromptIndicies.push(0);\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -1954,11 +1815,11 @@
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 15,
+            "_row_num": 9,
             "operationIdx": 1
           },
           {
-            "_row_num": 15,
+            "_row_num": 9,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
@@ -1969,146 +1830,14 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 15,
+            "_row_num": 9,
             "operationIdx": 3
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
           "_contents": 2,
-          "_screen15": 2
-        }
-      },
-      "reproductive_history": {
-        "section_name": "reproductive_history",
-        "nested_sections": {},
-        "reachable_sections": {},
-        "prompts": [
-          {
-            "type": "note",
-            "display": {
-              "prompt": {
-                "text": "The following questions refer to all your biological children who do not live with you."
-              }
-            },
-            "_row_num": 3,
-            "__rowNum__": 2,
-            "_token_type": "prompt",
-            "_type": "note",
-            "_branch_label_enclosing_screen": "reproductive_history/_screen2",
-            "promptIdx": 0
-          },
-          {
-            "type": "note",
-            "display": {
-              "prompt": {
-                "text": "Please list your children who were born alive, including those who have since died."
-              }
-            },
-            "_row_num": 8,
-            "__rowNum__": 7,
-            "_token_type": "prompt",
-            "_type": "note",
-            "_branch_label_enclosing_screen": "reproductive_history/_screen7",
-            "promptIdx": 1
-          },
-          {
-            "type": "note",
-            "display": {
-              "prompt": {
-                "text": "Start with the first born."
-              }
-            },
-            "_row_num": 9,
-            "__rowNum__": 8,
-            "_token_type": "prompt",
-            "_type": "note",
-            "_branch_label_enclosing_screen": "reproductive_history/_screen7",
-            "promptIdx": 2
-          },
-          {
-            "type": "linked_table",
-            "values_list": "linked_reproductive_history",
-            "display": {
-              "prompt": {
-                "text": "Reproductive History"
-              }
-            },
-            "_row_num": 13,
-            "__rowNum__": 12,
-            "_token_type": "prompt",
-            "_type": "linked_table",
-            "_branch_label_enclosing_screen": "reproductive_history/_screen7",
-            "promptIdx": 3
-          },
-          {
-            "_token_type": "prompt",
-            "type": "contents",
-            "_type": "contents",
-            "_row_num": 15,
-            "_branch_label_enclosing_screen": "reproductive_history/_screen15",
-            "promptIdx": 4
-          }
-        ],
-        "validation_tag_map": {
-          "finalize": []
-        },
-        "operations": [
-          {
-            "clause": "begin screen",
-            "_row_num": 2,
-            "__rowNum__": 1,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 5,
-              "__rowNum__": 4,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 0
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 7,
-            "__rowNum__": 6,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 14,
-              "__rowNum__": 13,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 1
-          },
-          {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 15,
-            "operationIdx": 2
-          },
-          {
-            "_row_num": 15,
-            "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
-            "screen": {
-              "hideInBackHistory": true
-            },
-            "operationIdx": 3
-          },
-          {
-            "_token_type": "resume",
-            "clause": "resume",
-            "_row_num": 15,
-            "operationIdx": 4
-          }
-        ],
-        "branch_label_map": {
-          "_screen2": 0,
-          "_screen7": 1,
-          "_contents": 3,
-          "_screen15": 3
+          "_screen9": 2
         }
       }
     },
@@ -2236,7 +1965,7 @@
         "valuesList": "marital_choices",
         "_defn": [
           {
-            "_row_num": 6,
+            "_row_num": 8,
             "section_name": "demog_continued"
           },
           {
@@ -2266,7 +1995,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 12,
             "section_name": "demog_continued"
           },
           {
@@ -2279,11 +2008,29 @@
         "elementSet": "data",
         "elementPath": "education_years"
       },
+      "has_children": {
+        "type": "string",
+        "valuesList": "yesno",
+        "_defn": [
+          {
+            "_row_num": 16,
+            "section_name": "demog_continued"
+          },
+          {
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "has_children",
+        "elementName": "has_children",
+        "elementSet": "data",
+        "elementPath": "has_children"
+      },
       "birthplace": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 25,
+            "_row_num": 27,
             "section_name": "demog_continued"
           },
           {
@@ -2324,7 +2071,7 @@
         },
         "_defn": [
           {
-            "_row_num": 31,
+            "_row_num": 33,
             "section_name": "demog_continued"
           },
           {
@@ -2342,23 +2089,19 @@
         ],
         "notUnitOfRetention": true
       },
-      "has_children": {
+      "lives_in_household": {
         "type": "string",
-        "valuesList": "yesno",
         "_defn": [
           {
-            "_row_num": 14,
-            "section_name": "demog_continued"
-          },
-          {
-            "_row_num": 23,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
-        "elementKey": "has_children",
-        "elementName": "has_children",
+        "comment": "lives in household?",
+        "elementKey": "lives_in_household",
+        "elementName": "lives_in_household",
         "elementSet": "data",
-        "elementPath": "has_children"
+        "elementPath": "lives_in_household"
       },
       "person_photo_uriFragment": {
         "type": "string",
