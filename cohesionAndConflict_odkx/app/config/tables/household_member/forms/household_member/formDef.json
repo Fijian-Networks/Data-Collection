@@ -316,15 +316,6 @@
           }
         },
         "_row_num": 9
-      },
-      {
-        "setting_name": "reproductive_history",
-        "display": {
-          "title": {
-            "text": "Reproductive History"
-          }
-        },
-        "_row_num": 10
       }
     ],
     "model": [
@@ -703,15 +694,6 @@
           }
         },
         "_row_num": 9
-      },
-      "reproductive_history": {
-        "setting_name": "reproductive_history",
-        "display": {
-          "title": {
-            "text": "Reproductive History"
-          }
-        },
-        "_row_num": 10
       },
       "_locales": {
         "setting_name": "_locales",

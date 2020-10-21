@@ -147,6 +147,11 @@
         "_row_num": 4
       },
       {
+        "name": "lives_in_household",
+        "type": "select_one",
+        "_row_num": 5
+      },
+      {
         "comment": "uuid",
         "name": "person_2",
         "type": "string",
@@ -177,7 +182,7 @@
         "_row_num": 4
       },
       {
-        "type": "select_one_with_other",
+        "type": "select_one",
         "values_list": "roster",
         "name": "person_1",
         "display": {
@@ -188,7 +193,7 @@
         "_row_num": 5
       },
       {
-        "type": "select_one_with_other",
+        "type": "select_one",
         "values_list": "roster",
         "name": "person_2",
         "display": {
@@ -196,66 +201,44 @@
             "text": "Person 2"
           }
         },
-        "_row_num": 6
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 7
-      },
-      {
-        "comment": "conditional for other selection above so new person node may be created, making sure live_in_household is false",
-        "clause": "begin screen",
-        "_row_num": 9
-      },
-      {
-        "type": "note",
-        "display": {
-          "prompt": {
-            "text": "testing if other has been selected for new member page"
-          }
-        },
-        "_row_num": 10
-      },
-      {
-        "clause": "if",
-        "condition": "!data('person_1').startsWith('uuid:') | !data('person_2').startsWith('uuid:')",
-        "require": "data('person_1').startsWith(\"uuid:\")",
-        "_row_num": 11
-      },
-      {
-        "type": "note",
-        "display": {
-          "prompt": {
-            "text": "you entered someone not on the roster."
-          }
-        },
-        "_row_num": 12
-      },
-      {
-        "clause": "end if",
-        "_row_num": 13
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 18
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 20
+        "_row_num": 8
       },
       {
         "type": "text",
         "name": "marriage_id",
         "display": {
           "prompt": {
-            "text": "Input first names of both people separated with = to create readable marriage id."
+            "text": "Input first names of both people: separate their names with = if they are married, or != if they are not married but have offspring"
           }
         },
-        "_row_num": 21
+        "_row_num": 10
+      },
+      {
+        "comment": "conditional for other selection above so new person node may be created, making sure live_in_household is false",
+        "_row_num": 12
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": "If the person is not on the list, please add them to the roster"
+          }
+        },
+        "_row_num": 14
+      },
+      {
+        "type": "linked_table",
+        "values_list": "linked_household_member",
+        "display": {
+          "prompt": {
+            "text": "Please enter info on person not living in household to the best of your ability"
+          }
+        },
+        "_row_num": 15
       },
       {
         "clause": "end screen",
-        "_row_num": 22
+        "_row_num": 17
       }
     ],
     "queries": [
@@ -270,6 +253,17 @@
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
         "openRowInitialElementKeyToValueMap": "{}",
         "_row_num": 3
+      },
+      {
+        "query_name": "linked_household_member",
+        "query_type": "linked_table",
+        "linked_form_id": "household_member",
+        "linked_table_id": "household_member",
+        "selection": "null",
+        "selectionArgs": "null",
+        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'no' }",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "_row_num": 5
       }
     ]
   },
@@ -448,6 +442,17 @@
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
         "openRowInitialElementKeyToValueMap": "{}",
         "_row_num": 3
+      },
+      "linked_household_member": {
+        "query_name": "linked_household_member",
+        "query_type": "linked_table",
+        "linked_form_id": "household_member",
+        "linked_table_id": "household_member",
+        "selection": "null",
+        "selectionArgs": "null",
+        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'no' }",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "_row_num": 5
       }
     },
     "calculates": {},
@@ -466,7 +471,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 10,
             "section_name": "marriages"
           },
           {
@@ -492,12 +497,22 @@
         "comment": "uuid",
         "elementKey": "person_1"
       },
+      "lives_in_household": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "lives_in_household"
+      },
       "person_2": {
         "type": "string",
         "valuesList": "roster",
         "_defn": [
           {
-            "_row_num": 6,
+            "_row_num": 8,
             "section_name": "marriages"
           },
           {
@@ -730,7 +745,7 @@
             "promptIdx": 1
           },
           {
-            "type": "select_one_with_other",
+            "type": "select_one",
             "values_list": "roster",
             "name": "person_1",
             "display": {
@@ -741,12 +756,12 @@
             "_row_num": 5,
             "__rowNum__": 4,
             "_token_type": "prompt",
-            "_type": "select_one_with_other",
+            "_type": "select_one",
             "_branch_label_enclosing_screen": "marriages/_screen2",
             "promptIdx": 2
           },
           {
-            "type": "select_one_with_other",
+            "type": "select_one",
             "values_list": "roster",
             "name": "person_2",
             "display": {
@@ -754,62 +769,63 @@
                 "text": "Person 2"
               }
             },
-            "_row_num": 6,
-            "__rowNum__": 5,
+            "_row_num": 8,
+            "__rowNum__": 7,
             "_token_type": "prompt",
-            "_type": "select_one_with_other",
+            "_type": "select_one",
             "_branch_label_enclosing_screen": "marriages/_screen2",
             "promptIdx": 3
-          },
-          {
-            "type": "note",
-            "display": {
-              "prompt": {
-                "text": "testing if other has been selected for new member page"
-              }
-            },
-            "_row_num": 10,
-            "__rowNum__": 9,
-            "_token_type": "prompt",
-            "_type": "note",
-            "_branch_label_enclosing_screen": "marriages/_screen9",
-            "promptIdx": 4
-          },
-          {
-            "type": "note",
-            "display": {
-              "prompt": {
-                "text": "you entered someone not on the roster."
-              }
-            },
-            "_row_num": 12,
-            "__rowNum__": 11,
-            "_token_type": "prompt",
-            "_type": "note",
-            "_branch_label_enclosing_screen": "marriages/_screen9",
-            "promptIdx": 5
           },
           {
             "type": "text",
             "name": "marriage_id",
             "display": {
               "prompt": {
-                "text": "Input first names of both people separated with = to create readable marriage id."
+                "text": "Input first names of both people: separate their names with = if they are married, or != if they are not married but have offspring"
               }
             },
-            "_row_num": 21,
-            "__rowNum__": 20,
+            "_row_num": 10,
+            "__rowNum__": 9,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "marriages/_screen20",
+            "_branch_label_enclosing_screen": "marriages/_screen2",
+            "promptIdx": 4
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": "If the person is not on the list, please add them to the roster"
+              }
+            },
+            "_row_num": 14,
+            "__rowNum__": 13,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "marriages/_screen2",
+            "promptIdx": 5
+          },
+          {
+            "type": "linked_table",
+            "values_list": "linked_household_member",
+            "display": {
+              "prompt": {
+                "text": "Please enter info on person not living in household to the best of your ability"
+              }
+            },
+            "_row_num": 15,
+            "__rowNum__": 14,
+            "_token_type": "prompt",
+            "_type": "linked_table",
+            "_branch_label_enclosing_screen": "marriages/_screen2",
             "promptIdx": 6
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 23,
-            "_branch_label_enclosing_screen": "marriages/_screen23",
+            "_row_num": 18,
+            "_branch_label_enclosing_screen": "marriages/_screen18",
             "promptIdx": 7
           }
         ],
@@ -824,70 +840,39 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 7,
-              "__rowNum__": 6,
+              "_row_num": 17,
+              "__rowNum__": 16,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 0
-          },
-          {
-            "comment": "conditional for other selection above so new person node may be created, making sure live_in_household is false",
-            "clause": "begin screen",
-            "_row_num": 9,
-            "__rowNum__": 8,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 18,
-              "__rowNum__": 17,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\nif (!data('person_1').startsWith('uuid:') | !data('person_2').startsWith('uuid:')) {\nactivePromptIndicies.push(5);\n}\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 1
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 20,
-            "__rowNum__": 19,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 22,
-              "__rowNum__": 21,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 2
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 23,
-            "operationIdx": 3
+            "_row_num": 18,
+            "operationIdx": 1
           },
           {
-            "_row_num": 23,
+            "_row_num": 18,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 4
+            "operationIdx": 2
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 23,
-            "operationIdx": 5
+            "_row_num": 18,
+            "operationIdx": 3
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
-          "_screen9": 1,
-          "_screen20": 2,
-          "_contents": 4,
-          "_screen23": 4
+          "_contents": 2,
+          "_screen18": 2
         }
       }
     },
@@ -909,7 +894,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 10,
             "section_name": "marriages"
           },
           {
@@ -941,12 +926,25 @@
         "elementSet": "data",
         "elementPath": "person_1"
       },
+      "lives_in_household": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "lives_in_household",
+        "elementName": "lives_in_household",
+        "elementSet": "data",
+        "elementPath": "lives_in_household"
+      },
       "person_2": {
         "type": "string",
         "valuesList": "roster",
         "_defn": [
           {
-            "_row_num": 6,
+            "_row_num": 8,
             "section_name": "marriages"
           },
           {
