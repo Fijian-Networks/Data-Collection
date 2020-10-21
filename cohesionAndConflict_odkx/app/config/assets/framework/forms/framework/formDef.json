@@ -483,20 +483,20 @@
       },
       {
         "choice_list_name": "forms",
-        "data_value": "reproductive_history",
+        "data_value": "marriages",
         "display": {
           "title": {
-            "text": "Reproductive history"
+            "text": "Marriages"
           }
         },
         "_row_num": 6
       },
       {
         "choice_list_name": "forms",
-        "data_value": "marriages",
+        "data_value": "families",
         "display": {
           "title": {
-            "text": "Marriages"
+            "text": "Families"
           }
         },
         "_row_num": 7
@@ -615,24 +615,6 @@
         "_row_num": 23
       },
       {
-        "branch_label": "reproductive_history",
-        "_row_num": 26
-      },
-      {
-        "url": "'?' + odkSurvey.getHashString('reproductive_history')",
-        "type": "external_link",
-        "display": {
-          "prompt": {
-            "text": "Open form"
-          }
-        },
-        "_row_num": 27
-      },
-      {
-        "clause": "exit section",
-        "_row_num": 28
-      },
-      {
         "branch_label": "marriages",
         "_row_num": 30
       },
@@ -649,6 +631,24 @@
       {
         "clause": "exit section",
         "_row_num": 32
+      },
+      {
+        "branch_label": "families",
+        "_row_num": 34
+      },
+      {
+        "url": "'?' + odkSurvey.getHashString('families')",
+        "type": "external_link",
+        "display": {
+          "prompt": {
+            "text": "Open form"
+          }
+        },
+        "_row_num": 35
+      },
+      {
+        "clause": "exit section",
+        "_row_num": 36
       }
     ]
   },
@@ -766,20 +766,20 @@
         },
         {
           "choice_list_name": "forms",
-          "data_value": "reproductive_history",
+          "data_value": "marriages",
           "display": {
             "title": {
-              "text": "Reproductive history"
+              "text": "Marriages"
             }
           },
           "_row_num": 6
         },
         {
           "choice_list_name": "forms",
-          "data_value": "marriages",
+          "data_value": "families",
           "display": {
             "title": {
-              "text": "Marriages"
+              "text": "Families"
             }
           },
           "_row_num": 7
@@ -1423,21 +1423,6 @@
             "promptIdx": 5
           },
           {
-            "url": "'?' + odkSurvey.getHashString('reproductive_history')",
-            "type": "external_link",
-            "display": {
-              "prompt": {
-                "text": "Open form"
-              }
-            },
-            "_row_num": 27,
-            "__rowNum__": 26,
-            "_token_type": "prompt",
-            "_type": "external_link",
-            "_branch_label_enclosing_screen": "survey/_screen27",
-            "promptIdx": 6
-          },
-          {
             "url": "'?' + odkSurvey.getHashString('marriages')",
             "type": "external_link",
             "display": {
@@ -1450,14 +1435,29 @@
             "_token_type": "prompt",
             "_type": "external_link",
             "_branch_label_enclosing_screen": "survey/_screen31",
+            "promptIdx": 6
+          },
+          {
+            "url": "'?' + odkSurvey.getHashString('families')",
+            "type": "external_link",
+            "display": {
+              "prompt": {
+                "text": "Open form"
+              }
+            },
+            "_row_num": 35,
+            "__rowNum__": 34,
+            "_token_type": "prompt",
+            "_type": "external_link",
+            "_branch_label_enclosing_screen": "survey/_screen35",
             "promptIdx": 7
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 33,
-            "_branch_label_enclosing_screen": "survey/_screen33",
+            "_row_num": 37,
+            "_branch_label_enclosing_screen": "survey/_screen37",
             "promptIdx": 8
           }
         ],
@@ -1560,39 +1560,39 @@
             "operationIdx": 13
           },
           {
-            "_row_num": 27,
+            "_row_num": 31,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 14
           },
           {
             "clause": "exit section",
-            "_row_num": 28,
-            "__rowNum__": 27,
+            "_row_num": 32,
+            "__rowNum__": 31,
             "_token_type": "exit_section",
             "operationIdx": 15
           },
           {
-            "_row_num": 31,
+            "_row_num": 35,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 16
           },
           {
             "clause": "exit section",
-            "_row_num": 32,
-            "__rowNum__": 31,
+            "_row_num": 36,
+            "__rowNum__": 35,
             "_token_type": "exit_section",
             "operationIdx": 17
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 33,
+            "_row_num": 37,
             "operationIdx": 18
           },
           {
-            "_row_num": 33,
+            "_row_num": 37,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
@@ -1603,7 +1603,7 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 33,
+            "_row_num": 37,
             "operationIdx": 20
           }
         ],
@@ -1621,12 +1621,12 @@
           "_screen18": 10,
           "household_member": 12,
           "_screen22": 12,
-          "reproductive_history": 14,
-          "_screen27": 14,
-          "marriages": 16,
-          "_screen31": 16,
+          "marriages": 14,
+          "_screen31": 14,
+          "families": 16,
+          "_screen35": 16,
           "_contents": 19,
-          "_screen33": 19
+          "_screen37": 19
         }
       }
     },
@@ -1663,3 +1663,5 @@
     ]
   }
 }
+could not find setting with name: framework_variant
+could not find setting with name: framework_variant

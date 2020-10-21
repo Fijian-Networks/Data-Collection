@@ -13,7 +13,7 @@
     ],
     "survey": [
       {
-        "clause": "do section marriages",
+        "clause": "do section family",
         "_row_num": 2
       }
     ],
@@ -37,62 +37,12 @@
           }
         },
         "_row_num": 3
-      },
-      {
-        "choice_list_name": "marital_choices",
-        "data_value": "married",
-        "display": {
-          "title": {
-            "text": "Married"
-          }
-        },
-        "_row_num": 5
-      },
-      {
-        "choice_list_name": "marital_choices",
-        "data_value": "never_married",
-        "display": {
-          "title": {
-            "text": "Never Married"
-          }
-        },
-        "_row_num": 6
-      },
-      {
-        "choice_list_name": "marital_choices",
-        "data_value": "divorced",
-        "display": {
-          "title": {
-            "text": "Divorced"
-          }
-        },
-        "_row_num": 7
-      },
-      {
-        "choice_list_name": "marital_choices",
-        "data_value": "separated",
-        "display": {
-          "title": {
-            "text": "Separated"
-          }
-        },
-        "_row_num": 8
-      },
-      {
-        "choice_list_name": "marital_choices",
-        "data_value": "widowed",
-        "display": {
-          "title": {
-            "text": "Widowed"
-          }
-        },
-        "_row_num": 9
       }
     ],
     "settings": [
       {
         "setting_name": "form_id",
-        "value": "marriages",
+        "value": "families",
         "_row_num": 2
       },
       {
@@ -102,28 +52,28 @@
       },
       {
         "setting_name": "table_id",
-        "value": "marriages",
+        "value": "families",
         "_row_num": 4
       },
       {
         "setting_name": "instance_name",
-        "value": "marriage_id",
+        "value": "family_id",
         "_row_num": 5
       },
       {
         "setting_name": "survey",
         "display": {
           "title": {
-            "text": "Marriages"
+            "text": "Families"
           }
         },
         "_row_num": 6
       },
       {
-        "setting_name": "marriages",
+        "setting_name": "families",
         "display": {
           "title": {
-            "text": "Marriages"
+            "text": "Family unit details"
           }
         },
         "_row_num": 7
@@ -136,24 +86,19 @@
         "_row_num": 2
       },
       {
-        "name": "marriage_id",
+        "comment": "uuid",
+        "name": "family_id",
         "type": "string",
         "_row_num": 3
       },
       {
         "comment": "uuid",
-        "name": "person_1",
+        "name": "child",
         "type": "string",
         "_row_num": 4
-      },
-      {
-        "comment": "uuid",
-        "name": "person_2",
-        "type": "string",
-        "_row_num": 6
       }
     ],
-    "marriages": [
+    "family": [
       {
         "clause": "begin screen",
         "_row_num": 2
@@ -162,7 +107,7 @@
         "type": "note",
         "display": {
           "prompt": {
-            "text": "Marriage Information:"
+            "text": "Family Information:"
           }
         },
         "_row_num": 3
@@ -171,18 +116,18 @@
         "type": "note",
         "display": {
           "prompt": {
-            "text": "something here.. Select the two people in a relationship, something limiting the extent, maybe only those relationships that bore offspring?"
+            "text": "something here.. Select the child and which marriage combination represents their biological parents"
           }
         },
         "_row_num": 4
       },
       {
         "type": "select_one",
-        "values_list": "roster",
-        "name": "person_1",
+        "values_list": "marriage_roster",
+        "name": "family_id",
         "display": {
           "prompt": {
-            "text": "Person 1"
+            "text": "Parents:"
           }
         },
         "_row_num": 5
@@ -190,27 +135,13 @@
       {
         "type": "select_one",
         "values_list": "roster",
-        "name": "person_2",
+        "name": "child",
         "display": {
           "prompt": {
-            "text": "Person 2"
+            "text": "Child"
           }
         },
         "_row_num": 8
-      },
-      {
-        "type": "text",
-        "name": "marriage_id",
-        "display": {
-          "prompt": {
-            "text": "Input first names of both people: separate their names with = if they are married, or != if they are not married but have offspring"
-          }
-        },
-        "_row_num": 10
-      },
-      {
-        "comment": "conditional for other selection above so new person node may be created, making sure live_in_household is false",
-        "_row_num": 12
       },
       {
         "type": "note",
@@ -226,7 +157,7 @@
         "values_list": "linked_household_member",
         "display": {
           "prompt": {
-            "text": "Please enter info on person not living in household to the best of your ability"
+            "text": "Please enter info on child not living in household to the best of your ability"
           }
         },
         "_row_num": 15
@@ -238,6 +169,18 @@
     ],
     "queries": [
       {
+        "comments": "creates roster of marriages",
+        "query_name": "marriage_roster",
+        "query_type": "linked_table",
+        "linked_form_id": "marriages",
+        "linked_table_id": "marriages",
+        "selection": "household_id = ?",
+        "selectionArgs": "[ data('household_id') ]",
+        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "_row_num": 3
+      },
+      {
         "comments": "creates roster",
         "query_name": "roster",
         "query_type": "linked_table",
@@ -247,7 +190,7 @@
         "selectionArgs": "[ data('household_id') ]",
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
         "openRowInitialElementKeyToValueMap": "{}",
-        "_row_num": 3
+        "_row_num": 4
       },
       {
         "query_name": "linked_household_member",
@@ -258,7 +201,7 @@
         "selectionArgs": "null",
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'no' }",
         "openRowInitialElementKeyToValueMap": "{}",
-        "_row_num": 5
+        "_row_num": 6
       }
     ]
   },
@@ -281,7 +224,7 @@
     "settings": {
       "form_id": {
         "setting_name": "form_id",
-        "value": "marriages",
+        "value": "families",
         "_row_num": 2
       },
       "form_version": {
@@ -291,28 +234,28 @@
       },
       "table_id": {
         "setting_name": "table_id",
-        "value": "marriages",
+        "value": "families",
         "_row_num": 4
       },
       "instance_name": {
         "setting_name": "instance_name",
-        "value": "marriage_id",
+        "value": "family_id",
         "_row_num": 5
       },
       "survey": {
         "setting_name": "survey",
         "display": {
           "title": {
-            "text": "Marriages"
+            "text": "Families"
           }
         },
         "_row_num": 6
       },
-      "marriages": {
-        "setting_name": "marriages",
+      "families": {
+        "setting_name": "families",
         "display": {
           "title": {
-            "text": "Marriages"
+            "text": "Family unit details"
           }
         },
         "_row_num": 7
@@ -340,10 +283,17 @@
         "setting_name": "survey",
         "display": {
           "title": {
-            "text": "Marriages"
+            "text": "Families"
           }
         },
         "_row_num": 6
+      },
+      "family": {
+        "display": {
+          "title": {
+            "text": "Families"
+          }
+        }
       }
     },
     "choices": {
@@ -368,64 +318,24 @@
           },
           "_row_num": 3
         }
-      ],
-      "marital_choices": [
-        {
-          "choice_list_name": "marital_choices",
-          "data_value": "married",
-          "display": {
-            "title": {
-              "text": "Married"
-            }
-          },
-          "_row_num": 5
-        },
-        {
-          "choice_list_name": "marital_choices",
-          "data_value": "never_married",
-          "display": {
-            "title": {
-              "text": "Never Married"
-            }
-          },
-          "_row_num": 6
-        },
-        {
-          "choice_list_name": "marital_choices",
-          "data_value": "divorced",
-          "display": {
-            "title": {
-              "text": "Divorced"
-            }
-          },
-          "_row_num": 7
-        },
-        {
-          "choice_list_name": "marital_choices",
-          "data_value": "separated",
-          "display": {
-            "title": {
-              "text": "Separated"
-            }
-          },
-          "_row_num": 8
-        },
-        {
-          "choice_list_name": "marital_choices",
-          "data_value": "widowed",
-          "display": {
-            "title": {
-              "text": "Widowed"
-            }
-          },
-          "_row_num": 9
-        }
       ]
     },
     "table_specific_definitions": {
       "_tokens": {}
     },
     "queries": {
+      "marriage_roster": {
+        "comments": "creates roster of marriages",
+        "query_name": "marriage_roster",
+        "query_type": "linked_table",
+        "linked_form_id": "marriages",
+        "linked_table_id": "marriages",
+        "selection": "household_id = ?",
+        "selectionArgs": "[ data('household_id') ]",
+        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "_row_num": 3
+      },
       "roster": {
         "comments": "creates roster",
         "query_name": "roster",
@@ -436,7 +346,7 @@
         "selectionArgs": "[ data('household_id') ]",
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
         "openRowInitialElementKeyToValueMap": "{}",
-        "_row_num": 3
+        "_row_num": 4
       },
       "linked_household_member": {
         "query_name": "linked_household_member",
@@ -447,7 +357,7 @@
         "selectionArgs": "null",
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'no' }",
         "openRowInitialElementKeyToValueMap": "{}",
-        "_row_num": 5
+        "_row_num": 6
       }
     },
     "calculates": {},
@@ -462,27 +372,29 @@
         ],
         "elementKey": "household_id"
       },
-      "marriage_id": {
+      "family_id": {
         "type": "string",
+        "valuesList": "marriage_roster",
         "_defn": [
           {
-            "_row_num": 10,
-            "section_name": "marriages"
+            "_row_num": 5,
+            "section_name": "family"
           },
           {
             "_row_num": 3,
             "section_name": "model"
           }
         ],
-        "elementKey": "marriage_id"
+        "comment": "uuid",
+        "elementKey": "family_id"
       },
-      "person_1": {
+      "child": {
         "type": "string",
         "valuesList": "roster",
         "_defn": [
           {
-            "_row_num": 5,
-            "section_name": "marriages"
+            "_row_num": 8,
+            "section_name": "family"
           },
           {
             "_row_num": 4,
@@ -490,28 +402,12 @@
           }
         ],
         "comment": "uuid",
-        "elementKey": "person_1"
-      },
-      "person_2": {
-        "type": "string",
-        "valuesList": "roster",
-        "_defn": [
-          {
-            "_row_num": 8,
-            "section_name": "marriages"
-          },
-          {
-            "_row_num": 6,
-            "section_name": "model"
-          }
-        ],
-        "comment": "uuid",
-        "elementKey": "person_2"
+        "elementKey": "child"
       }
     },
     "section_names": [
+      "family",
       "initial",
-      "marriages",
       "survey"
     ],
     "sections": {
@@ -522,7 +418,7 @@
         },
         "reachable_sections": {
           "survey": true,
-          "marriages": true
+          "family": true
         },
         "prompts": [
           {
@@ -535,7 +431,7 @@
             "promptIdx": 0,
             "display": {
               "title": {
-                "text": "Marriages"
+                "text": "Families"
               }
             },
             "_branch_label_enclosing_screen": "survey/0"
@@ -627,26 +523,26 @@
       "survey": {
         "section_name": "survey",
         "nested_sections": {
-          "marriages": true
+          "family": true
         },
         "reachable_sections": {
-          "marriages": true
+          "family": true
         },
         "prompts": [
           {
-            "clause": "do section marriages",
+            "clause": "do section family",
             "_row_num": 2,
             "__rowNum__": 1,
             "_token_type": "prompt",
-            "_do_section_name": "marriages",
+            "_do_section_name": "family",
             "_type": "_section",
             "promptIdx": 0,
             "display": {
               "title": {
-                "text": "Marriages"
+                "text": "Families"
               }
             },
-            "_branch_label_enclosing_screen": "marriages/0"
+            "_branch_label_enclosing_screen": "family/0"
           },
           {
             "_token_type": "prompt",
@@ -662,11 +558,11 @@
         },
         "operations": [
           {
-            "clause": "do section marriages",
+            "clause": "do section family",
             "_row_num": 2,
             "__rowNum__": 1,
             "_token_type": "do_section",
-            "_do_section_name": "marriages",
+            "_do_section_name": "family",
             "operationIdx": 0
           },
           {
@@ -696,8 +592,8 @@
           "_screen3": 2
         }
       },
-      "marriages": {
-        "section_name": "marriages",
+      "family": {
+        "section_name": "family",
         "nested_sections": {},
         "reachable_sections": {},
         "prompts": [
@@ -705,76 +601,61 @@
             "type": "note",
             "display": {
               "prompt": {
-                "text": "Marriage Information:"
+                "text": "Family Information:"
               }
             },
             "_row_num": 3,
             "__rowNum__": 2,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "marriages/_screen2",
+            "_branch_label_enclosing_screen": "family/_screen2",
             "promptIdx": 0
           },
           {
             "type": "note",
             "display": {
               "prompt": {
-                "text": "something here.. Select the two people in a relationship, something limiting the extent, maybe only those relationships that bore offspring?"
+                "text": "something here.. Select the child and which marriage combination represents their biological parents"
               }
             },
             "_row_num": 4,
             "__rowNum__": 3,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "marriages/_screen2",
+            "_branch_label_enclosing_screen": "family/_screen2",
             "promptIdx": 1
           },
           {
             "type": "select_one",
-            "values_list": "roster",
-            "name": "person_1",
+            "values_list": "marriage_roster",
+            "name": "family_id",
             "display": {
               "prompt": {
-                "text": "Person 1"
+                "text": "Parents:"
               }
             },
             "_row_num": 5,
             "__rowNum__": 4,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "marriages/_screen2",
+            "_branch_label_enclosing_screen": "family/_screen2",
             "promptIdx": 2
           },
           {
             "type": "select_one",
             "values_list": "roster",
-            "name": "person_2",
+            "name": "child",
             "display": {
               "prompt": {
-                "text": "Person 2"
+                "text": "Child"
               }
             },
             "_row_num": 8,
             "__rowNum__": 7,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "marriages/_screen2",
+            "_branch_label_enclosing_screen": "family/_screen2",
             "promptIdx": 3
-          },
-          {
-            "type": "text",
-            "name": "marriage_id",
-            "display": {
-              "prompt": {
-                "text": "Input first names of both people: separate their names with = if they are married, or != if they are not married but have offspring"
-              }
-            },
-            "_row_num": 10,
-            "__rowNum__": 9,
-            "_token_type": "prompt",
-            "_type": "text",
-            "_branch_label_enclosing_screen": "marriages/_screen2",
-            "promptIdx": 4
           },
           {
             "type": "note",
@@ -787,31 +668,31 @@
             "__rowNum__": 13,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "marriages/_screen2",
-            "promptIdx": 5
+            "_branch_label_enclosing_screen": "family/_screen2",
+            "promptIdx": 4
           },
           {
             "type": "linked_table",
             "values_list": "linked_household_member",
             "display": {
               "prompt": {
-                "text": "Please enter info on person not living in household to the best of your ability"
+                "text": "Please enter info on child not living in household to the best of your ability"
               }
             },
             "_row_num": 15,
             "__rowNum__": 14,
             "_token_type": "prompt",
             "_type": "linked_table",
-            "_branch_label_enclosing_screen": "marriages/_screen2",
-            "promptIdx": 6
+            "_branch_label_enclosing_screen": "family/_screen2",
+            "promptIdx": 5
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
             "_row_num": 18,
-            "_branch_label_enclosing_screen": "marriages/_screen18",
-            "promptIdx": 7
+            "_branch_label_enclosing_screen": "family/_screen18",
+            "promptIdx": 6
           }
         ],
         "validation_tag_map": {
@@ -829,7 +710,7 @@
               "__rowNum__": 16,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 0
           },
           {
@@ -841,7 +722,7 @@
           {
             "_row_num": 18,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
@@ -875,30 +756,32 @@
         "elementSet": "data",
         "elementPath": "household_id"
       },
-      "marriage_id": {
+      "family_id": {
         "type": "string",
+        "valuesList": "marriage_roster",
         "_defn": [
           {
-            "_row_num": 10,
-            "section_name": "marriages"
+            "_row_num": 5,
+            "section_name": "family"
           },
           {
             "_row_num": 3,
             "section_name": "model"
           }
         ],
-        "elementKey": "marriage_id",
-        "elementName": "marriage_id",
+        "comment": "uuid",
+        "elementKey": "family_id",
+        "elementName": "family_id",
         "elementSet": "data",
-        "elementPath": "marriage_id"
+        "elementPath": "family_id"
       },
-      "person_1": {
+      "child": {
         "type": "string",
         "valuesList": "roster",
         "_defn": [
           {
-            "_row_num": 5,
-            "section_name": "marriages"
+            "_row_num": 8,
+            "section_name": "family"
           },
           {
             "_row_num": 4,
@@ -906,29 +789,10 @@
           }
         ],
         "comment": "uuid",
-        "elementKey": "person_1",
-        "elementName": "person_1",
+        "elementKey": "child",
+        "elementName": "child",
         "elementSet": "data",
-        "elementPath": "person_1"
-      },
-      "person_2": {
-        "type": "string",
-        "valuesList": "roster",
-        "_defn": [
-          {
-            "_row_num": 8,
-            "section_name": "marriages"
-          },
-          {
-            "_row_num": 6,
-            "section_name": "model"
-          }
-        ],
-        "comment": "uuid",
-        "elementKey": "person_2",
-        "elementName": "person_2",
-        "elementSet": "data",
-        "elementPath": "person_2"
+        "elementPath": "child"
       },
       "_id": {
         "type": "string",
@@ -1056,7 +920,7 @@
         "_aspect": "default",
         "_key": "SurveyUtil.formId",
         "_type": "string",
-        "_value": "marriages"
+        "_value": "families"
       },
       {
         "_partition": "Table",
@@ -1070,7 +934,7 @@
         "_aspect": "default",
         "_key": "displayName",
         "_type": "object",
-        "_value": "{\"text\":\"Marriages\"}"
+        "_value": "{\"text\":\"Families\"}"
       }
     ]
   }
