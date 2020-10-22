@@ -2,6 +2,10 @@
   "xlsx": {
     "survey": [
       {
+        "comments": "Household node creation::",
+        "_row_num": 2
+      },
+      {
         "comments": "generate household ID",
         "clause": "do section id",
         "_row_num": 3
@@ -16,42 +20,46 @@
       {
         "comments": "customary membership for household",
         "clause": "do section customary_membership",
-        "_row_num": 8
+        "_row_num": 7
       },
       {
-        "comments": "household members",
+        "comments": "Person node creation",
         "clause": "do section members",
-        "_row_num": 10
+        "_row_num": 9
       },
       {
-        "comments": "Marriages",
+        "comments": "Marriage edgelist creation",
         "clause": "do section marriages",
-        "_row_num": 12
+        "_row_num": 11
       },
       {
         "comments": "Family edgelist creation",
         "clause": "do section families",
+        "_row_num": 13
+      },
+      {
+        "comments": "Household node attributes",
         "_row_num": 14
       },
       {
         "comments": "asset wealth",
         "clause": "do section asset_wealth",
-        "_row_num": 16
+        "_row_num": 15
       },
       {
         "comments": "income of head and spouse",
         "clause": "do section income",
-        "_row_num": 17
+        "_row_num": 16
       },
       {
         "comments": "food security",
         "clause": "do section food_security",
-        "_row_num": 18
+        "_row_num": 17
       },
       {
         "comments": "crops and fishing",
         "clause": "do section crops_fishing",
-        "_row_num": 19
+        "_row_num": 18
       }
     ],
     "choices": [
@@ -116,36 +124,6 @@
         "_row_num": 8
       },
       {
-        "choice_list_name": "custom_member_choices",
-        "data_value": "tokatoka",
-        "display": {
-          "title": {
-            "text": "Tokatoka"
-          }
-        },
-        "_row_num": 10
-      },
-      {
-        "choice_list_name": "custom_member_choices",
-        "data_value": "mataqali",
-        "display": {
-          "title": {
-            "text": "Mataqali"
-          }
-        },
-        "_row_num": 11
-      },
-      {
-        "choice_list_name": "custom_member_choices",
-        "data_value": "yavusa",
-        "display": {
-          "title": {
-            "text": "Yavusa"
-          }
-        },
-        "_row_num": 12
-      },
-      {
         "choice_list_name": "asset_inventory",
         "data_value": "thing1",
         "display": {
@@ -153,7 +131,7 @@
             "text": "Thing 1"
           }
         },
-        "_row_num": 14
+        "_row_num": 10
       },
       {
         "choice_list_name": "asset_inventory",
@@ -163,7 +141,7 @@
             "text": "Thing 2"
           }
         },
-        "_row_num": 15
+        "_row_num": 11
       },
       {
         "choice_list_name": "asset_inventory",
@@ -173,7 +151,7 @@
             "text": "Thing 3"
           }
         },
-        "_row_num": 16
+        "_row_num": 12
       },
       {
         "choice_list_name": "asset_inventory",
@@ -183,7 +161,7 @@
             "text": "Thing 4"
           }
         },
-        "_row_num": 17
+        "_row_num": 13
       },
       {
         "choice_list_name": "asset_inventory",
@@ -193,7 +171,7 @@
             "text": "Thing 5"
           }
         },
-        "_row_num": 18
+        "_row_num": 14
       },
       {
         "choice_list_name": "asset_inventory",
@@ -203,7 +181,7 @@
             "text": "Thing 6"
           }
         },
-        "_row_num": 19
+        "_row_num": 15
       },
       {
         "choice_list_name": "asset_inventory",
@@ -213,7 +191,7 @@
             "text": "Thing 7"
           }
         },
-        "_row_num": 20
+        "_row_num": 16
       },
       {
         "choice_list_name": "asset_inventory",
@@ -223,7 +201,7 @@
             "text": "Thing 8"
           }
         },
-        "_row_num": 21
+        "_row_num": 17
       },
       {
         "choice_list_name": "asset_inventory",
@@ -233,7 +211,7 @@
             "text": "Thing 9"
           }
         },
-        "_row_num": 22
+        "_row_num": 18
       },
       {
         "choice_list_name": "asset_inventory",
@@ -243,7 +221,7 @@
             "text": "Thing 10"
           }
         },
-        "_row_num": 23
+        "_row_num": 19
       },
       {
         "choice_list_name": "food_security_list",
@@ -253,7 +231,7 @@
             "text": "Always had enough"
           }
         },
-        "_row_num": 25
+        "_row_num": 21
       },
       {
         "choice_list_name": "food_security_list",
@@ -263,7 +241,7 @@
             "text": "Always had enough, but sometimes food was of low quality"
           }
         },
-        "_row_num": 26
+        "_row_num": 22
       },
       {
         "choice_list_name": "food_security_list",
@@ -273,7 +251,7 @@
             "text": "Didn't have enough a few times a year"
           }
         },
-        "_row_num": 27
+        "_row_num": 23
       },
       {
         "choice_list_name": "food_security_list",
@@ -283,7 +261,7 @@
             "text": "Didn't have enough a few times a month"
           }
         },
-        "_row_num": 28
+        "_row_num": 24
       },
       {
         "choice_list_name": "food_security_list",
@@ -293,7 +271,7 @@
             "text": "Didn't have enough a few times a week"
           }
         },
-        "_row_num": 29
+        "_row_num": 25
       },
       {
         "choice_list_name": "food_security_list",
@@ -303,7 +281,7 @@
             "text": "Never or almost never had enough"
           }
         },
-        "_row_num": 30
+        "_row_num": 26
       }
     ],
     "settings": [
@@ -334,7 +312,7 @@
             "text": "Household Survey"
           }
         },
-        "_row_num": 7
+        "_row_num": 6
       },
       {
         "setting_name": "id",
@@ -420,6 +398,7 @@
     ],
     "queries": [
       {
+        "comments": "household member",
         "query_name": "linked_household_member",
         "query_type": "linked_table",
         "linked_form_id": "household_member",
@@ -428,7 +407,7 @@
         "selectionArgs": "[ data('household_id') ]",
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'yes' }",
         "openRowInitialElementKeyToValueMap": "{}",
-        "_row_num": 4
+        "_row_num": 3
       },
       {
         "comments": "creates roster",
@@ -440,9 +419,10 @@
         "selectionArgs": "[ data('household_id') ]",
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
         "openRowInitialElementKeyToValueMap": "{}",
-        "_row_num": 5
+        "_row_num": 4
       },
       {
+        "comments": "marriages",
         "query_name": "linked_marriages",
         "query_type": "linked_table",
         "linked_form_id": "marriages",
@@ -451,9 +431,10 @@
         "selectionArgs": "[ data('household_id') ]",
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
         "openRowInitialElementKeyToValueMap": "{}",
-        "_row_num": 6
+        "_row_num": 5
       },
       {
+        "comments": "families",
         "query_name": "linked_families",
         "query_type": "linked_table",
         "linked_form_id": "families",
@@ -462,7 +443,7 @@
         "selectionArgs": "[ data('household_id') ]",
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
         "openRowInitialElementKeyToValueMap": "{}",
-        "_row_num": 7
+        "_row_num": 6
       }
     ],
     "model": [
@@ -610,7 +591,7 @@
             "text": "Tokatoka:"
           }
         },
-        "_row_num": 7
+        "_row_num": 5
       },
       {
         "type": "text",
@@ -620,7 +601,7 @@
             "text": "Yavusa:"
           }
         },
-        "_row_num": 8
+        "_row_num": 6
       },
       {
         "type": "text",
@@ -630,7 +611,7 @@
             "text": "Matagali:"
           }
         },
-        "_row_num": 9
+        "_row_num": 7
       },
       {
         "type": "text",
@@ -640,11 +621,11 @@
             "text": "Extra Notes:"
           }
         },
-        "_row_num": 10
+        "_row_num": 8
       },
       {
         "clause": "end screen",
-        "_row_num": 12
+        "_row_num": 9
       }
     ],
     "members": [
@@ -700,7 +681,7 @@
       },
       {
         "clause": "end screen",
-        "_row_num": 12
+        "_row_num": 6
       }
     ],
     "families": [
@@ -933,7 +914,7 @@
             "text": "Household Survey"
           }
         },
-        "_row_num": 7
+        "_row_num": 6
       },
       "id": {
         "setting_name": "id",
@@ -1018,7 +999,7 @@
       },
       "_locales": {
         "setting_name": "_locales",
-        "_row_num": 7,
+        "_row_num": 6,
         "value": [
           {
             "display": {
@@ -1032,7 +1013,7 @@
       },
       "_default_locale": {
         "setting_name": "_default_locale",
-        "_row_num": 7,
+        "_row_num": 6,
         "value": "default"
       },
       "initial": {
@@ -1042,7 +1023,7 @@
             "text": "Household Survey"
           }
         },
-        "_row_num": 7
+        "_row_num": 6
       }
     },
     "choices": {
@@ -1110,38 +1091,6 @@
           "_row_num": 8
         }
       ],
-      "custom_member_choices": [
-        {
-          "choice_list_name": "custom_member_choices",
-          "data_value": "tokatoka",
-          "display": {
-            "title": {
-              "text": "Tokatoka"
-            }
-          },
-          "_row_num": 10
-        },
-        {
-          "choice_list_name": "custom_member_choices",
-          "data_value": "mataqali",
-          "display": {
-            "title": {
-              "text": "Mataqali"
-            }
-          },
-          "_row_num": 11
-        },
-        {
-          "choice_list_name": "custom_member_choices",
-          "data_value": "yavusa",
-          "display": {
-            "title": {
-              "text": "Yavusa"
-            }
-          },
-          "_row_num": 12
-        }
-      ],
       "asset_inventory": [
         {
           "choice_list_name": "asset_inventory",
@@ -1151,7 +1100,7 @@
               "text": "Thing 1"
             }
           },
-          "_row_num": 14
+          "_row_num": 10
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1161,7 +1110,7 @@
               "text": "Thing 2"
             }
           },
-          "_row_num": 15
+          "_row_num": 11
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1171,7 +1120,7 @@
               "text": "Thing 3"
             }
           },
-          "_row_num": 16
+          "_row_num": 12
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1181,7 +1130,7 @@
               "text": "Thing 4"
             }
           },
-          "_row_num": 17
+          "_row_num": 13
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1191,7 +1140,7 @@
               "text": "Thing 5"
             }
           },
-          "_row_num": 18
+          "_row_num": 14
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1201,7 +1150,7 @@
               "text": "Thing 6"
             }
           },
-          "_row_num": 19
+          "_row_num": 15
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1211,7 +1160,7 @@
               "text": "Thing 7"
             }
           },
-          "_row_num": 20
+          "_row_num": 16
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1221,7 +1170,7 @@
               "text": "Thing 8"
             }
           },
-          "_row_num": 21
+          "_row_num": 17
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1231,7 +1180,7 @@
               "text": "Thing 9"
             }
           },
-          "_row_num": 22
+          "_row_num": 18
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1241,7 +1190,7 @@
               "text": "Thing 10"
             }
           },
-          "_row_num": 23
+          "_row_num": 19
         }
       ],
       "food_security_list": [
@@ -1253,7 +1202,7 @@
               "text": "Always had enough"
             }
           },
-          "_row_num": 25
+          "_row_num": 21
         },
         {
           "choice_list_name": "food_security_list",
@@ -1263,7 +1212,7 @@
               "text": "Always had enough, but sometimes food was of low quality"
             }
           },
-          "_row_num": 26
+          "_row_num": 22
         },
         {
           "choice_list_name": "food_security_list",
@@ -1273,7 +1222,7 @@
               "text": "Didn't have enough a few times a year"
             }
           },
-          "_row_num": 27
+          "_row_num": 23
         },
         {
           "choice_list_name": "food_security_list",
@@ -1283,7 +1232,7 @@
               "text": "Didn't have enough a few times a month"
             }
           },
-          "_row_num": 28
+          "_row_num": 24
         },
         {
           "choice_list_name": "food_security_list",
@@ -1293,7 +1242,7 @@
               "text": "Didn't have enough a few times a week"
             }
           },
-          "_row_num": 29
+          "_row_num": 25
         },
         {
           "choice_list_name": "food_security_list",
@@ -1303,7 +1252,7 @@
               "text": "Never or almost never had enough"
             }
           },
-          "_row_num": 30
+          "_row_num": 26
         }
       ]
     },
@@ -1312,6 +1261,7 @@
     },
     "queries": {
       "linked_household_member": {
+        "comments": "household member",
         "query_name": "linked_household_member",
         "query_type": "linked_table",
         "linked_form_id": "household_member",
@@ -1320,7 +1270,7 @@
         "selectionArgs": "[ data('household_id') ]",
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'yes' }",
         "openRowInitialElementKeyToValueMap": "{}",
-        "_row_num": 4
+        "_row_num": 3
       },
       "roster": {
         "comments": "creates roster",
@@ -1332,9 +1282,10 @@
         "selectionArgs": "[ data('household_id') ]",
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
         "openRowInitialElementKeyToValueMap": "{}",
-        "_row_num": 5
+        "_row_num": 4
       },
       "linked_marriages": {
+        "comments": "marriages",
         "query_name": "linked_marriages",
         "query_type": "linked_table",
         "linked_form_id": "marriages",
@@ -1343,9 +1294,10 @@
         "selectionArgs": "[ data('household_id') ]",
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
         "openRowInitialElementKeyToValueMap": "{}",
-        "_row_num": 6
+        "_row_num": 5
       },
       "linked_families": {
+        "comments": "families",
         "query_name": "linked_families",
         "query_type": "linked_table",
         "linked_form_id": "families",
@@ -1354,7 +1306,7 @@
         "selectionArgs": "[ data('household_id') ]",
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
         "openRowInitialElementKeyToValueMap": "{}",
-        "_row_num": 7
+        "_row_num": 6
       }
     },
     "calculates": {},
@@ -1620,7 +1572,7 @@
       "tokatoka": {
         "_defn": [
           {
-            "_row_num": 7,
+            "_row_num": 5,
             "section_name": "customary_membership"
           }
         ],
@@ -1630,7 +1582,7 @@
       "yavusa": {
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 6,
             "section_name": "customary_membership"
           }
         ],
@@ -1640,7 +1592,7 @@
       "mataqali": {
         "_defn": [
           {
-            "_row_num": 9,
+            "_row_num": 7,
             "section_name": "customary_membership"
           }
         ],
@@ -1650,7 +1602,7 @@
       "membership_notes": {
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 8,
             "section_name": "customary_membership"
           }
         ],
@@ -1716,8 +1668,8 @@
           {
             "comments": "customary membership for household",
             "clause": "do section customary_membership",
-            "_row_num": 8,
-            "__rowNum__": 7,
+            "_row_num": 7,
+            "__rowNum__": 6,
             "_token_type": "prompt",
             "_do_section_name": "customary_membership",
             "_type": "_section",
@@ -1730,10 +1682,10 @@
             "_branch_label_enclosing_screen": "customary_membership/0"
           },
           {
-            "comments": "household members",
+            "comments": "Person node creation",
             "clause": "do section members",
-            "_row_num": 10,
-            "__rowNum__": 9,
+            "_row_num": 9,
+            "__rowNum__": 8,
             "_token_type": "prompt",
             "_do_section_name": "members",
             "_type": "_section",
@@ -1746,10 +1698,10 @@
             "_branch_label_enclosing_screen": "members/0"
           },
           {
-            "comments": "Marriages",
+            "comments": "Marriage edgelist creation",
             "clause": "do section marriages",
-            "_row_num": 12,
-            "__rowNum__": 11,
+            "_row_num": 11,
+            "__rowNum__": 10,
             "_token_type": "prompt",
             "_do_section_name": "marriages",
             "_type": "_section",
@@ -1764,8 +1716,8 @@
           {
             "comments": "Family edgelist creation",
             "clause": "do section families",
-            "_row_num": 14,
-            "__rowNum__": 13,
+            "_row_num": 13,
+            "__rowNum__": 12,
             "_token_type": "prompt",
             "_do_section_name": "families",
             "_type": "_section",
@@ -1780,8 +1732,8 @@
           {
             "comments": "asset wealth",
             "clause": "do section asset_wealth",
-            "_row_num": 16,
-            "__rowNum__": 15,
+            "_row_num": 15,
+            "__rowNum__": 14,
             "_token_type": "prompt",
             "_do_section_name": "asset_wealth",
             "_type": "_section",
@@ -1796,8 +1748,8 @@
           {
             "comments": "income of head and spouse",
             "clause": "do section income",
-            "_row_num": 17,
-            "__rowNum__": 16,
+            "_row_num": 16,
+            "__rowNum__": 15,
             "_token_type": "prompt",
             "_do_section_name": "income",
             "_type": "_section",
@@ -1812,8 +1764,8 @@
           {
             "comments": "food security",
             "clause": "do section food_security",
-            "_row_num": 18,
-            "__rowNum__": 17,
+            "_row_num": 17,
+            "__rowNum__": 16,
             "_token_type": "prompt",
             "_do_section_name": "food_security",
             "_type": "_section",
@@ -1828,8 +1780,8 @@
           {
             "comments": "crops and fishing",
             "clause": "do section crops_fishing",
-            "_row_num": 19,
-            "__rowNum__": 18,
+            "_row_num": 18,
+            "__rowNum__": 17,
             "_token_type": "prompt",
             "_do_section_name": "crops_fishing",
             "_type": "_section",
@@ -1845,8 +1797,8 @@
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 20,
-            "_branch_label_enclosing_screen": "survey/_screen20",
+            "_row_num": 19,
+            "_branch_label_enclosing_screen": "survey/_screen19",
             "promptIdx": 9
           }
         ],
@@ -1876,26 +1828,26 @@
           {
             "comments": "customary membership for household",
             "clause": "do section customary_membership",
-            "_row_num": 8,
-            "__rowNum__": 7,
+            "_row_num": 7,
+            "__rowNum__": 6,
             "_token_type": "do_section",
             "_do_section_name": "customary_membership",
             "operationIdx": 2
           },
           {
-            "comments": "household members",
+            "comments": "Person node creation",
             "clause": "do section members",
-            "_row_num": 10,
-            "__rowNum__": 9,
+            "_row_num": 9,
+            "__rowNum__": 8,
             "_token_type": "do_section",
             "_do_section_name": "members",
             "operationIdx": 3
           },
           {
-            "comments": "Marriages",
+            "comments": "Marriage edgelist creation",
             "clause": "do section marriages",
-            "_row_num": 12,
-            "__rowNum__": 11,
+            "_row_num": 11,
+            "__rowNum__": 10,
             "_token_type": "do_section",
             "_do_section_name": "marriages",
             "operationIdx": 4
@@ -1903,8 +1855,8 @@
           {
             "comments": "Family edgelist creation",
             "clause": "do section families",
-            "_row_num": 14,
-            "__rowNum__": 13,
+            "_row_num": 13,
+            "__rowNum__": 12,
             "_token_type": "do_section",
             "_do_section_name": "families",
             "operationIdx": 5
@@ -1912,8 +1864,8 @@
           {
             "comments": "asset wealth",
             "clause": "do section asset_wealth",
-            "_row_num": 16,
-            "__rowNum__": 15,
+            "_row_num": 15,
+            "__rowNum__": 14,
             "_token_type": "do_section",
             "_do_section_name": "asset_wealth",
             "operationIdx": 6
@@ -1921,8 +1873,8 @@
           {
             "comments": "income of head and spouse",
             "clause": "do section income",
-            "_row_num": 17,
-            "__rowNum__": 16,
+            "_row_num": 16,
+            "__rowNum__": 15,
             "_token_type": "do_section",
             "_do_section_name": "income",
             "operationIdx": 7
@@ -1930,8 +1882,8 @@
           {
             "comments": "food security",
             "clause": "do section food_security",
-            "_row_num": 18,
-            "__rowNum__": 17,
+            "_row_num": 17,
+            "__rowNum__": 16,
             "_token_type": "do_section",
             "_do_section_name": "food_security",
             "operationIdx": 8
@@ -1939,8 +1891,8 @@
           {
             "comments": "crops and fishing",
             "clause": "do section crops_fishing",
-            "_row_num": 19,
-            "__rowNum__": 18,
+            "_row_num": 18,
+            "__rowNum__": 17,
             "_token_type": "do_section",
             "_do_section_name": "crops_fishing",
             "operationIdx": 9
@@ -1948,11 +1900,11 @@
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 20,
+            "_row_num": 19,
             "operationIdx": 10
           },
           {
-            "_row_num": 20,
+            "_row_num": 19,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
@@ -1963,13 +1915,13 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 20,
+            "_row_num": 19,
             "operationIdx": 12
           }
         ],
         "branch_label_map": {
           "_contents": 11,
-          "_screen20": 11
+          "_screen19": 11
         }
       },
       "id": {
@@ -2121,8 +2073,8 @@
                 "text": "Tokatoka:"
               }
             },
-            "_row_num": 7,
-            "__rowNum__": 6,
+            "_row_num": 5,
+            "__rowNum__": 4,
             "_token_type": "prompt",
             "_type": "text",
             "_branch_label_enclosing_screen": "customary_membership/_screen3",
@@ -2136,8 +2088,8 @@
                 "text": "Yavusa:"
               }
             },
-            "_row_num": 8,
-            "__rowNum__": 7,
+            "_row_num": 6,
+            "__rowNum__": 5,
             "_token_type": "prompt",
             "_type": "text",
             "_branch_label_enclosing_screen": "customary_membership/_screen3",
@@ -2151,8 +2103,8 @@
                 "text": "Matagali:"
               }
             },
-            "_row_num": 9,
-            "__rowNum__": 8,
+            "_row_num": 7,
+            "__rowNum__": 6,
             "_token_type": "prompt",
             "_type": "text",
             "_branch_label_enclosing_screen": "customary_membership/_screen3",
@@ -2166,8 +2118,8 @@
                 "text": "Extra Notes:"
               }
             },
-            "_row_num": 10,
-            "__rowNum__": 9,
+            "_row_num": 8,
+            "__rowNum__": 7,
             "_token_type": "prompt",
             "_type": "text",
             "_branch_label_enclosing_screen": "customary_membership/_screen3",
@@ -2177,8 +2129,8 @@
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 13,
-            "_branch_label_enclosing_screen": "customary_membership/_screen13",
+            "_row_num": 10,
+            "_branch_label_enclosing_screen": "customary_membership/_screen10",
             "promptIdx": 5
           }
         ],
@@ -2193,8 +2145,8 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 12,
-              "__rowNum__": 11,
+              "_row_num": 9,
+              "__rowNum__": 8,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
@@ -2203,11 +2155,11 @@
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 13,
+            "_row_num": 10,
             "operationIdx": 1
           },
           {
-            "_row_num": 13,
+            "_row_num": 10,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
@@ -2218,14 +2170,14 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 13,
+            "_row_num": 10,
             "operationIdx": 3
           }
         ],
         "branch_label_map": {
           "_screen3": 0,
           "_contents": 2,
-          "_screen13": 2
+          "_screen10": 2
         }
       },
       "members": {
@@ -2353,8 +2305,8 @@
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 13,
-            "_branch_label_enclosing_screen": "marriages/_screen13",
+            "_row_num": 7,
+            "_branch_label_enclosing_screen": "marriages/_screen7",
             "promptIdx": 3
           }
         ],
@@ -2369,8 +2321,8 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 12,
-              "__rowNum__": 11,
+              "_row_num": 6,
+              "__rowNum__": 5,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\n\nreturn activePromptIndicies;\n}\n",
@@ -2379,11 +2331,11 @@
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 13,
+            "_row_num": 7,
             "operationIdx": 1
           },
           {
-            "_row_num": 13,
+            "_row_num": 7,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
@@ -2394,14 +2346,14 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 13,
+            "_row_num": 7,
             "operationIdx": 3
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
           "_contents": 2,
-          "_screen13": 2
+          "_screen7": 2
         }
       },
       "families": {
@@ -3446,7 +3398,7 @@
       "tokatoka": {
         "_defn": [
           {
-            "_row_num": 7,
+            "_row_num": 5,
             "section_name": "customary_membership"
           }
         ],
@@ -3459,7 +3411,7 @@
       "yavusa": {
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 6,
             "section_name": "customary_membership"
           }
         ],
@@ -3472,7 +3424,7 @@
       "mataqali": {
         "_defn": [
           {
-            "_row_num": 9,
+            "_row_num": 7,
             "section_name": "customary_membership"
           }
         ],
@@ -3485,7 +3437,7 @@
       "membership_notes": {
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 8,
             "section_name": "customary_membership"
           }
         ],
@@ -3667,14 +3619,14 @@
         "_aspect": "asset_wealth",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing1\",\"display\":{\"title\":{\"text\":\"Thing 1\"}},\"_row_num\":14},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing2\",\"display\":{\"title\":{\"text\":\"Thing 2\"}},\"_row_num\":15},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing3\",\"display\":{\"title\":{\"text\":\"Thing 3\"}},\"_row_num\":16},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing4\",\"display\":{\"title\":{\"text\":\"Thing 4\"}},\"_row_num\":17},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing5\",\"display\":{\"title\":{\"text\":\"Thing 5\"}},\"_row_num\":18},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing6\",\"display\":{\"title\":{\"text\":\"Thing 6\"}},\"_row_num\":19},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing7\",\"display\":{\"title\":{\"text\":\"Thing 7\"}},\"_row_num\":20},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing8\",\"display\":{\"title\":{\"text\":\"Thing 8\"}},\"_row_num\":21},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing9\",\"display\":{\"title\":{\"text\":\"Thing 9\"}},\"_row_num\":22},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing10\",\"display\":{\"title\":{\"text\":\"Thing 10\"}},\"_row_num\":23}]"
+        "_value": "[{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing1\",\"display\":{\"title\":{\"text\":\"Thing 1\"}},\"_row_num\":10},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing2\",\"display\":{\"title\":{\"text\":\"Thing 2\"}},\"_row_num\":11},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing3\",\"display\":{\"title\":{\"text\":\"Thing 3\"}},\"_row_num\":12},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing4\",\"display\":{\"title\":{\"text\":\"Thing 4\"}},\"_row_num\":13},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing5\",\"display\":{\"title\":{\"text\":\"Thing 5\"}},\"_row_num\":14},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing6\",\"display\":{\"title\":{\"text\":\"Thing 6\"}},\"_row_num\":15},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing7\",\"display\":{\"title\":{\"text\":\"Thing 7\"}},\"_row_num\":16},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing8\",\"display\":{\"title\":{\"text\":\"Thing 8\"}},\"_row_num\":17},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing9\",\"display\":{\"title\":{\"text\":\"Thing 9\"}},\"_row_num\":18},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing10\",\"display\":{\"title\":{\"text\":\"Thing 10\"}},\"_row_num\":19}]"
       },
       {
         "_partition": "Column",
         "_aspect": "food_security",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"food_security_list\",\"data_value\":1,\"display\":{\"title\":{\"text\":\"Always had enough\"}},\"_row_num\":25},{\"choice_list_name\":\"food_security_list\",\"data_value\":2,\"display\":{\"title\":{\"text\":\"Always had enough, but sometimes food was of low quality\"}},\"_row_num\":26},{\"choice_list_name\":\"food_security_list\",\"data_value\":3,\"display\":{\"title\":{\"text\":\"Didn't have enough a few times a year\"}},\"_row_num\":27},{\"choice_list_name\":\"food_security_list\",\"data_value\":4,\"display\":{\"title\":{\"text\":\"Didn't have enough a few times a month\"}},\"_row_num\":28},{\"choice_list_name\":\"food_security_list\",\"data_value\":5,\"display\":{\"title\":{\"text\":\"Didn't have enough a few times a week\"}},\"_row_num\":29},{\"choice_list_name\":\"food_security_list\",\"data_value\":6,\"display\":{\"title\":{\"text\":\"Never or almost never had enough\"}},\"_row_num\":30}]"
+        "_value": "[{\"choice_list_name\":\"food_security_list\",\"data_value\":1,\"display\":{\"title\":{\"text\":\"Always had enough\"}},\"_row_num\":21},{\"choice_list_name\":\"food_security_list\",\"data_value\":2,\"display\":{\"title\":{\"text\":\"Always had enough, but sometimes food was of low quality\"}},\"_row_num\":22},{\"choice_list_name\":\"food_security_list\",\"data_value\":3,\"display\":{\"title\":{\"text\":\"Didn't have enough a few times a year\"}},\"_row_num\":23},{\"choice_list_name\":\"food_security_list\",\"data_value\":4,\"display\":{\"title\":{\"text\":\"Didn't have enough a few times a month\"}},\"_row_num\":24},{\"choice_list_name\":\"food_security_list\",\"data_value\":5,\"display\":{\"title\":{\"text\":\"Didn't have enough a few times a week\"}},\"_row_num\":25},{\"choice_list_name\":\"food_security_list\",\"data_value\":6,\"display\":{\"title\":{\"text\":\"Never or almost never had enough\"}},\"_row_num\":26}]"
       },
       {
         "_partition": "Column",

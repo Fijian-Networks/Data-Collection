@@ -141,7 +141,7 @@
             "text": "Child"
           }
         },
-        "_row_num": 8
+        "_row_num": 7
       },
       {
         "type": "note",
@@ -150,7 +150,7 @@
             "text": "If the person is not on the list, please add them to the roster"
           }
         },
-        "_row_num": 14
+        "_row_num": 9
       },
       {
         "type": "linked_table",
@@ -158,13 +158,16 @@
         "display": {
           "prompt": {
             "text": "Please enter info on child not living in household to the best of your ability"
+          },
+          "new_instance_label": {
+            "text": "Add child to roster"
           }
         },
-        "_row_num": 15
+        "_row_num": 10
       },
       {
         "clause": "end screen",
-        "_row_num": 17
+        "_row_num": 12
       }
     ],
     "queries": [
@@ -181,7 +184,7 @@
         "_row_num": 3
       },
       {
-        "comments": "creates roster",
+        "comments": "creates roster of household members",
         "query_name": "roster",
         "query_type": "linked_table",
         "linked_form_id": "household_member",
@@ -193,6 +196,7 @@
         "_row_num": 4
       },
       {
+        "comments": "used to add new members not living in household",
         "query_name": "linked_household_member",
         "query_type": "linked_table",
         "linked_form_id": "household_member",
@@ -337,7 +341,7 @@
         "_row_num": 3
       },
       "roster": {
-        "comments": "creates roster",
+        "comments": "creates roster of household members",
         "query_name": "roster",
         "query_type": "linked_table",
         "linked_form_id": "household_member",
@@ -349,6 +353,7 @@
         "_row_num": 4
       },
       "linked_household_member": {
+        "comments": "used to add new members not living in household",
         "query_name": "linked_household_member",
         "query_type": "linked_table",
         "linked_form_id": "household_member",
@@ -393,7 +398,7 @@
         "valuesList": "roster",
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 7,
             "section_name": "family"
           },
           {
@@ -650,8 +655,8 @@
                 "text": "Child"
               }
             },
-            "_row_num": 8,
-            "__rowNum__": 7,
+            "_row_num": 7,
+            "__rowNum__": 6,
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "family/_screen2",
@@ -664,8 +669,8 @@
                 "text": "If the person is not on the list, please add them to the roster"
               }
             },
-            "_row_num": 14,
-            "__rowNum__": 13,
+            "_row_num": 9,
+            "__rowNum__": 8,
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "family/_screen2",
@@ -677,10 +682,13 @@
             "display": {
               "prompt": {
                 "text": "Please enter info on child not living in household to the best of your ability"
+              },
+              "new_instance_label": {
+                "text": "Add child to roster"
               }
             },
-            "_row_num": 15,
-            "__rowNum__": 14,
+            "_row_num": 10,
+            "__rowNum__": 9,
             "_token_type": "prompt",
             "_type": "linked_table",
             "_branch_label_enclosing_screen": "family/_screen2",
@@ -690,8 +698,8 @@
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 18,
-            "_branch_label_enclosing_screen": "family/_screen18",
+            "_row_num": 13,
+            "_branch_label_enclosing_screen": "family/_screen13",
             "promptIdx": 6
           }
         ],
@@ -706,8 +714,8 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 17,
-              "__rowNum__": 16,
+              "_row_num": 12,
+              "__rowNum__": 11,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
@@ -716,11 +724,11 @@
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 18,
+            "_row_num": 13,
             "operationIdx": 1
           },
           {
-            "_row_num": 18,
+            "_row_num": 13,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
@@ -731,14 +739,14 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 18,
+            "_row_num": 13,
             "operationIdx": 3
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
           "_contents": 2,
-          "_screen18": 2
+          "_screen13": 2
         }
       }
     },
@@ -780,7 +788,7 @@
         "valuesList": "roster",
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 7,
             "section_name": "family"
           },
           {

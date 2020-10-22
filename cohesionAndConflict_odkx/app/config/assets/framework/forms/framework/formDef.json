@@ -26,7 +26,7 @@
         "setting_name": "survey",
         "display": {
           "title": {
-            "text": "Common JavaScript Framework"
+            "text": "Main list of surveys"
           }
         },
         "_row_num": 5
@@ -519,136 +519,120 @@
         "_row_num": 3
       },
       {
-        "clause": "else",
+        "clause": "end if",
         "_row_num": 4
       },
       {
-        "type": "note",
-        "display": {
-          "prompt": {
-            "text": "This is the default form."
-          },
-          "hint": {
-            "text": "Set your url hash to #formPath=[relative path to form directory]/ to change forms."
-          }
-        },
+        "clause": "exit section",
         "_row_num": 5
       },
       {
-        "clause": "end if",
-        "_row_num": 6
-      },
-      {
-        "clause": "exit section",
-        "_row_num": 7
-      },
-      {
         "branch_label": "household_items",
-        "_row_num": 9
+        "_row_num": 7
       },
       {
         "url": "'?' + odkSurvey.getHashString('household_items')",
         "type": "external_link",
         "display": {
           "prompt": {
-            "text": "Open form"
+            "text": "Freelist: household items"
           }
         },
-        "_row_num": 10
+        "_row_num": 8
       },
       {
         "clause": "exit section",
-        "_row_num": 11
+        "_row_num": 9
       },
       {
         "branch_label": "household_cooperation_measures",
-        "_row_num": 13
+        "_row_num": 11
       },
       {
         "url": "'?' + odkSurvey.getHashString('household_cooperation_measures')",
         "type": "external_link",
         "display": {
           "prompt": {
-            "text": "Open form"
+            "text": "Freelist: cooperation measures"
           }
         },
-        "_row_num": 14
+        "_row_num": 12
       },
       {
         "clause": "exit section",
-        "_row_num": 15
+        "_row_num": 13
       },
       {
         "branch_label": "household_census",
-        "_row_num": 17
+        "_row_num": 15
       },
       {
         "url": "'?' + odkSurvey.getHashString('household_census')",
         "type": "external_link",
         "display": {
           "prompt": {
-            "text": "Open form"
+            "text": "Main household census"
           }
         },
-        "_row_num": 18
+        "_row_num": 16
       },
       {
         "clause": "exit section",
-        "_row_num": 19
+        "_row_num": 17
       },
       {
         "branch_label": "household_member",
-        "_row_num": 21
+        "_row_num": 19
       },
       {
         "url": "'?' + odkSurvey.getHashString('household_member')",
         "type": "external_link",
         "display": {
           "prompt": {
-            "text": "Open form"
+            "text": "member subform"
           }
         },
-        "_row_num": 22
+        "_row_num": 20
       },
       {
         "clause": "exit section",
-        "_row_num": 23
+        "_row_num": 21
       },
       {
         "branch_label": "marriages",
-        "_row_num": 30
+        "_row_num": 24
       },
       {
         "url": "'?' + odkSurvey.getHashString('marriages')",
         "type": "external_link",
         "display": {
           "prompt": {
-            "text": "Open form"
+            "text": "marriage subform"
           }
         },
-        "_row_num": 31
+        "_row_num": 25
       },
       {
         "clause": "exit section",
-        "_row_num": 32
+        "_row_num": 26
       },
       {
         "branch_label": "families",
-        "_row_num": 34
+        "_row_num": 28
       },
       {
         "url": "'?' + odkSurvey.getHashString('families')",
         "type": "external_link",
         "display": {
           "prompt": {
-            "text": "Open form"
+            "text": "families subform"
           }
         },
-        "_row_num": 35
+        "_row_num": 29
       },
       {
         "clause": "exit section",
-        "_row_num": 36
+        "_row_num": 30
       }
     ]
   },
@@ -688,7 +672,7 @@
         "setting_name": "survey",
         "display": {
           "title": {
-            "text": "Common JavaScript Framework"
+            "text": "Main list of surveys"
           }
         },
         "_row_num": 5
@@ -716,7 +700,7 @@
         "setting_name": "survey",
         "display": {
           "title": {
-            "text": "Common JavaScript Framework"
+            "text": "Main list of surveys"
           }
         },
         "_row_num": 5
@@ -1245,7 +1229,7 @@
             "promptIdx": 0,
             "display": {
               "title": {
-                "text": "Common JavaScript Framework"
+                "text": "Main list of surveys"
               }
             },
             "_branch_label_enclosing_screen": "survey/0"
@@ -1346,119 +1330,102 @@
             "promptIdx": 0
           },
           {
-            "type": "note",
-            "display": {
-              "prompt": {
-                "text": "This is the default form."
-              },
-              "hint": {
-                "text": "Set your url hash to #formPath=[relative path to form directory]/ to change forms."
-              }
-            },
-            "_row_num": 5,
-            "__rowNum__": 4,
-            "_token_type": "prompt",
-            "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen5",
-            "promptIdx": 1
-          },
-          {
             "url": "'?' + odkSurvey.getHashString('household_items')",
             "type": "external_link",
             "display": {
               "prompt": {
-                "text": "Open form"
+                "text": "Freelist: household items"
               }
             },
-            "_row_num": 10,
-            "__rowNum__": 9,
+            "_row_num": 8,
+            "__rowNum__": 7,
             "_token_type": "prompt",
             "_type": "external_link",
-            "_branch_label_enclosing_screen": "survey/_screen10",
-            "promptIdx": 2
+            "_branch_label_enclosing_screen": "survey/_screen8",
+            "promptIdx": 1
           },
           {
             "url": "'?' + odkSurvey.getHashString('household_cooperation_measures')",
             "type": "external_link",
             "display": {
               "prompt": {
-                "text": "Open form"
+                "text": "Freelist: cooperation measures"
               }
             },
-            "_row_num": 14,
-            "__rowNum__": 13,
+            "_row_num": 12,
+            "__rowNum__": 11,
             "_token_type": "prompt",
             "_type": "external_link",
-            "_branch_label_enclosing_screen": "survey/_screen14",
-            "promptIdx": 3
+            "_branch_label_enclosing_screen": "survey/_screen12",
+            "promptIdx": 2
           },
           {
             "url": "'?' + odkSurvey.getHashString('household_census')",
             "type": "external_link",
             "display": {
               "prompt": {
-                "text": "Open form"
+                "text": "Main household census"
               }
             },
-            "_row_num": 18,
-            "__rowNum__": 17,
+            "_row_num": 16,
+            "__rowNum__": 15,
             "_token_type": "prompt",
             "_type": "external_link",
-            "_branch_label_enclosing_screen": "survey/_screen18",
-            "promptIdx": 4
+            "_branch_label_enclosing_screen": "survey/_screen16",
+            "promptIdx": 3
           },
           {
             "url": "'?' + odkSurvey.getHashString('household_member')",
             "type": "external_link",
             "display": {
               "prompt": {
-                "text": "Open form"
+                "text": "member subform"
               }
             },
-            "_row_num": 22,
-            "__rowNum__": 21,
+            "_row_num": 20,
+            "__rowNum__": 19,
             "_token_type": "prompt",
             "_type": "external_link",
-            "_branch_label_enclosing_screen": "survey/_screen22",
-            "promptIdx": 5
+            "_branch_label_enclosing_screen": "survey/_screen20",
+            "promptIdx": 4
           },
           {
             "url": "'?' + odkSurvey.getHashString('marriages')",
             "type": "external_link",
             "display": {
               "prompt": {
-                "text": "Open form"
+                "text": "marriage subform"
               }
             },
-            "_row_num": 31,
-            "__rowNum__": 30,
+            "_row_num": 25,
+            "__rowNum__": 24,
             "_token_type": "prompt",
             "_type": "external_link",
-            "_branch_label_enclosing_screen": "survey/_screen31",
-            "promptIdx": 6
+            "_branch_label_enclosing_screen": "survey/_screen25",
+            "promptIdx": 5
           },
           {
             "url": "'?' + odkSurvey.getHashString('families')",
             "type": "external_link",
             "display": {
               "prompt": {
-                "text": "Open form"
+                "text": "families subform"
               }
             },
-            "_row_num": 35,
-            "__rowNum__": 34,
+            "_row_num": 29,
+            "__rowNum__": 28,
             "_token_type": "prompt",
             "_type": "external_link",
-            "_branch_label_enclosing_screen": "survey/_screen35",
-            "promptIdx": 7
+            "_branch_label_enclosing_screen": "survey/_screen29",
+            "promptIdx": 6
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 37,
-            "_branch_label_enclosing_screen": "survey/_screen37",
-            "promptIdx": 8
+            "_row_num": 31,
+            "_branch_label_enclosing_screen": "survey/_screen31",
+            "promptIdx": 7
           }
         ],
         "validation_tag_map": {
@@ -1475,7 +1442,7 @@
             "operationIdx": 0
           },
           {
-            "clause": "else",
+            "clause": "end if",
             "_token_type": "goto_label",
             "_branch_label": "_else4",
             "_row_num": 4,
@@ -1490,143 +1457,136 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif6",
-            "_row_num": 6,
+            "_branch_label": "_endif4",
+            "_row_num": 4,
             "operationIdx": 3
           },
           {
+            "clause": "exit section",
             "_row_num": 5,
-            "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
+            "__rowNum__": 4,
+            "_token_type": "exit_section",
             "operationIdx": 4
           },
           {
-            "clause": "exit section",
-            "_row_num": 7,
-            "__rowNum__": 6,
-            "_token_type": "exit_section",
+            "_row_num": 8,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 5
           },
           {
-            "_row_num": 10,
-            "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\n\nreturn activePromptIndicies;\n}\n",
+            "clause": "exit section",
+            "_row_num": 9,
+            "__rowNum__": 8,
+            "_token_type": "exit_section",
             "operationIdx": 6
           },
           {
-            "clause": "exit section",
-            "_row_num": 11,
-            "__rowNum__": 10,
-            "_token_type": "exit_section",
+            "_row_num": 12,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 7
           },
           {
-            "_row_num": 14,
-            "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
+            "clause": "exit section",
+            "_row_num": 13,
+            "__rowNum__": 12,
+            "_token_type": "exit_section",
             "operationIdx": 8
           },
           {
-            "clause": "exit section",
-            "_row_num": 15,
-            "__rowNum__": 14,
-            "_token_type": "exit_section",
+            "_row_num": 16,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 9
           },
           {
-            "_row_num": 18,
-            "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
+            "clause": "exit section",
+            "_row_num": 17,
+            "__rowNum__": 16,
+            "_token_type": "exit_section",
             "operationIdx": 10
           },
           {
-            "clause": "exit section",
-            "_row_num": 19,
-            "__rowNum__": 18,
-            "_token_type": "exit_section",
+            "_row_num": 20,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 11
           },
           {
-            "_row_num": 22,
-            "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
+            "clause": "exit section",
+            "_row_num": 21,
+            "__rowNum__": 20,
+            "_token_type": "exit_section",
             "operationIdx": 12
           },
           {
-            "clause": "exit section",
-            "_row_num": 23,
-            "__rowNum__": 22,
-            "_token_type": "exit_section",
+            "_row_num": 25,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 13
+          },
+          {
+            "clause": "exit section",
+            "_row_num": 26,
+            "__rowNum__": 25,
+            "_token_type": "exit_section",
+            "operationIdx": 14
+          },
+          {
+            "_row_num": 29,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 15
+          },
+          {
+            "clause": "exit section",
+            "_row_num": 30,
+            "__rowNum__": 29,
+            "_token_type": "exit_section",
+            "operationIdx": 16
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 31,
+            "operationIdx": 17
           },
           {
             "_row_num": 31,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 14
-          },
-          {
-            "clause": "exit section",
-            "_row_num": 32,
-            "__rowNum__": 31,
-            "_token_type": "exit_section",
-            "operationIdx": 15
-          },
-          {
-            "_row_num": 35,
-            "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 16
-          },
-          {
-            "clause": "exit section",
-            "_row_num": 36,
-            "__rowNum__": 35,
-            "_token_type": "exit_section",
-            "operationIdx": 17
-          },
-          {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 37,
-            "operationIdx": 18
-          },
-          {
-            "_row_num": 37,
-            "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 19
+            "operationIdx": 18
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 37,
-            "operationIdx": 20
+            "_row_num": 31,
+            "operationIdx": 19
           }
         ],
         "branch_label_map": {
           "_then2": 2,
           "_screen3": 2,
           "_else4": 4,
-          "_screen5": 4,
-          "_endif6": 5,
-          "household_items": 6,
-          "_screen10": 6,
-          "household_cooperation_measures": 8,
-          "_screen14": 8,
-          "household_census": 10,
-          "_screen18": 10,
-          "household_member": 12,
-          "_screen22": 12,
-          "marriages": 14,
-          "_screen31": 14,
-          "families": 16,
-          "_screen35": 16,
-          "_contents": 19,
-          "_screen37": 19
+          "_endif4": 4,
+          "household_items": 5,
+          "_screen8": 5,
+          "household_cooperation_measures": 7,
+          "_screen12": 7,
+          "household_census": 9,
+          "_screen16": 9,
+          "household_member": 11,
+          "_screen20": 11,
+          "marriages": 13,
+          "_screen25": 13,
+          "families": 15,
+          "_screen29": 15,
+          "_contents": 18,
+          "_screen31": 18
         }
       }
     },
@@ -1658,10 +1618,8 @@
         "_aspect": "default",
         "_key": "displayName",
         "_type": "object",
-        "_value": "{\"text\":\"Common JavaScript Framework\"}"
+        "_value": "{\"text\":\"Main list of surveys\"}"
       }
     ]
   }
 }
-could not find setting with name: framework_variant
-could not find setting with name: framework_variant
