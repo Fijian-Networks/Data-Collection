@@ -40,7 +40,7 @@
       },
       {
         "choice_list_name": "marital_choices",
-        "data_value": "married",
+        "data_value": "M",
         "display": {
           "title": {
             "text": "Married"
@@ -50,7 +50,7 @@
       },
       {
         "choice_list_name": "marital_choices",
-        "data_value": "never_married",
+        "data_value": "NM",
         "display": {
           "title": {
             "text": "Never Married"
@@ -60,7 +60,7 @@
       },
       {
         "choice_list_name": "marital_choices",
-        "data_value": "divorced",
+        "data_value": "D",
         "display": {
           "title": {
             "text": "Divorced"
@@ -70,7 +70,7 @@
       },
       {
         "choice_list_name": "marital_choices",
-        "data_value": "separated",
+        "data_value": "S",
         "display": {
           "title": {
             "text": "Separated"
@@ -80,7 +80,7 @@
       },
       {
         "choice_list_name": "marital_choices",
-        "data_value": "widowed",
+        "data_value": "W",
         "display": {
           "title": {
             "text": "Widowed"
@@ -136,21 +136,26 @@
         "_row_num": 2
       },
       {
-        "name": "marriage_id",
-        "type": "string",
-        "_row_num": 3
+        "name": "mstat",
+        "type": "select_one",
+        "_row_num": 4
       },
       {
         "comment": "uuid",
         "name": "person_1",
         "type": "string",
-        "_row_num": 4
+        "_row_num": 6
       },
       {
         "comment": "uuid",
         "name": "person_2",
         "type": "string",
-        "_row_num": 6
+        "_row_num": 8
+      },
+      {
+        "name": "marriage_id",
+        "type": "string",
+        "_row_num": 10
       }
     ],
     "marriages": [
@@ -196,21 +201,29 @@
             "text": "Person 2"
           }
         },
-        "_row_num": 8
+        "_row_num": 7
       },
       {
+        "type": "select_one",
+        "values_list": "marital_choices",
+        "name": "mstat",
+        "display": {
+          "prompt": {
+            "text": "What is their current marital status?"
+          }
+        },
+        "_row_num": 9
+      },
+      {
+        "comment": "temp fix_ spending too long",
         "type": "text",
         "name": "marriage_id",
         "display": {
           "prompt": {
-            "text": "Input first names of both people: separate their names with = if they are married, or != if they are not married but have offspring"
+            "text": "Type first names separated by M, NM, S, D, W:"
           }
         },
-        "_row_num": 10
-      },
-      {
-        "comment": "conditional for other selection above so new person node may be created, making sure live_in_household is false",
-        "_row_num": 12
+        "_row_num": 11
       },
       {
         "type": "note",
@@ -219,7 +232,7 @@
             "text": "If the person is not on the list, please add them to the roster"
           }
         },
-        "_row_num": 14
+        "_row_num": 13
       },
       {
         "type": "linked_table",
@@ -229,11 +242,11 @@
             "text": "Please enter info on person not living in household to the best of your ability"
           }
         },
-        "_row_num": 15
+        "_row_num": 14
       },
       {
         "clause": "end screen",
-        "_row_num": 17
+        "_row_num": 16
       }
     ],
     "queries": [
@@ -372,7 +385,7 @@
       "marital_choices": [
         {
           "choice_list_name": "marital_choices",
-          "data_value": "married",
+          "data_value": "M",
           "display": {
             "title": {
               "text": "Married"
@@ -382,7 +395,7 @@
         },
         {
           "choice_list_name": "marital_choices",
-          "data_value": "never_married",
+          "data_value": "NM",
           "display": {
             "title": {
               "text": "Never Married"
@@ -392,7 +405,7 @@
         },
         {
           "choice_list_name": "marital_choices",
-          "data_value": "divorced",
+          "data_value": "D",
           "display": {
             "title": {
               "text": "Divorced"
@@ -402,7 +415,7 @@
         },
         {
           "choice_list_name": "marital_choices",
-          "data_value": "separated",
+          "data_value": "S",
           "display": {
             "title": {
               "text": "Separated"
@@ -412,7 +425,7 @@
         },
         {
           "choice_list_name": "marital_choices",
-          "data_value": "widowed",
+          "data_value": "W",
           "display": {
             "title": {
               "text": "Widowed"
@@ -462,19 +475,20 @@
         ],
         "elementKey": "household_id"
       },
-      "marriage_id": {
+      "mstat": {
         "type": "string",
+        "valuesList": "marital_choices",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 9,
             "section_name": "marriages"
           },
           {
-            "_row_num": 3,
+            "_row_num": 4,
             "section_name": "model"
           }
         ],
-        "elementKey": "marriage_id"
+        "elementKey": "mstat"
       },
       "person_1": {
         "type": "string",
@@ -485,7 +499,7 @@
             "section_name": "marriages"
           },
           {
-            "_row_num": 4,
+            "_row_num": 6,
             "section_name": "model"
           }
         ],
@@ -497,16 +511,30 @@
         "valuesList": "roster",
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 7,
             "section_name": "marriages"
           },
           {
-            "_row_num": 6,
+            "_row_num": 8,
             "section_name": "model"
           }
         ],
         "comment": "uuid",
         "elementKey": "person_2"
+      },
+      "marriage_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 11,
+            "section_name": "marriages"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "marriage_id"
       }
     },
     "section_names": [
@@ -754,27 +782,44 @@
                 "text": "Person 2"
               }
             },
-            "_row_num": 8,
-            "__rowNum__": 7,
+            "_row_num": 7,
+            "__rowNum__": 6,
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "marriages/_screen2",
             "promptIdx": 3
           },
           {
+            "type": "select_one",
+            "values_list": "marital_choices",
+            "name": "mstat",
+            "display": {
+              "prompt": {
+                "text": "What is their current marital status?"
+              }
+            },
+            "_row_num": 9,
+            "__rowNum__": 8,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "marriages/_screen2",
+            "promptIdx": 4
+          },
+          {
+            "comment": "temp fix_ spending too long",
             "type": "text",
             "name": "marriage_id",
             "display": {
               "prompt": {
-                "text": "Input first names of both people: separate their names with = if they are married, or != if they are not married but have offspring"
+                "text": "Type first names separated by M, NM, S, D, W:"
               }
             },
-            "_row_num": 10,
-            "__rowNum__": 9,
+            "_row_num": 11,
+            "__rowNum__": 10,
             "_token_type": "prompt",
             "_type": "text",
             "_branch_label_enclosing_screen": "marriages/_screen2",
-            "promptIdx": 4
+            "promptIdx": 5
           },
           {
             "type": "note",
@@ -783,12 +828,12 @@
                 "text": "If the person is not on the list, please add them to the roster"
               }
             },
-            "_row_num": 14,
-            "__rowNum__": 13,
+            "_row_num": 13,
+            "__rowNum__": 12,
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "marriages/_screen2",
-            "promptIdx": 5
+            "promptIdx": 6
           },
           {
             "type": "linked_table",
@@ -798,20 +843,20 @@
                 "text": "Please enter info on person not living in household to the best of your ability"
               }
             },
-            "_row_num": 15,
-            "__rowNum__": 14,
+            "_row_num": 14,
+            "__rowNum__": 13,
             "_token_type": "prompt",
             "_type": "linked_table",
             "_branch_label_enclosing_screen": "marriages/_screen2",
-            "promptIdx": 6
+            "promptIdx": 7
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 18,
-            "_branch_label_enclosing_screen": "marriages/_screen18",
-            "promptIdx": 7
+            "_row_num": 17,
+            "_branch_label_enclosing_screen": "marriages/_screen17",
+            "promptIdx": 8
           }
         ],
         "validation_tag_map": {
@@ -825,23 +870,23 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 17,
-              "__rowNum__": 16,
+              "_row_num": 16,
+              "__rowNum__": 15,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 0
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 18,
+            "_row_num": 17,
             "operationIdx": 1
           },
           {
-            "_row_num": 18,
+            "_row_num": 17,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
@@ -850,14 +895,14 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 18,
+            "_row_num": 17,
             "operationIdx": 3
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
           "_contents": 2,
-          "_screen18": 2
+          "_screen17": 2
         }
       }
     },
@@ -875,22 +920,23 @@
         "elementSet": "data",
         "elementPath": "household_id"
       },
-      "marriage_id": {
+      "mstat": {
         "type": "string",
+        "valuesList": "marital_choices",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 9,
             "section_name": "marriages"
           },
           {
-            "_row_num": 3,
+            "_row_num": 4,
             "section_name": "model"
           }
         ],
-        "elementKey": "marriage_id",
-        "elementName": "marriage_id",
+        "elementKey": "mstat",
+        "elementName": "mstat",
         "elementSet": "data",
-        "elementPath": "marriage_id"
+        "elementPath": "mstat"
       },
       "person_1": {
         "type": "string",
@@ -901,7 +947,7 @@
             "section_name": "marriages"
           },
           {
-            "_row_num": 4,
+            "_row_num": 6,
             "section_name": "model"
           }
         ],
@@ -916,11 +962,11 @@
         "valuesList": "roster",
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 7,
             "section_name": "marriages"
           },
           {
-            "_row_num": 6,
+            "_row_num": 8,
             "section_name": "model"
           }
         ],
@@ -929,6 +975,23 @@
         "elementName": "person_2",
         "elementSet": "data",
         "elementPath": "person_2"
+      },
+      "marriage_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 11,
+            "section_name": "marriages"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "marriage_id",
+        "elementName": "marriage_id",
+        "elementSet": "data",
+        "elementPath": "marriage_id"
       },
       "_id": {
         "type": "string",
@@ -1044,6 +1107,13 @@
       }
     },
     "properties": [
+      {
+        "_partition": "Column",
+        "_aspect": "mstat",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"marital_choices\",\"data_value\":\"M\",\"display\":{\"title\":{\"text\":\"Married\"}},\"_row_num\":5},{\"choice_list_name\":\"marital_choices\",\"data_value\":\"NM\",\"display\":{\"title\":{\"text\":\"Never Married\"}},\"_row_num\":6},{\"choice_list_name\":\"marital_choices\",\"data_value\":\"D\",\"display\":{\"title\":{\"text\":\"Divorced\"}},\"_row_num\":7},{\"choice_list_name\":\"marital_choices\",\"data_value\":\"S\",\"display\":{\"title\":{\"text\":\"Separated\"}},\"_row_num\":8},{\"choice_list_name\":\"marital_choices\",\"data_value\":\"W\",\"display\":{\"title\":{\"text\":\"Widowed\"}},\"_row_num\":9}]"
+      },
       {
         "_partition": "FormType",
         "_aspect": "default",

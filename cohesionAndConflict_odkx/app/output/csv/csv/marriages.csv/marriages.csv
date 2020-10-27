@@ -1,3 +1,0 @@
-_id,_form_id,_locale,_savepoint_type,_savepoint_timestamp,_savepoint_creator,household_id,marriage_id,person_1,person_2,_default_access,_group_modify,_group_privileged,_group_read_only,_row_etag,_row_owner
-uuid:2cfd3656-d564-4c6e-ba30-3bf0f16b19d6,marriages,en_NZ,COMPLETE,2020-10-21T22:13:11.669000000,anonymous,Ab_levuka_170.5133368--45.8663428,A_M_B,uuid:59969f6d-670c-4b04-b686-e2b56184bc0a,uuid:d06db8c6-f39e-4b2c-8207-09f6c94f8447,FULL,,,,,anonymous
-uuid:403819fc-5fe9-4567-b054-6103a969df8b,marriages,en_NZ,COMPLETE,2020-10-21T22:14:09.467000000,anonymous,Ab_levuka_170.5133368--45.8663428,B_NM_basdad,uuid:d06db8c6-f39e-4b2c-8207-09f6c94f8447,uuid:6cbc9f0d-441a-4c30-9396-afd01eb51c2e,FULL,,,,,anonymous

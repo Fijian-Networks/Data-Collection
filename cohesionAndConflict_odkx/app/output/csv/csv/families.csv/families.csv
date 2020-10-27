@@ -1,3 +1,0 @@
-_id,_form_id,_locale,_savepoint_type,_savepoint_timestamp,_savepoint_creator,child,family_id,household_id,_default_access,_group_modify,_group_privileged,_group_read_only,_row_etag,_row_owner
-uuid:8977045a-f63c-4762-835b-253ca040469f,families,en_NZ,COMPLETE,2020-10-21T22:14:24.303000000,anonymous,uuid:85aed57a-95d7-42ed-8b09-dfc28aef1531,uuid:2cfd3656-d564-4c6e-ba30-3bf0f16b19d6,Ab_levuka_170.5133368--45.8663428,FULL,,,,,anonymous
-uuid:3ff72764-7e23-4acb-b7da-d131c107d930,families,en_NZ,COMPLETE,2020-10-21T22:14:36.391000000,anonymous,uuid:20c10815-f591-4383-bacc-6c60fb38ec08,uuid:403819fc-5fe9-4567-b054-6103a969df8b,Ab_levuka_170.5133368--45.8663428,FULL,,,,,anonymous

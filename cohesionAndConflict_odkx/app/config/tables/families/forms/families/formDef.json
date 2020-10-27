@@ -39,6 +39,25 @@
         "_row_num": 3
       }
     ],
+    "model": [
+      {
+        "name": "household_id",
+        "type": "string",
+        "_row_num": 2
+      },
+      {
+        "comment": "uuid",
+        "name": "family_id",
+        "type": "string",
+        "_row_num": 4
+      },
+      {
+        "comment": "uuid",
+        "name": "child",
+        "type": "string",
+        "_row_num": 5
+      }
+    ],
     "settings": [
       {
         "setting_name": "form_id",
@@ -77,25 +96,6 @@
           }
         },
         "_row_num": 7
-      }
-    ],
-    "model": [
-      {
-        "name": "household_id",
-        "type": "string",
-        "_row_num": 2
-      },
-      {
-        "comment": "uuid",
-        "name": "family_id",
-        "type": "string",
-        "_row_num": 3
-      },
-      {
-        "comment": "uuid",
-        "name": "child",
-        "type": "string",
-        "_row_num": 4
       }
     ],
     "family": [
@@ -138,7 +138,7 @@
         "name": "child",
         "display": {
           "prompt": {
-            "text": "Child"
+            "text": "Child:"
           }
         },
         "_row_num": 7
@@ -386,7 +386,7 @@
             "section_name": "family"
           },
           {
-            "_row_num": 3,
+            "_row_num": 4,
             "section_name": "model"
           }
         ],
@@ -402,7 +402,7 @@
             "section_name": "family"
           },
           {
-            "_row_num": 4,
+            "_row_num": 5,
             "section_name": "model"
           }
         ],
@@ -652,7 +652,7 @@
             "name": "child",
             "display": {
               "prompt": {
-                "text": "Child"
+                "text": "Child:"
               }
             },
             "_row_num": 7,
@@ -773,7 +773,7 @@
             "section_name": "family"
           },
           {
-            "_row_num": 3,
+            "_row_num": 4,
             "section_name": "model"
           }
         ],
@@ -792,7 +792,7 @@
             "section_name": "family"
           },
           {
-            "_row_num": 4,
+            "_row_num": 5,
             "section_name": "model"
           }
         ],

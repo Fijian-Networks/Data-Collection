@@ -13,6 +13,7 @@
     ],
     "survey": [
       {
+        "comment": "assigns default yes to is_alive",
         "type": "assign",
         "name": "is_alive",
         "calculation": "\"yes\"",
@@ -1351,6 +1352,7 @@
         },
         "operations": [
           {
+            "comment": "assigns default yes to is_alive",
             "type": "assign",
             "name": "is_alive",
             "calculation": "\"yes\"",
