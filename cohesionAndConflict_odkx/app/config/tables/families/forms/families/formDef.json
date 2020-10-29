@@ -42,20 +42,36 @@
     "model": [
       {
         "name": "household_id",
-        "type": "string",
+        "type": "text",
         "_row_num": 2
       },
       {
-        "comment": "uuid",
-        "name": "family_id",
-        "type": "string",
+        "comment": "uuid from linked table",
+        "name": "marriage_uuid",
+        "type": "select_one",
         "_row_num": 4
+      },
+      {
+        "comment": "readable",
+        "name": "family_id",
+        "type": "text",
+        "_row_num": 6
       },
       {
         "comment": "uuid",
         "name": "child",
-        "type": "string",
-        "_row_num": 5
+        "type": "select_one",
+        "_row_num": 8
+      },
+      {
+        "name": "child_name",
+        "type": "text",
+        "_row_num": 9
+      },
+      {
+        "name": "marriage_name",
+        "type": "text",
+        "_row_num": 10
       }
     ],
     "settings": [
@@ -124,7 +140,7 @@
       {
         "type": "select_one",
         "values_list": "marriage_roster",
-        "name": "family_id",
+        "name": "marriage_uuid",
         "display": {
           "prompt": {
             "text": "Parents:"
@@ -168,6 +184,83 @@
       {
         "clause": "end screen",
         "_row_num": 12
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 14
+      },
+      {
+        "comment": "asyncs for child name and family id creation",
+        "type": "async_assign_text_value",
+        "values_list": "marriage_name_query",
+        "name": "marriage_name",
+        "display": {
+          "debug": true
+        },
+        "_row_num": 15
+      },
+      {
+        "type": "async_assign_text_value",
+        "values_list": "child_name_query",
+        "name": "child_name",
+        "display": {
+          "debug": true
+        },
+        "_row_num": 16
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 18
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 19
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": "marr_id :: {{data.marriage_uuid}}"
+          }
+        },
+        "_row_num": 20
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": "marr name :: {{data.marriage_name}}"
+          }
+        },
+        "_row_num": 21
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": "child_id :: {{data.child}}"
+          }
+        },
+        "_row_num": 22
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": "child name :: {{data.child_name}}"
+          }
+        },
+        "_row_num": 23
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 24
+      },
+      {
+        "type": "assign",
+        "name": "family_id",
+        "calculation": "data('marriage_name') + \"=\" + data('child_name')",
+        "_row_num": 25
       }
     ],
     "queries": [
@@ -206,6 +299,48 @@
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'no' }",
         "openRowInitialElementKeyToValueMap": "{}",
         "_row_num": 6
+      },
+      {
+        "comments": "mariage id name",
+        "query_name": "marriage_name_query",
+        "query_type": "linked_table",
+        "linked_form_id": "marriages",
+        "linked_table_id": "marriages",
+        "selection": "_id = ?",
+        "selectionArgs": "[ data('marriage_uuid') ]",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "fieldname": "marriage_id",
+        "_row_num": 9
+      },
+      {
+        "query_name": "child_name_query",
+        "query_type": "linked_table",
+        "linked_form_id": "household_member",
+        "linked_table_id": "household_member",
+        "selection": "_id = ?",
+        "selectionArgs": "[ data('child') ]",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "fieldname": "first_name",
+        "_row_num": 10
+      }
+    ],
+    "prompt_types": [
+      {
+        "prompt_type_name": "async_assign_count",
+        "type": "integer",
+        "_row_num": 3
+      },
+      {
+        "prompt_type_name": "async_assign_num_value",
+        "type": "integer",
+        "_row_num": 4
+      },
+      {
+        "prompt_type_name": "async_assign_text_value",
+        "type": "string",
+        "_row_num": 5
       }
     ]
   },
@@ -363,6 +498,31 @@
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'no' }",
         "openRowInitialElementKeyToValueMap": "{}",
         "_row_num": 6
+      },
+      "marriage_name_query": {
+        "comments": "mariage id name",
+        "query_name": "marriage_name_query",
+        "query_type": "linked_table",
+        "linked_form_id": "marriages",
+        "linked_table_id": "marriages",
+        "selection": "_id = ?",
+        "selectionArgs": "[ data('marriage_uuid') ]",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "fieldname": "marriage_id",
+        "_row_num": 9
+      },
+      "child_name_query": {
+        "query_name": "child_name_query",
+        "query_type": "linked_table",
+        "linked_form_id": "household_member",
+        "linked_table_id": "household_member",
+        "selection": "_id = ?",
+        "selectionArgs": "[ data('child') ]",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "fieldname": "first_name",
+        "_row_num": 10
       }
     },
     "calculates": {},
@@ -377,7 +537,7 @@
         ],
         "elementKey": "household_id"
       },
-      "family_id": {
+      "marriage_uuid": {
         "type": "string",
         "valuesList": "marriage_roster",
         "_defn": [
@@ -390,7 +550,22 @@
             "section_name": "model"
           }
         ],
-        "comment": "uuid",
+        "comment": "uuid from linked table",
+        "elementKey": "marriage_uuid"
+      },
+      "family_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 25,
+            "section_name": "family"
+          },
+          {
+            "_row_num": 6,
+            "section_name": "model"
+          }
+        ],
+        "comment": "readable",
         "elementKey": "family_id"
       },
       "child": {
@@ -402,12 +577,44 @@
             "section_name": "family"
           },
           {
-            "_row_num": 5,
+            "_row_num": 8,
             "section_name": "model"
           }
         ],
         "comment": "uuid",
         "elementKey": "child"
+      },
+      "child_name": {
+        "prompt_type_name": "async_assign_text_value",
+        "type": "string",
+        "valuesList": "child_name_query",
+        "_defn": [
+          {
+            "_row_num": 16,
+            "section_name": "family"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "child_name"
+      },
+      "marriage_name": {
+        "prompt_type_name": "async_assign_text_value",
+        "type": "string",
+        "valuesList": "marriage_name_query",
+        "_defn": [
+          {
+            "_row_num": 15,
+            "section_name": "family"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "marriage_name"
       }
     },
     "section_names": [
@@ -633,7 +840,7 @@
           {
             "type": "select_one",
             "values_list": "marriage_roster",
-            "name": "family_id",
+            "name": "marriage_uuid",
             "display": {
               "prompt": {
                 "text": "Parents:"
@@ -695,12 +902,97 @@
             "promptIdx": 5
           },
           {
+            "comment": "asyncs for child name and family id creation",
+            "type": "async_assign_text_value",
+            "values_list": "marriage_name_query",
+            "name": "marriage_name",
+            "display": {
+              "debug": true
+            },
+            "_row_num": 15,
+            "__rowNum__": 14,
+            "_token_type": "prompt",
+            "_type": "async_assign_text_value",
+            "_branch_label_enclosing_screen": "family/_screen14",
+            "promptIdx": 6
+          },
+          {
+            "type": "async_assign_text_value",
+            "values_list": "child_name_query",
+            "name": "child_name",
+            "display": {
+              "debug": true
+            },
+            "_row_num": 16,
+            "__rowNum__": 15,
+            "_token_type": "prompt",
+            "_type": "async_assign_text_value",
+            "_branch_label_enclosing_screen": "family/_screen14",
+            "promptIdx": 7
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": "marr_id :: {{data.marriage_uuid}}"
+              }
+            },
+            "_row_num": 20,
+            "__rowNum__": 19,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "family/_screen19",
+            "promptIdx": 8
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": "marr name :: {{data.marriage_name}}"
+              }
+            },
+            "_row_num": 21,
+            "__rowNum__": 20,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "family/_screen19",
+            "promptIdx": 9
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": "child_id :: {{data.child}}"
+              }
+            },
+            "_row_num": 22,
+            "__rowNum__": 21,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "family/_screen19",
+            "promptIdx": 10
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": "child name :: {{data.child_name}}"
+              }
+            },
+            "_row_num": 23,
+            "__rowNum__": 22,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "family/_screen19",
+            "promptIdx": 11
+          },
+          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 13,
-            "_branch_label_enclosing_screen": "family/_screen13",
-            "promptIdx": 6
+            "_row_num": 26,
+            "_branch_label_enclosing_screen": "family/_screen26",
+            "promptIdx": 12
           }
         ],
         "validation_tag_map": {
@@ -722,31 +1014,70 @@
             "operationIdx": 0
           },
           {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 13,
+            "clause": "begin screen",
+            "_row_num": 14,
+            "__rowNum__": 13,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 18,
+              "__rowNum__": 17,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 1
           },
           {
-            "_row_num": 13,
+            "clause": "begin screen",
+            "_row_num": 19,
+            "__rowNum__": 18,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 24,
+              "__rowNum__": 23,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\nactivePromptIndicies.push(9);\nactivePromptIndicies.push(10);\nactivePromptIndicies.push(11);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 2
+          },
+          {
+            "type": "assign",
+            "name": "family_id",
+            "calculation": "data('marriage_name') + \"=\" + data('child_name')",
+            "_row_num": 25,
+            "__rowNum__": 24,
+            "_token_type": "assign",
+            "operationIdx": 3
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 26,
+            "operationIdx": 4
+          },
+          {
+            "_row_num": 26,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 2
+            "operationIdx": 5
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 13,
-            "operationIdx": 3
+            "_row_num": 26,
+            "operationIdx": 6
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
-          "_contents": 2,
-          "_screen13": 2
+          "_screen14": 1,
+          "_screen19": 2,
+          "_contents": 5,
+          "_screen26": 5
         }
       }
     },
@@ -764,7 +1095,7 @@
         "elementSet": "data",
         "elementPath": "household_id"
       },
-      "family_id": {
+      "marriage_uuid": {
         "type": "string",
         "valuesList": "marriage_roster",
         "_defn": [
@@ -777,7 +1108,25 @@
             "section_name": "model"
           }
         ],
-        "comment": "uuid",
+        "comment": "uuid from linked table",
+        "elementKey": "marriage_uuid",
+        "elementName": "marriage_uuid",
+        "elementSet": "data",
+        "elementPath": "marriage_uuid"
+      },
+      "family_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 25,
+            "section_name": "family"
+          },
+          {
+            "_row_num": 6,
+            "section_name": "model"
+          }
+        ],
+        "comment": "readable",
         "elementKey": "family_id",
         "elementName": "family_id",
         "elementSet": "data",
@@ -792,7 +1141,7 @@
             "section_name": "family"
           },
           {
-            "_row_num": 5,
+            "_row_num": 8,
             "section_name": "model"
           }
         ],
@@ -801,6 +1150,44 @@
         "elementName": "child",
         "elementSet": "data",
         "elementPath": "child"
+      },
+      "child_name": {
+        "prompt_type_name": "async_assign_text_value",
+        "type": "string",
+        "valuesList": "child_name_query",
+        "_defn": [
+          {
+            "_row_num": 16,
+            "section_name": "family"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "child_name",
+        "elementName": "child_name",
+        "elementSet": "data",
+        "elementPath": "child_name"
+      },
+      "marriage_name": {
+        "prompt_type_name": "async_assign_text_value",
+        "type": "string",
+        "valuesList": "marriage_name_query",
+        "_defn": [
+          {
+            "_row_num": 15,
+            "section_name": "family"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "marriage_name",
+        "elementName": "marriage_name",
+        "elementSet": "data",
+        "elementPath": "marriage_name"
       },
       "_id": {
         "type": "string",
