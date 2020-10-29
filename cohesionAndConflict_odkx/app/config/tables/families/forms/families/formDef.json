@@ -48,7 +48,7 @@
       {
         "comment": "uuid from linked table",
         "name": "marriage_uuid",
-        "type": "select_one",
+        "type": "text",
         "_row_num": 4
       },
       {
