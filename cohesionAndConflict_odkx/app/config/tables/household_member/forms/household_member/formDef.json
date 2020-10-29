@@ -32,7 +32,7 @@
       },
       {
         "clause": "do section demog_continued",
-        "_row_num": 6
+        "_row_num": 5
       }
     ],
     "choices": [
@@ -330,90 +330,90 @@
         "comment": "basic demog",
         "name": "household_id",
         "type": "text",
-        "_row_num": 3
+        "_row_num": 2
       },
       {
         "name": "first_name",
         "type": "text",
-        "_row_num": 4
+        "_row_num": 3
       },
       {
         "name": "last_name",
         "type": "text",
-        "_row_num": 5
+        "_row_num": 4
       },
       {
         "name": "name",
         "type": "text",
-        "_row_num": 6
+        "_row_num": 5
       },
       {
         "name": "age",
         "type": "integer",
-        "_row_num": 7
+        "_row_num": 6
       },
       {
         "name": "sex",
         "type": "select_one",
-        "_row_num": 8
+        "_row_num": 7
       },
       {
         "comment": "demog_continued",
-        "_row_num": 10
+        "_row_num": 9
       },
       {
         "name": "relation_to_head",
         "type": "select_one",
-        "_row_num": 11
+        "_row_num": 10
       },
       {
         "name": "marital_status",
         "type": "select_one",
-        "_row_num": 12
+        "_row_num": 11
       },
       {
         "name": "customary_membership",
         "type": "select_one",
-        "_row_num": 13
+        "_row_num": 12
       },
       {
         "name": "education_years",
         "type": "integer",
-        "_row_num": 14
+        "_row_num": 13
       },
       {
         "name": "has_children",
         "type": "select_one",
-        "_row_num": 15
+        "_row_num": 14
       },
       {
         "comment": "female_questions",
-        "_row_num": 17
+        "_row_num": 16
       },
       {
         "name": "birthplace",
         "type": "text",
-        "_row_num": 18
+        "_row_num": 17
       },
       {
         "comment": "photo",
-        "_row_num": 20
+        "_row_num": 19
       },
       {
         "name": "person_photo",
         "type": "image",
-        "_row_num": 21
+        "_row_num": 20
       },
       {
         "comment": "assigned automatically",
         "name": "lives_in_household",
         "type": "select_one",
-        "_row_num": 23
+        "_row_num": 22
       },
       {
         "name": "is_alive",
         "type": "select_one",
-        "_row_num": 24
+        "_row_num": 23
       }
     ],
     "basic_demog": [
@@ -960,7 +960,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 3,
+            "_row_num": 2,
             "section_name": "model"
           }
         ],
@@ -975,7 +975,7 @@
             "section_name": "basic_demog"
           },
           {
-            "_row_num": 4,
+            "_row_num": 3,
             "section_name": "model"
           }
         ],
@@ -989,7 +989,7 @@
             "section_name": "basic_demog"
           },
           {
-            "_row_num": 5,
+            "_row_num": 4,
             "section_name": "model"
           }
         ],
@@ -1003,7 +1003,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 6,
+            "_row_num": 5,
             "section_name": "model"
           }
         ],
@@ -1017,7 +1017,7 @@
             "section_name": "basic_demog"
           },
           {
-            "_row_num": 7,
+            "_row_num": 6,
             "section_name": "model"
           }
         ],
@@ -1032,7 +1032,7 @@
             "section_name": "basic_demog"
           },
           {
-            "_row_num": 8,
+            "_row_num": 7,
             "section_name": "model"
           }
         ],
@@ -1047,7 +1047,7 @@
             "section_name": "demog_continued"
           },
           {
-            "_row_num": 11,
+            "_row_num": 10,
             "section_name": "model"
           }
         ],
@@ -1062,7 +1062,7 @@
             "section_name": "demog_continued"
           },
           {
-            "_row_num": 12,
+            "_row_num": 11,
             "section_name": "model"
           }
         ],
@@ -1072,7 +1072,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 13,
+            "_row_num": 12,
             "section_name": "model"
           }
         ],
@@ -1086,7 +1086,7 @@
             "section_name": "demog_continued"
           },
           {
-            "_row_num": 14,
+            "_row_num": 13,
             "section_name": "model"
           }
         ],
@@ -1101,7 +1101,7 @@
             "section_name": "demog_continued"
           },
           {
-            "_row_num": 15,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
@@ -1115,7 +1115,7 @@
             "section_name": "demog_continued"
           },
           {
-            "_row_num": 18,
+            "_row_num": 17,
             "section_name": "model"
           }
         ],
@@ -1143,7 +1143,7 @@
             "section_name": "demog_continued"
           },
           {
-            "_row_num": 21,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -1153,7 +1153,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 23,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -1173,7 +1173,7 @@
             "section_name": "basic_demog"
           },
           {
-            "_row_num": 24,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -1325,8 +1325,8 @@
           },
           {
             "clause": "do section demog_continued",
-            "_row_num": 6,
-            "__rowNum__": 5,
+            "_row_num": 5,
+            "__rowNum__": 4,
             "_token_type": "prompt",
             "_do_section_name": "demog_continued",
             "_type": "_section",
@@ -1342,8 +1342,8 @@
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 7,
-            "_branch_label_enclosing_screen": "survey/_screen7",
+            "_row_num": 6,
+            "_branch_label_enclosing_screen": "survey/_screen6",
             "promptIdx": 2
           }
         ],
@@ -1381,8 +1381,8 @@
           },
           {
             "clause": "do section demog_continued",
-            "_row_num": 6,
-            "__rowNum__": 5,
+            "_row_num": 5,
+            "__rowNum__": 4,
             "_token_type": "do_section",
             "_do_section_name": "demog_continued",
             "operationIdx": 3
@@ -1390,11 +1390,11 @@
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 7,
+            "_row_num": 6,
             "operationIdx": 4
           },
           {
-            "_row_num": 7,
+            "_row_num": 6,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
@@ -1405,13 +1405,13 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 7,
+            "_row_num": 6,
             "operationIdx": 6
           }
         ],
         "branch_label_map": {
           "_contents": 5,
-          "_screen7": 5
+          "_screen6": 5
         }
       },
       "basic_demog": {
@@ -1773,7 +1773,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 3,
+            "_row_num": 2,
             "section_name": "model"
           }
         ],
@@ -1791,7 +1791,7 @@
             "section_name": "basic_demog"
           },
           {
-            "_row_num": 4,
+            "_row_num": 3,
             "section_name": "model"
           }
         ],
@@ -1808,7 +1808,7 @@
             "section_name": "basic_demog"
           },
           {
-            "_row_num": 5,
+            "_row_num": 4,
             "section_name": "model"
           }
         ],
@@ -1825,7 +1825,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 6,
+            "_row_num": 5,
             "section_name": "model"
           }
         ],
@@ -1842,7 +1842,7 @@
             "section_name": "basic_demog"
           },
           {
-            "_row_num": 7,
+            "_row_num": 6,
             "section_name": "model"
           }
         ],
@@ -1860,7 +1860,7 @@
             "section_name": "basic_demog"
           },
           {
-            "_row_num": 8,
+            "_row_num": 7,
             "section_name": "model"
           }
         ],
@@ -1878,7 +1878,7 @@
             "section_name": "demog_continued"
           },
           {
-            "_row_num": 11,
+            "_row_num": 10,
             "section_name": "model"
           }
         ],
@@ -1896,7 +1896,7 @@
             "section_name": "demog_continued"
           },
           {
-            "_row_num": 12,
+            "_row_num": 11,
             "section_name": "model"
           }
         ],
@@ -1909,7 +1909,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 13,
+            "_row_num": 12,
             "section_name": "model"
           }
         ],
@@ -1926,7 +1926,7 @@
             "section_name": "demog_continued"
           },
           {
-            "_row_num": 14,
+            "_row_num": 13,
             "section_name": "model"
           }
         ],
@@ -1944,7 +1944,7 @@
             "section_name": "demog_continued"
           },
           {
-            "_row_num": 15,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
@@ -1961,7 +1961,7 @@
             "section_name": "demog_continued"
           },
           {
-            "_row_num": 18,
+            "_row_num": 17,
             "section_name": "model"
           }
         ],
@@ -1998,7 +1998,7 @@
             "section_name": "demog_continued"
           },
           {
-            "_row_num": 21,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -2016,7 +2016,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 23,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -2039,7 +2039,7 @@
             "section_name": "basic_demog"
           },
           {
-            "_row_num": 24,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
