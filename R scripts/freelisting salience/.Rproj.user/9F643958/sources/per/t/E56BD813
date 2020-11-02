@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1599434043142.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3560977036",
+    "id" : "E56BD813",
+    "lastKnownWriteTime" : 1599783619,
+    "last_content_update" : 1599783619187,
+    "path" : "~/Documents/SHAVER_NETWORK/odkX/R_testing/freelisting/convertFreelist.R",
+    "project_path" : "convertFreelist.R",
+    "properties" : {
+        "cursorPosition" : "0,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
