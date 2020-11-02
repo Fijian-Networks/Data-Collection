@@ -263,7 +263,7 @@
         "name": "person_1_name",
         "hideInContents": true,
         "display": {
-          "debug": false
+          "debug": true
         },
         "_row_num": 17
       },
@@ -273,7 +273,7 @@
         "name": "person_2_name",
         "hideInContents": true,
         "display": {
-          "debug": false
+          "debug": true
         },
         "_row_num": 18
       },
@@ -995,7 +995,7 @@
             "name": "person_1_name",
             "hideInContents": true,
             "display": {
-              "debug": false
+              "debug": true
             },
             "_row_num": 17,
             "__rowNum__": 16,
@@ -1010,7 +1010,7 @@
             "name": "person_2_name",
             "hideInContents": true,
             "display": {
-              "debug": false
+              "debug": true
             },
             "_row_num": 18,
             "__rowNum__": 17,

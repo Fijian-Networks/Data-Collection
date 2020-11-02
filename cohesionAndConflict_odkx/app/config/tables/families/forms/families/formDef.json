@@ -47,7 +47,7 @@
       },
       {
         "comment": "uuid from linked table",
-        "name": "marriage_uuid",
+        "name": "marriage_id",
         "type": "select_one",
         "_row_num": 4
       },
@@ -59,7 +59,7 @@
       },
       {
         "comment": "uuid",
-        "name": "child",
+        "name": "child_id",
         "type": "select_one",
         "_row_num": 8
       },
@@ -140,7 +140,7 @@
       {
         "type": "select_one",
         "values_list": "marriage_roster",
-        "name": "marriage_uuid",
+        "name": "marriage_id",
         "display": {
           "prompt": {
             "text": "Parents:"
@@ -151,7 +151,7 @@
       {
         "type": "select_one",
         "values_list": "roster",
-        "name": "child",
+        "name": "child_id",
         "display": {
           "prompt": {
             "text": "Child:"
@@ -220,7 +220,7 @@
         "type": "note",
         "display": {
           "prompt": {
-            "text": "marr_id :: {{data.marriage_uuid}}"
+            "text": "marr_id :: {{data.marriage_id}}"
           }
         },
         "_row_num": 20
@@ -238,7 +238,7 @@
         "type": "note",
         "display": {
           "prompt": {
-            "text": "child_id :: {{data.child}}"
+            "text": "child_id :: {{data.child_id}}"
           }
         },
         "_row_num": 22
@@ -307,10 +307,10 @@
         "linked_form_id": "marriages",
         "linked_table_id": "marriages",
         "selection": "_id = ?",
-        "selectionArgs": "[ data('marriage_uuid') ]",
+        "selectionArgs": "[ data('marriage_id') ]",
         "newRowInitialElementKeyToValueMap": "{}",
         "openRowInitialElementKeyToValueMap": "{}",
-        "fieldname": "marriage_id",
+        "fieldName": "marriage_id",
         "_row_num": 9
       },
       {
@@ -319,10 +319,10 @@
         "linked_form_id": "household_member",
         "linked_table_id": "household_member",
         "selection": "_id = ?",
-        "selectionArgs": "[ data('child') ]",
+        "selectionArgs": "[ data('child_id') ]",
         "newRowInitialElementKeyToValueMap": "{}",
         "openRowInitialElementKeyToValueMap": "{}",
-        "fieldname": "first_name",
+        "fieldName": "first_name",
         "_row_num": 10
       }
     ],
@@ -506,10 +506,10 @@
         "linked_form_id": "marriages",
         "linked_table_id": "marriages",
         "selection": "_id = ?",
-        "selectionArgs": "[ data('marriage_uuid') ]",
+        "selectionArgs": "[ data('marriage_id') ]",
         "newRowInitialElementKeyToValueMap": "{}",
         "openRowInitialElementKeyToValueMap": "{}",
-        "fieldname": "marriage_id",
+        "fieldName": "marriage_id",
         "_row_num": 9
       },
       "child_name_query": {
@@ -518,10 +518,10 @@
         "linked_form_id": "household_member",
         "linked_table_id": "household_member",
         "selection": "_id = ?",
-        "selectionArgs": "[ data('child') ]",
+        "selectionArgs": "[ data('child_id') ]",
         "newRowInitialElementKeyToValueMap": "{}",
         "openRowInitialElementKeyToValueMap": "{}",
-        "fieldname": "first_name",
+        "fieldName": "first_name",
         "_row_num": 10
       }
     },
@@ -537,7 +537,7 @@
         ],
         "elementKey": "household_id"
       },
-      "marriage_uuid": {
+      "marriage_id": {
         "type": "string",
         "valuesList": "marriage_roster",
         "_defn": [
@@ -551,7 +551,7 @@
           }
         ],
         "comment": "uuid from linked table",
-        "elementKey": "marriage_uuid"
+        "elementKey": "marriage_id"
       },
       "family_id": {
         "type": "string",
@@ -568,7 +568,7 @@
         "comment": "readable",
         "elementKey": "family_id"
       },
-      "child": {
+      "child_id": {
         "type": "string",
         "valuesList": "roster",
         "_defn": [
@@ -582,7 +582,7 @@
           }
         ],
         "comment": "uuid",
-        "elementKey": "child"
+        "elementKey": "child_id"
       },
       "child_name": {
         "prompt_type_name": "async_assign_text_value",
@@ -840,7 +840,7 @@
           {
             "type": "select_one",
             "values_list": "marriage_roster",
-            "name": "marriage_uuid",
+            "name": "marriage_id",
             "display": {
               "prompt": {
                 "text": "Parents:"
@@ -856,7 +856,7 @@
           {
             "type": "select_one",
             "values_list": "roster",
-            "name": "child",
+            "name": "child_id",
             "display": {
               "prompt": {
                 "text": "Child:"
@@ -934,7 +934,7 @@
             "type": "note",
             "display": {
               "prompt": {
-                "text": "marr_id :: {{data.marriage_uuid}}"
+                "text": "marr_id :: {{data.marriage_id}}"
               }
             },
             "_row_num": 20,
@@ -962,7 +962,7 @@
             "type": "note",
             "display": {
               "prompt": {
-                "text": "child_id :: {{data.child}}"
+                "text": "child_id :: {{data.child_id}}"
               }
             },
             "_row_num": 22,
@@ -1095,7 +1095,7 @@
         "elementSet": "data",
         "elementPath": "household_id"
       },
-      "marriage_uuid": {
+      "marriage_id": {
         "type": "string",
         "valuesList": "marriage_roster",
         "_defn": [
@@ -1109,10 +1109,10 @@
           }
         ],
         "comment": "uuid from linked table",
-        "elementKey": "marriage_uuid",
-        "elementName": "marriage_uuid",
+        "elementKey": "marriage_id",
+        "elementName": "marriage_id",
         "elementSet": "data",
-        "elementPath": "marriage_uuid"
+        "elementPath": "marriage_id"
       },
       "family_id": {
         "type": "string",
@@ -1132,7 +1132,7 @@
         "elementSet": "data",
         "elementPath": "family_id"
       },
-      "child": {
+      "child_id": {
         "type": "string",
         "valuesList": "roster",
         "_defn": [
@@ -1146,10 +1146,10 @@
           }
         ],
         "comment": "uuid",
-        "elementKey": "child",
-        "elementName": "child",
+        "elementKey": "child_id",
+        "elementName": "child_id",
         "elementSet": "data",
-        "elementPath": "child"
+        "elementPath": "child_id"
       },
       "child_name": {
         "prompt_type_name": "async_assign_text_value",
