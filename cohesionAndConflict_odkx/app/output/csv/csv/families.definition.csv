@@ -1,0 +1,7 @@
+_element_key,_element_name,_element_type,_list_child_element_keys
+child_id,child_id,string,[]
+child_name,child_name,string,[]
+family_id,family_id,string,[]
+household_id,household_id,string,[]
+marriage_id,marriage_id,string,[]
+marriage_name,marriage_name,string,[]
