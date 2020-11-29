@@ -1,0 +1,197 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf610
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28300\viewh16740\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 Census questions:\
+\
+
+\i\b \ul Household id generation :: done outside of house\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\i0\b0 \cf0 \ulnone Take a picture of the house from outside.
+\f0\i\b \ul \
+
+\f1\i0\b0 \ulnone Capture the GPS coordinates of the house.
+\f0\i\b \ul \
+
+\f1\i0\b0 \ulnone Select the village where the household is located.\
+Add readable household ID
+\f0\i\b \ul \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \ulc0 \
+
+\i0 customary_membership
+\i \
+
+\i0\b0 \ulnone Text input for :\
+	Tokatoka\
+	Yavusa\
+	Mataqali\
+	extra notes:
+\i\b \ul \
+\
+Create Household Roster\
+\
+\pard\tx560\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \ulc0 	Household Member:
+\i0\b0 \ulnone 	\
+			
+\b \ul basic demog
+\b0 \ulnone \
+\pard\tx560\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1 \cf0 	Household members first name::\
+	Household members last name:\
+	Age:\
+	Sex:\
+	Is this person alive:  (default yes)\
+
+\f0 \
+			
+\b \ul demog_continued
+\b0 \ulnone \
+\pard\tx560\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx560\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1 \cf0 	What is \{\{data.first_name\}\}'s relation to the head of the household? \
+				[
+\i choices
+\i0 ]
+\i \
+			
+\i0 Head\
+			Spouse\
+			Son/Daughter\
+			Grandchild\
+			Father/Mother\
+			Sister/Brother\
+			Niece/Nephew\
+			Uncle/Aunt\
+			Son/Daughter-in-law\
+			Father/Mother-in-law\
+			Brother/Sister-in-law\
+			Grandparent\
+			Other relative\
+			non-relative	\
+\
+	What is \{\{data.first_name\}\}'s marital status?\
+				[
+\i choices
+\i0 ]
+\i \
+			
+\i0 Married\
+			Never Married\
+			Divorced\
+			Separated\
+			Widowed\
+\
+	How many years of education has \{\{data:first_name\}\} had?\
+	Does \{\{data:first_name\}\} have any children?\
+\pard\tx560\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\b \cf0 	If person female::
+\b0  Where was \{\{data.first_name\}\} born?\
+	Please take a photo of the household member\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+\
+
+\i\b \ul Marriages\
+	\
+
+\i0 	marriage list page:
+\i \
+	
+\i0\b0 \ulnone 	Add as many entries as needed to cover all relationships resulting in offspring.\
+\
+	
+\b \ul marriages questions:\
+
+\b0 \ulnone 		Select the people in a relationship within household. \
+		\
+		If any relationship with someone outside of the current household has resulted in offspring, add the other person to the roster. ::\cf2 (
+\i links to household member add)
+\i0 \cf0 \
+\
+		\
+\
+
+\i\b \ul Families\
+\
+
+\i0 	families list page:\
+
+\i 		
+\i0\b0 \ulnone Create family lists of offspring resulting from the marriages input in previous question:\
+\
+
+\b \ul 	family creation page:\
+		
+\b0 \cf2 \ulnone Select the child and the marriage combination which represents their biological parents:\
+\
+		If the person is not on the list, add them to the roster :: (
+\i links to household member add)\
+			
+\i0 Please enter info on child not living in household to the best of your ability
+\i \
+
+\i0 \
+\
+
+\i\b \ul Asset_Wealth
+\b0 \ulnone \
+
+\i0 	Select which of the following items are present in the household: 
+\i List generated from free listing questionnaire\
+\
+
+\b \ul Income\
+
+\i0\b0 \ulnone 	ask head::
+\i\b \ul \
+		
+\i0\b0 \cf0 \ulnone How much money did you earn in the past week?
+\i \cf2 \
+		
+\i0 \cf0 How did you earn this money?\
+		How much money did your spouse earn in the past week?\
+		How did they earn this money?\
+\
+
+\i\b \ul Food_security
+\i0\b0 \ulnone \
+	In the last year has your household had enough food for three meals a day?\
+\
+\ul 			[
+\i \ulnone choices
+\i0 ]\ul \
+\ulnone 		1 Always had enough\
+		2 Always had enough, but sometimes food was of low quality\
+		3 Didn\'92t have enough a few times a year		\
+		4 Didn\'92t have enough a few times a month\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 		5 Didn\'92t have enough a few times a week\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 		6 Never or almost never had enough\
+\
+
+\i\b \ul Crops_fishing\
+	
+\i0\b0 \ulnone Approximately how many kava plants do you have currently under cultivation?\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 	Approximately how many taro plants do you have currently under cultivation?\
+	Approximately how many cassava plants do you have currently under cultivation?\
+	In an average week, how many days do members of your household go fishing?\
+	On average, how many fish are caught when out fishing?\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\
+\
+}
