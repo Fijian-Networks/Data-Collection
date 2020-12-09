@@ -1,0 +1,53 @@
+class DataSearch extends SearchDelegate<Notes> {
+  DatabaseHelper db = new DatabaseHelper();
+
+  List<Person> persons = new List();
+  List<Person> suggestion = new List();
+  HomeState i = HomeState();
+
+
+
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(icon: Icon(Icons.clear), onPressed: () {
+        query = '';
+      } )
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+      icon: AnimatedIcon(
+        icon: AnimatedIcons.menu_arrow,
+        progress: transitionAnimation,
+      ),
+      onPressed: (){
+        close(context, null);
+      },
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    suggestion = query.isEmpty ? i.items : i.items;/*.where((target) =>
+        target.title.startsWith(query))*/
+    if( i.items.isEmpty)
+    {
+      print("Null");
+    }
+    return ListView.builder(
+      itemBuilder: (context, position)=>
+          ListTile(
+            leading: Icon(Icons.location_city),
+            title: Text('${i.persons[position].first_name}'),
+
+          ),
+      itemCount: suggestion.length,
+    );
+
