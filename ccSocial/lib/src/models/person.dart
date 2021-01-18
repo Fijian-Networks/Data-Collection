@@ -6,9 +6,10 @@ class Person {
   final String lastName;
   final int age;
   final String sex;
-  final String
-      householdId; //TODO Make a seperate entry for village, or parse from houeshold_id
-  final Path photo = null; //TODO sort photo path later
+  final String householdId;
+  final String village;
+  final String photoName;
+  String photoPath;
 
 //constructor method, with all fields
   Person(
@@ -17,7 +18,10 @@ class Person {
       this.lastName,
       this.age,
       this.sex,
-      this.householdId});
+      this.householdId,
+      this.village,
+      this.photoName,
+      this.photoPath});
 
 // method to bring in sqlite entry and create a new Person instance.
 // key value pair, where key is the column name from sqlite database, househole_member
@@ -28,6 +32,37 @@ class Person {
         lastName: json['last_name'],
         age: json['age'],
         sex: json['sex'],
-        householdId: json['household_id']);
+        householdId: json['household_id'],
+        village: json['village'],
+        photoName: json['person_photo_uriFragment'] == null
+            ? ''
+            : json['person_photo_uriFragment']);
+  }
+
+// edits UUID to match path under folder instance, adds photoName
+  String getPhotoPath(String _personInstanceDir) {
+    // For local storage method, return formated instance and image name
+    if (this.photoName == '') {
+      // check if image present
+      this.photoPath = "No Image";
+      return "assets/noImage.jpg";
+    } else {
+      this.photoPath = _personInstanceDir +
+          ((this.uuid + "/" + this.photoName).replaceAll(new RegExp(r"([:,-])"),
+              "_")); //regex to change all '-' and ':' to '_'
+      print(photoPath);
+      return (photoPath);
+    }
+
+    /*  Assets approach... need to update to local storage
+    String householdMemberDirectory =
+        "assets/db/default/household_member/instances/"; //for asset approach
+    if (this.photoName == '') { // check if image present
+      return "assets/db/default/noImage.jpg";
+    } else {
+      return (householdMemberDirectory + this.uuid + "/" + this.photoName)
+          .replaceAll(new RegExp(r"([:,-])"), "_"); //regex to change all '-' and ':' to '_'
+    }
+    */
   }
 }

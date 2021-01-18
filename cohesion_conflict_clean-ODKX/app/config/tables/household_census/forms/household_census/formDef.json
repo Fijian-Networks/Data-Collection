@@ -405,8 +405,9 @@
         "linked_table_id": "household_member",
         "selection": "household_id = ?",
         "selectionArgs": "[ data('household_id') ]",
-        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'yes' }",
+        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'yes', village: data('household_village') }",
         "openRowInitialElementKeyToValueMap": "{}",
+        "comment": "pass household_id and village vars to member, and defaults lives_in_household to yes.",
         "_row_num": 3
       },
       {
@@ -451,6 +452,11 @@
         "name": "household_id",
         "type": "text",
         "_row_num": 2
+      },
+      {
+        "name": "household_village",
+        "type": "select_one",
+        "_row_num": 3
       },
       {
         "name": "customary_membership",
@@ -1268,8 +1274,9 @@
         "linked_table_id": "household_member",
         "selection": "household_id = ?",
         "selectionArgs": "[ data('household_id') ]",
-        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'yes' }",
+        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'yes', village: data('household_village') }",
         "openRowInitialElementKeyToValueMap": "{}",
+        "comment": "pass household_id and village vars to member, and defaults lives_in_household to yes.",
         "_row_num": 3
       },
       "roster": {
@@ -1324,6 +1331,21 @@
           }
         ],
         "elementKey": "household_id"
+      },
+      "household_village": {
+        "type": "string",
+        "valuesList": "village_name",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "id"
+          },
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "household_village"
       },
       "customary_membership": {
         "type": "string",
@@ -1547,17 +1569,6 @@
           }
         },
         "elementKey": "location"
-      },
-      "household_village": {
-        "_defn": [
-          {
-            "_row_num": 5,
-            "section_name": "id"
-          }
-        ],
-        "type": "string",
-        "valuesList": "village_name",
-        "elementKey": "household_village"
       },
       "household_human_id": {
         "_defn": [
@@ -3066,6 +3077,24 @@
         "elementSet": "data",
         "elementPath": "household_id"
       },
+      "household_village": {
+        "type": "string",
+        "valuesList": "village_name",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "id"
+          },
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "household_village",
+        "elementName": "household_village",
+        "elementSet": "data",
+        "elementPath": "household_village"
+      },
       "customary_membership": {
         "type": "string",
         "_defn": [
@@ -3367,20 +3396,6 @@
           "location_longitude"
         ],
         "notUnitOfRetention": true
-      },
-      "household_village": {
-        "_defn": [
-          {
-            "_row_num": 5,
-            "section_name": "id"
-          }
-        ],
-        "type": "string",
-        "valuesList": "village_name",
-        "elementKey": "household_village",
-        "elementName": "household_village",
-        "elementSet": "data",
-        "elementPath": "household_village"
       },
       "household_human_id": {
         "_defn": [

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ccSocial/sqfliteTest.dart';
+import 'package:ccSocial/searchPage.dart';
 
 void main() {
   runApp(MyApp());

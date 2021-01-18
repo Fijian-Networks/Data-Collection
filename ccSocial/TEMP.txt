@@ -1,53 +1,82 @@
-class DataSearch extends SearchDelegate<Notes> {
-  DatabaseHelper db = new DatabaseHelper();
+18.1.21
+[X] Permissions
+[X] path for storage on android
+[X] Use _rootDir to access ODKX folders
+[X] test with photos before loading stored sqlite.db
+[X] no image case needs taking care of
+[ ] Load sqlite db from phone storage
+    redo sqflite db fetch code
 
-  List<Person> persons = new List();
-  List<Person> suggestion = new List();
-  HomeState i = HomeState();
+14.1.21
+    Directory d = Directory('/storage/emulated/0');
+doing :: 
+[ ] Permissions for storage, using Permissions plugin
+[ ] path getting for odkx dir on android device,
 
 
 
-  @override
-  List<Widget> buildActions(BuildContext context) {
-    return [
-      IconButton(icon: Icon(Icons.clear), onPressed: () {
-        query = '';
-      } )
-    ];
-  }
+13.1.21:
+leaving this at:
+    need to figure path stuff to image locations on android, so can point to ODK folder on device. 
+    Means no messing with assets, program will be smaller and more flexible for changing data.
+    
 
-  @override
-  Widget buildLeading(BuildContext context) {
-    return IconButton(
-      icon: AnimatedIcon(
-        icon: AnimatedIcons.menu_arrow,
-        progress: transitionAnimation,
-      ),
-      onPressed: (){
-        close(context, null);
-      },
-    );
-  }
 
-  @override
-  Widget buildResults(BuildContext context) {
-  }
+///
+Passing data from searchpagestate to DetailScreen
+pass info to constructor DONE
 
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    suggestion = query.isEmpty ? i.items : i.items;/*.where((target) =>
-        target.title.startsWith(query))*/
-    if( i.items.isEmpty)
-    {
-      print("Null");
-    }
-    return ListView.builder(
-      itemBuilder: (context, position)=>
-          ListTile(
-            leading: Icon(Icons.location_city),
-            title: Text('${i.persons[position].first_name}'),
 
-          ),
-      itemCount: suggestion.length,
-    );
 
+/////
+Getting path of photos::
+
+uuid from Person object looks like..
+    uuid:121aac7a-c2f6-4483-8e14-72938e2fa88a
+
+needs to look like::
+    uuid_121aac7a_c2f6_4483_8e14_72938e2fa88a
+
+    replace ":" and "-"'s to "_"
+
+regex call:: 
+    new RegExp(r"([:,-])")
+
+path will need to look like::
+    assets/db/default/household_member/instances/uuid_121aac7a_c2f6_4483_8e14_72938e2fa88a/1606684293864_android_id_d588f4d267ed266f.jpg
+
+
+create a script to do this?
+Could extract from odk-x android app, only .db AND household_member/instances/uuid:*/*.jpg
+
+
+
+
+
+
+.////
+from::
+https://stackoverflow.com/questions/56544200/flutter-how-to-get-a-list-of-names-of-all-images-in-assets-directory
+////.
+
+
+"You can also use final manifestContent = await rootBundle.loadString('AssetManifest.json'); 
+instead of DefaultAssetBundle if you want to do this in a place where you don't have a BuildContext. – Javaxtreme Jul 21 at 0:37
+
+
+    Future _initImages() async {
+  // >> To get paths you need these 2 lines
+  final manifestContent = await DefaultAssetBundle.of(context).loadString('AssetManifest.json');
+
+  final Map<String, dynamic> manifestMap = json.decode(manifestContent);
+  // >> To get paths you need these 2 lines
+
+  final imagePaths = manifestMap.keys
+      .where((String key) => key.contains('images/'))
+      .where((String key) => key.contains('.svg'))
+      .toList();
+
+  setState(() {
+    someImages = imagePaths;
+  });
+}
