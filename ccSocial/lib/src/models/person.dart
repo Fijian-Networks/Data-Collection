@@ -24,7 +24,7 @@ class Person {
       this.photoPath});
 
 // method to bring in sqlite entry and create a new Person instance.
-// key value pair, where key is the column name from sqlite database, househole_member
+// key value pair, where key is the column name from sqlite database, household_member
   factory Person.fromJson(Map<String, dynamic> json) {
     return Person(
         uuid: json['_id'],
@@ -53,16 +53,5 @@ class Person {
       print(photoPath);
       return (photoPath);
     }
-
-    /*  Assets approach... need to update to local storage
-    String householdMemberDirectory =
-        "assets/db/default/household_member/instances/"; //for asset approach
-    if (this.photoName == '') { // check if image present
-      return "assets/db/default/noImage.jpg";
-    } else {
-      return (householdMemberDirectory + this.uuid + "/" + this.photoName)
-          .replaceAll(new RegExp(r"([:,-])"), "_"); //regex to change all '-' and ':' to '_'
-    }
-    */
   }
 }

@@ -25,10 +25,8 @@ class DatabaseService {
     } catch (_) {}
 
     var data = File(path).readAsBytesSync();
-
     //write and flush bytes
     await File(path).writeAsBytes(data, flush: true);
-
     //Open the DB
     _db = await openDatabase(path, readOnly: true);
   }

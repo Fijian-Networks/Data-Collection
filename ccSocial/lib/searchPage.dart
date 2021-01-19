@@ -30,6 +30,8 @@ class _SearchPageState extends State<SearchPage> {
   // init searchTerms to empty string
   String searchTerms = '';
 
+  Future<List<Person>> _persons;
+
   @override
   void initState() {
     super.initState();
@@ -51,12 +53,6 @@ class _SearchPageState extends State<SearchPage> {
     _odkxDBPath = _rootDir + "/opendatakit/default/data/webDB/sqlite.db";
     _odkxPersonInstanceDir = _rootDir +
         "/opendatakit/default/data/tables/household_member/instances/";
-
-    //Debug Text
-    print("Permissions :: " + _permissionStatus.toString());
-    print("_rootDir :: " + _rootDir);
-    print("DBPath :: " + _odkxDBPath);
-    print("PersonInstanceDir :: " + _odkxPersonInstanceDir);
 
     setState(() {});
   }
@@ -81,9 +77,9 @@ class _SearchPageState extends State<SearchPage> {
   // TODO: make results appear as datatable?
 
   Widget build(BuildContext context) {
-    //testFileStorage();
     // Searchterms as typed in text
     return Scaffold(
+      // Search text field
       appBar: AppBar(
         title: TextField(
             controller: searchController, //controller to trigger search strings
@@ -95,6 +91,8 @@ class _SearchPageState extends State<SearchPage> {
             )),
       ),
       body: Container(
+        // pass search results to populate list view
+        // TODO: this is where the datatable would be called, if at all...
         child: _searchResults(searchController.text),
       ),
     );
@@ -126,8 +124,8 @@ class _SearchPageState extends State<SearchPage> {
                 // detail screen, overlays image and data
 
                 Navigator.push(context, MaterialPageRoute(builder: (_) {
-                  return DetailScreen(selectedPerson,
-                      _odkxPersonInstanceDir); //need to pass a person object through here.
+                  // pass selected person and their instance directory to the details screen
+                  return DetailScreen(selectedPerson, _odkxPersonInstanceDir);
                 }));
               },
             );

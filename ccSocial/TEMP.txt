@@ -3,6 +3,10 @@
 [X] Load sqlite db from phone storage
 [X] redo sqflite db fetch code
 
+assess if data table view is better
+if data table:: 
+    [ ] add icon if image present, click to show
+    fields:: name, sex, age, photo, village
 
 18.1.21
 [X] Permissions
