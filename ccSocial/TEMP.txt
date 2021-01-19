@@ -1,11 +1,15 @@
+20.1.21
+
+[X] Load sqlite db from phone storage
+[X] redo sqflite db fetch code
+
+
 18.1.21
 [X] Permissions
 [X] path for storage on android
 [X] Use _rootDir to access ODKX folders
 [X] test with photos before loading stored sqlite.db
 [X] no image case needs taking care of
-[ ] Load sqlite db from phone storage
-    redo sqflite db fetch code
 
 14.1.21
     Directory d = Directory('/storage/emulated/0');
