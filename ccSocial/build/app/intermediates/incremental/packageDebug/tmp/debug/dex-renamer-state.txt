@@ -1,0 +1,4 @@
+#Wed Jan 20 11:01:18 NZDT 2021
+base.0=/Users/admin/Documents/SHAVER_NETWORK/cohesionAndConflict/ccSocial/build/app/intermediates/dex/debug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
