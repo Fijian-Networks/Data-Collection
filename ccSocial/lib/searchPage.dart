@@ -18,7 +18,7 @@ class _SearchPageState extends State<SearchPage> {
   // Permission permission;
   PermissionStatus _permissionStatus;
   // Paths
-  String _rootDir, _odkxDBPath, _odkxPersonInstanceDir;
+  String _rootDir, _odkxPersonInstanceDir;
   // init empty db service
   final dbService = DatabaseService();
   // Search text input link for on the fly update of search results
@@ -30,17 +30,14 @@ class _SearchPageState extends State<SearchPage> {
   // init searchTerms to empty string
   String searchTerms = '';
 
-  Future<List<Person>> _persons;
-
   @override
   void initState() {
     super.initState();
-
     initPermissionsState();
     // calls _updateSearchList Method on live text entry
     searchController.addListener(_updateSearchList);
-    // init empty string for TextEditingController
-    searchController.text = '';
+
+    setState(() {});
   }
 
   // permission check and set, Directory loading
@@ -50,11 +47,19 @@ class _SearchPageState extends State<SearchPage> {
     }
 
     _rootDir = await ExtStorage.getExternalStorageDirectory();
-    _odkxDBPath = _rootDir + "/opendatakit/default/data/webDB/sqlite.db";
     _odkxPersonInstanceDir = _rootDir +
         "/opendatakit/default/data/tables/household_member/instances/";
+    dbService.initDatabase();
 
-    setState(() {});
+    setState(() {
+      //init controllerText to empty
+      _clearSearchControllerText();
+    });
+  }
+
+  void _clearSearchControllerText() async {
+    // init empty string for TextEditingController
+    searchController.text = '';
   }
 
   // method called on text input
@@ -73,9 +78,24 @@ class _SearchPageState extends State<SearchPage> {
     super.dispose();
   }
 
-  // UI
-  // TODO: make results appear as datatable?
+// Methods for list interactions, should be in own file?
+// method to copy UUID to clipboard, used on trailing icon in list view
+  // copyToClipboard(Person selectedPerson, BuildContext context) {
+  //   Clipboard.setData(ClipboardData(text: selectedPerson.uuid)).then((result) {
+  //     final copyConfirmation = SnackBar(
+  //       content: Text(
+  //         "Copied to clipboard",
+  //       ),
+  //       action: SnackBarAction(
+  //         label: "OK",
+  //         onPressed: () {},
+  //       ),
+  //     );
+  //     Scaffold.of(context).showSnackBar(copyConfirmation);
+  //   });
+  // }
 
+  // UI
   Widget build(BuildContext context) {
     // Searchterms as typed in text
     return Scaffold(
@@ -89,6 +109,13 @@ class _SearchPageState extends State<SearchPage> {
               hintText: "Search",
               prefixIcon: Icon(Icons.search),
             )),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.clear),
+              onPressed: () {
+                _clearSearchControllerText();
+              })
+        ],
       ),
       body: Container(
         // pass search results to populate list view
@@ -101,34 +128,43 @@ class _SearchPageState extends State<SearchPage> {
   // Method to get search results as a Future<List<Person>>
   FutureBuilder<List<Person>> _searchResults(String searchTerms) {
     return FutureBuilder<List<Person>>(
+      //divider constructor after builder
       future: dbService.getPersons(query: searchTerms),
       builder: (BuildContext context, AsyncSnapshot<List<Person>> snapshot) {
         if (!snapshot.hasData)
           return ListView(
-            children: [Text("loading")],
+            children: [Text("Loading Database...")],
           );
 
-        return ListView.builder(
+        return ListView.separated(
           itemCount: snapshot.data.length,
           itemBuilder: (BuildContext context, int index) {
+            selectedPerson = snapshot.data[index];
             return ListTile(
+              leading: Icon(selectedPerson.photoIcon.icon),
               //this is where we return the data entry variables.
-              title: Text(snapshot.data[index].firstName +
-                  ' ' +
-                  snapshot.data[index].lastName),
-              // On Tap, selects the persons file and stores as selectedPerson.
-              onTap: () {
-                selectedPerson = snapshot.data[index];
+              title: Text(selectedPerson.getName()),
+              subtitle: selectedPerson.detailsSubtitle(),
+              onTap: () {},
+              onLongPress: () {
                 // create photoPath for selectedPerson
-                selectedPerson.getPhotoPath(_odkxPersonInstanceDir);
+                snapshot.data[index].setPhotoPath();
                 // detail screen, overlays image and data
-
                 Navigator.push(context, MaterialPageRoute(builder: (_) {
-                  // pass selected person and their instance directory to the details screen
-                  return DetailScreen(selectedPerson, _odkxPersonInstanceDir);
+                  // pass selected person to the details screen
+                  return DetailScreen(snapshot.data[index]);
                 }));
               },
+              trailing: IconButton(
+                  icon: Icon(Icons.copy),
+                  onPressed: () {
+                    copyToClipboard(snapshot.data[index], context);
+                  }),
             );
+          },
+          // Divider Creation!
+          separatorBuilder: (context, index) {
+            return Divider();
           },
         );
       },
@@ -138,31 +174,64 @@ class _SearchPageState extends State<SearchPage> {
 
 // create new screen containining photo and details to confirm exact human
 class DetailScreen extends StatelessWidget {
-  DetailScreen(this.selectedPerson, this._personInstanceDir);
+  DetailScreen(this.selectedPerson);
   final Person selectedPerson;
-  final String _personInstanceDir;
+  //Text Syle for details
+  final TextStyle _ts = TextStyle(fontSize: 30);
 
   @override
   Widget build(BuildContext context) {
-    //logic to handle no image found
-    // create untyped var to populate with either AssetImage or Image.file
-    var personPhoto;
-    if (selectedPerson.photoName == "") {
-      personPhoto = AssetImage("assets/noImage.jpg");
-    } else {
-      personPhoto =
-          Image.file(File(selectedPerson.getPhotoPath(_personInstanceDir)))
-              .image;
-    }
-
     return Scaffold(
-      body: GestureDetector(
-        child: Center(
-            child: Hero(tag: 'imageHero', child: Image(image: personPhoto))),
-        onTap: () {
-          Navigator.pop(context);
-        },
-      ),
+      key: _scaffoldKey,
+      appBar: AppBar(
+          title:
+              Text(selectedPerson.getName(), style: TextStyle(fontSize: 30))),
+      body: Column(children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            (Text(selectedPerson.getAge(), style: _ts)),
+            (Text("Sex: " + selectedPerson.sex, style: _ts)),
+            (Text("Village: " + selectedPerson.village, style: _ts)),
+            IconButton(
+                icon: Icon(Icons.copy),
+                onPressed: () {
+                  copyToClipboard(selectedPerson,
+                      context); //TODO:Snackbar confirmation for copying
+                })
+          ],
+        ),
+        Expanded(
+          child: Image(image: selectedPerson.photo, fit: BoxFit.fitHeight),
+        )
+      ]),
     );
   }
 }
+
+// Global Methods
+// method to copy UUID to clipboard, used on trailing icon in list view
+copyToClipboard(Person selectedPerson, BuildContext context) {
+  Clipboard.setData(ClipboardData(text: selectedPerson.uuid)).then((result) {
+    // final copyConfirmation = SnackBar(
+    //   content: Text(
+    //     "Copied to clipboard",
+    //   ),
+    //   action: SnackBarAction(
+    //     label: "OK",
+    //     onPressed: () {},
+    //   ),
+    // );
+    Scaffold.of(context).showSnackBar(SnackBar(
+      content: Text(
+        "Copied to clipboard",
+      ),
+      action: SnackBarAction(
+        label: "OK",
+        onPressed: () {},
+      ),
+    ));
+  });
+}
+
+final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();

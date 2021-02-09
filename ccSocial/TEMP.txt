@@ -1,14 +1,55 @@
-20.1.21
 
-[X] Load sqlite db from phone storage
-[X] redo sqflite db fetch code
+[ ] snackbar confirmation for copy to clipboard
 
-assess if data table view is better
-if data table:: 
-    [ ] add icon if image present, click to show
+Next Big tasks::
+
+[ ] create sql test db with hundreds of entries, randomised etc
+
+[ ] assess if data table view is better
+if data table::  perhaps for details screen, next to photo
     fields:: name, sex, age, photo, village
 
-18.1.21
+[ ] Refactor for initial 'release'
+
+[ ] production server install - mid feb for initial 'release'
+
+
+9.2.21 -- not feeling morning work...
+[ ] snackbar confirmation in details screen
+[ ] ODKx social network survey creation
+
+
+28.1.21
+[X] photos not working anymore!!! FIX
+all photo based methods are skipping null checks
+
+[X] Details screen add info and image, with copy to clipboard button
+
+
+
+22.1.21
+
+[X] Meet John @ 11
+smaller tasks:
+    [X] cancel/clear search method, call on init
+    [X] icon to copy uuid to clipboard
+    [X] subtitle age and village
+    [X] age: if null = deceased; if int.length > 3 = dob
+    [X] click on iconButton for photo
+
+
+
+
+20.1.21 //3hours
+[X] DB is not loading now... Why???? FIX!
+[X] Load sqlite db from phone storage
+[X] redo sqflite db fetch code
+[X] copy uuid to clipboard?
+[X] add confirmation of copy
+
+
+
+18.1.21 //3hours?
 [X] Permissions
 [X] path for storage on android
 [X] Use _rootDir to access ODKX folders

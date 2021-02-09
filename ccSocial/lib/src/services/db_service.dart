@@ -1,10 +1,7 @@
 import 'dart:io';
-
-import 'package:flutter/services.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite/sqlite_api.dart';
 import 'package:path/path.dart';
-
 import 'package:ccSocial/src/models/person.dart';
 
 class DatabaseService {
@@ -19,7 +16,8 @@ class DatabaseService {
     var path = join(_dbPath, dbName);
     print("dbPath in db_service :: " + path);
     // TODO: catch errors if no db exists on storage
-    //check if parent directory exists
+    bool exists = await databaseExists(path);
+    print("database exists?  " + exists.toString());
     try {
       await Directory(dirname(path)).create(recursive: true);
     } catch (_) {}
@@ -31,11 +29,11 @@ class DatabaseService {
     _db = await openDatabase(path, readOnly: true);
   }
 
-//Default returns all instances of person from DB,
+// Default returns all instances of person from DB,
 // call with getPersons(query : 'QUERY GOES HERE')
+// TODO: Filter logic goes here?
   Future<List<Person>> getPersons({String query = ''}) async {
     String queryCat;
-    await initDatabase();
     // rawQuery here defines what is selected from DB
     if (query.isEmpty) {
       queryCat =
