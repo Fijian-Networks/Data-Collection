@@ -37,7 +37,7 @@ class Person {
       age: json['age'],
       sex: json['sex'],
       householdId: json['household_id'],
-      village: json['village'],
+      village: json['village'] == null ? 'NA' : json['village'],
       photoName: json['person_photo_uriFragment'],
       photoIcon: json['person_photo_uriFragment'] == null
           ? Icon(Icons.image_not_supported)
@@ -112,5 +112,9 @@ class Person {
       ageText = "Age: " + age.toString();
     }
     return Text(ageText + "    Village: " + this.village);
+  }
+
+  String getSurveyCsv() {
+    return '';
   }
 }

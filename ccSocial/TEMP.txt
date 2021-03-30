@@ -5,13 +5,24 @@ Next Big tasks::
 
 [ ] create sql test db with hundreds of entries, randomised etc
 
-[ ] assess if data table view is better
-if data table::  perhaps for details screen, next to photo
-    fields:: name, sex, age, photo, village
-
 [ ] Refactor for initial 'release'
 
 [ ] production server install - mid feb for initial 'release'
+
+11.2.21
+plan social network app and block out components
+component for questions and answers, mapping to csv output...
+
+
+
+10.2.21
+ started work on odkx survey,
+ odkx doesnt retain state when switching apps.
+ need to create new app from scratch just for social network questions.
+
+ on the plus side, the search app works well when new entries are created in ODKX
+
+back to planning questionaire app...
 
 
 9.2.21 -- not feeling morning work...

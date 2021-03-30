@@ -145,8 +145,7 @@ class _SearchPageState extends State<SearchPage> {
               //this is where we return the data entry variables.
               title: Text(selectedPerson.getName()),
               subtitle: selectedPerson.detailsSubtitle(),
-              onTap: () {},
-              onLongPress: () {
+              onTap: () {
                 // create photoPath for selectedPerson
                 snapshot.data[index].setPhotoPath();
                 // detail screen, overlays image and data

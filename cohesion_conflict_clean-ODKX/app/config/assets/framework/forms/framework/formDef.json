@@ -500,6 +500,26 @@
           }
         },
         "_row_num": 7
+      },
+      {
+        "choice_list_name": "forms",
+        "data_value": "social_network",
+        "display": {
+          "title": {
+            "text": "Social Network survey"
+          }
+        },
+        "_row_num": 8
+      },
+      {
+        "choice_list_name": "forms",
+        "data_value": "social_capital",
+        "display": {
+          "title": {
+            "text": "Social Capital Ranking"
+          }
+        },
+        "_row_num": 9
       }
     ],
     "survey": [
@@ -633,6 +653,42 @@
       {
         "clause": "exit section",
         "_row_num": 30
+      },
+      {
+        "branch_label": "social_network",
+        "_row_num": 32
+      },
+      {
+        "url": "'?' + odkSurvey.getHashString('social_network')",
+        "type": "external_link",
+        "display": {
+          "prompt": {
+            "text": "Social Network Questions"
+          }
+        },
+        "_row_num": 33
+      },
+      {
+        "clause": "exit section",
+        "_row_num": 34
+      },
+      {
+        "branch_label": "social_capital",
+        "_row_num": 36
+      },
+      {
+        "url": "'?' + odkSurvey.getHashString('social_capital')",
+        "type": "external_link",
+        "display": {
+          "prompt": {
+            "text": "Social Capital Ranking"
+          }
+        },
+        "_row_num": 37
+      },
+      {
+        "clause": "exit section",
+        "_row_num": 38
       }
     ]
   },
@@ -767,6 +823,26 @@
             }
           },
           "_row_num": 7
+        },
+        {
+          "choice_list_name": "forms",
+          "data_value": "social_network",
+          "display": {
+            "title": {
+              "text": "Social Network survey"
+            }
+          },
+          "_row_num": 8
+        },
+        {
+          "choice_list_name": "forms",
+          "data_value": "social_capital",
+          "display": {
+            "title": {
+              "text": "Social Capital Ranking"
+            }
+          },
+          "_row_num": 9
         }
       ]
     },
@@ -1420,12 +1496,42 @@
             "promptIdx": 6
           },
           {
+            "url": "'?' + odkSurvey.getHashString('social_network')",
+            "type": "external_link",
+            "display": {
+              "prompt": {
+                "text": "Social Network Questions"
+              }
+            },
+            "_row_num": 33,
+            "__rowNum__": 32,
+            "_token_type": "prompt",
+            "_type": "external_link",
+            "_branch_label_enclosing_screen": "survey/_screen33",
+            "promptIdx": 7
+          },
+          {
+            "url": "'?' + odkSurvey.getHashString('social_capital')",
+            "type": "external_link",
+            "display": {
+              "prompt": {
+                "text": "Social Capital Ranking"
+              }
+            },
+            "_row_num": 37,
+            "__rowNum__": 36,
+            "_token_type": "prompt",
+            "_type": "external_link",
+            "_branch_label_enclosing_screen": "survey/_screen37",
+            "promptIdx": 8
+          },
+          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 31,
-            "_branch_label_enclosing_screen": "survey/_screen31",
-            "promptIdx": 7
+            "_row_num": 39,
+            "_branch_label_enclosing_screen": "survey/_screen39",
+            "promptIdx": 9
           }
         ],
         "validation_tag_map": {
@@ -1547,25 +1653,51 @@
             "operationIdx": 16
           },
           {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 31,
+            "_row_num": 33,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 17
           },
           {
-            "_row_num": 31,
+            "clause": "exit section",
+            "_row_num": 34,
+            "__rowNum__": 33,
+            "_token_type": "exit_section",
+            "operationIdx": 18
+          },
+          {
+            "_row_num": 37,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 19
+          },
+          {
+            "clause": "exit section",
+            "_row_num": 38,
+            "__rowNum__": 37,
+            "_token_type": "exit_section",
+            "operationIdx": 20
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 39,
+            "operationIdx": 21
+          },
+          {
+            "_row_num": 39,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 18
+            "operationIdx": 22
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 31,
-            "operationIdx": 19
+            "_row_num": 39,
+            "operationIdx": 23
           }
         ],
         "branch_label_map": {
@@ -1585,8 +1717,12 @@
           "_screen25": 13,
           "families": 15,
           "_screen29": 15,
-          "_contents": 18,
-          "_screen31": 18
+          "social_network": 17,
+          "_screen33": 17,
+          "social_capital": 19,
+          "_screen37": 19,
+          "_contents": 22,
+          "_screen39": 22
         }
       }
     },

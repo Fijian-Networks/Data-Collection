@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      //links to  sqfliteTest.dart file
-      home: SearchPage(),
+      //links to  searchpage file for testing
+      home: SearchPage(), //need to work on survey app now...
     );
   }
 }
