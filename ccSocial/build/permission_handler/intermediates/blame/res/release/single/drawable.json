@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/admin/Documents/SHAVER_NETWORK/cohesionAndConflict/ccSocial/build/permission_handler/intermediates/res/merged/release/drawable/notification_bg.xml",
+        "source": "/Users/admin/.gradle/caches/transforms-3/f03867b584d7421f901712c5281513f0/transformed/core-1.1.0/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/Users/admin/Documents/SHAVER_NETWORK/cohesionAndConflict/ccSocial/build/permission_handler/intermediates/res/merged/release/drawable/notification_bg_low.xml",
+        "source": "/Users/admin/.gradle/caches/transforms-3/f03867b584d7421f901712c5281513f0/transformed/core-1.1.0/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/Users/admin/Documents/SHAVER_NETWORK/cohesionAndConflict/ccSocial/build/permission_handler/intermediates/res/merged/release/drawable/notification_icon_background.xml",
+        "source": "/Users/admin/.gradle/caches/transforms-3/f03867b584d7421f901712c5281513f0/transformed/core-1.1.0/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/Users/admin/Documents/SHAVER_NETWORK/cohesionAndConflict/ccSocial/build/permission_handler/intermediates/res/merged/release/drawable/notification_tile_bg.xml",
+        "source": "/Users/admin/.gradle/caches/transforms-3/f03867b584d7421f901712c5281513f0/transformed/core-1.1.0/res/drawable/notification_tile_bg.xml"
+    }
+]

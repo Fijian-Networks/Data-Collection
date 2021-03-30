@@ -1,0 +1,4 @@
+#Mon Mar 01 10:19:47 NZDT 2021
+base.0=/Users/admin/Documents/SHAVER_NETWORK/cohesionAndConflict/ccSocial/build/app/intermediates/dex/release/shrunkDex/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

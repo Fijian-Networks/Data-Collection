@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1615512217204.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "146CA0FD",
+    "lastKnownWriteTime" : 4322293248,
+    "last_content_update" : 1615512217204,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "3902E2A",
+        "caption" : "householdMembers",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=householdMembers&cache_key=3902E2A",
+        "displayedObservations" : 21,
+        "environment" : "",
+        "object" : "householdMembers",
+        "preview" : 0,
+        "totalObservations" : 21,
+        "variables" : 29
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

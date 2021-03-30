@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1615235689380.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1567566007",
+    "id" : "4219282D",
+    "lastKnownWriteTime" : 1615502334,
+    "last_content_update" : 1615502334741,
+    "path" : "~/Documents/SHAVER_NETWORK/cohesionAndConflict/R scripts/gramps testing/tidyAndMerge.R",
+    "project_path" : "tidyAndMerge.R",
+    "properties" : {
+        "cursorPosition" : "26,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
