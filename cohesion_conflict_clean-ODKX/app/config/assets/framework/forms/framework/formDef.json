@@ -473,36 +473,6 @@
       },
       {
         "choice_list_name": "forms",
-        "data_value": "household_member",
-        "display": {
-          "title": {
-            "text": "Household Member"
-          }
-        },
-        "_row_num": 5
-      },
-      {
-        "choice_list_name": "forms",
-        "data_value": "marriages",
-        "display": {
-          "title": {
-            "text": "Marriages"
-          }
-        },
-        "_row_num": 6
-      },
-      {
-        "choice_list_name": "forms",
-        "data_value": "families",
-        "display": {
-          "title": {
-            "text": "Families"
-          }
-        },
-        "_row_num": 7
-      },
-      {
-        "choice_list_name": "forms",
         "data_value": "social_network",
         "display": {
           "title": {
@@ -520,6 +490,36 @@
           }
         },
         "_row_num": 9
+      },
+      {
+        "choice_list_name": "forms",
+        "data_value": "household_member",
+        "display": {
+          "title": {
+            "text": ".(member subform)"
+          }
+        },
+        "_row_num": 11
+      },
+      {
+        "choice_list_name": "forms",
+        "data_value": "marriages",
+        "display": {
+          "title": {
+            "text": ".(marriages subform)"
+          }
+        },
+        "_row_num": 12
+      },
+      {
+        "choice_list_name": "forms",
+        "data_value": "families",
+        "display": {
+          "title": {
+            "text": ".(families subform)"
+          }
+        },
+        "_row_num": 13
       }
     ],
     "survey": [
@@ -796,36 +796,6 @@
         },
         {
           "choice_list_name": "forms",
-          "data_value": "household_member",
-          "display": {
-            "title": {
-              "text": "Household Member"
-            }
-          },
-          "_row_num": 5
-        },
-        {
-          "choice_list_name": "forms",
-          "data_value": "marriages",
-          "display": {
-            "title": {
-              "text": "Marriages"
-            }
-          },
-          "_row_num": 6
-        },
-        {
-          "choice_list_name": "forms",
-          "data_value": "families",
-          "display": {
-            "title": {
-              "text": "Families"
-            }
-          },
-          "_row_num": 7
-        },
-        {
-          "choice_list_name": "forms",
           "data_value": "social_network",
           "display": {
             "title": {
@@ -843,6 +813,36 @@
             }
           },
           "_row_num": 9
+        },
+        {
+          "choice_list_name": "forms",
+          "data_value": "household_member",
+          "display": {
+            "title": {
+              "text": ".(member subform)"
+            }
+          },
+          "_row_num": 11
+        },
+        {
+          "choice_list_name": "forms",
+          "data_value": "marriages",
+          "display": {
+            "title": {
+              "text": ".(marriages subform)"
+            }
+          },
+          "_row_num": 12
+        },
+        {
+          "choice_list_name": "forms",
+          "data_value": "families",
+          "display": {
+            "title": {
+              "text": ".(families subform)"
+            }
+          },
+          "_row_num": 13
         }
       ]
     },
