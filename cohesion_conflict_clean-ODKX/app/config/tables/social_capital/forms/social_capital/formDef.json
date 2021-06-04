@@ -14,7 +14,7 @@
       {
         "comment": "social ranking confirmation",
         "clause": "do section social_capital_confirm",
-        "_row_num": 5
+        "_row_num": 6
       }
     ],
     "choices": [
@@ -87,7 +87,7 @@
       },
       {
         "setting_name": "form_version",
-        "value": 20130408,
+        "value": 2,
         "_row_num": 3
       },
       {
@@ -345,7 +345,7 @@
       },
       {
         "clause": "begin screen",
-        "_row_num": 31
+        "_row_num": 30
       },
       {
         "type": "note",
@@ -354,7 +354,7 @@
             "text": "Social Capital Ranking Questions"
           }
         },
-        "_row_num": 32
+        "_row_num": 31
       },
       {
         "type": "note",
@@ -363,7 +363,7 @@
             "text": "Who have the most influence in the community?"
           }
         },
-        "_row_num": 33
+        "_row_num": 32
       },
       {
         "type": "note",
@@ -372,7 +372,7 @@
             "text": "Males names:"
           }
         },
-        "_row_num": 34
+        "_row_num": 33
       },
       {
         "type": "text",
@@ -382,7 +382,7 @@
             "text": "1)"
           }
         },
-        "_row_num": 35
+        "_row_num": 34
       },
       {
         "type": "text",
@@ -392,7 +392,7 @@
             "text": "2)"
           }
         },
-        "_row_num": 37
+        "_row_num": 36
       },
       {
         "type": "text",
@@ -402,7 +402,7 @@
             "text": "3)"
           }
         },
-        "_row_num": 39
+        "_row_num": 38
       },
       {
         "type": "text",
@@ -412,7 +412,7 @@
             "text": "4)"
           }
         },
-        "_row_num": 41
+        "_row_num": 40
       },
       {
         "type": "text",
@@ -422,7 +422,7 @@
             "text": "5)"
           }
         },
-        "_row_num": 43
+        "_row_num": 42
       },
       {
         "type": "note",
@@ -431,7 +431,7 @@
             "text": "Females names:"
           }
         },
-        "_row_num": 44
+        "_row_num": 43
       },
       {
         "type": "text",
@@ -441,7 +441,7 @@
             "text": "1)"
           }
         },
-        "_row_num": 45
+        "_row_num": 44
       },
       {
         "type": "text",
@@ -451,7 +451,7 @@
             "text": "2)"
           }
         },
-        "_row_num": 47
+        "_row_num": 46
       },
       {
         "type": "text",
@@ -461,7 +461,7 @@
             "text": "3)"
           }
         },
-        "_row_num": 49
+        "_row_num": 48
       },
       {
         "type": "text",
@@ -471,7 +471,7 @@
             "text": "4)"
           }
         },
-        "_row_num": 51
+        "_row_num": 50
       },
       {
         "type": "text",
@@ -481,7 +481,7 @@
             "text": "5)"
           }
         },
-        "_row_num": 53
+        "_row_num": 52
       },
       {
         "type": "text",
@@ -491,15 +491,15 @@
             "text": "Comments:"
           }
         },
-        "_row_num": 55
+        "_row_num": 54
       },
       {
         "clause": "end screen",
-        "_row_num": 56
+        "_row_num": 55
       },
       {
         "clause": "begin screen",
-        "_row_num": 59
+        "_row_num": 58
       },
       {
         "type": "note",
@@ -508,7 +508,7 @@
             "text": "Social Capital Ranking Questions"
           }
         },
-        "_row_num": 60
+        "_row_num": 59
       },
       {
         "type": "note",
@@ -517,7 +517,7 @@
             "text": "Who are the most knowledgeable in the community?"
           }
         },
-        "_row_num": 61
+        "_row_num": 60
       },
       {
         "type": "note",
@@ -526,7 +526,7 @@
             "text": "Males names:"
           }
         },
-        "_row_num": 62
+        "_row_num": 61
       },
       {
         "type": "text",
@@ -536,7 +536,7 @@
             "text": "1)"
           }
         },
-        "_row_num": 63
+        "_row_num": 62
       },
       {
         "type": "text",
@@ -546,7 +546,7 @@
             "text": "2)"
           }
         },
-        "_row_num": 65
+        "_row_num": 64
       },
       {
         "type": "text",
@@ -556,7 +556,7 @@
             "text": "3)"
           }
         },
-        "_row_num": 67
+        "_row_num": 66
       },
       {
         "type": "text",
@@ -566,7 +566,7 @@
             "text": "4)"
           }
         },
-        "_row_num": 69
+        "_row_num": 68
       },
       {
         "type": "text",
@@ -576,7 +576,7 @@
             "text": "5)"
           }
         },
-        "_row_num": 71
+        "_row_num": 70
       },
       {
         "type": "note",
@@ -585,7 +585,7 @@
             "text": "Females names:"
           }
         },
-        "_row_num": 72
+        "_row_num": 71
       },
       {
         "type": "text",
@@ -595,7 +595,7 @@
             "text": "1)"
           }
         },
-        "_row_num": 73
+        "_row_num": 72
       },
       {
         "type": "text",
@@ -605,7 +605,7 @@
             "text": "2)"
           }
         },
-        "_row_num": 75
+        "_row_num": 74
       },
       {
         "type": "text",
@@ -615,7 +615,7 @@
             "text": "3)"
           }
         },
-        "_row_num": 77
+        "_row_num": 76
       },
       {
         "type": "text",
@@ -625,7 +625,7 @@
             "text": "4)"
           }
         },
-        "_row_num": 79
+        "_row_num": 78
       },
       {
         "type": "text",
@@ -635,7 +635,7 @@
             "text": "5)"
           }
         },
-        "_row_num": 81
+        "_row_num": 80
       },
       {
         "type": "text",
@@ -645,15 +645,15 @@
             "text": "Comments:"
           }
         },
-        "_row_num": 83
+        "_row_num": 81
       },
       {
         "clause": "end screen",
-        "_row_num": 84
+        "_row_num": 82
       },
       {
         "clause": "begin screen",
-        "_row_num": 87
+        "_row_num": 84
       },
       {
         "type": "note",
@@ -662,16 +662,16 @@
             "text": "Social Capital Ranking Questions"
           }
         },
-        "_row_num": 88
+        "_row_num": 85
       },
       {
         "type": "note",
         "display": {
           "prompt": {
-            "text": "who are the most generous in the community?"
+            "text": "Who are the most generous in the community?"
           }
         },
-        "_row_num": 89
+        "_row_num": 86
       },
       {
         "type": "note",
@@ -680,7 +680,7 @@
             "text": "Males names:"
           }
         },
-        "_row_num": 90
+        "_row_num": 87
       },
       {
         "type": "text",
@@ -690,7 +690,7 @@
             "text": "1)"
           }
         },
-        "_row_num": 91
+        "_row_num": 88
       },
       {
         "type": "text",
@@ -700,7 +700,7 @@
             "text": "2)"
           }
         },
-        "_row_num": 93
+        "_row_num": 90
       },
       {
         "type": "text",
@@ -710,7 +710,7 @@
             "text": "3)"
           }
         },
-        "_row_num": 95
+        "_row_num": 92
       },
       {
         "type": "text",
@@ -720,7 +720,7 @@
             "text": "4)"
           }
         },
-        "_row_num": 97
+        "_row_num": 94
       },
       {
         "type": "text",
@@ -730,7 +730,7 @@
             "text": "5)"
           }
         },
-        "_row_num": 99
+        "_row_num": 96
       },
       {
         "type": "note",
@@ -739,7 +739,7 @@
             "text": "Females names:"
           }
         },
-        "_row_num": 100
+        "_row_num": 97
       },
       {
         "type": "text",
@@ -749,7 +749,7 @@
             "text": "1)"
           }
         },
-        "_row_num": 101
+        "_row_num": 98
       },
       {
         "type": "text",
@@ -759,7 +759,7 @@
             "text": "2)"
           }
         },
-        "_row_num": 103
+        "_row_num": 100
       },
       {
         "type": "text",
@@ -769,7 +769,7 @@
             "text": "3)"
           }
         },
-        "_row_num": 105
+        "_row_num": 102
       },
       {
         "type": "text",
@@ -779,7 +779,7 @@
             "text": "4)"
           }
         },
-        "_row_num": 107
+        "_row_num": 104
       },
       {
         "type": "text",
@@ -789,7 +789,7 @@
             "text": "5)"
           }
         },
-        "_row_num": 109
+        "_row_num": 106
       },
       {
         "type": "text",
@@ -799,15 +799,15 @@
             "text": "Comments:"
           }
         },
-        "_row_num": 111
+        "_row_num": 108
       },
       {
         "clause": "end screen",
-        "_row_num": 112
+        "_row_num": 109
       },
       {
         "clause": "begin screen",
-        "_row_num": 115
+        "_row_num": 111
       },
       {
         "type": "note",
@@ -816,7 +816,7 @@
             "text": "Social Capital Ranking Questions"
           }
         },
-        "_row_num": 116
+        "_row_num": 112
       },
       {
         "type": "note",
@@ -825,7 +825,7 @@
             "text": "Who are the most religious in the community?"
           }
         },
-        "_row_num": 117
+        "_row_num": 113
       },
       {
         "type": "note",
@@ -834,7 +834,7 @@
             "text": "Males names:"
           }
         },
-        "_row_num": 118
+        "_row_num": 114
       },
       {
         "type": "text",
@@ -844,7 +844,7 @@
             "text": "1)"
           }
         },
-        "_row_num": 119
+        "_row_num": 115
       },
       {
         "type": "text",
@@ -854,7 +854,7 @@
             "text": "2)"
           }
         },
-        "_row_num": 121
+        "_row_num": 117
       },
       {
         "type": "text",
@@ -864,7 +864,7 @@
             "text": "3)"
           }
         },
-        "_row_num": 123
+        "_row_num": 119
       },
       {
         "type": "text",
@@ -874,7 +874,7 @@
             "text": "4)"
           }
         },
-        "_row_num": 125
+        "_row_num": 121
       },
       {
         "type": "text",
@@ -884,7 +884,7 @@
             "text": "5)"
           }
         },
-        "_row_num": 127
+        "_row_num": 123
       },
       {
         "type": "note",
@@ -893,7 +893,7 @@
             "text": "Females names:"
           }
         },
-        "_row_num": 128
+        "_row_num": 124
       },
       {
         "type": "text",
@@ -903,7 +903,7 @@
             "text": "1)"
           }
         },
-        "_row_num": 129
+        "_row_num": 125
       },
       {
         "type": "text",
@@ -913,7 +913,7 @@
             "text": "2)"
           }
         },
-        "_row_num": 131
+        "_row_num": 127
       },
       {
         "type": "text",
@@ -923,7 +923,7 @@
             "text": "3)"
           }
         },
-        "_row_num": 133
+        "_row_num": 129
       },
       {
         "type": "text",
@@ -933,7 +933,7 @@
             "text": "4)"
           }
         },
-        "_row_num": 135
+        "_row_num": 131
       },
       {
         "type": "text",
@@ -943,7 +943,7 @@
             "text": "5)"
           }
         },
-        "_row_num": 137
+        "_row_num": 133
       },
       {
         "type": "text",
@@ -953,11 +953,11 @@
             "text": "Comments:"
           }
         },
-        "_row_num": 139
+        "_row_num": 135
       },
       {
         "clause": "end screen",
-        "_row_num": 140
+        "_row_num": 136
       }
     ],
     "queries": [
@@ -991,6 +991,10 @@
       }
     ],
     "social_capital_confirm": [
+      {
+        "comment": "These If statements are horrendous...",
+        "_row_num": 2
+      },
       {
         "clause": "begin screen",
         "_row_num": 3
@@ -4414,7 +4418,7 @@
       },
       "form_version": {
         "setting_name": "form_version",
-        "value": 20130408,
+        "value": 2,
         "_row_num": 3
       },
       "table_id": {
@@ -4926,7 +4930,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 35,
+            "_row_num": 34,
             "section_name": "social_capital"
           },
           {
@@ -4954,7 +4958,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 37,
+            "_row_num": 36,
             "section_name": "social_capital"
           },
           {
@@ -4982,7 +4986,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 39,
+            "_row_num": 38,
             "section_name": "social_capital"
           },
           {
@@ -5010,7 +5014,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 41,
+            "_row_num": 40,
             "section_name": "social_capital"
           },
           {
@@ -5038,7 +5042,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 43,
+            "_row_num": 42,
             "section_name": "social_capital"
           },
           {
@@ -5066,7 +5070,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 45,
+            "_row_num": 44,
             "section_name": "social_capital"
           },
           {
@@ -5094,7 +5098,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 47,
+            "_row_num": 46,
             "section_name": "social_capital"
           },
           {
@@ -5122,7 +5126,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 49,
+            "_row_num": 48,
             "section_name": "social_capital"
           },
           {
@@ -5150,7 +5154,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 51,
+            "_row_num": 50,
             "section_name": "social_capital"
           },
           {
@@ -5178,7 +5182,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 53,
+            "_row_num": 52,
             "section_name": "social_capital"
           },
           {
@@ -5206,7 +5210,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 55,
+            "_row_num": 54,
             "section_name": "social_capital"
           },
           {
@@ -5220,7 +5224,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 62,
             "section_name": "social_capital"
           },
           {
@@ -5248,7 +5252,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 64,
             "section_name": "social_capital"
           },
           {
@@ -5276,7 +5280,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 67,
+            "_row_num": 66,
             "section_name": "social_capital"
           },
           {
@@ -5304,7 +5308,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 69,
+            "_row_num": 68,
             "section_name": "social_capital"
           },
           {
@@ -5332,7 +5336,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 71,
+            "_row_num": 70,
             "section_name": "social_capital"
           },
           {
@@ -5360,7 +5364,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 73,
+            "_row_num": 72,
             "section_name": "social_capital"
           },
           {
@@ -5388,7 +5392,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 75,
+            "_row_num": 74,
             "section_name": "social_capital"
           },
           {
@@ -5416,7 +5420,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 77,
+            "_row_num": 76,
             "section_name": "social_capital"
           },
           {
@@ -5444,7 +5448,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 79,
+            "_row_num": 78,
             "section_name": "social_capital"
           },
           {
@@ -5472,7 +5476,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 81,
+            "_row_num": 80,
             "section_name": "social_capital"
           },
           {
@@ -5500,7 +5504,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 83,
+            "_row_num": 81,
             "section_name": "social_capital"
           },
           {
@@ -5514,7 +5518,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 91,
+            "_row_num": 88,
             "section_name": "social_capital"
           },
           {
@@ -5542,7 +5546,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 93,
+            "_row_num": 90,
             "section_name": "social_capital"
           },
           {
@@ -5570,7 +5574,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 95,
+            "_row_num": 92,
             "section_name": "social_capital"
           },
           {
@@ -5598,7 +5602,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 97,
+            "_row_num": 94,
             "section_name": "social_capital"
           },
           {
@@ -5626,7 +5630,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 99,
+            "_row_num": 96,
             "section_name": "social_capital"
           },
           {
@@ -5654,7 +5658,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 101,
+            "_row_num": 98,
             "section_name": "social_capital"
           },
           {
@@ -5682,7 +5686,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 103,
+            "_row_num": 100,
             "section_name": "social_capital"
           },
           {
@@ -5710,7 +5714,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 105,
+            "_row_num": 102,
             "section_name": "social_capital"
           },
           {
@@ -5738,7 +5742,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 107,
+            "_row_num": 104,
             "section_name": "social_capital"
           },
           {
@@ -5766,7 +5770,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 109,
+            "_row_num": 106,
             "section_name": "social_capital"
           },
           {
@@ -5794,7 +5798,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 111,
+            "_row_num": 108,
             "section_name": "social_capital"
           },
           {
@@ -5808,7 +5812,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 119,
+            "_row_num": 115,
             "section_name": "social_capital"
           },
           {
@@ -5836,7 +5840,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 121,
+            "_row_num": 117,
             "section_name": "social_capital"
           },
           {
@@ -5864,7 +5868,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 123,
+            "_row_num": 119,
             "section_name": "social_capital"
           },
           {
@@ -5892,7 +5896,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 125,
+            "_row_num": 121,
             "section_name": "social_capital"
           },
           {
@@ -5920,7 +5924,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 127,
+            "_row_num": 123,
             "section_name": "social_capital"
           },
           {
@@ -5948,7 +5952,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 129,
+            "_row_num": 125,
             "section_name": "social_capital"
           },
           {
@@ -5976,7 +5980,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 131,
+            "_row_num": 127,
             "section_name": "social_capital"
           },
           {
@@ -6004,7 +6008,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 133,
+            "_row_num": 129,
             "section_name": "social_capital"
           },
           {
@@ -6032,7 +6036,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 135,
+            "_row_num": 131,
             "section_name": "social_capital"
           },
           {
@@ -6060,7 +6064,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 137,
+            "_row_num": 133,
             "section_name": "social_capital"
           },
           {
@@ -6088,7 +6092,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 139,
+            "_row_num": 135,
             "section_name": "social_capital"
           },
           {
@@ -6155,8 +6159,8 @@
           {
             "comment": "social ranking confirmation",
             "clause": "do section social_capital_confirm",
-            "_row_num": 5,
-            "__rowNum__": 4,
+            "_row_num": 6,
+            "__rowNum__": 5,
             "_token_type": "prompt",
             "_do_section_name": "social_capital_confirm",
             "_type": "_section",
@@ -6172,8 +6176,8 @@
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 6,
-            "_branch_label_enclosing_screen": "survey/_screen6",
+            "_row_num": 7,
+            "_branch_label_enclosing_screen": "survey/_screen7",
             "promptIdx": 3
           }
         ],
@@ -6202,8 +6206,8 @@
           {
             "comment": "social ranking confirmation",
             "clause": "do section social_capital_confirm",
-            "_row_num": 5,
-            "__rowNum__": 4,
+            "_row_num": 6,
+            "__rowNum__": 5,
             "_token_type": "do_section",
             "_do_section_name": "social_capital_confirm",
             "operationIdx": 2
@@ -6211,11 +6215,11 @@
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 6,
+            "_row_num": 7,
             "operationIdx": 3
           },
           {
-            "_row_num": 6,
+            "_row_num": 7,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
@@ -6226,13 +6230,13 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 6,
+            "_row_num": 7,
             "operationIdx": 5
           }
         ],
         "branch_label_map": {
           "_contents": 4,
-          "_screen6": 4
+          "_screen7": 4
         }
       },
       "intro": {
@@ -6633,11 +6637,11 @@
                 "text": "Social Capital Ranking Questions"
               }
             },
-            "_row_num": 32,
-            "__rowNum__": 31,
+            "_row_num": 31,
+            "__rowNum__": 30,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "social_capital/_screen31",
+            "_branch_label_enclosing_screen": "social_capital/_screen30",
             "promptIdx": 15
           },
           {
@@ -6647,11 +6651,11 @@
                 "text": "Who have the most influence in the community?"
               }
             },
-            "_row_num": 33,
-            "__rowNum__": 32,
+            "_row_num": 32,
+            "__rowNum__": 31,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "social_capital/_screen31",
+            "_branch_label_enclosing_screen": "social_capital/_screen30",
             "promptIdx": 16
           },
           {
@@ -6661,11 +6665,11 @@
                 "text": "Males names:"
               }
             },
-            "_row_num": 34,
-            "__rowNum__": 33,
+            "_row_num": 33,
+            "__rowNum__": 32,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "social_capital/_screen31",
+            "_branch_label_enclosing_screen": "social_capital/_screen30",
             "promptIdx": 17
           },
           {
@@ -6676,11 +6680,11 @@
                 "text": "1)"
               }
             },
-            "_row_num": 35,
-            "__rowNum__": 34,
+            "_row_num": 34,
+            "__rowNum__": 33,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen31",
+            "_branch_label_enclosing_screen": "social_capital/_screen30",
             "promptIdx": 18
           },
           {
@@ -6691,11 +6695,11 @@
                 "text": "2)"
               }
             },
-            "_row_num": 37,
-            "__rowNum__": 36,
+            "_row_num": 36,
+            "__rowNum__": 35,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen31",
+            "_branch_label_enclosing_screen": "social_capital/_screen30",
             "promptIdx": 19
           },
           {
@@ -6706,11 +6710,11 @@
                 "text": "3)"
               }
             },
-            "_row_num": 39,
-            "__rowNum__": 38,
+            "_row_num": 38,
+            "__rowNum__": 37,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen31",
+            "_branch_label_enclosing_screen": "social_capital/_screen30",
             "promptIdx": 20
           },
           {
@@ -6721,11 +6725,11 @@
                 "text": "4)"
               }
             },
-            "_row_num": 41,
-            "__rowNum__": 40,
+            "_row_num": 40,
+            "__rowNum__": 39,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen31",
+            "_branch_label_enclosing_screen": "social_capital/_screen30",
             "promptIdx": 21
           },
           {
@@ -6736,11 +6740,11 @@
                 "text": "5)"
               }
             },
-            "_row_num": 43,
-            "__rowNum__": 42,
+            "_row_num": 42,
+            "__rowNum__": 41,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen31",
+            "_branch_label_enclosing_screen": "social_capital/_screen30",
             "promptIdx": 22
           },
           {
@@ -6750,11 +6754,11 @@
                 "text": "Females names:"
               }
             },
-            "_row_num": 44,
-            "__rowNum__": 43,
+            "_row_num": 43,
+            "__rowNum__": 42,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "social_capital/_screen31",
+            "_branch_label_enclosing_screen": "social_capital/_screen30",
             "promptIdx": 23
           },
           {
@@ -6765,11 +6769,11 @@
                 "text": "1)"
               }
             },
-            "_row_num": 45,
-            "__rowNum__": 44,
+            "_row_num": 44,
+            "__rowNum__": 43,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen31",
+            "_branch_label_enclosing_screen": "social_capital/_screen30",
             "promptIdx": 24
           },
           {
@@ -6780,11 +6784,11 @@
                 "text": "2)"
               }
             },
-            "_row_num": 47,
-            "__rowNum__": 46,
+            "_row_num": 46,
+            "__rowNum__": 45,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen31",
+            "_branch_label_enclosing_screen": "social_capital/_screen30",
             "promptIdx": 25
           },
           {
@@ -6795,11 +6799,11 @@
                 "text": "3)"
               }
             },
-            "_row_num": 49,
-            "__rowNum__": 48,
+            "_row_num": 48,
+            "__rowNum__": 47,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen31",
+            "_branch_label_enclosing_screen": "social_capital/_screen30",
             "promptIdx": 26
           },
           {
@@ -6810,11 +6814,11 @@
                 "text": "4)"
               }
             },
-            "_row_num": 51,
-            "__rowNum__": 50,
+            "_row_num": 50,
+            "__rowNum__": 49,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen31",
+            "_branch_label_enclosing_screen": "social_capital/_screen30",
             "promptIdx": 27
           },
           {
@@ -6825,11 +6829,11 @@
                 "text": "5)"
               }
             },
-            "_row_num": 53,
-            "__rowNum__": 52,
+            "_row_num": 52,
+            "__rowNum__": 51,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen31",
+            "_branch_label_enclosing_screen": "social_capital/_screen30",
             "promptIdx": 28
           },
           {
@@ -6840,11 +6844,11 @@
                 "text": "Comments:"
               }
             },
-            "_row_num": 55,
-            "__rowNum__": 54,
+            "_row_num": 54,
+            "__rowNum__": 53,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen31",
+            "_branch_label_enclosing_screen": "social_capital/_screen30",
             "promptIdx": 29
           },
           {
@@ -6854,11 +6858,11 @@
                 "text": "Social Capital Ranking Questions"
               }
             },
-            "_row_num": 60,
-            "__rowNum__": 59,
+            "_row_num": 59,
+            "__rowNum__": 58,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "social_capital/_screen59",
+            "_branch_label_enclosing_screen": "social_capital/_screen58",
             "promptIdx": 30
           },
           {
@@ -6868,11 +6872,11 @@
                 "text": "Who are the most knowledgeable in the community?"
               }
             },
-            "_row_num": 61,
-            "__rowNum__": 60,
+            "_row_num": 60,
+            "__rowNum__": 59,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "social_capital/_screen59",
+            "_branch_label_enclosing_screen": "social_capital/_screen58",
             "promptIdx": 31
           },
           {
@@ -6882,11 +6886,11 @@
                 "text": "Males names:"
               }
             },
-            "_row_num": 62,
-            "__rowNum__": 61,
+            "_row_num": 61,
+            "__rowNum__": 60,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "social_capital/_screen59",
+            "_branch_label_enclosing_screen": "social_capital/_screen58",
             "promptIdx": 32
           },
           {
@@ -6897,11 +6901,11 @@
                 "text": "1)"
               }
             },
-            "_row_num": 63,
-            "__rowNum__": 62,
+            "_row_num": 62,
+            "__rowNum__": 61,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen59",
+            "_branch_label_enclosing_screen": "social_capital/_screen58",
             "promptIdx": 33
           },
           {
@@ -6912,11 +6916,11 @@
                 "text": "2)"
               }
             },
-            "_row_num": 65,
-            "__rowNum__": 64,
+            "_row_num": 64,
+            "__rowNum__": 63,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen59",
+            "_branch_label_enclosing_screen": "social_capital/_screen58",
             "promptIdx": 34
           },
           {
@@ -6927,11 +6931,11 @@
                 "text": "3)"
               }
             },
-            "_row_num": 67,
-            "__rowNum__": 66,
+            "_row_num": 66,
+            "__rowNum__": 65,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen59",
+            "_branch_label_enclosing_screen": "social_capital/_screen58",
             "promptIdx": 35
           },
           {
@@ -6942,11 +6946,11 @@
                 "text": "4)"
               }
             },
-            "_row_num": 69,
-            "__rowNum__": 68,
+            "_row_num": 68,
+            "__rowNum__": 67,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen59",
+            "_branch_label_enclosing_screen": "social_capital/_screen58",
             "promptIdx": 36
           },
           {
@@ -6957,11 +6961,11 @@
                 "text": "5)"
               }
             },
-            "_row_num": 71,
-            "__rowNum__": 70,
+            "_row_num": 70,
+            "__rowNum__": 69,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen59",
+            "_branch_label_enclosing_screen": "social_capital/_screen58",
             "promptIdx": 37
           },
           {
@@ -6971,11 +6975,11 @@
                 "text": "Females names:"
               }
             },
-            "_row_num": 72,
-            "__rowNum__": 71,
+            "_row_num": 71,
+            "__rowNum__": 70,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "social_capital/_screen59",
+            "_branch_label_enclosing_screen": "social_capital/_screen58",
             "promptIdx": 38
           },
           {
@@ -6986,11 +6990,11 @@
                 "text": "1)"
               }
             },
-            "_row_num": 73,
-            "__rowNum__": 72,
+            "_row_num": 72,
+            "__rowNum__": 71,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen59",
+            "_branch_label_enclosing_screen": "social_capital/_screen58",
             "promptIdx": 39
           },
           {
@@ -7001,11 +7005,11 @@
                 "text": "2)"
               }
             },
-            "_row_num": 75,
-            "__rowNum__": 74,
+            "_row_num": 74,
+            "__rowNum__": 73,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen59",
+            "_branch_label_enclosing_screen": "social_capital/_screen58",
             "promptIdx": 40
           },
           {
@@ -7016,11 +7020,11 @@
                 "text": "3)"
               }
             },
-            "_row_num": 77,
-            "__rowNum__": 76,
+            "_row_num": 76,
+            "__rowNum__": 75,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen59",
+            "_branch_label_enclosing_screen": "social_capital/_screen58",
             "promptIdx": 41
           },
           {
@@ -7031,11 +7035,11 @@
                 "text": "4)"
               }
             },
-            "_row_num": 79,
-            "__rowNum__": 78,
+            "_row_num": 78,
+            "__rowNum__": 77,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen59",
+            "_branch_label_enclosing_screen": "social_capital/_screen58",
             "promptIdx": 42
           },
           {
@@ -7046,11 +7050,11 @@
                 "text": "5)"
               }
             },
-            "_row_num": 81,
-            "__rowNum__": 80,
+            "_row_num": 80,
+            "__rowNum__": 79,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen59",
+            "_branch_label_enclosing_screen": "social_capital/_screen58",
             "promptIdx": 43
           },
           {
@@ -7061,11 +7065,11 @@
                 "text": "Comments:"
               }
             },
-            "_row_num": 83,
-            "__rowNum__": 82,
+            "_row_num": 81,
+            "__rowNum__": 80,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen59",
+            "_branch_label_enclosing_screen": "social_capital/_screen58",
             "promptIdx": 44
           },
           {
@@ -7075,25 +7079,25 @@
                 "text": "Social Capital Ranking Questions"
               }
             },
-            "_row_num": 88,
-            "__rowNum__": 87,
+            "_row_num": 85,
+            "__rowNum__": 84,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "social_capital/_screen87",
+            "_branch_label_enclosing_screen": "social_capital/_screen84",
             "promptIdx": 45
           },
           {
             "type": "note",
             "display": {
               "prompt": {
-                "text": "who are the most generous in the community?"
+                "text": "Who are the most generous in the community?"
               }
             },
-            "_row_num": 89,
-            "__rowNum__": 88,
+            "_row_num": 86,
+            "__rowNum__": 85,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "social_capital/_screen87",
+            "_branch_label_enclosing_screen": "social_capital/_screen84",
             "promptIdx": 46
           },
           {
@@ -7103,11 +7107,11 @@
                 "text": "Males names:"
               }
             },
-            "_row_num": 90,
-            "__rowNum__": 89,
+            "_row_num": 87,
+            "__rowNum__": 86,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "social_capital/_screen87",
+            "_branch_label_enclosing_screen": "social_capital/_screen84",
             "promptIdx": 47
           },
           {
@@ -7118,11 +7122,11 @@
                 "text": "1)"
               }
             },
-            "_row_num": 91,
-            "__rowNum__": 90,
+            "_row_num": 88,
+            "__rowNum__": 87,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen87",
+            "_branch_label_enclosing_screen": "social_capital/_screen84",
             "promptIdx": 48
           },
           {
@@ -7133,11 +7137,11 @@
                 "text": "2)"
               }
             },
-            "_row_num": 93,
-            "__rowNum__": 92,
+            "_row_num": 90,
+            "__rowNum__": 89,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen87",
+            "_branch_label_enclosing_screen": "social_capital/_screen84",
             "promptIdx": 49
           },
           {
@@ -7148,11 +7152,11 @@
                 "text": "3)"
               }
             },
-            "_row_num": 95,
-            "__rowNum__": 94,
+            "_row_num": 92,
+            "__rowNum__": 91,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen87",
+            "_branch_label_enclosing_screen": "social_capital/_screen84",
             "promptIdx": 50
           },
           {
@@ -7163,11 +7167,11 @@
                 "text": "4)"
               }
             },
-            "_row_num": 97,
-            "__rowNum__": 96,
+            "_row_num": 94,
+            "__rowNum__": 93,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen87",
+            "_branch_label_enclosing_screen": "social_capital/_screen84",
             "promptIdx": 51
           },
           {
@@ -7178,11 +7182,11 @@
                 "text": "5)"
               }
             },
-            "_row_num": 99,
-            "__rowNum__": 98,
+            "_row_num": 96,
+            "__rowNum__": 95,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen87",
+            "_branch_label_enclosing_screen": "social_capital/_screen84",
             "promptIdx": 52
           },
           {
@@ -7192,11 +7196,11 @@
                 "text": "Females names:"
               }
             },
-            "_row_num": 100,
-            "__rowNum__": 99,
+            "_row_num": 97,
+            "__rowNum__": 96,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "social_capital/_screen87",
+            "_branch_label_enclosing_screen": "social_capital/_screen84",
             "promptIdx": 53
           },
           {
@@ -7207,11 +7211,11 @@
                 "text": "1)"
               }
             },
-            "_row_num": 101,
-            "__rowNum__": 100,
+            "_row_num": 98,
+            "__rowNum__": 97,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen87",
+            "_branch_label_enclosing_screen": "social_capital/_screen84",
             "promptIdx": 54
           },
           {
@@ -7222,11 +7226,11 @@
                 "text": "2)"
               }
             },
-            "_row_num": 103,
-            "__rowNum__": 102,
+            "_row_num": 100,
+            "__rowNum__": 99,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen87",
+            "_branch_label_enclosing_screen": "social_capital/_screen84",
             "promptIdx": 55
           },
           {
@@ -7237,11 +7241,11 @@
                 "text": "3)"
               }
             },
-            "_row_num": 105,
-            "__rowNum__": 104,
+            "_row_num": 102,
+            "__rowNum__": 101,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen87",
+            "_branch_label_enclosing_screen": "social_capital/_screen84",
             "promptIdx": 56
           },
           {
@@ -7252,11 +7256,11 @@
                 "text": "4)"
               }
             },
-            "_row_num": 107,
-            "__rowNum__": 106,
+            "_row_num": 104,
+            "__rowNum__": 103,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen87",
+            "_branch_label_enclosing_screen": "social_capital/_screen84",
             "promptIdx": 57
           },
           {
@@ -7267,11 +7271,11 @@
                 "text": "5)"
               }
             },
-            "_row_num": 109,
-            "__rowNum__": 108,
+            "_row_num": 106,
+            "__rowNum__": 105,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen87",
+            "_branch_label_enclosing_screen": "social_capital/_screen84",
             "promptIdx": 58
           },
           {
@@ -7282,11 +7286,11 @@
                 "text": "Comments:"
               }
             },
-            "_row_num": 111,
-            "__rowNum__": 110,
+            "_row_num": 108,
+            "__rowNum__": 107,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen87",
+            "_branch_label_enclosing_screen": "social_capital/_screen84",
             "promptIdx": 59
           },
           {
@@ -7296,11 +7300,11 @@
                 "text": "Social Capital Ranking Questions"
               }
             },
-            "_row_num": 116,
-            "__rowNum__": 115,
+            "_row_num": 112,
+            "__rowNum__": 111,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "social_capital/_screen115",
+            "_branch_label_enclosing_screen": "social_capital/_screen111",
             "promptIdx": 60
           },
           {
@@ -7310,11 +7314,11 @@
                 "text": "Who are the most religious in the community?"
               }
             },
-            "_row_num": 117,
-            "__rowNum__": 116,
+            "_row_num": 113,
+            "__rowNum__": 112,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "social_capital/_screen115",
+            "_branch_label_enclosing_screen": "social_capital/_screen111",
             "promptIdx": 61
           },
           {
@@ -7324,11 +7328,11 @@
                 "text": "Males names:"
               }
             },
-            "_row_num": 118,
-            "__rowNum__": 117,
+            "_row_num": 114,
+            "__rowNum__": 113,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "social_capital/_screen115",
+            "_branch_label_enclosing_screen": "social_capital/_screen111",
             "promptIdx": 62
           },
           {
@@ -7339,11 +7343,11 @@
                 "text": "1)"
               }
             },
-            "_row_num": 119,
-            "__rowNum__": 118,
+            "_row_num": 115,
+            "__rowNum__": 114,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen115",
+            "_branch_label_enclosing_screen": "social_capital/_screen111",
             "promptIdx": 63
           },
           {
@@ -7354,11 +7358,11 @@
                 "text": "2)"
               }
             },
-            "_row_num": 121,
-            "__rowNum__": 120,
+            "_row_num": 117,
+            "__rowNum__": 116,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen115",
+            "_branch_label_enclosing_screen": "social_capital/_screen111",
             "promptIdx": 64
           },
           {
@@ -7369,11 +7373,11 @@
                 "text": "3)"
               }
             },
-            "_row_num": 123,
-            "__rowNum__": 122,
+            "_row_num": 119,
+            "__rowNum__": 118,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen115",
+            "_branch_label_enclosing_screen": "social_capital/_screen111",
             "promptIdx": 65
           },
           {
@@ -7384,11 +7388,11 @@
                 "text": "4)"
               }
             },
-            "_row_num": 125,
-            "__rowNum__": 124,
+            "_row_num": 121,
+            "__rowNum__": 120,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen115",
+            "_branch_label_enclosing_screen": "social_capital/_screen111",
             "promptIdx": 66
           },
           {
@@ -7399,11 +7403,11 @@
                 "text": "5)"
               }
             },
-            "_row_num": 127,
-            "__rowNum__": 126,
+            "_row_num": 123,
+            "__rowNum__": 122,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen115",
+            "_branch_label_enclosing_screen": "social_capital/_screen111",
             "promptIdx": 67
           },
           {
@@ -7413,11 +7417,11 @@
                 "text": "Females names:"
               }
             },
-            "_row_num": 128,
-            "__rowNum__": 127,
+            "_row_num": 124,
+            "__rowNum__": 123,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "social_capital/_screen115",
+            "_branch_label_enclosing_screen": "social_capital/_screen111",
             "promptIdx": 68
           },
           {
@@ -7428,11 +7432,11 @@
                 "text": "1)"
               }
             },
-            "_row_num": 129,
-            "__rowNum__": 128,
+            "_row_num": 125,
+            "__rowNum__": 124,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen115",
+            "_branch_label_enclosing_screen": "social_capital/_screen111",
             "promptIdx": 69
           },
           {
@@ -7443,11 +7447,11 @@
                 "text": "2)"
               }
             },
-            "_row_num": 131,
-            "__rowNum__": 130,
+            "_row_num": 127,
+            "__rowNum__": 126,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen115",
+            "_branch_label_enclosing_screen": "social_capital/_screen111",
             "promptIdx": 70
           },
           {
@@ -7458,11 +7462,11 @@
                 "text": "3)"
               }
             },
-            "_row_num": 133,
-            "__rowNum__": 132,
+            "_row_num": 129,
+            "__rowNum__": 128,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen115",
+            "_branch_label_enclosing_screen": "social_capital/_screen111",
             "promptIdx": 71
           },
           {
@@ -7473,11 +7477,11 @@
                 "text": "4)"
               }
             },
-            "_row_num": 135,
-            "__rowNum__": 134,
+            "_row_num": 131,
+            "__rowNum__": 130,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen115",
+            "_branch_label_enclosing_screen": "social_capital/_screen111",
             "promptIdx": 72
           },
           {
@@ -7488,11 +7492,11 @@
                 "text": "5)"
               }
             },
-            "_row_num": 137,
-            "__rowNum__": 136,
+            "_row_num": 133,
+            "__rowNum__": 132,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen115",
+            "_branch_label_enclosing_screen": "social_capital/_screen111",
             "promptIdx": 73
           },
           {
@@ -7503,19 +7507,19 @@
                 "text": "Comments:"
               }
             },
-            "_row_num": 139,
-            "__rowNum__": 138,
+            "_row_num": 135,
+            "__rowNum__": 134,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "social_capital/_screen115",
+            "_branch_label_enclosing_screen": "social_capital/_screen111",
             "promptIdx": 74
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 141,
-            "_branch_label_enclosing_screen": "social_capital/_screen141",
+            "_row_num": 137,
+            "_branch_label_enclosing_screen": "social_capital/_screen137",
             "promptIdx": 75
           }
         ],
@@ -7539,13 +7543,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 31,
-            "__rowNum__": 30,
+            "_row_num": 30,
+            "__rowNum__": 29,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 56,
-              "__rowNum__": 55,
+              "_row_num": 55,
+              "__rowNum__": 54,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(15);\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\nactivePromptIndicies.push(26);\nactivePromptIndicies.push(27);\nactivePromptIndicies.push(28);\nactivePromptIndicies.push(29);\n\nreturn activePromptIndicies;\n}\n",
@@ -7553,13 +7557,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 59,
-            "__rowNum__": 58,
+            "_row_num": 58,
+            "__rowNum__": 57,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 84,
-              "__rowNum__": 83,
+              "_row_num": 82,
+              "__rowNum__": 81,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\nactivePromptIndicies.push(32);\nactivePromptIndicies.push(33);\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\nactivePromptIndicies.push(36);\nactivePromptIndicies.push(37);\nactivePromptIndicies.push(38);\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\nactivePromptIndicies.push(41);\nactivePromptIndicies.push(42);\nactivePromptIndicies.push(43);\nactivePromptIndicies.push(44);\n\nreturn activePromptIndicies;\n}\n",
@@ -7567,13 +7571,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 87,
-            "__rowNum__": 86,
+            "_row_num": 84,
+            "__rowNum__": 83,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 112,
-              "__rowNum__": 111,
+              "_row_num": 109,
+              "__rowNum__": 108,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(45);\nactivePromptIndicies.push(46);\nactivePromptIndicies.push(47);\nactivePromptIndicies.push(48);\nactivePromptIndicies.push(49);\nactivePromptIndicies.push(50);\nactivePromptIndicies.push(51);\nactivePromptIndicies.push(52);\nactivePromptIndicies.push(53);\nactivePromptIndicies.push(54);\nactivePromptIndicies.push(55);\nactivePromptIndicies.push(56);\nactivePromptIndicies.push(57);\nactivePromptIndicies.push(58);\nactivePromptIndicies.push(59);\n\nreturn activePromptIndicies;\n}\n",
@@ -7581,13 +7585,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 115,
-            "__rowNum__": 114,
+            "_row_num": 111,
+            "__rowNum__": 110,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 140,
-              "__rowNum__": 139,
+              "_row_num": 136,
+              "__rowNum__": 135,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(60);\nactivePromptIndicies.push(61);\nactivePromptIndicies.push(62);\nactivePromptIndicies.push(63);\nactivePromptIndicies.push(64);\nactivePromptIndicies.push(65);\nactivePromptIndicies.push(66);\nactivePromptIndicies.push(67);\nactivePromptIndicies.push(68);\nactivePromptIndicies.push(69);\nactivePromptIndicies.push(70);\nactivePromptIndicies.push(71);\nactivePromptIndicies.push(72);\nactivePromptIndicies.push(73);\nactivePromptIndicies.push(74);\n\nreturn activePromptIndicies;\n}\n",
@@ -7596,11 +7600,11 @@
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 141,
+            "_row_num": 137,
             "operationIdx": 5
           },
           {
-            "_row_num": 141,
+            "_row_num": 137,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(75);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
@@ -7611,18 +7615,18 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 141,
+            "_row_num": 137,
             "operationIdx": 7
           }
         ],
         "branch_label_map": {
           "_screen3": 0,
-          "_screen31": 1,
-          "_screen59": 2,
-          "_screen87": 3,
-          "_screen115": 4,
+          "_screen30": 1,
+          "_screen58": 2,
+          "_screen84": 3,
+          "_screen111": 4,
           "_contents": 6,
-          "_screen141": 6
+          "_screen137": 6
         }
       },
       "social_capital_confirm": {
@@ -13326,7 +13330,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 35,
+            "_row_num": 34,
             "section_name": "social_capital"
           },
           {
@@ -13360,7 +13364,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 37,
+            "_row_num": 36,
             "section_name": "social_capital"
           },
           {
@@ -13394,7 +13398,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 39,
+            "_row_num": 38,
             "section_name": "social_capital"
           },
           {
@@ -13428,7 +13432,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 41,
+            "_row_num": 40,
             "section_name": "social_capital"
           },
           {
@@ -13462,7 +13466,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 43,
+            "_row_num": 42,
             "section_name": "social_capital"
           },
           {
@@ -13496,7 +13500,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 45,
+            "_row_num": 44,
             "section_name": "social_capital"
           },
           {
@@ -13530,7 +13534,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 47,
+            "_row_num": 46,
             "section_name": "social_capital"
           },
           {
@@ -13564,7 +13568,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 49,
+            "_row_num": 48,
             "section_name": "social_capital"
           },
           {
@@ -13598,7 +13602,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 51,
+            "_row_num": 50,
             "section_name": "social_capital"
           },
           {
@@ -13632,7 +13636,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 53,
+            "_row_num": 52,
             "section_name": "social_capital"
           },
           {
@@ -13666,7 +13670,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 55,
+            "_row_num": 54,
             "section_name": "social_capital"
           },
           {
@@ -13683,7 +13687,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 62,
             "section_name": "social_capital"
           },
           {
@@ -13717,7 +13721,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 64,
             "section_name": "social_capital"
           },
           {
@@ -13751,7 +13755,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 67,
+            "_row_num": 66,
             "section_name": "social_capital"
           },
           {
@@ -13785,7 +13789,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 69,
+            "_row_num": 68,
             "section_name": "social_capital"
           },
           {
@@ -13819,7 +13823,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 71,
+            "_row_num": 70,
             "section_name": "social_capital"
           },
           {
@@ -13853,7 +13857,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 73,
+            "_row_num": 72,
             "section_name": "social_capital"
           },
           {
@@ -13887,7 +13891,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 75,
+            "_row_num": 74,
             "section_name": "social_capital"
           },
           {
@@ -13921,7 +13925,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 77,
+            "_row_num": 76,
             "section_name": "social_capital"
           },
           {
@@ -13955,7 +13959,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 79,
+            "_row_num": 78,
             "section_name": "social_capital"
           },
           {
@@ -13989,7 +13993,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 81,
+            "_row_num": 80,
             "section_name": "social_capital"
           },
           {
@@ -14023,7 +14027,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 83,
+            "_row_num": 81,
             "section_name": "social_capital"
           },
           {
@@ -14040,7 +14044,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 91,
+            "_row_num": 88,
             "section_name": "social_capital"
           },
           {
@@ -14074,7 +14078,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 93,
+            "_row_num": 90,
             "section_name": "social_capital"
           },
           {
@@ -14108,7 +14112,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 95,
+            "_row_num": 92,
             "section_name": "social_capital"
           },
           {
@@ -14142,7 +14146,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 97,
+            "_row_num": 94,
             "section_name": "social_capital"
           },
           {
@@ -14176,7 +14180,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 99,
+            "_row_num": 96,
             "section_name": "social_capital"
           },
           {
@@ -14210,7 +14214,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 101,
+            "_row_num": 98,
             "section_name": "social_capital"
           },
           {
@@ -14244,7 +14248,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 103,
+            "_row_num": 100,
             "section_name": "social_capital"
           },
           {
@@ -14278,7 +14282,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 105,
+            "_row_num": 102,
             "section_name": "social_capital"
           },
           {
@@ -14312,7 +14316,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 107,
+            "_row_num": 104,
             "section_name": "social_capital"
           },
           {
@@ -14346,7 +14350,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 109,
+            "_row_num": 106,
             "section_name": "social_capital"
           },
           {
@@ -14380,7 +14384,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 111,
+            "_row_num": 108,
             "section_name": "social_capital"
           },
           {
@@ -14397,7 +14401,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 119,
+            "_row_num": 115,
             "section_name": "social_capital"
           },
           {
@@ -14431,7 +14435,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 121,
+            "_row_num": 117,
             "section_name": "social_capital"
           },
           {
@@ -14465,7 +14469,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 123,
+            "_row_num": 119,
             "section_name": "social_capital"
           },
           {
@@ -14499,7 +14503,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 125,
+            "_row_num": 121,
             "section_name": "social_capital"
           },
           {
@@ -14533,7 +14537,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 127,
+            "_row_num": 123,
             "section_name": "social_capital"
           },
           {
@@ -14567,7 +14571,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 129,
+            "_row_num": 125,
             "section_name": "social_capital"
           },
           {
@@ -14601,7 +14605,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 131,
+            "_row_num": 127,
             "section_name": "social_capital"
           },
           {
@@ -14635,7 +14639,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 133,
+            "_row_num": 129,
             "section_name": "social_capital"
           },
           {
@@ -14669,7 +14673,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 135,
+            "_row_num": 131,
             "section_name": "social_capital"
           },
           {
@@ -14703,7 +14707,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 137,
+            "_row_num": 133,
             "section_name": "social_capital"
           },
           {
@@ -14737,7 +14741,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 139,
+            "_row_num": 135,
             "section_name": "social_capital"
           },
           {

@@ -493,7 +493,7 @@
             "text": "What is {{data.first_name}}'s relation to the head of the household?"
           }
         },
-        "_row_num": 3
+        "_row_num": 4
       },
       {
         "type": "text",
@@ -503,13 +503,13 @@
             "text": "Where was {{data.first_name}} born?"
           }
         },
-        "_row_num": 4
+        "_row_num": 5
       },
       {
         "clause": "if",
         "condition": "data('age') >= 18",
         "required": "data('age') >=16",
-        "_row_num": 5
+        "_row_num": 6
       },
       {
         "type": "select_one_dropdown",
@@ -520,16 +520,16 @@
             "text": "What is {{data.first_name}}'s marital status?"
           }
         },
-        "_row_num": 6
+        "_row_num": 7
       },
       {
         "clause": "end if",
-        "_row_num": 7
+        "_row_num": 8
       },
       {
         "clause": "if",
         "condition": "data('age') >= 5",
-        "_row_num": 9
+        "_row_num": 10
       },
       {
         "type": "integer",
@@ -539,17 +539,17 @@
             "text": "How many years of education has {{data.first_name}} had?"
           }
         },
-        "_row_num": 10
+        "_row_num": 11
       },
       {
         "clause": "end if",
-        "_row_num": 11
+        "_row_num": 12
       },
       {
         "clause": "if",
         "condition": "data('age') >= 15",
         "required": "data('age') >= 16",
-        "_row_num": 13
+        "_row_num": 14
       },
       {
         "type": "select_one",
@@ -560,11 +560,11 @@
             "text": "Does {{data.first_name}} have any children?"
           }
         },
-        "_row_num": 14
+        "_row_num": 15
       },
       {
         "clause": "end if",
-        "_row_num": 15
+        "_row_num": 16
       },
       {
         "clause": "end screen",
@@ -1026,7 +1026,7 @@
         "valuesList": "relationships",
         "_defn": [
           {
-            "_row_num": 3,
+            "_row_num": 4,
             "section_name": "demog_continued"
           },
           {
@@ -1041,7 +1041,7 @@
         "valuesList": "marital_choices",
         "_defn": [
           {
-            "_row_num": 6,
+            "_row_num": 7,
             "section_name": "demog_continued"
           },
           {
@@ -1065,7 +1065,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 11,
             "section_name": "demog_continued"
           },
           {
@@ -1080,7 +1080,7 @@
         "valuesList": "yesno",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 15,
             "section_name": "demog_continued"
           },
           {
@@ -1094,7 +1094,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 4,
+            "_row_num": 5,
             "section_name": "demog_continued"
           },
           {
@@ -1562,8 +1562,8 @@
                 "text": "What is {{data.first_name}}'s relation to the head of the household?"
               }
             },
-            "_row_num": 3,
-            "__rowNum__": 2,
+            "_row_num": 4,
+            "__rowNum__": 3,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
             "_branch_label_enclosing_screen": "demog_continued/_screen2",
@@ -1577,8 +1577,8 @@
                 "text": "Where was {{data.first_name}} born?"
               }
             },
-            "_row_num": 4,
-            "__rowNum__": 3,
+            "_row_num": 5,
+            "__rowNum__": 4,
             "_token_type": "prompt",
             "_type": "text",
             "_branch_label_enclosing_screen": "demog_continued/_screen2",
@@ -1593,8 +1593,8 @@
                 "text": "What is {{data.first_name}}'s marital status?"
               }
             },
-            "_row_num": 6,
-            "__rowNum__": 5,
+            "_row_num": 7,
+            "__rowNum__": 6,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
             "_branch_label_enclosing_screen": "demog_continued/_screen2",
@@ -1608,8 +1608,8 @@
                 "text": "How many years of education has {{data.first_name}} had?"
               }
             },
-            "_row_num": 10,
-            "__rowNum__": 9,
+            "_row_num": 11,
+            "__rowNum__": 10,
             "_token_type": "prompt",
             "_type": "integer",
             "_branch_label_enclosing_screen": "demog_continued/_screen2",
@@ -1624,8 +1624,8 @@
                 "text": "Does {{data.first_name}} have any children?"
               }
             },
-            "_row_num": 14,
-            "__rowNum__": 13,
+            "_row_num": 15,
+            "__rowNum__": 14,
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "demog_continued/_screen2",
@@ -1836,7 +1836,7 @@
         "valuesList": "relationships",
         "_defn": [
           {
-            "_row_num": 3,
+            "_row_num": 4,
             "section_name": "demog_continued"
           },
           {
@@ -1854,7 +1854,7 @@
         "valuesList": "marital_choices",
         "_defn": [
           {
-            "_row_num": 6,
+            "_row_num": 7,
             "section_name": "demog_continued"
           },
           {
@@ -1884,7 +1884,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 11,
             "section_name": "demog_continued"
           },
           {
@@ -1902,7 +1902,7 @@
         "valuesList": "yesno",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 15,
             "section_name": "demog_continued"
           },
           {
@@ -1919,7 +1919,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 4,
+            "_row_num": 5,
             "section_name": "demog_continued"
           },
           {

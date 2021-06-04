@@ -185,25 +185,27 @@ class DetailScreen extends StatelessWidget {
       appBar: AppBar(
           title:
               Text(selectedPerson.getName(), style: TextStyle(fontSize: 30))),
-      body: Column(children: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            (Text(selectedPerson.getAge(), style: _ts)),
-            (Text("Sex: " + selectedPerson.sex, style: _ts)),
-            (Text("Village: " + selectedPerson.village, style: _ts)),
-            IconButton(
-                icon: Icon(Icons.copy),
-                onPressed: () {
-                  copyToClipboard(selectedPerson,
-                      context); //TODO:Snackbar confirmation for copying
-                })
-          ],
-        ),
-        Expanded(
-          child: Image(image: selectedPerson.photo, fit: BoxFit.fitHeight),
-        )
-      ]),
+      body: Builder(
+        builder: (context) => Column(children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              (Text(selectedPerson.getAge(), style: _ts)),
+              (Text("Sex: " + selectedPerson.sex, style: _ts)),
+              (Text("Village: " + selectedPerson.village, style: _ts)),
+              IconButton(
+                  icon: Icon(Icons.copy),
+                  onPressed: () {
+                    copyToClipboard(selectedPerson,
+                        context); //TODO:Snackbar confirmation for copying
+                  })
+            ],
+          ),
+          Expanded(
+            child: Image(image: selectedPerson.photo, fit: BoxFit.fitHeight),
+          )
+        ]),
+      ),
     );
   }
 }

@@ -449,6 +449,7 @@
             "text": "Freelisting: Household Items"
           }
         },
+        "comment": "Initial freelisting forms",
         "_row_num": 2
       },
       {
@@ -469,7 +470,8 @@
             "text": "Household Ethnographic Census"
           }
         },
-        "_row_num": 4
+        "comment": "Main census form",
+        "_row_num": 5
       },
       {
         "choice_list_name": "forms",
@@ -479,7 +481,8 @@
             "text": "Social Network survey"
           }
         },
-        "_row_num": 8
+        "comment": "SNA edge/node data gathering",
+        "_row_num": 7
       },
       {
         "choice_list_name": "forms",
@@ -489,7 +492,7 @@
             "text": "Social Capital Ranking"
           }
         },
-        "_row_num": 9
+        "_row_num": 8
       },
       {
         "choice_list_name": "forms",
@@ -499,7 +502,8 @@
             "text": ".(member subform)"
           }
         },
-        "_row_num": 11
+        "comment": "These forms are called from other forms",
+        "_row_num": 10
       },
       {
         "choice_list_name": "forms",
@@ -509,7 +513,8 @@
             "text": ".(marriages subform)"
           }
         },
-        "_row_num": 12
+        "comment": "These are not to be used on their own",
+        "_row_num": 11
       },
       {
         "choice_list_name": "forms",
@@ -519,7 +524,7 @@
             "text": ".(families subform)"
           }
         },
-        "_row_num": 13
+        "_row_num": 12
       }
     ],
     "survey": [
@@ -772,6 +777,7 @@
               "text": "Freelisting: Household Items"
             }
           },
+          "comment": "Initial freelisting forms",
           "_row_num": 2
         },
         {
@@ -792,7 +798,8 @@
               "text": "Household Ethnographic Census"
             }
           },
-          "_row_num": 4
+          "comment": "Main census form",
+          "_row_num": 5
         },
         {
           "choice_list_name": "forms",
@@ -802,7 +809,8 @@
               "text": "Social Network survey"
             }
           },
-          "_row_num": 8
+          "comment": "SNA edge/node data gathering",
+          "_row_num": 7
         },
         {
           "choice_list_name": "forms",
@@ -812,7 +820,7 @@
               "text": "Social Capital Ranking"
             }
           },
-          "_row_num": 9
+          "_row_num": 8
         },
         {
           "choice_list_name": "forms",
@@ -822,7 +830,8 @@
               "text": ".(member subform)"
             }
           },
-          "_row_num": 11
+          "comment": "These forms are called from other forms",
+          "_row_num": 10
         },
         {
           "choice_list_name": "forms",
@@ -832,7 +841,8 @@
               "text": ".(marriages subform)"
             }
           },
-          "_row_num": 12
+          "comment": "These are not to be used on their own",
+          "_row_num": 11
         },
         {
           "choice_list_name": "forms",
@@ -842,7 +852,7 @@
               "text": ".(families subform)"
             }
           },
-          "_row_num": 13
+          "_row_num": 12
         }
       ]
     },
