@@ -1,0 +1,16 @@
+personID,firstName,lastName,sex,age,householdID,livesInHousehold,village,isAlive,hasChildren
+undefined,NA,NA,NA,NA,NA,NA,NA,NA,NA
+uuid:fa554ff9-99b6-4e31-8a23-6db3bc2e624a,Boss,Ding,male,44,H1_levuka_170.54246601--45.84418119,yes,levuka,yes,yes
+uuid:cb3db41d-664f-41a9-b7de-43c9facb2894,Betty,Ding,female,30,H1_levuka_170.54246601--45.84418119,yes,levuka,yes,yes
+uuid:cbfaebde-f64b-4f78-a605-8f6f1a40449a,Bobby,Dong,male,30,H1_levuka_170.54246601--45.84418119,yes,levuka,no,yes
+uuid:166870a7-8f77-474d-ae71-ece867bcca67,Dolly,Dong,female,21,H1_levuka_170.54246601--45.84418119,yes,levuka,yes,yes
+uuid:6d81a364-656f-4e28-a534-71e1dea42a01,Dylan,Ding,male,15,H1_levuka_170.54246601--45.84418119,yes,levuka,yes,no
+uuid:7a770241-4238-4ec6-a75e-c994cba25bcd,Collet,Effen,female,9,H1_levuka_170.54246601--45.84418119,yes,levuka,yes,NA
+uuid:4df1d5ca-8fd7-4d62-85f8-05540e19beb7,Donald,Ding,male,3,H1_levuka_170.54246601--45.84418119,yes,levuka,yes,NA
+uuid:d3017c90-766c-4035-a8d8-48787d0c7749,Granny,Able,female,70,H1_levuka_170.54246601--45.84418119,yes,levuka,yes,yes
+uuid:f192f637-5c45-4422-8f32-bde7dde8ac21,Gramps,Able,male,79,H1_levuka_170.54246601--45.84418119,yes,levuka,no,yes
+uuid:97eaea06-9158-47b8-bf31-d498113a98d9,Garry,Effen,male,NA,H1_levuka_170.54246601--45.84418119,no,NA,yes,NA
+uuid:bad8b075-e94c-422e-83f8-895da5a255f8,Clary,Numpty,female,23,H1_levuka_170.54246601--45.84418119,no,NA,yes,NA
+uuid:6634338b-6a86-4ccb-aa67-80728f87bdcd,Murry,Numpty,male,34,H1_levuka_170.54246601--45.84418119,no,NA,yes,no
+uuid:1cde8f33-8449-4624-aaab-40206bbce49a,Manny,Ding,male,40,H1_levuka_170.54246601--45.84418119,no,NA,yes,no
+uuid:8ce7532d-bc82-4b5b-8ccc-78d840494d84,Not,Here,male,58,NA,no,NA,yes,NA

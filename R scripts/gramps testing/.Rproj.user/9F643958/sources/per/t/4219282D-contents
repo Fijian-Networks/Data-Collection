@@ -40,12 +40,5 @@ tidy.marriages <- marriages_ODK %>% select(marriage = "_id", partner1 = person_1
 write_csv(marriages_ODK, path = "marriages.csv")
 write_csv(tidy.marriages, path = "tidyMarriages.csv")
 
-########################################################
-# Merging family and marriage data to person nodes
-# not sure if it is nessecary...
-# surely node and edgelists make more sense?
-#######################################################
-
-
 
 
