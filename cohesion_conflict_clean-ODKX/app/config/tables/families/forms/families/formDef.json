@@ -52,7 +52,7 @@
         "_row_num": 4
       },
       {
-        "comment": "readable",
+        "comment": "readable id",
         "name": "family_id",
         "type": "text",
         "_row_num": 6
@@ -69,6 +69,7 @@
         "_row_num": 9
       },
       {
+        "comment": "generated from parent combination",
         "name": "marriage_name",
         "type": "text",
         "_row_num": 10
@@ -149,6 +150,7 @@
         "_row_num": 5
       },
       {
+        "comment": "Selected from household roster",
         "type": "select_one",
         "values_list": "roster",
         "name": "child_id",
@@ -169,6 +171,7 @@
         "_row_num": 9
       },
       {
+        "comment": "Adds new member to database",
         "type": "linked_table",
         "values_list": "linked_household_member",
         "display": {
@@ -195,7 +198,7 @@
         "values_list": "marriage_name_query",
         "name": "marriage_name",
         "display": {
-          "debug": false
+          "debug": 0
         },
         "_row_num": 15
       },
@@ -204,11 +207,12 @@
         "values_list": "child_name_query",
         "name": "child_name",
         "display": {
-          "debug": false
+          "debug": 0
         },
         "_row_num": 16
       },
       {
+        "comment": "Has to be blank screen for data handling",
         "type": "note",
         "display": {
           "prompt": {
@@ -222,6 +226,7 @@
         "_row_num": 19
       },
       {
+        "comment": "generate family ID",
         "type": "assign",
         "name": "family_id",
         "calculation": "data('marriage_name') + \"=\" + data('child_name')",
@@ -266,7 +271,7 @@
         "_row_num": 6
       },
       {
-        "comments": "mariage id name",
+        "comments": "marriage id name",
         "query_name": "marriage_name_query",
         "query_type": "linked_table",
         "linked_form_id": "marriages",
@@ -279,6 +284,7 @@
         "_row_num": 9
       },
       {
+        "comments": "get child id",
         "query_name": "child_name_query",
         "query_type": "linked_table",
         "linked_form_id": "household_member",
@@ -465,7 +471,7 @@
         "_row_num": 6
       },
       "marriage_name_query": {
-        "comments": "mariage id name",
+        "comments": "marriage id name",
         "query_name": "marriage_name_query",
         "query_type": "linked_table",
         "linked_form_id": "marriages",
@@ -478,6 +484,7 @@
         "_row_num": 9
       },
       "child_name_query": {
+        "comments": "get child id",
         "query_name": "child_name_query",
         "query_type": "linked_table",
         "linked_form_id": "household_member",
@@ -530,7 +537,7 @@
             "section_name": "model"
           }
         ],
-        "comment": "readable",
+        "comment": "readable id",
         "elementKey": "family_id"
       },
       "child_id": {
@@ -579,6 +586,7 @@
             "section_name": "model"
           }
         ],
+        "comment": "generated from parent combination",
         "elementKey": "marriage_name"
       }
     },
@@ -819,6 +827,7 @@
             "promptIdx": 2
           },
           {
+            "comment": "Selected from household roster",
             "type": "select_one",
             "values_list": "roster",
             "name": "child_id",
@@ -849,6 +858,7 @@
             "promptIdx": 4
           },
           {
+            "comment": "Adds new member to database",
             "type": "linked_table",
             "values_list": "linked_household_member",
             "display": {
@@ -872,7 +882,7 @@
             "values_list": "marriage_name_query",
             "name": "marriage_name",
             "display": {
-              "debug": false
+              "debug": 0
             },
             "_row_num": 15,
             "__rowNum__": 14,
@@ -886,7 +896,7 @@
             "values_list": "child_name_query",
             "name": "child_name",
             "display": {
-              "debug": false
+              "debug": 0
             },
             "_row_num": 16,
             "__rowNum__": 15,
@@ -896,6 +906,7 @@
             "promptIdx": 7
           },
           {
+            "comment": "Has to be blank screen for data handling",
             "type": "note",
             "display": {
               "prompt": {
@@ -951,6 +962,7 @@
             "operationIdx": 1
           },
           {
+            "comment": "generate family ID",
             "type": "assign",
             "name": "family_id",
             "calculation": "data('marriage_name') + \"=\" + data('child_name')",
@@ -1034,7 +1046,7 @@
             "section_name": "model"
           }
         ],
-        "comment": "readable",
+        "comment": "readable id",
         "elementKey": "family_id",
         "elementName": "family_id",
         "elementSet": "data",
@@ -1092,6 +1104,7 @@
             "section_name": "model"
           }
         ],
+        "comment": "generated from parent combination",
         "elementKey": "marriage_name",
         "elementName": "marriage_name",
         "elementSet": "data",

@@ -161,13 +161,13 @@
         "comment": "async tmp var for names",
         "name": "person_1_name",
         "type": "text",
-        "isSessionVariable": true,
+        "isSessionVariable": 1,
         "_row_num": 12
       },
       {
         "name": "person_2_name",
         "type": "text",
-        "isSessionVariable": true,
+        "isSessionVariable": 1,
         "_row_num": 13
       }
     ],
@@ -261,9 +261,9 @@
         "type": "async_assign_text_value",
         "values_list": "person_1_name_query",
         "name": "person_1_name",
-        "hideInContents": true,
+        "hideInContents": 1,
         "display": {
-          "debug": false
+          "debug": 0
         },
         "_row_num": 17
       },
@@ -271,9 +271,9 @@
         "type": "async_assign_text_value",
         "values_list": "person_2_name_query",
         "name": "person_2_name",
-        "hideInContents": true,
+        "hideInContents": 1,
         "display": {
-          "debug": false
+          "debug": 0
         },
         "_row_num": 18
       },
@@ -281,20 +281,47 @@
         "type": "note",
         "display": {
           "prompt": {
-            "text": "This screen is intentionally left almost blank"
+            "text": "Confirm your choices by tapping Next above."
           }
         },
-        "_row_num": 19
+        "_row_num": 20
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": "Person 1:  {{ data.person_1_name }}"
+          }
+        },
+        "_row_num": 22
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": "Status: {{ data.mstat }}"
+          }
+        },
+        "_row_num": 23
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": "Person 2:  {{ data.person_2_name }}"
+          }
+        },
+        "_row_num": 24
       },
       {
         "clause": "end screen",
-        "_row_num": 20
+        "_row_num": 26
       },
       {
         "type": "assign",
         "name": "marriage_id",
         "calculation": "data('person_1_name') + '_' + data('mstat') + '_' + data('person_2_name')",
-        "_row_num": 21
+        "_row_num": 27
       }
     ],
     "queries": [
@@ -643,7 +670,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 27,
             "section_name": "marriages"
           },
           {
@@ -668,7 +695,7 @@
           }
         ],
         "comment": "async tmp var for names",
-        "isSessionVariable": true,
+        "isSessionVariable": 1,
         "elementKey": "person_1_name"
       },
       "person_2_name": {
@@ -685,7 +712,7 @@
             "section_name": "model"
           }
         ],
-        "isSessionVariable": true,
+        "isSessionVariable": 1,
         "elementKey": "person_2_name"
       }
     },
@@ -993,9 +1020,9 @@
             "type": "async_assign_text_value",
             "values_list": "person_1_name_query",
             "name": "person_1_name",
-            "hideInContents": true,
+            "hideInContents": 1,
             "display": {
-              "debug": false
+              "debug": 0
             },
             "_row_num": 17,
             "__rowNum__": 16,
@@ -1008,9 +1035,9 @@
             "type": "async_assign_text_value",
             "values_list": "person_2_name_query",
             "name": "person_2_name",
-            "hideInContents": true,
+            "hideInContents": 1,
             "display": {
-              "debug": false
+              "debug": 0
             },
             "_row_num": 18,
             "__rowNum__": 17,
@@ -1023,23 +1050,65 @@
             "type": "note",
             "display": {
               "prompt": {
-                "text": "This screen is intentionally left almost blank"
+                "text": "Confirm your choices by tapping Next above."
               }
             },
-            "_row_num": 19,
-            "__rowNum__": 18,
+            "_row_num": 20,
+            "__rowNum__": 19,
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "marriages/_screen16",
             "promptIdx": 9
           },
           {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": "Person 1:  {{ data.person_1_name }}"
+              }
+            },
+            "_row_num": 22,
+            "__rowNum__": 21,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "marriages/_screen16",
+            "promptIdx": 10
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": "Status: {{ data.mstat }}"
+              }
+            },
+            "_row_num": 23,
+            "__rowNum__": 22,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "marriages/_screen16",
+            "promptIdx": 11
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": "Person 2:  {{ data.person_2_name }}"
+              }
+            },
+            "_row_num": 24,
+            "__rowNum__": 23,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "marriages/_screen16",
+            "promptIdx": 12
+          },
+          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 22,
-            "_branch_label_enclosing_screen": "marriages/_screen22",
-            "promptIdx": 10
+            "_row_num": 28,
+            "_branch_label_enclosing_screen": "marriages/_screen28",
+            "promptIdx": 13
           }
         ],
         "validation_tag_map": {
@@ -1067,32 +1136,32 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 20,
-              "__rowNum__": 19,
+              "_row_num": 26,
+              "__rowNum__": 25,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\nactivePromptIndicies.push(8);\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\nactivePromptIndicies.push(8);\nactivePromptIndicies.push(9);\nactivePromptIndicies.push(10);\nactivePromptIndicies.push(11);\nactivePromptIndicies.push(12);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 1
           },
           {
             "type": "assign",
             "name": "marriage_id",
             "calculation": "data('person_1_name') + '_' + data('mstat') + '_' + data('person_2_name')",
-            "_row_num": 21,
-            "__rowNum__": 20,
+            "_row_num": 27,
+            "__rowNum__": 26,
             "_token_type": "assign",
             "operationIdx": 2
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 22,
+            "_row_num": 28,
             "operationIdx": 3
           },
           {
-            "_row_num": 22,
+            "_row_num": 28,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(10);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(13);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
@@ -1101,7 +1170,7 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 22,
+            "_row_num": 28,
             "operationIdx": 5
           }
         ],
@@ -1109,7 +1178,7 @@
           "_screen2": 0,
           "_screen16": 1,
           "_contents": 4,
-          "_screen22": 4
+          "_screen28": 4
         }
       }
     },
@@ -1187,7 +1256,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 27,
             "section_name": "marriages"
           },
           {
@@ -1215,7 +1284,7 @@
           }
         ],
         "comment": "async tmp var for names",
-        "isSessionVariable": true,
+        "isSessionVariable": 1,
         "elementKey": "person_1_name",
         "elementName": "person_1_name",
         "elementSet": "data",
@@ -1235,7 +1304,7 @@
             "section_name": "model"
           }
         ],
-        "isSessionVariable": true,
+        "isSessionVariable": 1,
         "elementKey": "person_2_name",
         "elementName": "person_2_name",
         "elementSet": "data",

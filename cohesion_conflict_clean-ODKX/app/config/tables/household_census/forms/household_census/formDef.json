@@ -124,6 +124,10 @@
         "_row_num": 8
       },
       {
+        "Comments": "These are to be replaced by freelisting results",
+        "_row_num": 10
+      },
+      {
         "choice_list_name": "asset_inventory",
         "data_value": "thing1",
         "display": {
@@ -131,7 +135,7 @@
             "text": "Thing 1"
           }
         },
-        "_row_num": 10
+        "_row_num": 11
       },
       {
         "choice_list_name": "asset_inventory",
@@ -141,7 +145,7 @@
             "text": "Thing 2"
           }
         },
-        "_row_num": 11
+        "_row_num": 12
       },
       {
         "choice_list_name": "asset_inventory",
@@ -151,7 +155,7 @@
             "text": "Thing 3"
           }
         },
-        "_row_num": 12
+        "_row_num": 13
       },
       {
         "choice_list_name": "asset_inventory",
@@ -161,7 +165,7 @@
             "text": "Thing 4"
           }
         },
-        "_row_num": 13
+        "_row_num": 14
       },
       {
         "choice_list_name": "asset_inventory",
@@ -171,7 +175,7 @@
             "text": "Thing 5"
           }
         },
-        "_row_num": 14
+        "_row_num": 15
       },
       {
         "choice_list_name": "asset_inventory",
@@ -181,7 +185,7 @@
             "text": "Thing 6"
           }
         },
-        "_row_num": 15
+        "_row_num": 16
       },
       {
         "choice_list_name": "asset_inventory",
@@ -191,7 +195,7 @@
             "text": "Thing 7"
           }
         },
-        "_row_num": 16
+        "_row_num": 17
       },
       {
         "choice_list_name": "asset_inventory",
@@ -201,7 +205,7 @@
             "text": "Thing 8"
           }
         },
-        "_row_num": 17
+        "_row_num": 18
       },
       {
         "choice_list_name": "asset_inventory",
@@ -211,7 +215,7 @@
             "text": "Thing 9"
           }
         },
-        "_row_num": 18
+        "_row_num": 19
       },
       {
         "choice_list_name": "asset_inventory",
@@ -221,7 +225,7 @@
             "text": "Thing 10"
           }
         },
-        "_row_num": 19
+        "_row_num": 20
       },
       {
         "choice_list_name": "food_security_list",
@@ -231,7 +235,7 @@
             "text": "Always had enough"
           }
         },
-        "_row_num": 21
+        "_row_num": 22
       },
       {
         "choice_list_name": "food_security_list",
@@ -241,7 +245,7 @@
             "text": "Always had enough, but sometimes food was of low quality"
           }
         },
-        "_row_num": 22
+        "_row_num": 23
       },
       {
         "choice_list_name": "food_security_list",
@@ -251,7 +255,7 @@
             "text": "Didn't have enough a few times a year"
           }
         },
-        "_row_num": 23
+        "_row_num": 24
       },
       {
         "choice_list_name": "food_security_list",
@@ -261,7 +265,7 @@
             "text": "Didn't have enough a few times a month"
           }
         },
-        "_row_num": 24
+        "_row_num": 25
       },
       {
         "choice_list_name": "food_security_list",
@@ -271,7 +275,7 @@
             "text": "Didn't have enough a few times a week"
           }
         },
-        "_row_num": 25
+        "_row_num": 26
       },
       {
         "choice_list_name": "food_security_list",
@@ -281,7 +285,7 @@
             "text": "Never or almost never had enough"
           }
         },
-        "_row_num": 26
+        "_row_num": 27
       }
     ],
     "settings": [
@@ -405,8 +409,9 @@
         "linked_table_id": "household_member",
         "selection": "household_id = ?",
         "selectionArgs": "[ data('household_id') ]",
-        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'yes' }",
+        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'yes', village : data('household_village') }",
         "openRowInitialElementKeyToValueMap": "{}",
+        "comment": "Pass household_id and village variables to member, and defaults lives_in_household to yes.",
         "_row_num": 3
       },
       {
@@ -431,6 +436,7 @@
         "selectionArgs": "[ data('household_id') ]",
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
         "openRowInitialElementKeyToValueMap": "{}",
+        "comment": "pass household_id to subforms",
         "_row_num": 5
       },
       {
@@ -453,64 +459,69 @@
         "_row_num": 2
       },
       {
+        "name": "household_village",
+        "type": "select_one",
+        "_row_num": 3
+      },
+      {
         "name": "customary_membership",
         "type": "select_one",
-        "_row_num": 4
+        "_row_num": 5
       },
       {
         "name": "asset_wealth",
         "type": "select_multiple",
-        "_row_num": 6
+        "_row_num": 7
       },
       {
         "name": "income_head_amount",
         "type": "integer",
-        "_row_num": 8
+        "_row_num": 9
       },
       {
         "name": "income_head_source",
         "type": "text",
-        "_row_num": 9
+        "_row_num": 10
       },
       {
         "name": "income_spouse_amount",
         "type": "integer",
-        "_row_num": 10
+        "_row_num": 11
       },
       {
         "name": "income_spouse_source",
         "type": "text",
-        "_row_num": 11
+        "_row_num": 12
       },
       {
         "name": "food_security",
         "type": "select_one_integer",
-        "_row_num": 13
+        "_row_num": 14
       },
       {
         "name": "crops_kava",
         "type": "integer",
-        "_row_num": 15
+        "_row_num": 16
       },
       {
         "name": "crops_taro",
         "type": "integer",
-        "_row_num": 16
+        "_row_num": 17
       },
       {
         "name": "crops_cassava",
         "type": "integer",
-        "_row_num": 17
+        "_row_num": 18
       },
       {
         "name": "fish_days",
         "type": "integer",
-        "_row_num": 18
+        "_row_num": 19
       },
       {
         "name": "fish_catch",
         "type": "integer",
-        "_row_num": 19
+        "_row_num": 20
       }
     ],
     "id": [
@@ -634,6 +645,7 @@
         "_row_num": 2
       },
       {
+        "comments": "sends user to Members subform linked by houeshold_id",
         "type": "linked_table",
         "values_list": "linked_household_member",
         "display": {
@@ -1100,7 +1112,7 @@
               "text": "Thing 1"
             }
           },
-          "_row_num": 10
+          "_row_num": 11
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1110,7 +1122,7 @@
               "text": "Thing 2"
             }
           },
-          "_row_num": 11
+          "_row_num": 12
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1120,7 +1132,7 @@
               "text": "Thing 3"
             }
           },
-          "_row_num": 12
+          "_row_num": 13
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1130,7 +1142,7 @@
               "text": "Thing 4"
             }
           },
-          "_row_num": 13
+          "_row_num": 14
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1140,7 +1152,7 @@
               "text": "Thing 5"
             }
           },
-          "_row_num": 14
+          "_row_num": 15
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1150,7 +1162,7 @@
               "text": "Thing 6"
             }
           },
-          "_row_num": 15
+          "_row_num": 16
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1160,7 +1172,7 @@
               "text": "Thing 7"
             }
           },
-          "_row_num": 16
+          "_row_num": 17
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1170,7 +1182,7 @@
               "text": "Thing 8"
             }
           },
-          "_row_num": 17
+          "_row_num": 18
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1180,7 +1192,7 @@
               "text": "Thing 9"
             }
           },
-          "_row_num": 18
+          "_row_num": 19
         },
         {
           "choice_list_name": "asset_inventory",
@@ -1190,7 +1202,7 @@
               "text": "Thing 10"
             }
           },
-          "_row_num": 19
+          "_row_num": 20
         }
       ],
       "food_security_list": [
@@ -1202,7 +1214,7 @@
               "text": "Always had enough"
             }
           },
-          "_row_num": 21
+          "_row_num": 22
         },
         {
           "choice_list_name": "food_security_list",
@@ -1212,7 +1224,7 @@
               "text": "Always had enough, but sometimes food was of low quality"
             }
           },
-          "_row_num": 22
+          "_row_num": 23
         },
         {
           "choice_list_name": "food_security_list",
@@ -1222,7 +1234,7 @@
               "text": "Didn't have enough a few times a year"
             }
           },
-          "_row_num": 23
+          "_row_num": 24
         },
         {
           "choice_list_name": "food_security_list",
@@ -1232,7 +1244,7 @@
               "text": "Didn't have enough a few times a month"
             }
           },
-          "_row_num": 24
+          "_row_num": 25
         },
         {
           "choice_list_name": "food_security_list",
@@ -1242,7 +1254,7 @@
               "text": "Didn't have enough a few times a week"
             }
           },
-          "_row_num": 25
+          "_row_num": 26
         },
         {
           "choice_list_name": "food_security_list",
@@ -1252,7 +1264,7 @@
               "text": "Never or almost never had enough"
             }
           },
-          "_row_num": 26
+          "_row_num": 27
         }
       ]
     },
@@ -1268,8 +1280,9 @@
         "linked_table_id": "household_member",
         "selection": "household_id = ?",
         "selectionArgs": "[ data('household_id') ]",
-        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'yes' }",
+        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'yes', village : data('household_village') }",
         "openRowInitialElementKeyToValueMap": "{}",
+        "comment": "Pass household_id and village variables to member, and defaults lives_in_household to yes.",
         "_row_num": 3
       },
       "roster": {
@@ -1294,6 +1307,7 @@
         "selectionArgs": "[ data('household_id') ]",
         "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
         "openRowInitialElementKeyToValueMap": "{}",
+        "comment": "pass household_id to subforms",
         "_row_num": 5
       },
       "linked_families": {
@@ -1325,11 +1339,26 @@
         ],
         "elementKey": "household_id"
       },
+      "household_village": {
+        "type": "string",
+        "valuesList": "village_name",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "id"
+          },
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "household_village"
+      },
       "customary_membership": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 4,
+            "_row_num": 5,
             "section_name": "model"
           }
         ],
@@ -1348,7 +1377,7 @@
             "section_name": "asset_wealth"
           },
           {
-            "_row_num": 6,
+            "_row_num": 7,
             "section_name": "model"
           }
         ],
@@ -1362,7 +1391,7 @@
             "section_name": "income"
           },
           {
-            "_row_num": 8,
+            "_row_num": 9,
             "section_name": "model"
           }
         ],
@@ -1376,7 +1405,7 @@
             "section_name": "income"
           },
           {
-            "_row_num": 9,
+            "_row_num": 10,
             "section_name": "model"
           }
         ],
@@ -1390,7 +1419,7 @@
             "section_name": "income"
           },
           {
-            "_row_num": 10,
+            "_row_num": 11,
             "section_name": "model"
           }
         ],
@@ -1404,7 +1433,7 @@
             "section_name": "income"
           },
           {
-            "_row_num": 11,
+            "_row_num": 12,
             "section_name": "model"
           }
         ],
@@ -1419,7 +1448,7 @@
             "section_name": "food_security"
           },
           {
-            "_row_num": 13,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
@@ -1433,7 +1462,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 15,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
@@ -1447,7 +1476,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 16,
+            "_row_num": 17,
             "section_name": "model"
           }
         ],
@@ -1461,7 +1490,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 17,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -1475,7 +1504,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 18,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -1489,7 +1518,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 19,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -1547,17 +1576,6 @@
           }
         },
         "elementKey": "location"
-      },
-      "household_village": {
-        "_defn": [
-          {
-            "_row_num": 5,
-            "section_name": "id"
-          }
-        ],
-        "type": "string",
-        "valuesList": "village_name",
-        "elementKey": "household_village"
       },
       "household_human_id": {
         "_defn": [
@@ -2186,6 +2204,7 @@
         "reachable_sections": {},
         "prompts": [
           {
+            "comments": "sends user to Members subform linked by houeshold_id",
             "type": "linked_table",
             "values_list": "linked_household_member",
             "display": {
@@ -3066,11 +3085,29 @@
         "elementSet": "data",
         "elementPath": "household_id"
       },
+      "household_village": {
+        "type": "string",
+        "valuesList": "village_name",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "id"
+          },
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "household_village",
+        "elementName": "household_village",
+        "elementSet": "data",
+        "elementPath": "household_village"
+      },
       "customary_membership": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 4,
+            "_row_num": 5,
             "section_name": "model"
           }
         ],
@@ -3096,7 +3133,7 @@
             "section_name": "asset_wealth"
           },
           {
-            "_row_num": 6,
+            "_row_num": 7,
             "section_name": "model"
           }
         ],
@@ -3116,7 +3153,7 @@
             "section_name": "income"
           },
           {
-            "_row_num": 8,
+            "_row_num": 9,
             "section_name": "model"
           }
         ],
@@ -3133,7 +3170,7 @@
             "section_name": "income"
           },
           {
-            "_row_num": 9,
+            "_row_num": 10,
             "section_name": "model"
           }
         ],
@@ -3150,7 +3187,7 @@
             "section_name": "income"
           },
           {
-            "_row_num": 10,
+            "_row_num": 11,
             "section_name": "model"
           }
         ],
@@ -3167,7 +3204,7 @@
             "section_name": "income"
           },
           {
-            "_row_num": 11,
+            "_row_num": 12,
             "section_name": "model"
           }
         ],
@@ -3185,7 +3222,7 @@
             "section_name": "food_security"
           },
           {
-            "_row_num": 13,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
@@ -3202,7 +3239,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 15,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
@@ -3219,7 +3256,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 16,
+            "_row_num": 17,
             "section_name": "model"
           }
         ],
@@ -3236,7 +3273,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 17,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -3253,7 +3290,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 18,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -3270,7 +3307,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 19,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -3367,20 +3404,6 @@
           "location_longitude"
         ],
         "notUnitOfRetention": true
-      },
-      "household_village": {
-        "_defn": [
-          {
-            "_row_num": 5,
-            "section_name": "id"
-          }
-        ],
-        "type": "string",
-        "valuesList": "village_name",
-        "elementKey": "household_village",
-        "elementName": "household_village",
-        "elementSet": "data",
-        "elementPath": "household_village"
       },
       "household_human_id": {
         "_defn": [
@@ -3619,14 +3642,14 @@
         "_aspect": "asset_wealth",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing1\",\"display\":{\"title\":{\"text\":\"Thing 1\"}},\"_row_num\":10},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing2\",\"display\":{\"title\":{\"text\":\"Thing 2\"}},\"_row_num\":11},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing3\",\"display\":{\"title\":{\"text\":\"Thing 3\"}},\"_row_num\":12},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing4\",\"display\":{\"title\":{\"text\":\"Thing 4\"}},\"_row_num\":13},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing5\",\"display\":{\"title\":{\"text\":\"Thing 5\"}},\"_row_num\":14},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing6\",\"display\":{\"title\":{\"text\":\"Thing 6\"}},\"_row_num\":15},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing7\",\"display\":{\"title\":{\"text\":\"Thing 7\"}},\"_row_num\":16},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing8\",\"display\":{\"title\":{\"text\":\"Thing 8\"}},\"_row_num\":17},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing9\",\"display\":{\"title\":{\"text\":\"Thing 9\"}},\"_row_num\":18},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing10\",\"display\":{\"title\":{\"text\":\"Thing 10\"}},\"_row_num\":19}]"
+        "_value": "[{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing1\",\"display\":{\"title\":{\"text\":\"Thing 1\"}},\"_row_num\":11},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing2\",\"display\":{\"title\":{\"text\":\"Thing 2\"}},\"_row_num\":12},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing3\",\"display\":{\"title\":{\"text\":\"Thing 3\"}},\"_row_num\":13},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing4\",\"display\":{\"title\":{\"text\":\"Thing 4\"}},\"_row_num\":14},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing5\",\"display\":{\"title\":{\"text\":\"Thing 5\"}},\"_row_num\":15},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing6\",\"display\":{\"title\":{\"text\":\"Thing 6\"}},\"_row_num\":16},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing7\",\"display\":{\"title\":{\"text\":\"Thing 7\"}},\"_row_num\":17},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing8\",\"display\":{\"title\":{\"text\":\"Thing 8\"}},\"_row_num\":18},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing9\",\"display\":{\"title\":{\"text\":\"Thing 9\"}},\"_row_num\":19},{\"choice_list_name\":\"asset_inventory\",\"data_value\":\"thing10\",\"display\":{\"title\":{\"text\":\"Thing 10\"}},\"_row_num\":20}]"
       },
       {
         "_partition": "Column",
         "_aspect": "food_security",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"food_security_list\",\"data_value\":1,\"display\":{\"title\":{\"text\":\"Always had enough\"}},\"_row_num\":21},{\"choice_list_name\":\"food_security_list\",\"data_value\":2,\"display\":{\"title\":{\"text\":\"Always had enough, but sometimes food was of low quality\"}},\"_row_num\":22},{\"choice_list_name\":\"food_security_list\",\"data_value\":3,\"display\":{\"title\":{\"text\":\"Didn't have enough a few times a year\"}},\"_row_num\":23},{\"choice_list_name\":\"food_security_list\",\"data_value\":4,\"display\":{\"title\":{\"text\":\"Didn't have enough a few times a month\"}},\"_row_num\":24},{\"choice_list_name\":\"food_security_list\",\"data_value\":5,\"display\":{\"title\":{\"text\":\"Didn't have enough a few times a week\"}},\"_row_num\":25},{\"choice_list_name\":\"food_security_list\",\"data_value\":6,\"display\":{\"title\":{\"text\":\"Never or almost never had enough\"}},\"_row_num\":26}]"
+        "_value": "[{\"choice_list_name\":\"food_security_list\",\"data_value\":1,\"display\":{\"title\":{\"text\":\"Always had enough\"}},\"_row_num\":22},{\"choice_list_name\":\"food_security_list\",\"data_value\":2,\"display\":{\"title\":{\"text\":\"Always had enough, but sometimes food was of low quality\"}},\"_row_num\":23},{\"choice_list_name\":\"food_security_list\",\"data_value\":3,\"display\":{\"title\":{\"text\":\"Didn't have enough a few times a year\"}},\"_row_num\":24},{\"choice_list_name\":\"food_security_list\",\"data_value\":4,\"display\":{\"title\":{\"text\":\"Didn't have enough a few times a month\"}},\"_row_num\":25},{\"choice_list_name\":\"food_security_list\",\"data_value\":5,\"display\":{\"title\":{\"text\":\"Didn't have enough a few times a week\"}},\"_row_num\":26},{\"choice_list_name\":\"food_security_list\",\"data_value\":6,\"display\":{\"title\":{\"text\":\"Never or almost never had enough\"}},\"_row_num\":27}]"
       },
       {
         "_partition": "Column",

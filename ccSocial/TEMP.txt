@@ -1,0 +1,142 @@
+
+[ ] snackbar confirmation for copy to clipboard
+
+Next Big tasks::
+
+[ ] create sql test db with hundreds of entries, randomised etc
+
+[ ] Refactor for initial 'release'
+
+[ ] production server install - mid feb for initial 'release'
+
+11.2.21
+plan social network app and block out components
+component for questions and answers, mapping to csv output...
+
+
+
+10.2.21
+ started work on odkx survey,
+ odkx doesnt retain state when switching apps.
+ need to create new app from scratch just for social network questions.
+
+ on the plus side, the search app works well when new entries are created in ODKX
+
+back to planning questionaire app...
+
+
+9.2.21 -- not feeling morning work...
+[ ] snackbar confirmation in details screen
+[ ] ODKx social network survey creation
+
+
+28.1.21
+[X] photos not working anymore!!! FIX
+all photo based methods are skipping null checks
+
+[X] Details screen add info and image, with copy to clipboard button
+
+
+
+22.1.21
+
+[X] Meet John @ 11
+smaller tasks:
+    [X] cancel/clear search method, call on init
+    [X] icon to copy uuid to clipboard
+    [X] subtitle age and village
+    [X] age: if null = deceased; if int.length > 3 = dob
+    [X] click on iconButton for photo
+
+
+
+
+20.1.21 //3hours
+[X] DB is not loading now... Why???? FIX!
+[X] Load sqlite db from phone storage
+[X] redo sqflite db fetch code
+[X] copy uuid to clipboard?
+[X] add confirmation of copy
+
+
+
+18.1.21 //3hours?
+[X] Permissions
+[X] path for storage on android
+[X] Use _rootDir to access ODKX folders
+[X] test with photos before loading stored sqlite.db
+[X] no image case needs taking care of
+
+14.1.21
+    Directory d = Directory('/storage/emulated/0');
+doing :: 
+[ ] Permissions for storage, using Permissions plugin
+[ ] path getting for odkx dir on android device,
+
+
+
+13.1.21:
+leaving this at:
+    need to figure path stuff to image locations on android, so can point to ODK folder on device. 
+    Means no messing with assets, program will be smaller and more flexible for changing data.
+    
+
+
+///
+Passing data from searchpagestate to DetailScreen
+pass info to constructor DONE
+
+
+
+/////
+Getting path of photos::
+
+uuid from Person object looks like..
+    uuid:121aac7a-c2f6-4483-8e14-72938e2fa88a
+
+needs to look like::
+    uuid_121aac7a_c2f6_4483_8e14_72938e2fa88a
+
+    replace ":" and "-"'s to "_"
+
+regex call:: 
+    new RegExp(r"([:,-])")
+
+path will need to look like::
+    assets/db/default/household_member/instances/uuid_121aac7a_c2f6_4483_8e14_72938e2fa88a/1606684293864_android_id_d588f4d267ed266f.jpg
+
+
+create a script to do this?
+Could extract from odk-x android app, only .db AND household_member/instances/uuid:*/*.jpg
+
+
+
+
+
+
+.////
+from::
+https://stackoverflow.com/questions/56544200/flutter-how-to-get-a-list-of-names-of-all-images-in-assets-directory
+////.
+
+
+"You can also use final manifestContent = await rootBundle.loadString('AssetManifest.json'); 
+instead of DefaultAssetBundle if you want to do this in a place where you don't have a BuildContext. – Javaxtreme Jul 21 at 0:37
+
+
+    Future _initImages() async {
+  // >> To get paths you need these 2 lines
+  final manifestContent = await DefaultAssetBundle.of(context).loadString('AssetManifest.json');
+
+  final Map<String, dynamic> manifestMap = json.decode(manifestContent);
+  // >> To get paths you need these 2 lines
+
+  final imagePaths = manifestMap.keys
+      .where((String key) => key.contains('images/'))
+      .where((String key) => key.contains('.svg'))
+      .toList();
+
+  setState(() {
+    someImages = imagePaths;
+  });
+}
