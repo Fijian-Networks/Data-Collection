@@ -1,0 +1,1258 @@
+{
+  "xlsx": {
+    "initial": [
+      {
+        "clause": "do section survey",
+        "_row_num": 2
+      },
+      {
+        "clause": "goto _finalize",
+        "comments": "skips the finalize screen where the user chooses to save as incomplete or finalized and instead saves as finalized",
+        "_row_num": 3
+      }
+    ],
+    "survey": [
+      {
+        "clause": "do section family",
+        "_row_num": 2
+      }
+    ],
+    "choices": [
+      {
+        "choice_list_name": "yesno",
+        "data_value": "yes",
+        "display": {
+          "title": {
+            "text": "yes"
+          }
+        },
+        "_row_num": 2
+      },
+      {
+        "choice_list_name": "yesno",
+        "data_value": "no",
+        "display": {
+          "title": {
+            "text": "no"
+          }
+        },
+        "_row_num": 3
+      }
+    ],
+    "model": [
+      {
+        "name": "household_id",
+        "type": "text",
+        "_row_num": 2
+      },
+      {
+        "comment": "uuid from linked table",
+        "name": "marriage_id",
+        "type": "select_one",
+        "_row_num": 4
+      },
+      {
+        "comment": "readable id",
+        "name": "family_id",
+        "type": "text",
+        "_row_num": 6
+      },
+      {
+        "comment": "uuid",
+        "name": "child_id",
+        "type": "select_one",
+        "_row_num": 8
+      },
+      {
+        "name": "child_name",
+        "type": "text",
+        "_row_num": 9
+      },
+      {
+        "comment": "generated from parent combination",
+        "name": "marriage_name",
+        "type": "text",
+        "_row_num": 10
+      }
+    ],
+    "settings": [
+      {
+        "setting_name": "form_id",
+        "value": "families",
+        "_row_num": 2
+      },
+      {
+        "setting_name": "form_version",
+        "value": 2,
+        "_row_num": 3
+      },
+      {
+        "setting_name": "table_id",
+        "value": "families",
+        "_row_num": 4
+      },
+      {
+        "setting_name": "instance_name",
+        "value": "family_id",
+        "_row_num": 5
+      },
+      {
+        "setting_name": "survey",
+        "display": {
+          "title": {
+            "text": "Families"
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "setting_name": "families",
+        "display": {
+          "title": {
+            "text": "Family unit details"
+          }
+        },
+        "_row_num": 7
+      }
+    ],
+    "family": [
+      {
+        "clause": "begin screen",
+        "_row_num": 2
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": "Family Information:"
+          }
+        },
+        "_row_num": 3
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": "Create family lists of offspring resulting from the marriages input in previous question:"
+          }
+        },
+        "_row_num": 4
+      },
+      {
+        "type": "select_one",
+        "values_list": "marriage_roster",
+        "name": "marriage_id",
+        "display": {
+          "prompt": {
+            "text": "Parents:"
+          }
+        },
+        "_row_num": 5
+      },
+      {
+        "comment": "Selected from household roster",
+        "type": "select_one",
+        "values_list": "roster",
+        "name": "child_id",
+        "display": {
+          "prompt": {
+            "text": "Child:"
+          }
+        },
+        "_row_num": 7
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": "If the person is not on the list, please add them to the roster"
+          }
+        },
+        "_row_num": 9
+      },
+      {
+        "comment": "Adds new member to database",
+        "type": "linked_table",
+        "values_list": "linked_household_member",
+        "display": {
+          "prompt": {
+            "text": "Please enter info on child not living in household to the best of your ability"
+          },
+          "new_instance_label": {
+            "text": "Add child to roster"
+          }
+        },
+        "_row_num": 10
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 12
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 14
+      },
+      {
+        "comment": "asyncs for child name and family id creation",
+        "type": "async_assign_text_value",
+        "values_list": "marriage_name_query",
+        "name": "marriage_name",
+        "display": {
+          "debug": 0
+        },
+        "_row_num": 15
+      },
+      {
+        "type": "async_assign_text_value",
+        "values_list": "child_name_query",
+        "name": "child_name",
+        "display": {
+          "debug": 0
+        },
+        "_row_num": 16
+      },
+      {
+        "comment": "Has to be blank screen for data handling",
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": "This screen is almost intentionally left blank"
+          }
+        },
+        "_row_num": 17
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 19
+      },
+      {
+        "comment": "generate family ID",
+        "type": "assign",
+        "name": "family_id",
+        "calculation": "data('marriage_name') + \"=\" + data('child_name')",
+        "_row_num": 20
+      }
+    ],
+    "queries": [
+      {
+        "comments": "creates roster of marriages",
+        "query_name": "marriage_roster",
+        "query_type": "linked_table",
+        "linked_form_id": "marriages",
+        "linked_table_id": "marriages",
+        "selection": "household_id = ?",
+        "selectionArgs": "[ data('household_id') ]",
+        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "_row_num": 3
+      },
+      {
+        "comments": "creates roster of household members",
+        "query_name": "roster",
+        "query_type": "linked_table",
+        "linked_form_id": "household_member",
+        "linked_table_id": "household_member",
+        "selection": "household_id = ?",
+        "selectionArgs": "[ data('household_id') ]",
+        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "_row_num": 4
+      },
+      {
+        "comments": "used to add new members not living in household",
+        "query_name": "linked_household_member",
+        "query_type": "linked_table",
+        "linked_form_id": "household_member",
+        "linked_table_id": "household_member",
+        "selection": "null",
+        "selectionArgs": "null",
+        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'no' }",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "_row_num": 6
+      },
+      {
+        "comments": "marriage id name",
+        "query_name": "marriage_name_query",
+        "query_type": "linked_table",
+        "linked_form_id": "marriages",
+        "linked_table_id": "marriages",
+        "selection": "_id = ?",
+        "selectionArgs": "[ data('marriage_id') ]",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "fieldName": "marriage_id",
+        "_row_num": 9
+      },
+      {
+        "comments": "get child id",
+        "query_name": "child_name_query",
+        "query_type": "linked_table",
+        "linked_form_id": "household_member",
+        "linked_table_id": "household_member",
+        "selection": "_id = ?",
+        "selectionArgs": "[ data('child_id') ]",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "fieldName": "first_name",
+        "_row_num": 10
+      }
+    ],
+    "prompt_types": [
+      {
+        "prompt_type_name": "async_assign_count",
+        "type": "integer",
+        "_row_num": 3
+      },
+      {
+        "prompt_type_name": "async_assign_num_value",
+        "type": "integer",
+        "_row_num": 4
+      },
+      {
+        "prompt_type_name": "async_assign_text_value",
+        "type": "string",
+        "_row_num": 5
+      }
+    ]
+  },
+  "specification": {
+    "column_types": {
+      "_screen_block": "function",
+      "condition": "formula",
+      "constraint": "formula",
+      "required": "formula",
+      "calculation": "formula",
+      "newRowInitialElementKeyToValueMap": "formula",
+      "openRowInitialElementKeyToValueMap": "formula",
+      "selectionArgs": "formula",
+      "url": "formula",
+      "uri": "formula",
+      "callback": "formula(context)",
+      "choice_filter": "formula(choice_item)",
+      "templatePath": "requirejs_path",
+      "hideInContents": "formula"
+    },
+    "settings": {
+      "form_id": {
+        "setting_name": "form_id",
+        "value": "families",
+        "_row_num": 2
+      },
+      "form_version": {
+        "setting_name": "form_version",
+        "value": 2,
+        "_row_num": 3
+      },
+      "table_id": {
+        "setting_name": "table_id",
+        "value": "families",
+        "_row_num": 4
+      },
+      "instance_name": {
+        "setting_name": "instance_name",
+        "value": "family_id",
+        "_row_num": 5
+      },
+      "survey": {
+        "setting_name": "survey",
+        "display": {
+          "title": {
+            "text": "Families"
+          }
+        },
+        "_row_num": 6
+      },
+      "families": {
+        "setting_name": "families",
+        "display": {
+          "title": {
+            "text": "Family unit details"
+          }
+        },
+        "_row_num": 7
+      },
+      "_locales": {
+        "setting_name": "_locales",
+        "_row_num": 6,
+        "value": [
+          {
+            "display": {
+              "locale": {
+                "text": "default"
+              }
+            },
+            "name": "default"
+          }
+        ]
+      },
+      "_default_locale": {
+        "setting_name": "_default_locale",
+        "_row_num": 6,
+        "value": "default"
+      },
+      "initial": {
+        "setting_name": "survey",
+        "display": {
+          "title": {
+            "text": "Families"
+          }
+        },
+        "_row_num": 6
+      },
+      "family": {
+        "display": {
+          "title": {
+            "text": "Families"
+          }
+        }
+      }
+    },
+    "choices": {
+      "yesno": [
+        {
+          "choice_list_name": "yesno",
+          "data_value": "yes",
+          "display": {
+            "title": {
+              "text": "yes"
+            }
+          },
+          "_row_num": 2
+        },
+        {
+          "choice_list_name": "yesno",
+          "data_value": "no",
+          "display": {
+            "title": {
+              "text": "no"
+            }
+          },
+          "_row_num": 3
+        }
+      ]
+    },
+    "table_specific_definitions": {
+      "_tokens": {}
+    },
+    "queries": {
+      "marriage_roster": {
+        "comments": "creates roster of marriages",
+        "query_name": "marriage_roster",
+        "query_type": "linked_table",
+        "linked_form_id": "marriages",
+        "linked_table_id": "marriages",
+        "selection": "household_id = ?",
+        "selectionArgs": "[ data('household_id') ]",
+        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "_row_num": 3
+      },
+      "roster": {
+        "comments": "creates roster of household members",
+        "query_name": "roster",
+        "query_type": "linked_table",
+        "linked_form_id": "household_member",
+        "linked_table_id": "household_member",
+        "selection": "household_id = ?",
+        "selectionArgs": "[ data('household_id') ]",
+        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id') }",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "_row_num": 4
+      },
+      "linked_household_member": {
+        "comments": "used to add new members not living in household",
+        "query_name": "linked_household_member",
+        "query_type": "linked_table",
+        "linked_form_id": "household_member",
+        "linked_table_id": "household_member",
+        "selection": "null",
+        "selectionArgs": "null",
+        "newRowInitialElementKeyToValueMap": "{ household_id : data('household_id'), lives_in_household : 'no' }",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "_row_num": 6
+      },
+      "marriage_name_query": {
+        "comments": "marriage id name",
+        "query_name": "marriage_name_query",
+        "query_type": "linked_table",
+        "linked_form_id": "marriages",
+        "linked_table_id": "marriages",
+        "selection": "_id = ?",
+        "selectionArgs": "[ data('marriage_id') ]",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "fieldName": "marriage_id",
+        "_row_num": 9
+      },
+      "child_name_query": {
+        "comments": "get child id",
+        "query_name": "child_name_query",
+        "query_type": "linked_table",
+        "linked_form_id": "household_member",
+        "linked_table_id": "household_member",
+        "selection": "_id = ?",
+        "selectionArgs": "[ data('child_id') ]",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "fieldName": "first_name",
+        "_row_num": 10
+      }
+    },
+    "calculates": {},
+    "model": {
+      "household_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 2,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "household_id"
+      },
+      "marriage_id": {
+        "type": "string",
+        "valuesList": "marriage_roster",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "family"
+          },
+          {
+            "_row_num": 4,
+            "section_name": "model"
+          }
+        ],
+        "comment": "uuid from linked table",
+        "elementKey": "marriage_id"
+      },
+      "family_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 20,
+            "section_name": "family"
+          },
+          {
+            "_row_num": 6,
+            "section_name": "model"
+          }
+        ],
+        "comment": "readable id",
+        "elementKey": "family_id"
+      },
+      "child_id": {
+        "type": "string",
+        "valuesList": "roster",
+        "_defn": [
+          {
+            "_row_num": 7,
+            "section_name": "family"
+          },
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "comment": "uuid",
+        "elementKey": "child_id"
+      },
+      "child_name": {
+        "prompt_type_name": "async_assign_text_value",
+        "type": "string",
+        "valuesList": "child_name_query",
+        "_defn": [
+          {
+            "_row_num": 16,
+            "section_name": "family"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "child_name"
+      },
+      "marriage_name": {
+        "prompt_type_name": "async_assign_text_value",
+        "type": "string",
+        "valuesList": "marriage_name_query",
+        "_defn": [
+          {
+            "_row_num": 15,
+            "section_name": "family"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "comment": "generated from parent combination",
+        "elementKey": "marriage_name"
+      }
+    },
+    "section_names": [
+      "family",
+      "initial",
+      "survey"
+    ],
+    "sections": {
+      "initial": {
+        "section_name": "initial",
+        "nested_sections": {
+          "survey": true
+        },
+        "reachable_sections": {
+          "survey": true,
+          "family": true
+        },
+        "prompts": [
+          {
+            "clause": "do section survey",
+            "_row_num": 2,
+            "__rowNum__": 1,
+            "_token_type": "prompt",
+            "_do_section_name": "survey",
+            "_type": "_section",
+            "promptIdx": 0,
+            "display": {
+              "title": {
+                "text": "Families"
+              }
+            },
+            "_branch_label_enclosing_screen": "survey/0"
+          },
+          {
+            "_token_type": "prompt",
+            "type": "contents",
+            "_type": "contents",
+            "_row_num": 4,
+            "_branch_label_enclosing_screen": "initial/_screen4",
+            "promptIdx": 1
+          }
+        ],
+        "validation_tag_map": {
+          "finalize": []
+        },
+        "operations": [
+          {
+            "clause": "do section survey",
+            "_row_num": 2,
+            "__rowNum__": 1,
+            "_token_type": "do_section",
+            "_do_section_name": "survey",
+            "operationIdx": 0
+          },
+          {
+            "clause": "goto _finalize",
+            "comments": "skips the finalize screen where the user chooses to save as incomplete or finalized and instead saves as finalized",
+            "_row_num": 3,
+            "__rowNum__": 2,
+            "_token_type": "goto_label",
+            "_branch_label": "_finalize",
+            "operationIdx": 1
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 4,
+            "operationIdx": 2
+          },
+          {
+            "_row_num": 4,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 3
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 4,
+            "operationIdx": 4
+          },
+          {
+            "_token_type": "validate",
+            "clause": "validate finalize",
+            "_sweep_name": "finalize",
+            "_row_num": 4,
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 5
+          },
+          {
+            "_token_type": "save_and_terminate",
+            "clause": "save and terminate",
+            "calculation": true,
+            "_row_num": 4,
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 6
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 4,
+            "operationIdx": 7
+          }
+        ],
+        "branch_label_map": {
+          "_contents": 3,
+          "_screen4": 3,
+          "_finalize": 5
+        }
+      },
+      "survey": {
+        "section_name": "survey",
+        "nested_sections": {
+          "family": true
+        },
+        "reachable_sections": {
+          "family": true
+        },
+        "prompts": [
+          {
+            "clause": "do section family",
+            "_row_num": 2,
+            "__rowNum__": 1,
+            "_token_type": "prompt",
+            "_do_section_name": "family",
+            "_type": "_section",
+            "promptIdx": 0,
+            "display": {
+              "title": {
+                "text": "Families"
+              }
+            },
+            "_branch_label_enclosing_screen": "family/0"
+          },
+          {
+            "_token_type": "prompt",
+            "type": "contents",
+            "_type": "contents",
+            "_row_num": 3,
+            "_branch_label_enclosing_screen": "survey/_screen3",
+            "promptIdx": 1
+          }
+        ],
+        "validation_tag_map": {
+          "finalize": []
+        },
+        "operations": [
+          {
+            "clause": "do section family",
+            "_row_num": 2,
+            "__rowNum__": 1,
+            "_token_type": "do_section",
+            "_do_section_name": "family",
+            "operationIdx": 0
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 3,
+            "operationIdx": 1
+          },
+          {
+            "_row_num": 3,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 2
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 3,
+            "operationIdx": 3
+          }
+        ],
+        "branch_label_map": {
+          "_contents": 2,
+          "_screen3": 2
+        }
+      },
+      "family": {
+        "section_name": "family",
+        "nested_sections": {},
+        "reachable_sections": {},
+        "prompts": [
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": "Family Information:"
+              }
+            },
+            "_row_num": 3,
+            "__rowNum__": 2,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "family/_screen2",
+            "promptIdx": 0
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": "Create family lists of offspring resulting from the marriages input in previous question:"
+              }
+            },
+            "_row_num": 4,
+            "__rowNum__": 3,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "family/_screen2",
+            "promptIdx": 1
+          },
+          {
+            "type": "select_one",
+            "values_list": "marriage_roster",
+            "name": "marriage_id",
+            "display": {
+              "prompt": {
+                "text": "Parents:"
+              }
+            },
+            "_row_num": 5,
+            "__rowNum__": 4,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "family/_screen2",
+            "promptIdx": 2
+          },
+          {
+            "comment": "Selected from household roster",
+            "type": "select_one",
+            "values_list": "roster",
+            "name": "child_id",
+            "display": {
+              "prompt": {
+                "text": "Child:"
+              }
+            },
+            "_row_num": 7,
+            "__rowNum__": 6,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "family/_screen2",
+            "promptIdx": 3
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": "If the person is not on the list, please add them to the roster"
+              }
+            },
+            "_row_num": 9,
+            "__rowNum__": 8,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "family/_screen2",
+            "promptIdx": 4
+          },
+          {
+            "comment": "Adds new member to database",
+            "type": "linked_table",
+            "values_list": "linked_household_member",
+            "display": {
+              "prompt": {
+                "text": "Please enter info on child not living in household to the best of your ability"
+              },
+              "new_instance_label": {
+                "text": "Add child to roster"
+              }
+            },
+            "_row_num": 10,
+            "__rowNum__": 9,
+            "_token_type": "prompt",
+            "_type": "linked_table",
+            "_branch_label_enclosing_screen": "family/_screen2",
+            "promptIdx": 5
+          },
+          {
+            "comment": "asyncs for child name and family id creation",
+            "type": "async_assign_text_value",
+            "values_list": "marriage_name_query",
+            "name": "marriage_name",
+            "display": {
+              "debug": 0
+            },
+            "_row_num": 15,
+            "__rowNum__": 14,
+            "_token_type": "prompt",
+            "_type": "async_assign_text_value",
+            "_branch_label_enclosing_screen": "family/_screen14",
+            "promptIdx": 6
+          },
+          {
+            "type": "async_assign_text_value",
+            "values_list": "child_name_query",
+            "name": "child_name",
+            "display": {
+              "debug": 0
+            },
+            "_row_num": 16,
+            "__rowNum__": 15,
+            "_token_type": "prompt",
+            "_type": "async_assign_text_value",
+            "_branch_label_enclosing_screen": "family/_screen14",
+            "promptIdx": 7
+          },
+          {
+            "comment": "Has to be blank screen for data handling",
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": "This screen is almost intentionally left blank"
+              }
+            },
+            "_row_num": 17,
+            "__rowNum__": 16,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "family/_screen14",
+            "promptIdx": 8
+          },
+          {
+            "_token_type": "prompt",
+            "type": "contents",
+            "_type": "contents",
+            "_row_num": 21,
+            "_branch_label_enclosing_screen": "family/_screen21",
+            "promptIdx": 9
+          }
+        ],
+        "validation_tag_map": {
+          "finalize": []
+        },
+        "operations": [
+          {
+            "clause": "begin screen",
+            "_row_num": 2,
+            "__rowNum__": 1,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 12,
+              "__rowNum__": 11,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 0
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 14,
+            "__rowNum__": 13,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 19,
+              "__rowNum__": 18,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\nactivePromptIndicies.push(7);\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 1
+          },
+          {
+            "comment": "generate family ID",
+            "type": "assign",
+            "name": "family_id",
+            "calculation": "data('marriage_name') + \"=\" + data('child_name')",
+            "_row_num": 20,
+            "__rowNum__": 19,
+            "_token_type": "assign",
+            "operationIdx": 2
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 21,
+            "operationIdx": 3
+          },
+          {
+            "_row_num": 21,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 4
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 21,
+            "operationIdx": 5
+          }
+        ],
+        "branch_label_map": {
+          "_screen2": 0,
+          "_screen14": 1,
+          "_contents": 4,
+          "_screen21": 4
+        }
+      }
+    },
+    "dataTableModel": {
+      "household_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 2,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "household_id",
+        "elementName": "household_id",
+        "elementSet": "data",
+        "elementPath": "household_id"
+      },
+      "marriage_id": {
+        "type": "string",
+        "valuesList": "marriage_roster",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "family"
+          },
+          {
+            "_row_num": 4,
+            "section_name": "model"
+          }
+        ],
+        "comment": "uuid from linked table",
+        "elementKey": "marriage_id",
+        "elementName": "marriage_id",
+        "elementSet": "data",
+        "elementPath": "marriage_id"
+      },
+      "family_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 20,
+            "section_name": "family"
+          },
+          {
+            "_row_num": 6,
+            "section_name": "model"
+          }
+        ],
+        "comment": "readable id",
+        "elementKey": "family_id",
+        "elementName": "family_id",
+        "elementSet": "data",
+        "elementPath": "family_id"
+      },
+      "child_id": {
+        "type": "string",
+        "valuesList": "roster",
+        "_defn": [
+          {
+            "_row_num": 7,
+            "section_name": "family"
+          },
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "comment": "uuid",
+        "elementKey": "child_id",
+        "elementName": "child_id",
+        "elementSet": "data",
+        "elementPath": "child_id"
+      },
+      "child_name": {
+        "prompt_type_name": "async_assign_text_value",
+        "type": "string",
+        "valuesList": "child_name_query",
+        "_defn": [
+          {
+            "_row_num": 16,
+            "section_name": "family"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "child_name",
+        "elementName": "child_name",
+        "elementSet": "data",
+        "elementPath": "child_name"
+      },
+      "marriage_name": {
+        "prompt_type_name": "async_assign_text_value",
+        "type": "string",
+        "valuesList": "marriage_name_query",
+        "_defn": [
+          {
+            "_row_num": 15,
+            "section_name": "family"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "comment": "generated from parent combination",
+        "elementKey": "marriage_name",
+        "elementName": "marriage_name",
+        "elementSet": "data",
+        "elementPath": "marriage_name"
+      },
+      "_id": {
+        "type": "string",
+        "isNotNullable": true,
+        "elementKey": "_id",
+        "elementName": "_id",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_id"
+      },
+      "_row_etag": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_row_etag",
+        "elementName": "_row_etag",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_row_etag"
+      },
+      "_sync_state": {
+        "type": "string",
+        "isNotNullable": true,
+        "elementKey": "_sync_state",
+        "elementName": "_sync_state",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_sync_state"
+      },
+      "_conflict_type": {
+        "type": "integer",
+        "isNotNullable": false,
+        "elementKey": "_conflict_type",
+        "elementName": "_conflict_type",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_conflict_type"
+      },
+      "_default_access": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_default_access",
+        "elementName": "_default_access",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_default_access"
+      },
+      "_form_id": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_form_id",
+        "elementName": "_form_id",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_form_id"
+      },
+      "_group_modify": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_group_modify",
+        "elementName": "_group_modify",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_group_modify"
+      },
+      "_group_privileged": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_group_privileged",
+        "elementName": "_group_privileged",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_group_privileged"
+      },
+      "_group_read_only": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_group_read_only",
+        "elementName": "_group_read_only",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_group_read_only"
+      },
+      "_locale": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_locale",
+        "elementName": "_locale",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_locale"
+      },
+      "_row_owner": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_row_owner",
+        "elementName": "_row_owner",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_row_owner"
+      },
+      "_savepoint_type": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_savepoint_type",
+        "elementName": "_savepoint_type",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_savepoint_type"
+      },
+      "_savepoint_timestamp": {
+        "type": "string",
+        "isNotNullable": true,
+        "elementKey": "_savepoint_timestamp",
+        "elementName": "_savepoint_timestamp",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_savepoint_timestamp"
+      },
+      "_savepoint_creator": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_savepoint_creator",
+        "elementName": "_savepoint_creator",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_savepoint_creator"
+      }
+    },
+    "properties": [
+      {
+        "_partition": "FormType",
+        "_aspect": "default",
+        "_key": "FormType.formType",
+        "_type": "string",
+        "_value": "SURVEY"
+      },
+      {
+        "_partition": "SurveyUtil",
+        "_aspect": "default",
+        "_key": "SurveyUtil.formId",
+        "_type": "string",
+        "_value": "families"
+      },
+      {
+        "_partition": "Table",
+        "_aspect": "default",
+        "_key": "defaultViewType",
+        "_type": "string",
+        "_value": "SPREADSHEET"
+      },
+      {
+        "_partition": "Table",
+        "_aspect": "default",
+        "_key": "displayName",
+        "_type": "object",
+        "_value": "{\"text\":\"Families\"}"
+      }
+    ]
+  }
+}

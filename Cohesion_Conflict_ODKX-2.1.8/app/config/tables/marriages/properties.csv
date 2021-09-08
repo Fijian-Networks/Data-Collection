@@ -1,0 +1,6 @@
+_partition,_aspect,_key,_type,_value
+Column,mstat,displayChoicesList,object,"[{""choice_list_name"":""marital_choices"",""data_value"":""M"",""display"":{""title"":{""text"":""Married""}},""_row_num"":5},{""choice_list_name"":""marital_choices"",""data_value"":""NM"",""display"":{""title"":{""text"":""Never Married""}},""_row_num"":6},{""choice_list_name"":""marital_choices"",""data_value"":""D"",""display"":{""title"":{""text"":""Divorced""}},""_row_num"":7},{""choice_list_name"":""marital_choices"",""data_value"":""S"",""display"":{""title"":{""text"":""Separated""}},""_row_num"":8},{""choice_list_name"":""marital_choices"",""data_value"":""W"",""display"":{""title"":{""text"":""Widowed""}},""_row_num"":9}]"
+FormType,default,FormType.formType,string,SURVEY
+SurveyUtil,default,SurveyUtil.formId,string,marriages
+Table,default,defaultViewType,string,SPREADSHEET
+Table,default,displayName,object,"{""text"":""Marriages""}"

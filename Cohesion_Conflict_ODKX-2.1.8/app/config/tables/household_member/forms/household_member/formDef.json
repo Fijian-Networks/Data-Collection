@@ -1,0 +1,2475 @@
+{
+  "xlsx": {
+    "initial": [
+      {
+        "clause": "do section survey",
+        "_row_num": 2
+      },
+      {
+        "clause": "goto _finalize",
+        "comments": "skips the finalize screen where the user chooses to save as incomplete or finalized and instead saves as finalized",
+        "_row_num": 3
+      }
+    ],
+    "survey": [
+      {
+        "clause": "do section basic_demog",
+        "_row_num": 4
+      },
+      {
+        "comment": "assign full name for instance name",
+        "type": "assign",
+        "name": "name",
+        "calculation": "(data('first_name') + '_' + data('last_name'))",
+        "_row_num": 5
+      },
+      {
+        "clause": "do section demog_continued",
+        "_row_num": 7
+      }
+    ],
+    "choices": [
+      {
+        "choice_list_name": "yesno",
+        "data_value": "yes",
+        "display": {
+          "title": {
+            "text": "yes"
+          }
+        },
+        "_row_num": 2
+      },
+      {
+        "choice_list_name": "yesno",
+        "data_value": "no",
+        "display": {
+          "title": {
+            "text": "no"
+          }
+        },
+        "_row_num": 3
+      },
+      {
+        "choice_list_name": "sexes",
+        "data_value": "male",
+        "display": {
+          "title": {
+            "text": "male"
+          }
+        },
+        "_row_num": 5
+      },
+      {
+        "choice_list_name": "sexes",
+        "data_value": "female",
+        "display": {
+          "title": {
+            "text": "female"
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "choice_list_name": "relationships",
+        "data_value": "head",
+        "display": {
+          "title": {
+            "text": "Head"
+          }
+        },
+        "_row_num": 8
+      },
+      {
+        "choice_list_name": "relationships",
+        "data_value": "spouse",
+        "display": {
+          "title": {
+            "text": "Spouse"
+          }
+        },
+        "_row_num": 9
+      },
+      {
+        "choice_list_name": "relationships",
+        "data_value": "son_daughter",
+        "display": {
+          "title": {
+            "text": "Son/Daughter"
+          }
+        },
+        "_row_num": 10
+      },
+      {
+        "choice_list_name": "relationships",
+        "data_value": "grandchild",
+        "display": {
+          "title": {
+            "text": "Grandchild"
+          }
+        },
+        "_row_num": 11
+      },
+      {
+        "choice_list_name": "relationships",
+        "data_value": "father_mother",
+        "display": {
+          "title": {
+            "text": "Father/Mother"
+          }
+        },
+        "_row_num": 12
+      },
+      {
+        "choice_list_name": "relationships",
+        "data_value": "sister_brother",
+        "display": {
+          "title": {
+            "text": "Sister/Brother"
+          }
+        },
+        "_row_num": 13
+      },
+      {
+        "choice_list_name": "relationships",
+        "data_value": "niece_nephew",
+        "display": {
+          "title": {
+            "text": "Niece/Nephew"
+          }
+        },
+        "_row_num": 14
+      },
+      {
+        "choice_list_name": "relationships",
+        "data_value": "uncle_aunt",
+        "display": {
+          "title": {
+            "text": "Uncle/Aunt"
+          }
+        },
+        "_row_num": 15
+      },
+      {
+        "choice_list_name": "relationships",
+        "data_value": "in_law_son_daughter",
+        "display": {
+          "title": {
+            "text": "Son/Daughter in-law"
+          }
+        },
+        "_row_num": 16
+      },
+      {
+        "choice_list_name": "relationships",
+        "data_value": "in_law_father_mother",
+        "display": {
+          "title": {
+            "text": "Father/Mother in-law"
+          }
+        },
+        "_row_num": 17
+      },
+      {
+        "choice_list_name": "relationships",
+        "data_value": "in_law_brother_sister",
+        "display": {
+          "title": {
+            "text": "Brother/Sister in-law"
+          }
+        },
+        "_row_num": 18
+      },
+      {
+        "choice_list_name": "relationships",
+        "data_value": "grandparent",
+        "display": {
+          "title": {
+            "text": "Grandparent"
+          }
+        },
+        "_row_num": 19
+      },
+      {
+        "choice_list_name": "relationships",
+        "data_value": "other_relative",
+        "display": {
+          "title": {
+            "text": "Other relative"
+          }
+        },
+        "_row_num": 20
+      },
+      {
+        "choice_list_name": "relationships",
+        "data_value": "non_relative",
+        "display": {
+          "title": {
+            "text": "Non-relative"
+          }
+        },
+        "_row_num": 21
+      },
+      {
+        "choice_list_name": "marital_choices",
+        "data_value": "married",
+        "display": {
+          "title": {
+            "text": "Married"
+          }
+        },
+        "_row_num": 23
+      },
+      {
+        "choice_list_name": "marital_choices",
+        "data_value": "never_married",
+        "display": {
+          "title": {
+            "text": "Never Married"
+          }
+        },
+        "_row_num": 24
+      },
+      {
+        "choice_list_name": "marital_choices",
+        "data_value": "divorced",
+        "display": {
+          "title": {
+            "text": "Divorced"
+          }
+        },
+        "_row_num": 25
+      },
+      {
+        "choice_list_name": "marital_choices",
+        "data_value": "separated",
+        "display": {
+          "title": {
+            "text": "Separated"
+          }
+        },
+        "_row_num": 26
+      },
+      {
+        "choice_list_name": "marital_choices",
+        "data_value": "widowed",
+        "display": {
+          "title": {
+            "text": "Widowed"
+          }
+        },
+        "_row_num": 27
+      }
+    ],
+    "settings": [
+      {
+        "setting_name": "form_id",
+        "value": "household_member",
+        "_row_num": 2
+      },
+      {
+        "setting_name": "form_version",
+        "value": 2,
+        "_row_num": 3
+      },
+      {
+        "setting_name": "table_id",
+        "value": "household_member",
+        "_row_num": 4
+      },
+      {
+        "setting_name": "instance_name",
+        "value": "name",
+        "_row_num": 5
+      },
+      {
+        "setting_name": "survey",
+        "display": {
+          "title": {
+            "text": "Household Member"
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "setting_name": "basic_demog",
+        "display": {
+          "title": {
+            "text": "Basic Demographics"
+          }
+        },
+        "_row_num": 7
+      },
+      {
+        "setting_name": "demog_continued",
+        "display": {
+          "title": {
+            "text": "Demographics Continued"
+          }
+        },
+        "_row_num": 8
+      }
+    ],
+    "model": [
+      {
+        "comment": "basic demog",
+        "name": "household_id",
+        "type": "text",
+        "_row_num": 3
+      },
+      {
+        "name": "village",
+        "type": "select_one",
+        "_row_num": 4
+      },
+      {
+        "name": "first_name",
+        "type": "text",
+        "_row_num": 5
+      },
+      {
+        "name": "last_name",
+        "type": "text",
+        "_row_num": 6
+      },
+      {
+        "name": "name",
+        "type": "text",
+        "_row_num": 7
+      },
+      {
+        "name": "aka",
+        "type": "text",
+        "_row_num": 8
+      },
+      {
+        "name": "age",
+        "type": "integer",
+        "_row_num": 9
+      },
+      {
+        "name": "sex",
+        "type": "select_one",
+        "_row_num": 10
+      },
+      {
+        "name": "notes",
+        "type": "text",
+        "_row_num": 11
+      },
+      {
+        "comment": "demog_continued",
+        "_row_num": 13
+      },
+      {
+        "name": "relation_to_head",
+        "type": "select_one",
+        "_row_num": 14
+      },
+      {
+        "name": "marital_status",
+        "type": "select_one",
+        "_row_num": 15
+      },
+      {
+        "name": "customary_membership",
+        "type": "select_one",
+        "_row_num": 16
+      },
+      {
+        "name": "education_years",
+        "type": "integer",
+        "_row_num": 17
+      },
+      {
+        "name": "has_children",
+        "type": "select_one",
+        "_row_num": 18
+      },
+      {
+        "name": "birthplace",
+        "type": "text",
+        "_row_num": 19
+      },
+      {
+        "comment": "photo",
+        "_row_num": 21
+      },
+      {
+        "name": "person_photo",
+        "type": "image",
+        "_row_num": 22
+      },
+      {
+        "comment": "assigned automatically",
+        "name": "lives_in_household",
+        "type": "select_one",
+        "_row_num": 24
+      },
+      {
+        "name": "is_alive",
+        "type": "select_one",
+        "_row_num": 25
+      },
+      {
+        "name": "lives_fulltime",
+        "type": "select_one",
+        "_row_num": 26
+      }
+    ],
+    "basic_demog": [
+      {
+        "clause": "begin screen",
+        "_row_num": 2
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": "Data for household: {{data.household_id}}"
+          }
+        },
+        "_row_num": 3
+      },
+      {
+        "type": "text",
+        "name": "first_name",
+        "display": {
+          "prompt": {
+            "text": "Household members first name:"
+          }
+        },
+        "_row_num": 4
+      },
+      {
+        "type": "text",
+        "name": "last_name",
+        "display": {
+          "prompt": {
+            "text": "Household members last name:"
+          }
+        },
+        "_row_num": 5
+      },
+      {
+        "type": "text",
+        "name": "aka",
+        "display": {
+          "prompt": {
+            "text": "Are they known by any other names?"
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": "Add commas between names if more than one."
+          }
+        },
+        "_row_num": 7
+      },
+      {
+        "type": "integer",
+        "name": "age",
+        "display": {
+          "prompt": {
+            "text": "Age:"
+          }
+        },
+        "_row_num": 8
+      },
+      {
+        "type": "select_one",
+        "values_list": "sexes",
+        "name": "sex",
+        "display": {
+          "prompt": {
+            "text": "Sex:"
+          }
+        },
+        "_row_num": 9
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 10
+      },
+      {
+        "comment": "assigns default yes to is_alive",
+        "type": "assign",
+        "name": "is_alive",
+        "calculation": "\"yes\"",
+        "_row_num": 12
+      },
+      {
+        "comment": "assigns default yes to lives_fulltime",
+        "type": "assign",
+        "name": "lives_fulltime",
+        "calculation": "\"yes\"",
+        "_row_num": 13
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 15
+      },
+      {
+        "type": "select_one",
+        "values_list": "yesno",
+        "name": "lives_fulltime",
+        "display": {
+          "prompt": {
+            "text": "Does this person live here full time?"
+          }
+        },
+        "_row_num": 16
+      },
+      {
+        "type": "text",
+        "name": "notes",
+        "display": {
+          "prompt": {
+            "text": "Please add any relevant information to help data analysis:"
+          }
+        },
+        "_row_num": 17
+      },
+      {
+        "type": "select_one",
+        "values_list": "yesno",
+        "name": "is_alive",
+        "display": {
+          "prompt": {
+            "text": "Is this person alive?"
+          }
+        },
+        "_row_num": 18
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 19
+      }
+    ],
+    "demog_continued": [
+      {
+        "clause": "begin screen",
+        "_row_num": 2
+      },
+      {
+        "type": "select_one_dropdown",
+        "values_list": "relationships",
+        "name": "relation_to_head",
+        "display": {
+          "prompt": {
+            "text": "What is {{data.first_name}}'s relation to the head of the household?"
+          }
+        },
+        "_row_num": 4
+      },
+      {
+        "type": "text",
+        "name": "birthplace",
+        "display": {
+          "prompt": {
+            "text": "Where was {{data.first_name}} born?"
+          }
+        },
+        "_row_num": 5
+      },
+      {
+        "clause": "if",
+        "condition": "data('age') >= 18",
+        "required": "data('age') >=16",
+        "_row_num": 6
+      },
+      {
+        "type": "select_one_dropdown",
+        "values_list": "marital_choices",
+        "name": "marital_status",
+        "display": {
+          "prompt": {
+            "text": "What is {{data.first_name}}'s marital status?"
+          }
+        },
+        "_row_num": 7
+      },
+      {
+        "clause": "end if",
+        "_row_num": 8
+      },
+      {
+        "clause": "if",
+        "condition": "data('age') >= 5",
+        "_row_num": 10
+      },
+      {
+        "type": "integer",
+        "name": "education_years",
+        "display": {
+          "prompt": {
+            "text": "How many years of education has {{data.first_name}} had?"
+          }
+        },
+        "_row_num": 11
+      },
+      {
+        "clause": "end if",
+        "_row_num": 12
+      },
+      {
+        "clause": "if",
+        "condition": "data('age') >= 15",
+        "required": "data('age') >= 16",
+        "_row_num": 14
+      },
+      {
+        "type": "select_one",
+        "values_list": "yesno",
+        "name": "has_children",
+        "display": {
+          "prompt": {
+            "text": "Does {{data.first_name}} have any children?"
+          }
+        },
+        "_row_num": 15
+      },
+      {
+        "clause": "end if",
+        "_row_num": 16
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 18
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 20
+      },
+      {
+        "type": "image",
+        "name": "person_photo",
+        "display": {
+          "prompt": {
+            "text": "Please take a photo of the household member"
+          }
+        },
+        "_row_num": 21
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 22
+      }
+    ]
+  },
+  "specification": {
+    "column_types": {
+      "_screen_block": "function",
+      "condition": "formula",
+      "constraint": "formula",
+      "required": "formula",
+      "calculation": "formula",
+      "newRowInitialElementKeyToValueMap": "formula",
+      "openRowInitialElementKeyToValueMap": "formula",
+      "selectionArgs": "formula",
+      "url": "formula",
+      "uri": "formula",
+      "callback": "formula(context)",
+      "choice_filter": "formula(choice_item)",
+      "templatePath": "requirejs_path",
+      "hideInContents": "formula"
+    },
+    "settings": {
+      "form_id": {
+        "setting_name": "form_id",
+        "value": "household_member",
+        "_row_num": 2
+      },
+      "form_version": {
+        "setting_name": "form_version",
+        "value": 2,
+        "_row_num": 3
+      },
+      "table_id": {
+        "setting_name": "table_id",
+        "value": "household_member",
+        "_row_num": 4
+      },
+      "instance_name": {
+        "setting_name": "instance_name",
+        "value": "name",
+        "_row_num": 5
+      },
+      "survey": {
+        "setting_name": "survey",
+        "display": {
+          "title": {
+            "text": "Household Member"
+          }
+        },
+        "_row_num": 6
+      },
+      "basic_demog": {
+        "setting_name": "basic_demog",
+        "display": {
+          "title": {
+            "text": "Basic Demographics"
+          }
+        },
+        "_row_num": 7
+      },
+      "demog_continued": {
+        "setting_name": "demog_continued",
+        "display": {
+          "title": {
+            "text": "Demographics Continued"
+          }
+        },
+        "_row_num": 8
+      },
+      "_locales": {
+        "setting_name": "_locales",
+        "_row_num": 6,
+        "value": [
+          {
+            "display": {
+              "locale": {
+                "text": "default"
+              }
+            },
+            "name": "default"
+          }
+        ]
+      },
+      "_default_locale": {
+        "setting_name": "_default_locale",
+        "_row_num": 6,
+        "value": "default"
+      },
+      "initial": {
+        "setting_name": "survey",
+        "display": {
+          "title": {
+            "text": "Household Member"
+          }
+        },
+        "_row_num": 6
+      }
+    },
+    "choices": {
+      "yesno": [
+        {
+          "choice_list_name": "yesno",
+          "data_value": "yes",
+          "display": {
+            "title": {
+              "text": "yes"
+            }
+          },
+          "_row_num": 2
+        },
+        {
+          "choice_list_name": "yesno",
+          "data_value": "no",
+          "display": {
+            "title": {
+              "text": "no"
+            }
+          },
+          "_row_num": 3
+        }
+      ],
+      "sexes": [
+        {
+          "choice_list_name": "sexes",
+          "data_value": "male",
+          "display": {
+            "title": {
+              "text": "male"
+            }
+          },
+          "_row_num": 5
+        },
+        {
+          "choice_list_name": "sexes",
+          "data_value": "female",
+          "display": {
+            "title": {
+              "text": "female"
+            }
+          },
+          "_row_num": 6
+        }
+      ],
+      "relationships": [
+        {
+          "choice_list_name": "relationships",
+          "data_value": "head",
+          "display": {
+            "title": {
+              "text": "Head"
+            }
+          },
+          "_row_num": 8
+        },
+        {
+          "choice_list_name": "relationships",
+          "data_value": "spouse",
+          "display": {
+            "title": {
+              "text": "Spouse"
+            }
+          },
+          "_row_num": 9
+        },
+        {
+          "choice_list_name": "relationships",
+          "data_value": "son_daughter",
+          "display": {
+            "title": {
+              "text": "Son/Daughter"
+            }
+          },
+          "_row_num": 10
+        },
+        {
+          "choice_list_name": "relationships",
+          "data_value": "grandchild",
+          "display": {
+            "title": {
+              "text": "Grandchild"
+            }
+          },
+          "_row_num": 11
+        },
+        {
+          "choice_list_name": "relationships",
+          "data_value": "father_mother",
+          "display": {
+            "title": {
+              "text": "Father/Mother"
+            }
+          },
+          "_row_num": 12
+        },
+        {
+          "choice_list_name": "relationships",
+          "data_value": "sister_brother",
+          "display": {
+            "title": {
+              "text": "Sister/Brother"
+            }
+          },
+          "_row_num": 13
+        },
+        {
+          "choice_list_name": "relationships",
+          "data_value": "niece_nephew",
+          "display": {
+            "title": {
+              "text": "Niece/Nephew"
+            }
+          },
+          "_row_num": 14
+        },
+        {
+          "choice_list_name": "relationships",
+          "data_value": "uncle_aunt",
+          "display": {
+            "title": {
+              "text": "Uncle/Aunt"
+            }
+          },
+          "_row_num": 15
+        },
+        {
+          "choice_list_name": "relationships",
+          "data_value": "in_law_son_daughter",
+          "display": {
+            "title": {
+              "text": "Son/Daughter in-law"
+            }
+          },
+          "_row_num": 16
+        },
+        {
+          "choice_list_name": "relationships",
+          "data_value": "in_law_father_mother",
+          "display": {
+            "title": {
+              "text": "Father/Mother in-law"
+            }
+          },
+          "_row_num": 17
+        },
+        {
+          "choice_list_name": "relationships",
+          "data_value": "in_law_brother_sister",
+          "display": {
+            "title": {
+              "text": "Brother/Sister in-law"
+            }
+          },
+          "_row_num": 18
+        },
+        {
+          "choice_list_name": "relationships",
+          "data_value": "grandparent",
+          "display": {
+            "title": {
+              "text": "Grandparent"
+            }
+          },
+          "_row_num": 19
+        },
+        {
+          "choice_list_name": "relationships",
+          "data_value": "other_relative",
+          "display": {
+            "title": {
+              "text": "Other relative"
+            }
+          },
+          "_row_num": 20
+        },
+        {
+          "choice_list_name": "relationships",
+          "data_value": "non_relative",
+          "display": {
+            "title": {
+              "text": "Non-relative"
+            }
+          },
+          "_row_num": 21
+        }
+      ],
+      "marital_choices": [
+        {
+          "choice_list_name": "marital_choices",
+          "data_value": "married",
+          "display": {
+            "title": {
+              "text": "Married"
+            }
+          },
+          "_row_num": 23
+        },
+        {
+          "choice_list_name": "marital_choices",
+          "data_value": "never_married",
+          "display": {
+            "title": {
+              "text": "Never Married"
+            }
+          },
+          "_row_num": 24
+        },
+        {
+          "choice_list_name": "marital_choices",
+          "data_value": "divorced",
+          "display": {
+            "title": {
+              "text": "Divorced"
+            }
+          },
+          "_row_num": 25
+        },
+        {
+          "choice_list_name": "marital_choices",
+          "data_value": "separated",
+          "display": {
+            "title": {
+              "text": "Separated"
+            }
+          },
+          "_row_num": 26
+        },
+        {
+          "choice_list_name": "marital_choices",
+          "data_value": "widowed",
+          "display": {
+            "title": {
+              "text": "Widowed"
+            }
+          },
+          "_row_num": 27
+        }
+      ]
+    },
+    "table_specific_definitions": {
+      "_tokens": {}
+    },
+    "queries": {},
+    "calculates": {},
+    "model": {
+      "household_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "comment": "basic demog",
+        "elementKey": "household_id"
+      },
+      "village": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "village"
+      },
+      "first_name": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 5,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "first_name"
+      },
+      "last_name": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 6,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "last_name"
+      },
+      "name": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 7,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "name"
+      },
+      "aka": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "aka"
+      },
+      "age": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 8,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "age"
+      },
+      "sex": {
+        "type": "string",
+        "valuesList": "sexes",
+        "_defn": [
+          {
+            "_row_num": 9,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "sex"
+      },
+      "notes": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 17,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "notes"
+      },
+      "relation_to_head": {
+        "type": "string",
+        "valuesList": "relationships",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "demog_continued"
+          },
+          {
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "relation_to_head"
+      },
+      "marital_status": {
+        "type": "string",
+        "valuesList": "marital_choices",
+        "_defn": [
+          {
+            "_row_num": 7,
+            "section_name": "demog_continued"
+          },
+          {
+            "_row_num": 15,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "marital_status"
+      },
+      "customary_membership": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 16,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "customary_membership"
+      },
+      "education_years": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 11,
+            "section_name": "demog_continued"
+          },
+          {
+            "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "education_years"
+      },
+      "has_children": {
+        "type": "string",
+        "valuesList": "yesno",
+        "_defn": [
+          {
+            "_row_num": 15,
+            "section_name": "demog_continued"
+          },
+          {
+            "_row_num": 18,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "has_children"
+      },
+      "birthplace": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "demog_continued"
+          },
+          {
+            "_row_num": 19,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "birthplace"
+      },
+      "person_photo": {
+        "type": "object",
+        "elementType": "mimeUri",
+        "properties": {
+          "uriFragment": {
+            "type": "string",
+            "elementType": "rowpath",
+            "elementKey": "person_photo_uriFragment"
+          },
+          "contentType": {
+            "type": "string",
+            "elementType": "mimeType",
+            "default": "image/*",
+            "elementKey": "person_photo_contentType"
+          }
+        },
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "demog_continued"
+          },
+          {
+            "_row_num": 22,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "person_photo"
+      },
+      "lives_in_household": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 24,
+            "section_name": "model"
+          }
+        ],
+        "comment": "assigned automatically",
+        "elementKey": "lives_in_household"
+      },
+      "is_alive": {
+        "type": "string",
+        "valuesList": "yesno",
+        "_defn": [
+          {
+            "_row_num": 18,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 12,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 25,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "is_alive"
+      },
+      "lives_fulltime": {
+        "type": "string",
+        "valuesList": "yesno",
+        "_defn": [
+          {
+            "_row_num": 16,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 13,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 26,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "lives_fulltime"
+      }
+    },
+    "section_names": [
+      "basic_demog",
+      "demog_continued",
+      "initial",
+      "survey"
+    ],
+    "sections": {
+      "initial": {
+        "section_name": "initial",
+        "nested_sections": {
+          "survey": true
+        },
+        "reachable_sections": {
+          "survey": true,
+          "basic_demog": true,
+          "demog_continued": true
+        },
+        "prompts": [
+          {
+            "clause": "do section survey",
+            "_row_num": 2,
+            "__rowNum__": 1,
+            "_token_type": "prompt",
+            "_do_section_name": "survey",
+            "_type": "_section",
+            "promptIdx": 0,
+            "display": {
+              "title": {
+                "text": "Household Member"
+              }
+            },
+            "_branch_label_enclosing_screen": "survey/0"
+          },
+          {
+            "_token_type": "prompt",
+            "type": "contents",
+            "_type": "contents",
+            "_row_num": 4,
+            "_branch_label_enclosing_screen": "initial/_screen4",
+            "promptIdx": 1
+          }
+        ],
+        "validation_tag_map": {
+          "finalize": []
+        },
+        "operations": [
+          {
+            "clause": "do section survey",
+            "_row_num": 2,
+            "__rowNum__": 1,
+            "_token_type": "do_section",
+            "_do_section_name": "survey",
+            "operationIdx": 0
+          },
+          {
+            "clause": "goto _finalize",
+            "comments": "skips the finalize screen where the user chooses to save as incomplete or finalized and instead saves as finalized",
+            "_row_num": 3,
+            "__rowNum__": 2,
+            "_token_type": "goto_label",
+            "_branch_label": "_finalize",
+            "operationIdx": 1
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 4,
+            "operationIdx": 2
+          },
+          {
+            "_row_num": 4,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 3
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 4,
+            "operationIdx": 4
+          },
+          {
+            "_token_type": "validate",
+            "clause": "validate finalize",
+            "_sweep_name": "finalize",
+            "_row_num": 4,
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 5
+          },
+          {
+            "_token_type": "save_and_terminate",
+            "clause": "save and terminate",
+            "calculation": true,
+            "_row_num": 4,
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 6
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 4,
+            "operationIdx": 7
+          }
+        ],
+        "branch_label_map": {
+          "_contents": 3,
+          "_screen4": 3,
+          "_finalize": 5
+        }
+      },
+      "survey": {
+        "section_name": "survey",
+        "nested_sections": {
+          "basic_demog": true,
+          "demog_continued": true
+        },
+        "reachable_sections": {
+          "basic_demog": true,
+          "demog_continued": true
+        },
+        "prompts": [
+          {
+            "clause": "do section basic_demog",
+            "_row_num": 4,
+            "__rowNum__": 3,
+            "_token_type": "prompt",
+            "_do_section_name": "basic_demog",
+            "_type": "_section",
+            "promptIdx": 0,
+            "display": {
+              "title": {
+                "text": "Basic Demographics"
+              }
+            },
+            "_branch_label_enclosing_screen": "basic_demog/0"
+          },
+          {
+            "clause": "do section demog_continued",
+            "_row_num": 7,
+            "__rowNum__": 6,
+            "_token_type": "prompt",
+            "_do_section_name": "demog_continued",
+            "_type": "_section",
+            "promptIdx": 1,
+            "display": {
+              "title": {
+                "text": "Demographics Continued"
+              }
+            },
+            "_branch_label_enclosing_screen": "demog_continued/0"
+          },
+          {
+            "_token_type": "prompt",
+            "type": "contents",
+            "_type": "contents",
+            "_row_num": 8,
+            "_branch_label_enclosing_screen": "survey/_screen8",
+            "promptIdx": 2
+          }
+        ],
+        "validation_tag_map": {
+          "finalize": []
+        },
+        "operations": [
+          {
+            "clause": "do section basic_demog",
+            "_row_num": 4,
+            "__rowNum__": 3,
+            "_token_type": "do_section",
+            "_do_section_name": "basic_demog",
+            "operationIdx": 0
+          },
+          {
+            "comment": "assign full name for instance name",
+            "type": "assign",
+            "name": "name",
+            "calculation": "(data('first_name') + '_' + data('last_name'))",
+            "_row_num": 5,
+            "__rowNum__": 4,
+            "_token_type": "assign",
+            "operationIdx": 1
+          },
+          {
+            "clause": "do section demog_continued",
+            "_row_num": 7,
+            "__rowNum__": 6,
+            "_token_type": "do_section",
+            "_do_section_name": "demog_continued",
+            "operationIdx": 2
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 8,
+            "operationIdx": 3
+          },
+          {
+            "_row_num": 8,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\n\nreturn activePromptIndicies;\n}\n",
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 4
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 8,
+            "operationIdx": 5
+          }
+        ],
+        "branch_label_map": {
+          "_contents": 4,
+          "_screen8": 4
+        }
+      },
+      "basic_demog": {
+        "section_name": "basic_demog",
+        "nested_sections": {},
+        "reachable_sections": {},
+        "prompts": [
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": "Data for household: {{data.household_id}}"
+              }
+            },
+            "_row_num": 3,
+            "__rowNum__": 2,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "basic_demog/_screen2",
+            "promptIdx": 0
+          },
+          {
+            "type": "text",
+            "name": "first_name",
+            "display": {
+              "prompt": {
+                "text": "Household members first name:"
+              }
+            },
+            "_row_num": 4,
+            "__rowNum__": 3,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "basic_demog/_screen2",
+            "promptIdx": 1
+          },
+          {
+            "type": "text",
+            "name": "last_name",
+            "display": {
+              "prompt": {
+                "text": "Household members last name:"
+              }
+            },
+            "_row_num": 5,
+            "__rowNum__": 4,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "basic_demog/_screen2",
+            "promptIdx": 2
+          },
+          {
+            "type": "text",
+            "name": "aka",
+            "display": {
+              "prompt": {
+                "text": "Are they known by any other names?"
+              }
+            },
+            "_row_num": 6,
+            "__rowNum__": 5,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "basic_demog/_screen2",
+            "promptIdx": 3
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": "Add commas between names if more than one."
+              }
+            },
+            "_row_num": 7,
+            "__rowNum__": 6,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "basic_demog/_screen2",
+            "promptIdx": 4
+          },
+          {
+            "type": "integer",
+            "name": "age",
+            "display": {
+              "prompt": {
+                "text": "Age:"
+              }
+            },
+            "_row_num": 8,
+            "__rowNum__": 7,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "basic_demog/_screen2",
+            "promptIdx": 5
+          },
+          {
+            "type": "select_one",
+            "values_list": "sexes",
+            "name": "sex",
+            "display": {
+              "prompt": {
+                "text": "Sex:"
+              }
+            },
+            "_row_num": 9,
+            "__rowNum__": 8,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "basic_demog/_screen2",
+            "promptIdx": 6
+          },
+          {
+            "type": "select_one",
+            "values_list": "yesno",
+            "name": "lives_fulltime",
+            "display": {
+              "prompt": {
+                "text": "Does this person live here full time?"
+              }
+            },
+            "_row_num": 16,
+            "__rowNum__": 15,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "basic_demog/_screen15",
+            "promptIdx": 7
+          },
+          {
+            "type": "text",
+            "name": "notes",
+            "display": {
+              "prompt": {
+                "text": "Please add any relevant information to help data analysis:"
+              }
+            },
+            "_row_num": 17,
+            "__rowNum__": 16,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "basic_demog/_screen15",
+            "promptIdx": 8
+          },
+          {
+            "type": "select_one",
+            "values_list": "yesno",
+            "name": "is_alive",
+            "display": {
+              "prompt": {
+                "text": "Is this person alive?"
+              }
+            },
+            "_row_num": 18,
+            "__rowNum__": 17,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "basic_demog/_screen15",
+            "promptIdx": 9
+          },
+          {
+            "_token_type": "prompt",
+            "type": "contents",
+            "_type": "contents",
+            "_row_num": 20,
+            "_branch_label_enclosing_screen": "basic_demog/_screen20",
+            "promptIdx": 10
+          }
+        ],
+        "validation_tag_map": {
+          "finalize": []
+        },
+        "operations": [
+          {
+            "clause": "begin screen",
+            "_row_num": 2,
+            "__rowNum__": 1,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 10,
+              "__rowNum__": 9,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 0
+          },
+          {
+            "comment": "assigns default yes to is_alive",
+            "type": "assign",
+            "name": "is_alive",
+            "calculation": "\"yes\"",
+            "_row_num": 12,
+            "__rowNum__": 11,
+            "_token_type": "assign",
+            "operationIdx": 1
+          },
+          {
+            "comment": "assigns default yes to lives_fulltime",
+            "type": "assign",
+            "name": "lives_fulltime",
+            "calculation": "\"yes\"",
+            "_row_num": 13,
+            "__rowNum__": 12,
+            "_token_type": "assign",
+            "operationIdx": 2
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 15,
+            "__rowNum__": 14,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 19,
+              "__rowNum__": 18,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\nactivePromptIndicies.push(8);\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 3
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 20,
+            "operationIdx": 4
+          },
+          {
+            "_row_num": 20,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(10);\n\nreturn activePromptIndicies;\n}\n",
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 5
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 20,
+            "operationIdx": 6
+          }
+        ],
+        "branch_label_map": {
+          "_screen2": 0,
+          "_screen15": 3,
+          "_contents": 5,
+          "_screen20": 5
+        }
+      },
+      "demog_continued": {
+        "section_name": "demog_continued",
+        "nested_sections": {},
+        "reachable_sections": {},
+        "prompts": [
+          {
+            "type": "select_one_dropdown",
+            "values_list": "relationships",
+            "name": "relation_to_head",
+            "display": {
+              "prompt": {
+                "text": "What is {{data.first_name}}'s relation to the head of the household?"
+              }
+            },
+            "_row_num": 4,
+            "__rowNum__": 3,
+            "_token_type": "prompt",
+            "_type": "select_one_dropdown",
+            "_branch_label_enclosing_screen": "demog_continued/_screen2",
+            "promptIdx": 0
+          },
+          {
+            "type": "text",
+            "name": "birthplace",
+            "display": {
+              "prompt": {
+                "text": "Where was {{data.first_name}} born?"
+              }
+            },
+            "_row_num": 5,
+            "__rowNum__": 4,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "demog_continued/_screen2",
+            "promptIdx": 1
+          },
+          {
+            "type": "select_one_dropdown",
+            "values_list": "marital_choices",
+            "name": "marital_status",
+            "display": {
+              "prompt": {
+                "text": "What is {{data.first_name}}'s marital status?"
+              }
+            },
+            "_row_num": 7,
+            "__rowNum__": 6,
+            "_token_type": "prompt",
+            "_type": "select_one_dropdown",
+            "_branch_label_enclosing_screen": "demog_continued/_screen2",
+            "promptIdx": 2
+          },
+          {
+            "type": "integer",
+            "name": "education_years",
+            "display": {
+              "prompt": {
+                "text": "How many years of education has {{data.first_name}} had?"
+              }
+            },
+            "_row_num": 11,
+            "__rowNum__": 10,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "demog_continued/_screen2",
+            "promptIdx": 3
+          },
+          {
+            "type": "select_one",
+            "values_list": "yesno",
+            "name": "has_children",
+            "display": {
+              "prompt": {
+                "text": "Does {{data.first_name}} have any children?"
+              }
+            },
+            "_row_num": 15,
+            "__rowNum__": 14,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "demog_continued/_screen2",
+            "promptIdx": 4
+          },
+          {
+            "type": "image",
+            "name": "person_photo",
+            "display": {
+              "prompt": {
+                "text": "Please take a photo of the household member"
+              }
+            },
+            "_row_num": 21,
+            "__rowNum__": 20,
+            "_token_type": "prompt",
+            "_type": "image",
+            "_branch_label_enclosing_screen": "demog_continued/_screen20",
+            "promptIdx": 5
+          },
+          {
+            "_token_type": "prompt",
+            "type": "contents",
+            "_type": "contents",
+            "_row_num": 23,
+            "_branch_label_enclosing_screen": "demog_continued/_screen23",
+            "promptIdx": 6
+          }
+        ],
+        "validation_tag_map": {
+          "finalize": []
+        },
+        "operations": [
+          {
+            "clause": "begin screen",
+            "_row_num": 2,
+            "__rowNum__": 1,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 18,
+              "__rowNum__": 17,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nif (data('age') >= 18) {\nactivePromptIndicies.push(2);\n}\nif (data('age') >= 5) {\nactivePromptIndicies.push(3);\n}\nif (data('age') >= 15) {\nactivePromptIndicies.push(4);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 0
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 20,
+            "__rowNum__": 19,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 22,
+              "__rowNum__": 21,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 1
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 23,
+            "operationIdx": 2
+          },
+          {
+            "_row_num": 23,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 3
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 23,
+            "operationIdx": 4
+          }
+        ],
+        "branch_label_map": {
+          "_screen2": 0,
+          "_screen20": 1,
+          "_contents": 3,
+          "_screen23": 3
+        }
+      }
+    },
+    "dataTableModel": {
+      "household_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "comment": "basic demog",
+        "elementKey": "household_id",
+        "elementName": "household_id",
+        "elementSet": "data",
+        "elementPath": "household_id"
+      },
+      "village": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "village",
+        "elementName": "village",
+        "elementSet": "data",
+        "elementPath": "village"
+      },
+      "first_name": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 5,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "first_name",
+        "elementName": "first_name",
+        "elementSet": "data",
+        "elementPath": "first_name"
+      },
+      "last_name": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 6,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "last_name",
+        "elementName": "last_name",
+        "elementSet": "data",
+        "elementPath": "last_name"
+      },
+      "name": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 7,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "name",
+        "elementName": "name",
+        "elementSet": "data",
+        "elementPath": "name"
+      },
+      "aka": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "aka",
+        "elementName": "aka",
+        "elementSet": "data",
+        "elementPath": "aka"
+      },
+      "age": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 8,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "age",
+        "elementName": "age",
+        "elementSet": "data",
+        "elementPath": "age"
+      },
+      "sex": {
+        "type": "string",
+        "valuesList": "sexes",
+        "_defn": [
+          {
+            "_row_num": 9,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "sex",
+        "elementName": "sex",
+        "elementSet": "data",
+        "elementPath": "sex"
+      },
+      "notes": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 17,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "notes",
+        "elementName": "notes",
+        "elementSet": "data",
+        "elementPath": "notes"
+      },
+      "relation_to_head": {
+        "type": "string",
+        "valuesList": "relationships",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "demog_continued"
+          },
+          {
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "relation_to_head",
+        "elementName": "relation_to_head",
+        "elementSet": "data",
+        "elementPath": "relation_to_head"
+      },
+      "marital_status": {
+        "type": "string",
+        "valuesList": "marital_choices",
+        "_defn": [
+          {
+            "_row_num": 7,
+            "section_name": "demog_continued"
+          },
+          {
+            "_row_num": 15,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "marital_status",
+        "elementName": "marital_status",
+        "elementSet": "data",
+        "elementPath": "marital_status"
+      },
+      "customary_membership": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 16,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "customary_membership",
+        "elementName": "customary_membership",
+        "elementSet": "data",
+        "elementPath": "customary_membership"
+      },
+      "education_years": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 11,
+            "section_name": "demog_continued"
+          },
+          {
+            "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "education_years",
+        "elementName": "education_years",
+        "elementSet": "data",
+        "elementPath": "education_years"
+      },
+      "has_children": {
+        "type": "string",
+        "valuesList": "yesno",
+        "_defn": [
+          {
+            "_row_num": 15,
+            "section_name": "demog_continued"
+          },
+          {
+            "_row_num": 18,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "has_children",
+        "elementName": "has_children",
+        "elementSet": "data",
+        "elementPath": "has_children"
+      },
+      "birthplace": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "demog_continued"
+          },
+          {
+            "_row_num": 19,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "birthplace",
+        "elementName": "birthplace",
+        "elementSet": "data",
+        "elementPath": "birthplace"
+      },
+      "person_photo": {
+        "type": "object",
+        "elementType": "mimeUri",
+        "properties": {
+          "uriFragment": {
+            "type": "string",
+            "elementType": "rowpath",
+            "elementKey": "person_photo_uriFragment",
+            "elementName": "uriFragment",
+            "elementSet": "data",
+            "elementPath": "person_photo.uriFragment"
+          },
+          "contentType": {
+            "type": "string",
+            "elementType": "mimeType",
+            "default": "image/*",
+            "elementKey": "person_photo_contentType",
+            "elementName": "contentType",
+            "elementSet": "data",
+            "elementPath": "person_photo.contentType"
+          }
+        },
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "demog_continued"
+          },
+          {
+            "_row_num": 22,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "person_photo",
+        "elementName": "person_photo",
+        "elementSet": "data",
+        "elementPath": "person_photo",
+        "listChildElementKeys": [
+          "person_photo_contentType",
+          "person_photo_uriFragment"
+        ],
+        "notUnitOfRetention": true
+      },
+      "lives_in_household": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 24,
+            "section_name": "model"
+          }
+        ],
+        "comment": "assigned automatically",
+        "elementKey": "lives_in_household",
+        "elementName": "lives_in_household",
+        "elementSet": "data",
+        "elementPath": "lives_in_household"
+      },
+      "is_alive": {
+        "type": "string",
+        "valuesList": "yesno",
+        "_defn": [
+          {
+            "_row_num": 18,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 12,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 25,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "is_alive",
+        "elementName": "is_alive",
+        "elementSet": "data",
+        "elementPath": "is_alive"
+      },
+      "lives_fulltime": {
+        "type": "string",
+        "valuesList": "yesno",
+        "_defn": [
+          {
+            "_row_num": 16,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 13,
+            "section_name": "basic_demog"
+          },
+          {
+            "_row_num": 26,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "lives_fulltime",
+        "elementName": "lives_fulltime",
+        "elementSet": "data",
+        "elementPath": "lives_fulltime"
+      },
+      "person_photo_uriFragment": {
+        "type": "string",
+        "elementType": "rowpath",
+        "elementKey": "person_photo_uriFragment",
+        "elementName": "uriFragment",
+        "elementSet": "data",
+        "elementPath": "person_photo.uriFragment"
+      },
+      "person_photo_contentType": {
+        "type": "string",
+        "elementType": "mimeType",
+        "default": "image/*",
+        "elementKey": "person_photo_contentType",
+        "elementName": "contentType",
+        "elementSet": "data",
+        "elementPath": "person_photo.contentType"
+      },
+      "_id": {
+        "type": "string",
+        "isNotNullable": true,
+        "elementKey": "_id",
+        "elementName": "_id",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_id"
+      },
+      "_row_etag": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_row_etag",
+        "elementName": "_row_etag",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_row_etag"
+      },
+      "_sync_state": {
+        "type": "string",
+        "isNotNullable": true,
+        "elementKey": "_sync_state",
+        "elementName": "_sync_state",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_sync_state"
+      },
+      "_conflict_type": {
+        "type": "integer",
+        "isNotNullable": false,
+        "elementKey": "_conflict_type",
+        "elementName": "_conflict_type",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_conflict_type"
+      },
+      "_default_access": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_default_access",
+        "elementName": "_default_access",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_default_access"
+      },
+      "_form_id": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_form_id",
+        "elementName": "_form_id",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_form_id"
+      },
+      "_group_modify": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_group_modify",
+        "elementName": "_group_modify",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_group_modify"
+      },
+      "_group_privileged": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_group_privileged",
+        "elementName": "_group_privileged",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_group_privileged"
+      },
+      "_group_read_only": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_group_read_only",
+        "elementName": "_group_read_only",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_group_read_only"
+      },
+      "_locale": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_locale",
+        "elementName": "_locale",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_locale"
+      },
+      "_row_owner": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_row_owner",
+        "elementName": "_row_owner",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_row_owner"
+      },
+      "_savepoint_type": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_savepoint_type",
+        "elementName": "_savepoint_type",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_savepoint_type"
+      },
+      "_savepoint_timestamp": {
+        "type": "string",
+        "isNotNullable": true,
+        "elementKey": "_savepoint_timestamp",
+        "elementName": "_savepoint_timestamp",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_savepoint_timestamp"
+      },
+      "_savepoint_creator": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_savepoint_creator",
+        "elementName": "_savepoint_creator",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_savepoint_creator"
+      }
+    },
+    "properties": [
+      {
+        "_partition": "Column",
+        "_aspect": "has_children",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"yesno\",\"data_value\":\"yes\",\"display\":{\"title\":{\"text\":\"yes\"}},\"_row_num\":2},{\"choice_list_name\":\"yesno\",\"data_value\":\"no\",\"display\":{\"title\":{\"text\":\"no\"}},\"_row_num\":3}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "is_alive",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"yesno\",\"data_value\":\"yes\",\"display\":{\"title\":{\"text\":\"yes\"}},\"_row_num\":2},{\"choice_list_name\":\"yesno\",\"data_value\":\"no\",\"display\":{\"title\":{\"text\":\"no\"}},\"_row_num\":3}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "lives_fulltime",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"yesno\",\"data_value\":\"yes\",\"display\":{\"title\":{\"text\":\"yes\"}},\"_row_num\":2},{\"choice_list_name\":\"yesno\",\"data_value\":\"no\",\"display\":{\"title\":{\"text\":\"no\"}},\"_row_num\":3}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "marital_status",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"marital_choices\",\"data_value\":\"married\",\"display\":{\"title\":{\"text\":\"Married\"}},\"_row_num\":23},{\"choice_list_name\":\"marital_choices\",\"data_value\":\"never_married\",\"display\":{\"title\":{\"text\":\"Never Married\"}},\"_row_num\":24},{\"choice_list_name\":\"marital_choices\",\"data_value\":\"divorced\",\"display\":{\"title\":{\"text\":\"Divorced\"}},\"_row_num\":25},{\"choice_list_name\":\"marital_choices\",\"data_value\":\"separated\",\"display\":{\"title\":{\"text\":\"Separated\"}},\"_row_num\":26},{\"choice_list_name\":\"marital_choices\",\"data_value\":\"widowed\",\"display\":{\"title\":{\"text\":\"Widowed\"}},\"_row_num\":27}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "relation_to_head",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"relationships\",\"data_value\":\"head\",\"display\":{\"title\":{\"text\":\"Head\"}},\"_row_num\":8},{\"choice_list_name\":\"relationships\",\"data_value\":\"spouse\",\"display\":{\"title\":{\"text\":\"Spouse\"}},\"_row_num\":9},{\"choice_list_name\":\"relationships\",\"data_value\":\"son_daughter\",\"display\":{\"title\":{\"text\":\"Son/Daughter\"}},\"_row_num\":10},{\"choice_list_name\":\"relationships\",\"data_value\":\"grandchild\",\"display\":{\"title\":{\"text\":\"Grandchild\"}},\"_row_num\":11},{\"choice_list_name\":\"relationships\",\"data_value\":\"father_mother\",\"display\":{\"title\":{\"text\":\"Father/Mother\"}},\"_row_num\":12},{\"choice_list_name\":\"relationships\",\"data_value\":\"sister_brother\",\"display\":{\"title\":{\"text\":\"Sister/Brother\"}},\"_row_num\":13},{\"choice_list_name\":\"relationships\",\"data_value\":\"niece_nephew\",\"display\":{\"title\":{\"text\":\"Niece/Nephew\"}},\"_row_num\":14},{\"choice_list_name\":\"relationships\",\"data_value\":\"uncle_aunt\",\"display\":{\"title\":{\"text\":\"Uncle/Aunt\"}},\"_row_num\":15},{\"choice_list_name\":\"relationships\",\"data_value\":\"in_law_son_daughter\",\"display\":{\"title\":{\"text\":\"Son/Daughter in-law\"}},\"_row_num\":16},{\"choice_list_name\":\"relationships\",\"data_value\":\"in_law_father_mother\",\"display\":{\"title\":{\"text\":\"Father/Mother in-law\"}},\"_row_num\":17},{\"choice_list_name\":\"relationships\",\"data_value\":\"in_law_brother_sister\",\"display\":{\"title\":{\"text\":\"Brother/Sister in-law\"}},\"_row_num\":18},{\"choice_list_name\":\"relationships\",\"data_value\":\"grandparent\",\"display\":{\"title\":{\"text\":\"Grandparent\"}},\"_row_num\":19},{\"choice_list_name\":\"relationships\",\"data_value\":\"other_relative\",\"display\":{\"title\":{\"text\":\"Other relative\"}},\"_row_num\":20},{\"choice_list_name\":\"relationships\",\"data_value\":\"non_relative\",\"display\":{\"title\":{\"text\":\"Non-relative\"}},\"_row_num\":21}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "sex",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sexes\",\"data_value\":\"male\",\"display\":{\"title\":{\"text\":\"male\"}},\"_row_num\":5},{\"choice_list_name\":\"sexes\",\"data_value\":\"female\",\"display\":{\"title\":{\"text\":\"female\"}},\"_row_num\":6}]"
+      },
+      {
+        "_partition": "FormType",
+        "_aspect": "default",
+        "_key": "FormType.formType",
+        "_type": "string",
+        "_value": "SURVEY"
+      },
+      {
+        "_partition": "SurveyUtil",
+        "_aspect": "default",
+        "_key": "SurveyUtil.formId",
+        "_type": "string",
+        "_value": "household_member"
+      },
+      {
+        "_partition": "Table",
+        "_aspect": "default",
+        "_key": "defaultViewType",
+        "_type": "string",
+        "_value": "SPREADSHEET"
+      },
+      {
+        "_partition": "Table",
+        "_aspect": "default",
+        "_key": "displayName",
+        "_type": "object",
+        "_value": "{\"text\":\"Household Member\"}"
+      }
+    ]
+  }
+}
