@@ -118,8 +118,8 @@ ___
 | Question                                                                       |   Variable    | Type  |
 | ------------------------------------------------------------------------------ | :-----------: | :---: |
 | Approximately how many kava plants do you have currently under cultivatation?  |  crops_kava   |  int  |
-| Approximately how many taro plants do you have currentlu under cultivation?    |  crops_taro   |  int  |
-| Approximately how many cassava plants do you have currentlu under cultivation? | crops_cassava |  int  |
+| Approximately how many taro plants do you have currently under cultivation?    |  crops_taro   |  int  |
+| Approximately how many cassava plants do you have currently under cultivation? | crops_cassava |  int  |
 | In an average week, how many days do members of your household go fishing?     |   fish_days   |  int  |
 | On average, how many fish are caught when out fishing?                         |  fish_catch   |  int  |
 
