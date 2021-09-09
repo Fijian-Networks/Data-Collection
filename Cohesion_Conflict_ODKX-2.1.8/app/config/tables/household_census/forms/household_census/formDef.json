@@ -511,74 +511,89 @@
         "_row_num": 3
       },
       {
-        "name": "customary_membership",
-        "type": "select_one",
+        "name": "tokatoka",
+        "type": "text",
         "_row_num": 5
+      },
+      {
+        "name": "yavusa",
+        "type": "text",
+        "_row_num": 6
+      },
+      {
+        "name": "mataquali",
+        "type": "text",
+        "_row_num": 7
+      },
+      {
+        "name": "membership_notes",
+        "type": "text",
+        "_row_num": 9
       },
       {
         "name": "asset_wealth",
         "type": "select_multiple",
-        "_row_num": 7
+        "_row_num": 11
       },
       {
         "name": "income_head_amount",
         "type": "integer",
-        "_row_num": 9
+        "_row_num": 13
       },
       {
         "name": "income_head_source",
         "type": "text",
-        "_row_num": 10
+        "_row_num": 14
       },
       {
         "name": "income_spouse_amount",
         "type": "integer",
-        "_row_num": 11
+        "_row_num": 15
       },
       {
         "name": "income_spouse_source",
         "type": "text",
-        "_row_num": 12
+        "_row_num": 16
       },
       {
         "name": "food_security",
         "type": "select_one_integer",
-        "_row_num": 14
+        "_row_num": 18
       },
       {
         "name": "crops_kava",
         "type": "integer",
-        "_row_num": 16
+        "_row_num": 20
       },
       {
         "name": "crops_taro",
         "type": "integer",
-        "_row_num": 17
+        "_row_num": 21
       },
       {
         "name": "crops_cassava",
         "type": "integer",
-        "_row_num": 18
+        "_row_num": 22
       },
       {
         "name": "fish_days",
         "type": "integer",
-        "_row_num": 19
+        "_row_num": 23
       },
       {
         "name": "fish_catch",
         "type": "integer",
-        "_row_num": 20
+        "_row_num": 24
       },
       {
         "name": "contact_name",
         "type": "text",
-        "_row_num": 22
+        "_row_num": 26
       },
       {
         "name": "contact_details",
         "type": "text",
-        "_row_num": 23
+        "_row_num": 27
       }
     ],
     "id": [
@@ -1412,15 +1427,57 @@
         ],
         "elementKey": "household_village"
       },
-      "customary_membership": {
+      "tokatoka": {
         "type": "string",
         "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "customary_membership"
+          },
           {
             "_row_num": 5,
             "section_name": "model"
           }
         ],
-        "elementKey": "customary_membership"
+        "elementKey": "tokatoka"
+      },
+      "yavusa": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "customary_membership"
+          },
+          {
+            "_row_num": 6,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "yavusa"
+      },
+      "mataquali": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 7,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "mataquali"
+      },
+      "membership_notes": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 8,
+            "section_name": "customary_membership"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "membership_notes"
       },
       "asset_wealth": {
         "type": "array",
@@ -1435,7 +1492,7 @@
             "section_name": "asset_wealth"
           },
           {
-            "_row_num": 7,
+            "_row_num": 11,
             "section_name": "model"
           }
         ],
@@ -1449,7 +1506,7 @@
             "section_name": "income"
           },
           {
-            "_row_num": 9,
+            "_row_num": 13,
             "section_name": "model"
           }
         ],
@@ -1463,7 +1520,7 @@
             "section_name": "income"
           },
           {
-            "_row_num": 10,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
@@ -1477,7 +1534,7 @@
             "section_name": "income"
           },
           {
-            "_row_num": 11,
+            "_row_num": 15,
             "section_name": "model"
           }
         ],
@@ -1491,7 +1548,7 @@
             "section_name": "income"
           },
           {
-            "_row_num": 12,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
@@ -1506,7 +1563,7 @@
             "section_name": "food_security"
           },
           {
-            "_row_num": 14,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -1520,7 +1577,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 16,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -1534,7 +1591,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 17,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -1548,7 +1605,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 18,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -1562,7 +1619,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 19,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -1576,7 +1633,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 20,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -1590,7 +1647,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 22,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -1604,7 +1661,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 23,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -1673,26 +1730,6 @@
         "type": "string",
         "elementKey": "household_human_id"
       },
-      "tokatoka": {
-        "_defn": [
-          {
-            "_row_num": 5,
-            "section_name": "customary_membership"
-          }
-        ],
-        "type": "string",
-        "elementKey": "tokatoka"
-      },
-      "yavusa": {
-        "_defn": [
-          {
-            "_row_num": 6,
-            "section_name": "customary_membership"
-          }
-        ],
-        "type": "string",
-        "elementKey": "yavusa"
-      },
       "mataqali": {
         "_defn": [
           {
@@ -1702,16 +1739,6 @@
         ],
         "type": "string",
         "elementKey": "mataqali"
-      },
-      "membership_notes": {
-        "_defn": [
-          {
-            "_row_num": 8,
-            "section_name": "customary_membership"
-          }
-        ],
-        "type": "string",
-        "elementKey": "membership_notes"
       }
     },
     "section_names": [
@@ -3263,18 +3290,69 @@
         "elementSet": "data",
         "elementPath": "household_village"
       },
-      "customary_membership": {
+      "tokatoka": {
         "type": "string",
         "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "customary_membership"
+          },
           {
             "_row_num": 5,
             "section_name": "model"
           }
         ],
-        "elementKey": "customary_membership",
-        "elementName": "customary_membership",
+        "elementKey": "tokatoka",
+        "elementName": "tokatoka",
         "elementSet": "data",
-        "elementPath": "customary_membership"
+        "elementPath": "tokatoka"
+      },
+      "yavusa": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "customary_membership"
+          },
+          {
+            "_row_num": 6,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "yavusa",
+        "elementName": "yavusa",
+        "elementSet": "data",
+        "elementPath": "yavusa"
+      },
+      "mataquali": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 7,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "mataquali",
+        "elementName": "mataquali",
+        "elementSet": "data",
+        "elementPath": "mataquali"
+      },
+      "membership_notes": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 8,
+            "section_name": "customary_membership"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "membership_notes",
+        "elementName": "membership_notes",
+        "elementSet": "data",
+        "elementPath": "membership_notes"
       },
       "asset_wealth": {
         "type": "array",
@@ -3293,7 +3371,7 @@
             "section_name": "asset_wealth"
           },
           {
-            "_row_num": 7,
+            "_row_num": 11,
             "section_name": "model"
           }
         ],
@@ -3313,7 +3391,7 @@
             "section_name": "income"
           },
           {
-            "_row_num": 9,
+            "_row_num": 13,
             "section_name": "model"
           }
         ],
@@ -3330,7 +3408,7 @@
             "section_name": "income"
           },
           {
-            "_row_num": 10,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
@@ -3347,7 +3425,7 @@
             "section_name": "income"
           },
           {
-            "_row_num": 11,
+            "_row_num": 15,
             "section_name": "model"
           }
         ],
@@ -3364,7 +3442,7 @@
             "section_name": "income"
           },
           {
-            "_row_num": 12,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
@@ -3382,7 +3460,7 @@
             "section_name": "food_security"
           },
           {
-            "_row_num": 14,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -3399,7 +3477,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 16,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -3416,7 +3494,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 17,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -3433,7 +3511,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 18,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -3450,7 +3528,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 19,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -3467,7 +3545,7 @@
             "section_name": "crops_fishing"
           },
           {
-            "_row_num": 20,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -3484,7 +3562,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 22,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -3501,7 +3579,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 23,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -3612,32 +3690,6 @@
         "elementSet": "data",
         "elementPath": "household_human_id"
       },
-      "tokatoka": {
-        "_defn": [
-          {
-            "_row_num": 5,
-            "section_name": "customary_membership"
-          }
-        ],
-        "type": "string",
-        "elementKey": "tokatoka",
-        "elementName": "tokatoka",
-        "elementSet": "data",
-        "elementPath": "tokatoka"
-      },
-      "yavusa": {
-        "_defn": [
-          {
-            "_row_num": 6,
-            "section_name": "customary_membership"
-          }
-        ],
-        "type": "string",
-        "elementKey": "yavusa",
-        "elementName": "yavusa",
-        "elementSet": "data",
-        "elementPath": "yavusa"
-      },
       "mataqali": {
         "_defn": [
           {
@@ -3650,19 +3702,6 @@
         "elementName": "mataqali",
         "elementSet": "data",
         "elementPath": "mataqali"
-      },
-      "membership_notes": {
-        "_defn": [
-          {
-            "_row_num": 8,
-            "section_name": "customary_membership"
-          }
-        ],
-        "type": "string",
-        "elementKey": "membership_notes",
-        "elementName": "membership_notes",
-        "elementSet": "data",
-        "elementPath": "membership_notes"
       },
       "asset_wealth_items": {
         "type": "string",
