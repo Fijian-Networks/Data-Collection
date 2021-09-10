@@ -1,0 +1,34 @@
+---- starting ----
+I/MainMenuActivity: 2021-09-10 12:59:54.027 swapToFragmentView: FORM_CHOOSER
+---- flushing ----
+---- starting ----
+I/AndroidConnectFactory: 2021-09-10 12:59:54.035 getConnectionImpl -- uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e -- creating new connection for default when getting uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e
+---- flushing ----
+---- starting ----
+I/AndroidConnectFactory: 2021-09-10 12:59:54.605 getConnectionImpl -- uuid:66ef2c50-abc2-4b72-b843-7ae396c649fe-internal -- creating new connection for default when getting uuid:66ef2c50-abc2-4b72-b843-7ae396c649fe-internal
+---- flushing ----
+I/MainMenuActivity: 2021-09-10 12:59:54.030 BackStackEntry[0] FORM_CHOOSER
+E/MainMenuActivity: 2021-09-10 12:59:54.031 [239629769] popping back stack FORM_CHOOSER
+W/SQLiteConnection: 2021-09-10 12:59:54.849 busy_timeout is not 5000 but 2500
+I/SQLiteConnection: 2021-09-10 12:59:54.906 A SQLiteConnection object for database 'default' sessionQualifier 'uuid:66ef2c50-abc2-4b72-b843-7ae396c649fe-internal' successfully closed.
+I/SQLiteConnection: 2021-09-10 12:59:56.108 A SQLiteConnection object for database 'default' sessionQualifier 'uuid:66ef2c50-abc2-4b72-b843-7ae396c649fe-internal' successfully closed.
+W/SQLiteConnection: 2021-09-10 12:59:54.067 busy_timeout is not 5000 but 2500
+I/getTableHealthStatuses: 2021-09-10 12:59:54.069 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e getTableHealthStatuses -- searching for conflicts and checkpoints 
+I/getTableHealthStatus: 2021-09-10 12:59:54.070 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e families getTableHealthStatus -- searching for conflicts and checkpoints 
+I/getTableHealthStatus: 2021-09-10 12:59:54.098 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e families getTableHealthStatus -- full table scan completed: 28 ms
+I/getTableHealthStatus: 2021-09-10 12:59:54.098 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e household_census getTableHealthStatus -- searching for conflicts and checkpoints 
+I/getTableHealthStatus: 2021-09-10 12:59:54.099 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e household_census getTableHealthStatus -- full table scan completed: 1 ms
+I/getTableHealthStatus: 2021-09-10 12:59:54.100 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e household_cooperation_measures getTableHealthStatus -- searching for conflicts and checkpoints 
+I/getTableHealthStatus: 2021-09-10 12:59:54.102 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e household_cooperation_measures getTableHealthStatus -- full table scan completed: 2 ms
+I/getTableHealthStatus: 2021-09-10 12:59:54.103 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e household_items getTableHealthStatus -- searching for conflicts and checkpoints 
+I/getTableHealthStatus: 2021-09-10 12:59:54.104 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e household_items getTableHealthStatus -- full table scan completed: 1 ms
+I/getTableHealthStatus: 2021-09-10 12:59:54.104 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e household_member getTableHealthStatus -- searching for conflicts and checkpoints 
+I/getTableHealthStatus: 2021-09-10 12:59:54.106 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e household_member getTableHealthStatus -- full table scan completed: 2 ms
+I/getTableHealthStatus: 2021-09-10 12:59:54.106 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e marriages getTableHealthStatus -- searching for conflicts and checkpoints 
+I/getTableHealthStatus: 2021-09-10 12:59:54.109 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e marriages getTableHealthStatus -- full table scan completed: 3 ms
+I/getTableHealthStatus: 2021-09-10 12:59:54.109 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e social_capital getTableHealthStatus -- searching for conflicts and checkpoints 
+I/getTableHealthStatus: 2021-09-10 12:59:54.123 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e social_capital getTableHealthStatus -- full table scan completed: 14 ms
+I/getTableHealthStatus: 2021-09-10 12:59:54.123 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e social_network getTableHealthStatus -- searching for conflicts and checkpoints 
+I/getTableHealthStatus: 2021-09-10 12:59:54.124 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e social_network getTableHealthStatus -- full table scan completed: 1 ms
+I/getTableHealthStatuses: 2021-09-10 12:59:54.124 default uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e getTableHealthStatuses -- full table scan completed: 55 ms
+I/SQLiteConnection: 2021-09-10 12:59:54.159 A SQLiteConnection object for database 'default' sessionQualifier 'uuid:4bf08e6e-7d02-4f85-a809-206f175f3b5e' successfully closed.
