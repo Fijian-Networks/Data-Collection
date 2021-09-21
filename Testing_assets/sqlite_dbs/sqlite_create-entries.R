@@ -24,6 +24,7 @@ generate.household_id_list <- dbGetQuery(db, "SELECT household_id FROM household
 generate.household_id <- function(index) {generate.household_id_list[index,]}
 # get list of household village from household_census db and select by index same as household_id
 generate.household_village_list <- dbGetQuery(db, "SELECT household_village FROM household_census")
+
 generate.village_from_household <- function(index) {generate.household_village_list[index,]}
 
 # generate uuid

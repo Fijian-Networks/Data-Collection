@@ -6,6 +6,11 @@ library("RSQLite")
 
 # connect to db
 db <- dbConnect(RSQLite::SQLite(), "sqlite.db")
+# get list of all household IDs
+generate.household_id_list <- dbGetQuery(db, "SELECT household_id FROM household_census")
+# get list of household village from household_census db and select by index same as household_id
+generate.household_village_list <- dbGetQuery(db, "SELECT household_village FROM household_census")
+
 #get household Id from list
 generate.household_id <- function(index) {generate.household_id_list[index,]}
 # get village name from list
