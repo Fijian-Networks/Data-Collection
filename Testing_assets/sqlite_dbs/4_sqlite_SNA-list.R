@@ -26,9 +26,11 @@ generate.religion_for_household <- function(member_list){
 
 # lives in household not tested for testing
 
-query <- paste('SELECT "_id", "name", "age", "sex", "village", "household_id" FROM household_member WHERE "household_id" = "', household_id_list[1,], '" ORDER BY "age" DESC, "sex" DESC',sep='')
+#TODO: This query needs to be opened up into a function with i to iterate through all households..
+query <- paste('SELECT "_id", "name", "age", "sex", "village", "household_id" FROM household_member WHERE "household_id" = "', household_id_list[1,], '" ORDER BY "sex" DESC, "age" DESC',sep='')
 household_member_list<- dbGetQuery(db, query)
 household_member_list <- generate.religion_for_household(household_member_list)
+household_head_and_spouse <- household_member_list[match(unique(household_member_list$sex),household_member_list$sex),]
 
 # Select oldest male and female from a household, to act as head and spouse for testing purposes, renaming "name" column to "fullname" so it matches later tibble
 # this will be iterated upon for final generation
@@ -50,9 +52,6 @@ field_list <- as.list(dbListFields(db, "social_network"))
 
 # generate uuid
 generate.uuid <- function() {return(paste("uuid:",uuid::UUIDgenerate(use.time = TRUE), sep = ""))}
-
-
-
 
 
 #!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!#! 
@@ -88,10 +87,12 @@ table_to_insert.meta <- generate.participant_response.empty() %>% generate.metad
 
 # input: empty table, sex ("m" or "f")
 generate.participant_response.info <- function(.data, sex) {
-    if(sex == "m"){i=1} else if(sex =="f") {i=2} else {print("type m or f")}
-  participant.info <-  as_tibble(household_member_list[i,]) %>% select(-c(age, household_id))
+  
+    if(sex == "m"){i <- 1} else if(sex =="f") {i <- 2} else {print("type m or f")}
+  participant.info <-  as_tibble(household_head_and_spouse[i,]) %>% select(-c(age, household_id))
   # merge head_of_Household using fields as columns
   # rename columns to be same as field names
+  # .data[1,] is the empty table, assigning to row one
     participant.info.table <- .data[1,] %>% mutate(participant_uuid = participant.info$`_id`,participant_fullname = participant.info$name, participant_sex = participant.info$sex, participant_location = participant.info$village, participant_religion_upbringing = participant.info$religion) 
     return(participant.info.table)
 }
@@ -99,8 +100,9 @@ generate.participant_response.info <- function(.data, sex) {
 ###########
 # Run next function for each participant: 2 per household  = oldest male and female.
 #!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!##!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
-table_to_insert.participant_info <- generate.participant_response.empty() %>% generate.participant_response.info("f") #!#!#!#!#!#!#!#
+table_to_insert.participant_info <- generate.participant_response.empty() %>% generate.participant_response.info("m") #!#!#!#!#!#!#!#
 #!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!##!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+table_to_insert.participant_info$participant_sex
 
 #!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!##!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
 # IT WORKS!!!!!!! replace_na() merges the tables together and replaces NA, funnily enough... GRRR
@@ -108,6 +110,7 @@ table_to_insert.participant_info <- generate.participant_response.empty() %>% ge
 table_to_insert.part_meta <- replace_na(table_to_insert.meta, table_to_insert.participant_info)
 #!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!##!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
 
+table_to_insert.part_meta <- generate.participant_response.empty() %>% generate.participant_response.info("f") %>% generate.metadata()
 
 #!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!##!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
 #!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!##!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
@@ -133,8 +136,12 @@ table_to_insert.part_meta <- replace_na(table_to_insert.meta, table_to_insert.pa
 # SELECT "name", "_id" FROM household_member WHERE "lives_in_household" = "yes" AND "household_id" != "', household_id_list[1], AND "age" > 20'
 # Thus selecting anyone from anywhere that is NOT in their household and older than 20
 
-get_friends_query <- query <- paste('SELECT "_id", "name", "age", "sex", "village", "household_id" FROM household_member WHERE "age" > 20 AND "household_id" != "', household_id_list[1,], '" ORDER BY "age" DESC, "sex" DESC', sep='')
-q.friends <- as_tibble(dbGetQuery(db, query))
+generate.potential_friends <-  function(household_index) {
+get_friends_query <- query <- paste('SELECT "_id", "name", "age", "sex", "village", "household_id" FROM household_member WHERE "age" > 20 AND "household_id" != "', household_id_list[household_index,], '" ORDER BY "age" DESC, "sex" DESC', sep='')
+return(as_tibble(dbGetQuery(db, query)))
+}
+
+q.friends <- generate.potential_friends()
 
 no_close.friends <- sample(3,1) + 2
 no_outlier.friends <- sample(3,1) + 1
@@ -193,6 +200,7 @@ generate.list_based_questions <- function (friend_table, q) {
 cq1 <- generate.list_based_questions(table.friends, "cq1")
 cq4 <- generate.list_based_questions(table.friends, "cq4")
 cqm1 <- generate.list_based_questions(table.friends, "cqm1")
+cqm2 <- generate.list_based_questions(table.friends, "cqm2")
 cqf1 <- generate.list_based_questions(table.friends, "cqf1")
 
 #########################################
@@ -263,15 +271,101 @@ snq1234 <- table_to_insert.part_meta %>% replace_na(qsnq1) %>% replace_na(qsnq2)
 
 
 
+# function to generate all responses for single person, including male female logic.
 
-# test for replace na with different number of cols
-# IT WORKS!!!!
- tmp <- replace_na(tmp, all_questions)
+generate.person_responses <- function (household_index, sex) {
+  # init values
+  response_table <- generate.participant_response.empty() %>% generate.participant_response.info(toString(toString(sex))) %>% generate.metadata() #generate participant
+  q.friends <- generate.potential_friends(household_index) # collect all persons not living in household
+  no_close.friends <- sample(3,1) + 2   # random number of close friends
+  no_outlier.friends <- sample(3,1) + 1 # random number of outliers
+  total_no.friends <- no_close.friends + no_outlier.friends # total number of friends for iteration
+  table.friends <- q.friends[sample(nrow(q.friends), total_no.friends),] # select random persons as friends
+  friends.probablity <<- c(rep(1,no_close.friends), rep(0.3,no_outlier.friends)) # set probability for closer friends
+  
+  # cq1-4 
+  
+  cq1 <- generate.list_based_questions(table.friends, "cq1")
+  cq2 <- generate.cq2_and_3(table.friends,2)
+  cq3 <- generate.cq2_and_3(table.friends,3)
+  cq4 <- generate.list_based_questions(table.friends, "cq4")
+  
+  
+  
+  # male or female questions, and join onto response_table.sex
+  if(sex == "m"){
+    cqm1 <- generate.list_based_questions(table.friends, "cqm1")
+    cqm2 <- generate.list_based_questions(table.friends, "cqm2")
+    
+    response_table.sex <- response_table %>% replace_na(cqm1) %>% replace_na(cqm2)
+  } else if(sex == "f") {
+    cqf1 <- generate.list_based_questions(table.friends, "cqf1")
+    cqf2 <- generate.general_name_id(table.friends, "cqf2")
+    
+    response_table.sex <- response_table %>% replace_na(cqf1) %>% replace_na(cqf2)
+  } else{
+    print("no sex assigned to entry")
+    }
+  
+  #snq1-4
+  qsnq1 <- generate.general_name_id(table.friends, "snq1")
+  qsnq2 <- generate.general_name_id(table.friends, "snq2")
+  qsnq3 <- generate.general_name_id(table.friends, "snq3")
+  qsnq4 <- generate.general_name_id(table.friends, "snq4")
 
+  # bring all responses into table...
+  # This is gonna be ugly.
+  
+  output <- response_table.sex %>% replace_na(cq1) %>% replace_na(cq2) %>% replace_na(cq3) %>% replace_na(cq4) %>% replace_na(qsnq1) %>% replace_na(qsnq2) %>% replace_na(qsnq3) %>% replace_na(qsnq4)
+      
+  return(output)
+}
+
+
+# final Function run for one person!
+t.1 <- generate.person_responses(1,"m")
+t.1$participant_sex
+
+#################3#################3#################3#################3#################3#################3#################3
+#TODO: This query needs to be opened up into a function with i to iterate through all households..
+
+generate.household_member_list <-  function(household_index){
+  query <- paste('SELECT "_id", "name", "age", "sex", "village", "household_id" FROM household_member WHERE "household_id" = "', household_id_list[household_index,], '" ORDER BY "age" DESC, "sex" DESC',sep='')
+  household_member_list<- dbGetQuery(db, query)
+  household_member_list <- generate.religion_for_household(household_member_list)
+  
+  return(household_member_list)
+}
+
+# now, iterate over all households in household_id_list
+
+generate.all_households <- function(){
+  household_id_list <- dbGetQuery(db, "SELECT household_id FROM household_census")
+  responses <- generate.participant_response.empty()
+  i <- 1
+  r <- 1
+  while(i<= nrow(household_id_list)){
+    household_member_list <- generate.household_member_list(i)
+    #extract oldest male and female from list
+    household_member_list <- household_member_list[match(unique(household_member_list$sex),household_member_list$sex),]
+    m_response <- generate.person_responses(i,"m")
+    f_response <- generate.person_responses(i,"f")
+    responses[r,] <- m_response
+    responses[r+1,] <- f_response
+    i <- i + 1
+    r <- r+2
+  }
+  return(responses)  
+}
+
+# COMPLETED PROCESS:
+t <- generate.all_households()
+
+# TODO: CELEBRATE
+#TODO: CLEAN THE FUCK UP
  
  
 #!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!##!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
 # then insert into DB with dbAppendTable()
-# TODO: EVENTUALLYusing table_to_insert.final
 dbAppendTable(db, "social_network", table_to_insert.part_meta)
 #!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!##!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
