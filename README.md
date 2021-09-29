@@ -1,6 +1,6 @@
-#Fijian Networks
+# Fijian Networks
  
-###Don't get too comfortable, this repo will be split into multiple 'sane' chunks
+### Don't get too comfortable, this repo will be split into multiple 'sane' chunks
 
 _folder struct_
 
@@ -26,4 +26,4 @@ _folder struct_
 - test data
   - clean csvs and sqlite database for shiny-R implimentation
 
-##Again, these will be separated to individual repos within the Fijian Networks org page.
+## Again, these will be separated to individual repos within the Fijian Networks org page.
