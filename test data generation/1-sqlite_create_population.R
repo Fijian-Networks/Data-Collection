@@ -1,15 +1,24 @@
-setwd("/Users/admin/Documents/SHAVER_NETWORK/cohesionAndConflict/test data generation/")
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 library("DBI")
 library("uuid")
 library("randomNames")
 library("RSQLite")
 
+#############################################
+# Initialisation step
+#############################################
 # connect to db
 db <- dbConnect(RSQLite::SQLite(), "sqlite.db")
 # get list of all household IDs
 generate.household_id_list <- dbGetQuery(db, "SELECT household_id FROM household_census")
 # get list of household village from household_census db and select by index same as household_id
 generate.household_village_list <- dbGetQuery(db, "SELECT household_village FROM household_census")
+#############################################
+# End initialisation step
+#############################################
+
+
+
 
 #get household Id from list
 generate.household_id <- function(index) {generate.household_id_list[index,]}
@@ -88,7 +97,9 @@ generate.all <- function() {
 }
 
 
-
+#############################################
+# Generation step
+#############################################
 # This block will populate the linked sqlite db containing any number of household entries
 # with random names (1 last name per household), random ratio of sex in each household,
 # random age, ect...
