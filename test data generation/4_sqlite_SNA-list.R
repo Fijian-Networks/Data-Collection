@@ -1,4 +1,4 @@
-setwd("/Users/admin/Documents/SHAVER_NETWORK/cohesionAndConflict/Testing_assets/sqlite_dbs")
+setwd("/Users/admin/Documents/SHAVER_NETWORK/cohesionAndConflict/test data generation")
 library("DBI")
 library("uuid")
 library("randomNames")
@@ -367,5 +367,5 @@ t <- generate.all_households()
  
 #!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!##!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
 # then insert into DB with dbAppendTable()
-dbAppendTable(db, "social_network", table_to_insert.part_meta)
+dbAppendTable(db, "social_network", t)
 #!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!#!#!#!#!#!#!##!#!#!##!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!

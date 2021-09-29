@@ -1,4 +1,4 @@
-setwd("/Users/admin/Documents/SHAVER_NETWORK/cohesionAndConflict/Testing_assets/sqlite_dbs")
+setwd("/Users/admin/Documents/SHAVER_NETWORK/cohesionAndConflict/test data generation/")
 library("DBI")
 library("uuid")
 library("randomNames")
@@ -89,7 +89,7 @@ generate.all <- function() {
 
 
 
-# This function will populate any sqlite db containing any number of household entries
+# This block will populate the linked sqlite db containing any number of household entries
 # with random names (1 last name per household), random ratio of sex in each household,
 # random age, ect...
 ##########################################################################################

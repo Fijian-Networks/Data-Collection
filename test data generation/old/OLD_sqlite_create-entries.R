@@ -1,4 +1,4 @@
-setwd("/Users/admin/Documents/SHAVER_NETWORK/cohesionAndConflict/Testing_assets/sqlite_dbs")
+setwd("/Users/admin/Documents/SHAVER_NETWORK/cohesionAndConflict/test data generation/")
 library("DBI")
 library("uuid")
 library("randomNames")
