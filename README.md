@@ -9,7 +9,8 @@
     - ODK-X survey files and application builder
     - 0_ODK-X Programs
        * _*contains applications for fieldwork devices*_
-<br/>
+
+
 - **data_manipulation**
  _*Collection of scripts, usually in R*_
   - experiments - _*exploratory data manipulation tests*_
@@ -20,10 +21,12 @@
     - output
       - test data for shiy - _*clean csvs and sqlite database for shiny-R implimentation*_
       - Household_gps_testing_outputs - _*Households with GPS coords for simple testing*_
-<br/>
+
+
 - **ccSocial** -
     _*Custon flutter application for identifying the uuid's of participants and their responses for social network questions*_
-<br/>
+
+
 - **docs**
     _*Documentation for fieldworkers and data analysts*_
 
