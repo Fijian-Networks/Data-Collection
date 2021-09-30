@@ -24,7 +24,7 @@
 
 
 - **ccSocial** -
-    _*Custon flutter application for identifying the uuid's of participants and their responses for social network questions*_
+    _*Custom flutter application for identifying the uuid's of participants and their responses for social network questions*_
 
 
 - **docs**
